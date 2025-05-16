@@ -71,11 +71,11 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://https://github.com/CropXR/cropxr-documentation
-    - icon: fontawesome/brands/python
-      link: https://cropxr.data.surfsara.nl
+  #social:
+  #  - icon: fontawesome/brands/github
+  #    link: https://https://github.com/CropXR/cropxr-documentation
+  #  - icon: fontawesome/brands/python
+  #    link: https://cropxr.data.surfsara.nl
   copyright: Copyright &copy; 2025 CropXR
   consent:
     title: Cookie consent
