@@ -1,3 +1,1 @@
-
 # CropXR Documentation
-
