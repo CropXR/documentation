@@ -1,11 +1,6 @@
 # Research Drive
 
-# CropXR Research Drive Documentation
-
-Welcome to the CropXR Research Drive! This guide will help you effectively use our collaborative research platform.
-
 ## Table of Contents
-1. [Project registration](#project-registration)
 1. [Project Data Organization](#project-data-organization)
 1. [File Organization Guidelines](#file-organization-guidelines)
 1. [File Upload Guidelines](#file-upload-guidelines)
@@ -16,26 +11,11 @@ Welcome to the CropXR Research Drive! This guide will help you effectively use o
 1. [Contact](#contact)
 
 ## Project registration
-To get dedicated storage space for your investigations, please fill out the 
-[project registration form](https://forms.office.com/e/vmhWfLi47G).
+To get dedicated storage space for your investigations, please fill out the project registration form
+Please reach out via Slack to get the link to the form.
 A dedicated study folder will be created for you. 
 
 ## Project Data Organization
-
-### Data Sensitivity Levels
-
-All data sharing is conducted through the DAC. Approval for sharing depends on the sensitivity level of the data.
-
-The DAC oversees five levels of data access:
-
-| Access Level  | Description | DAC Approval needed for **CropXR** members? | DAC Approval needed for **non-CropXR** members? | Notes |
-|--------------|-------------|----------------------------------------------|----------------------------------------------|-------|
-| **Public** | Data accessible to everyone | No | No | No restrictions or monitoring required |
-| **Internal (CropXR)** | Data for internal **CropXR** use | Yes | Yes | Approval needed to ensure data aligns with organizational use policies |
-| **Restricted** | Specific individuals within **CropXR**, listed in data catalog | Yes* | Yes* | Access logged and monitored. Role-based access rights required |
-| **Confidential** | Specific individuals, **not** listed in catalog | Yes* | Yes* | Limited to select individuals with specific security clearances |
-
-**\* It is the responsibility of the person who uploads the data to indicate who can view the data.** The person can do so by selecting specific individuals or groups who can access the data. The Resilience Hub will include security measures to make sure that only the selected individuals can access the data.
 
 ### Standard Project Structure
 
@@ -235,7 +215,6 @@ A user in the role of dashboard admins is able to view all user accounts and pro
 
 
 ## Links
-
 - [Research Drive Wiki](https://wiki.surfnet.nl/display/RDRIVE)
 - [Research Drive Tutorials](https://wiki.surfnet.nl/display/RDRIVE/Tutorials)
 - [Research Drive Best Practices](https://wiki.surfnet.nl/display/RDRIVE/Best+practices)
@@ -243,10 +222,7 @@ A user in the role of dashboard admins is able to view all user accounts and pro
 - [CropXR GitHub Repository](https://github.com/cropxr)
 
 ## Contact
-
 If you have questions regarding this document, the research drive, 
 or any other  data related question please feel free to reach out 
-via email to [mailto:dataxr@uu.nl](dataxr@uu.nl), or write us in 
+via email to [dataxr@uu.nl](mailto:dataxr@uu.nl), or write us in 
 the [research-drive](https://cropxr.slack.com/archives/C06TD73J70F) slack channel.
-
-
