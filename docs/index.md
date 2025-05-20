@@ -1,6 +1,7 @@
 CropXR is an institute based in the Netherlands dedicated to developing 
-more resilient crops through innovative ‘smart breeding’. Its mission is 
-ambitious:
+more resilient crops through innovative ‘smart breeding’. 
+
+Its mission is ambitious:
 
 Through a solid foundation of Dutch plant biology, agricultural sciences, 
 and plant breeding, the institute adds an integrated layer of experimental 
