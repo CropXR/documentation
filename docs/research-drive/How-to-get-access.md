@@ -19,3 +19,4 @@ Upon approval:
 - Access invites will be sent to all approved team members
 
 > 💡 **Tip**: Include all team members who need access in your initial registration to streamline the onboarding process.
+

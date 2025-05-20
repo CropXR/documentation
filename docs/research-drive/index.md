@@ -21,7 +21,7 @@ Research Drive is SURF's secure cloud storage and collaboration platform designe
 - **Backup**: Automated backup systems with redundancy
 - **Support**: Technical support provided by both SURF and the CropXR data team
 
-> ⚠️ **Note**: Research Drive is intended for active research data. For long-term archival purposes, completed projects should transition to the CropXR Data Repository.
+> ⚠️ **Note**: Research Drive is intended for active research data. For long-term archival purposes, completed projects should transition to the CropXR Data Repository [ResilienceHub].
 
 ## Accessing the Platform
 Our Research Drive instance is hosted at [https://cropxr.data.surfsara.nl/](https://cropxr.data.surfsara.nl/)
