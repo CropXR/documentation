@@ -9,4 +9,4 @@ to develop technology and methods to generate new crop varieties that are
 better adjusted to climate change and less dependent on harmful agricultural 
 interventions.
 
-If you have questions please reach out to: [mailto:data@cropxr.org](data@cropxr.org)
+If you have questions please reach out to: [data@cropxr.org](mailto:data@cropxr.org)
