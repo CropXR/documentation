@@ -1,3 +1,3 @@
 # CropXR Documentation
 
-[Link](https://cropxr.github.io/cropxr-documentation/)
+[Link](https://cropxr.github.io/documentation/)
