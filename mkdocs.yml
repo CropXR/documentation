@@ -34,9 +34,7 @@ theme:
     - content.tabs.link
     - content.code.copy
     - content.code.annotate
-
-extra_javascript: [js/gurubase.js]
-
+  custom_dir: docs/overrides
 
 markdown_extensions:
   - admonition
