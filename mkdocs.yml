@@ -35,6 +35,9 @@ theme:
     - content.code.copy
     - content.code.annotate
 
+extra_javascript: [js/gurubase.js]
+
+
 markdown_extensions:
   - admonition
   - attr_list
@@ -98,6 +101,7 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
+
 
 plugins:
   - search
