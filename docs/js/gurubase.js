@@ -1,6 +1,7 @@
-async src="https://widget.gurubase.io/widget.latest.min.js" 
+<script async src="https://widget.gurubase.io/widget.latest.min.js" 
     data-widget-id="ySfwEa7EOmqc443LgiuJ-P9nD0QFWQw5qun0JHEnRIo"
     data-text="Ask AI"
     data-margins='{"bottom": "1rem", "right": "1rem"}'
     data-light-mode="auto"
     id="guru-widget-id">
+</script>
