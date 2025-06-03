@@ -34,7 +34,7 @@ theme:
     - content.tabs.link
     - content.code.copy
     - content.code.annotate
-  custom_dir: docs/overrides
+  custom_dir: overrides
 
 markdown_extensions:
   - admonition
@@ -96,10 +96,6 @@ extra:
 #  analytics:
 #    provider: google
 #    property: G-XXXXXXXXXXX 
-
-extra_css:
-  - stylesheets/extra.css
-
 
 plugins:
   - search
