@@ -725,6 +725,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#copy-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copy Commands
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -790,13 +799,16 @@
 
   <h1>Via Rclone</h1>
 
-<p>Rclone is a powerful, open-source command-line program designed for managing files across cloud storage platforms. Often described as the "Swiss Army knife" of cloud storage management, Rclone allows users to sync, copy, and transfer files between various cloud storage providers including Google Drive, Dropbox, Amazon S3, Microsoft OneDrive, and many others. Since its creation in 2012 by Nick Craig-Wood, Rclone has become an essential tool for system administrators, developers, and tech-savvy individuals who need to efficiently handle data across multiple cloud environments. With its robust encryption capabilities, extensive configuration options, and ability to handle files of virtually any size, Rclone provides a versatile solution for both personal and enterprise cloud storage management needs.</p>
+<p>Rclone is a powerful, open-source command-line program designed for managing files across cloud storage platforms. Often described as the "Swiss Army knife" of cloud storage management, Rclone allows users to sync, copy, and transfer files between various cloud storage providers including Google Drive, Dropbox, Amazon S3, Microsoft OneDrive, and many others. Since its creation in 2012 by Nick Craig-Wood, Rclone has become an essential tool for system administrators, developers, and tech-savvy individuals who need to efficiently handle data across multiple cloud environments. With its robust encryption capabilities, extensive configuration options, and ability to handle files of virtually any size, Rclone provides a versatile solution for both personal and enterprise cloud storage management needs. </p>
+<p>Reference instructions for mounting on Windows by SURF can be found <a href="https://servicedesk.surf.nl/wiki/spaces/WIKI/pages/102827692/Mounting+Research+Drive+with+Rclone+On+Windows">here</a> These steps overlap with the instructions below.
+Other instructions for interacting with the reseach drive using Rclone are <a href="https://servicedesk.surf.nl/wiki/spaces/WIKI/pages/102827686/Access+Research+Drive+via+Rclone">here</a>.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="manual-download-and-install">Manual Download and Install<a class="headerlink" href="#manual-download-and-install" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Download and install Rclone from <a href="https://rclone.org/downloads/">Rclone's website</a></li>
 <li>Verify installation by running <code>rclone --version</code> in your terminal</li>
 </ul>
+<p>When using Windows, you can use the rclone command only from the folder where rclone.exe is located. The executable can be moved if needed.</p>
 <h3 id="script-download-and-install">Script Download and Install<a class="headerlink" href="#script-download-and-install" title="Permanent link">&para;</a></h3>
 <p>To install rclone on Linux/macOS/BSD systems, run:</p>
 <div class="highlight"><pre><span></span><code>sudo -v ; curl https://rclone.org/install.sh | sudo bash
@@ -836,8 +848,10 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>rclone<span class="w"> </span>mount<span class="w"> </span><span class="s2">&quot;cropxr:cropxr (Projectfolder)/WPC1&quot;</span><span class="w"> </span>/local/folder/<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>writes<span class="w"> </span>--use-cookies<span class="w"> </span>-v
 </code></pre></div></p>
 <p><strong>Windows</strong>:
+For mounting in Windows, you need to install <a href="https://winfsp.dev/">WinFsp</a>. This means that you need administative priviledge to install programs on your computer, or you need to ask the systems admins for this program in advance.
+In the terminal from the folder that contains rclone:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rclone<span class="w"> </span>mount<span class="w"> </span><span class="s2">&quot;cropxr:cropxr (Projectfolder)/WPC1&quot;</span><span class="w"> </span>K:<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>writes<span class="w"> </span>--use-cookies<span class="w"> </span>-v
-</code></pre></div></p>
+</code></pre></div>
 <p>The <code>--vfs-cache-mode writes</code> flag is an important Rclone configuration option that controls how file data is cached when using Rclone to mount a remote file system.
 When set to "writes", this option means:</p>
 <ul>
@@ -847,6 +861,13 @@ When set to "writes", this option means:</p>
 </ul>
 <p>The <code>--use-cookies</code> flag in Rclone enables the use of cookies for authentication and session management when connecting to remote servers, particularly WebDAV servers like Research Drive (which is based on OwnCloud).</p>
 <p>Best practice is to mount a specific folder (e.g., <code>WPC1</code>) rather than the root of Research Drive. This helps in managing permissions and access control more effectively.</p>
+<h2 id="copy-commands">Copy Commands<a class="headerlink" href="#copy-commands" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>/my/source/location<span class="w"> </span><span class="s2">&quot;cropxr:cropxr (Projectfolder)/destination/folder&quot;</span>
+</code></pre></div>
+<p>This copies the file from the source to the research drive. When the source location is a folder, all the contents of the folder are copied to the desination.
+For large files it is recommended to add a time-out. The timeout shoudl be 10 min per GB of the largest file that will be copied.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--timeout<span class="w"> </span>50m<span class="w"> </span>/my/source/location<span class="w"> </span><span class="s2">&quot;cropxr:cropxr (Projectfolder)/destination/folder&quot;</span>
+</code></pre></div>
 
 
 
