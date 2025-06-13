@@ -845,12 +845,12 @@ Other instructions for interacting with the reseach drive using Rclone are <a hr
 - <code>YOUR_OBSCURED_PASSWORD</code> with the obscured password from step 3</p>
 <h2 id="mounting-commands">Mounting Commands<a class="headerlink" href="#mounting-commands" title="Permanent link">&para;</a></h2>
 <p><strong>Linux/MacOS</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>rclone<span class="w"> </span>mount<span class="w"> </span><span class="s2">&quot;cropxr:cropxr (Projectfolder)/WPC1&quot;</span><span class="w"> </span>/local/folder/<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>writes<span class="w"> </span>--use-cookies<span class="w"> </span>-v
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>rclone<span class="w"> </span>mount<span class="w"> </span><span class="s2">&quot;cropxr:research_drive/folder&quot;</span><span class="w"> </span>/local/folder/<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>writes<span class="w"> </span>--use-cookies<span class="w"> </span>-v
 </code></pre></div></p>
-<p><strong>Windows</strong>:
-For mounting in Windows, you need to install <a href="https://winfsp.dev/">WinFsp</a>. This means that you need administative priviledge to install programs on your computer, or you need to ask the systems admins for this program in advance.
+<p><strong>Windows</strong>:</p>
+<p>For mounting in Windows, you need to install <a href="https://winfsp.dev/">WinFsp</a>. This means that you need administative priviledge to install programs on your computer, or you need to ask the systems admins for this program in advance.
 In the terminal from the folder that contains rclone:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rclone<span class="w"> </span>mount<span class="w"> </span><span class="s2">&quot;cropxr:cropxr (Projectfolder)/WPC1&quot;</span><span class="w"> </span>K:<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>writes<span class="w"> </span>--use-cookies<span class="w"> </span>-v
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rclone<span class="w"> </span>mount<span class="w"> </span><span class="s2">&quot;cropxr:research_drive/folder&quot;</span><span class="w"> </span>K:<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>writes<span class="w"> </span>--use-cookies<span class="w"> </span>-v
 </code></pre></div>
 <p>The <code>--vfs-cache-mode writes</code> flag is an important Rclone configuration option that controls how file data is cached when using Rclone to mount a remote file system.
 When set to "writes", this option means:</p>
@@ -860,13 +860,25 @@ When set to "writes", this option means:</p>
 <li>File data read from the remote while a file is open is cached</li>
 </ul>
 <p>The <code>--use-cookies</code> flag in Rclone enables the use of cookies for authentication and session management when connecting to remote servers, particularly WebDAV servers like Research Drive (which is based on OwnCloud).</p>
+<p>Replace the paths in the example command with the actual path needed.
+The path of the folder on the research drive, should be either the complete path, or the path that is visible to/shared with the user.
+This likely looks like this for the full path
+<code>cropxr:cropxr (Projectfolder)/investigations/investigation_folder/study_folder</code>
+or like this for shared folders
+<code>cropxr:study_folder</code></p>
 <p>Best practice is to mount a specific folder (e.g., <code>WPC1</code>) rather than the root of Research Drive. This helps in managing permissions and access control more effectively.</p>
 <h2 id="copy-commands">Copy Commands<a class="headerlink" href="#copy-commands" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>/my/source/location<span class="w"> </span><span class="s2">&quot;cropxr:cropxr (Projectfolder)/destination/folder&quot;</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>/my/source/location<span class="w"> </span><span class="s2">&quot;cropxr:research_drive/destination/folder&quot;</span>
 </code></pre></div>
+Replace the paths in the example command with the actual path needed.
+The path of the folder on the research drive, should be either the complete path, or the path that is visible to/shared with the user.
+This likely looks like this for the full path
+<code>cropxr:cropxr (Projectfolder)/investigations/investigation_folder/study_folder</code>
+or like this for shared folders
+<code>cropxr:study_folder</code></p>
 <p>This copies the file from the source to the research drive. When the source location is a folder, all the contents of the folder are copied to the desination.
-For large files it is recommended to add a time-out. The timeout shoudl be 10 min per GB of the largest file that will be copied.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--timeout<span class="w"> </span>50m<span class="w"> </span>/my/source/location<span class="w"> </span><span class="s2">&quot;cropxr:cropxr (Projectfolder)/destination/folder&quot;</span>
+For large files it is recommended to add a time-out. The timeout should be 10 min per GB of the largest file that will be copied.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--timeout<span class="w"> </span>50m<span class="w"> </span>/my/source/location<span class="w"> </span><span class="s2">&quot;cropxr:research_drive/destination/folder&quot;</span>
 </code></pre></div>
 
 
