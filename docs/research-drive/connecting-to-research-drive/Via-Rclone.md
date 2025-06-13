@@ -54,15 +54,16 @@ Replace:
 
 **Linux/MacOS**:
 ```bash
-rclone mount "cropxr:cropxr (Projectfolder)/WPC1" /local/folder/ --vfs-cache-mode writes --use-cookies -v
+rclone mount "cropxr:research_drive/folder" /local/folder/ --vfs-cache-mode writes --use-cookies -v
 ```
 
 **Windows**:
+
 For mounting in Windows, you need to install [WinFsp](https://winfsp.dev/). This means that you need administative priviledge to install programs on your computer, or you need to ask the systems admins for this program in advance.
 In the terminal from the folder that contains rclone:
 
 ```bash
-rclone mount "cropxr:cropxr (Projectfolder)/WPC1" K: --vfs-cache-mode writes --use-cookies -v
+rclone mount "cropxr:research_drive/folder" K: --vfs-cache-mode writes --use-cookies -v
 ```
 
 The `--vfs-cache-mode writes` flag is an important Rclone configuration option that controls how file data is cached when using Rclone to mount a remote file system.
@@ -74,17 +75,30 @@ When set to "writes", this option means:
 
 The `--use-cookies` flag in Rclone enables the use of cookies for authentication and session management when connecting to remote servers, particularly WebDAV servers like Research Drive (which is based on OwnCloud).
 
+Replace the paths in the example command with the actual path needed.
+The path of the folder on the research drive, should be either the complete path, or the path that is visible to/shared with the user.
+This likely looks like this for the full path
+`cropxr:cropxr (Projectfolder)/investigations/investigation_folder/study_folder`
+or like this for shared folders
+`cropxr:study_folder`
+
 Best practice is to mount a specific folder (e.g., `WPC1`) rather than the root of Research Drive. This helps in managing permissions and access control more effectively.
 
 
 ## Copy Commands
 ```bash
-rclone copy /my/source/location "cropxr:cropxr (Projectfolder)/destination/folder"
+rclone copy /my/source/location "cropxr:research_drive/destination/folder"
 ```
+Replace the paths in the example command with the actual path needed.
+The path of the folder on the research drive, should be either the complete path, or the path that is visible to/shared with the user.
+This likely looks like this for the full path
+`cropxr:cropxr (Projectfolder)/investigations/investigation_folder/study_folder`
+or like this for shared folders
+`cropxr:study_folder`
 
 This copies the file from the source to the research drive. When the source location is a folder, all the contents of the folder are copied to the desination.
-For large files it is recommended to add a time-out. The timeout shoudl be 10 min per GB of the largest file that will be copied.
+For large files it is recommended to add a time-out. The timeout should be 10 min per GB of the largest file that will be copied.
 
 ```bash
-rclone copy --timeout 50m /my/source/location "cropxr:cropxr (Projectfolder)/destination/folder"
+rclone copy --timeout 50m /my/source/location "cropxr:research_drive/destination/folder"
 ```
