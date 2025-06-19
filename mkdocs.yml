@@ -34,7 +34,6 @@ theme:
     - content.tabs.link
     - content.code.copy
     - content.code.annotate
-  custom_dir: overrides
 
 markdown_extensions:
   - admonition
