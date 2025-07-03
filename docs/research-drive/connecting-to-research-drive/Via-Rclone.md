@@ -30,6 +30,10 @@ To install rclone on Linux/macOS/BSD systems, run:
     ```
 - Copy the outputted obscured password string
 
+## Get WebDAV URL
+- Go to Research Drive > File settings (in bottom left corner) > WebDAV
+- Copy the WebDAV URL
+
 ## Configuration Setup
 Create or edit the rclone configuration file:
 - Linux/MacOS: `~/.config/rclone/rclone.conf`
@@ -39,8 +43,8 @@ Add the following configuration:
 ```
 [cropxr]
 type = webdav
-url = https://cropxr.data.surfsara.nl/remote.php/webdav/
-vendor = owncloud
+url = YOUR_WEBDAV_URL
+vendor = nextcloud
 user = YOUR_APP_USERNAME 
 bearer_token_command = exit
 pass = YOUR_OBSCURED_PASSWORD
@@ -49,6 +53,9 @@ pass = YOUR_OBSCURED_PASSWORD
 Replace:
 - `YOUR_APP_USERNAME` with your email address that you use to login to Research Drive
 - `YOUR_OBSCURED_PASSWORD` with the obscured password from step 3
+- 'YOUR_WEBDAV_URL' with the URL from step 4
+
+If you have previously setup this configuration with owncloud, the password needs to be regenerated from within Research Drive, and the password, url and the vendor need to be updated in the config.
 
 ## Mounting Commands
 
