@@ -1,8 +1,10 @@
-# Instructions for researchers entering metadata in the catalogue
+# Metadata entry in the catalogue
+
+Important!! This guide is still under development. 
+Any metadata uploaded in the catalogue is not yet backed up.
 
 ### Contents
-- [Introduction](#introduction)
-      - [Process outline](#process-outline)
+- [Model introduction](#model-introduction)
       - [ISA FairdomSEEK structure](#isa-fairdomseek-structure)
       - [MIAPPE and ENA in FairdomSEEK](#miappe-and-ena-in-fairdomseek)
 - [Detailed instructions](#detailed-instructions)
@@ -17,40 +19,9 @@
     - [Registering data files](#registering-data-files)
     - [Grouping samples](#grouping-samples)
 - [High level example](#high-level-example)
-- [Short guide](#short-guide)
 
 
-# Introduction
-
-The ResilienceHub uses FairdomSEEK with ISA settings as the metadata catalogue. This document describes how metadata can be uploaded in the right format. This document contains a detailed step by step guide for first time data entry. A shorter reference guide for additional studies will be included later.
-
-
-There is a format to stick to, but also the format accommodates for many type of studies, so it leaves room to fill out differently. This puts some responsibility on the researcher for how to use this format and to really understand the model. The documents guide you through the choices you need to make, and how you can make them. Do plan time for this, especially the first time.  If you are stuck at any point, things are unclear or you need help, please reach out to the DataXR team at data@cropxr.org
-
-
-## Process outline
-
-We suggest you do phase 0 a few days before you plan to do your metadata entry and that you do step 1 and 2 in one session. 
- 
-### Phase 0: preparations
-
-Get an overview over the process and prepare data entry. Importantly, **read this document all the way through** (except the detailed step-wise instructions of phase 2, 3 and 4). Try to understand the process, the metadata model, and the concepts. You will define the study by choosing what experiments to include and make sure you are **registered upfront**. An admin from DataXR might need to approve requests, so make sure to do this a few days before your planned data entry. You gather files that contain metadata regarding your study.
-
-### Phase 1: define study, assays and sample templates
-
-In the web interface, create (an investigation and) study. Choose what fields to include in your study to properly capture the metadata. Define assays for the experiments performed in the study. 
-
- 
-### Phase 2: critical metadata entry
-
-Decide how to the metadata should be entered, to capture all information that is needed, by grouping conditions and samples. In the web interface, fill in all the fields that are essential to understand the study, focusing on key aspects, such as species and assay type. In this phase you also link the data to the performed experiments, so others can find and understand your data. 
-
- 
-### Phase 3: improving metadata
-
-When the fields have been defined, at any point in time you can save the metadata and edit it later. Add the additional metadata that was collected, and improves the re-usability of your data. You can also manage who can see your metadata at any time.
-
-
+# Model introduction
 
 ## ISA FairdomSEEK structure
 
@@ -193,8 +164,8 @@ Not all steps need to happen in this exact order, but some steps are dependent o
       3. Download the template by clicking the button “Batch download to Excel”. 
       4. In the excel, under the Samples tab fill in the data in the fields. 
          1. Ignore the first two columns.
-            2. The Source Name is the name that will be displayed.
-            3. Start with the most relevant fields to understand the study and the sources used. The data can be improved on at a later point. Fill in at least the species and the experimental group. 
+         2. The Source Name is the name that will be displayed.
+         3. Start with the most relevant fields to understand the study and the sources used. The data can be improved on at a later point. Fill in at least the species and the experimental group. 
       5. Save the file. Upload it by under “Upload excel spreadsheet” select “Browse” and click “🟦Upload”. Now there might be an error message. Please read it carefully and adjust the data accordingly.
            
          Be aware, if you upload the same excel multiple times, a new sample will be created with the same name. To check how to update existing samples, check the phase 3 instructions.
@@ -205,10 +176,10 @@ Not all steps need to happen in this exact order, but some steps are dependent o
       3. Download the template by clicking the button “Batch download to Excel”.
       4. In the excel, under the Samples tab fill in the data in the fields. 
          1. Ignore the first two columns.
-            2. Use the Input column to [link to a source](#sample-inputs) defined in the previous step.
-            3. The subject_id is the name that will be displayed.
-            4. There is a mandatory column called protocol. The text should refer to a registered SOP.
-            5. Start with the most relevant fields. The data can be improved on at a later point. 
+         2. Use the Input column to [link to a source](#sample-inputs) defined in the previous step.
+         3. The subject_id is the name that will be displayed.
+         4. There is a mandatory column called protocol. The text should refer to a registered SOP.
+         5. Start with the most relevant fields. The data can be improved on at a later point. 
       5. Save the file. Upload it by under “Upload excel spreadsheet” select “Browse” and click “🟦Upload”. Now there might be an error message. Please read it carefully and adjust the data accordingly.
 
 6. Fill in the assay stream extended metadata by going to  “⚙️Actions” in the top corner and then “📝Edit Assay Stream”. Focus on the fields that are most important and “🟦Update” to save.
@@ -385,48 +356,5 @@ Create one phenotyping assay stream for canopy coverage and fill in all the info
 Create one sequencing assay stream. Describe the library construction and sequencing. Create an assay with as output a data file. Create a row for each measurement, with as input a sample. Describe the output data file of the measurement and link to the data. 
 
 Create one phenotyping assay stream for the greenhouse sensors. Create an assay for the measurements of the output material with the template observation. Define one row per environment variable measured by the greenhouse sensors, describing the variable, the sensor and the scale. This can be one row for temperature and one for humidity. The input is the study observation unit greenhouse. Create a next assay in the stream for the data files, one row for each file, with as input the assay row defined in the previous assay. Describe the and link to the data. 
-
- 
-# Short guide
-
-Prepare
-
-1. register the study in the form and get storage 
-2. gather relevant documents, such as lab notes and experimental design overviews
-
-Start with the metadata entry in FairdomSEEK
-
-3. create a study
-      1. choose an extended metadata type
-      2. set the sharing of the study
-      3. choose a template for the study source. Add additional fields if needed.
-      4. choose a template for the study sample (sample only, observation unit, or combined)
-4. for each assay type create an assay stream
-      1. select the right extended metadata
-      2. set the sharing
-5. within the assay stream create one or more assays 
-      1. choose a sample template that fits the type of assay (choose between material and data file + choose the full or condensed + choose sequencing or observation)
-      2. add additional fields if needed
-      3. add additional assays for data files that were generate from the first assay output
-
-Now the study has been defined, continue with the minimally needed metadata.
-
-6. Register Data files by linking the URL to the file or folder. Manage the permissions on the file. 
-7. Register protocols under SOPs and manage the permissions. 
-8. Edit the study to fill the extend metadata and link SOPs.
-9. Define sources, based on your specific study and the level of granularity needed.
-
-   Enter the data by downloading the template, filling the data and uploading.
-10. Define samples/observation units, based on your specific study and the level of granularity needed.
-
-    Enter the data by downloading the template, filling the data, referencing the study sources by name and id, and uploading the template in the interface.
-11. Edit assay metadata 
-12. Enter assay row data + link data files
-
-Now that the minimal metadata is added, continue improving the metadata.
-
-13. adapt permissions 
-14. update with additional data
-
 
  
