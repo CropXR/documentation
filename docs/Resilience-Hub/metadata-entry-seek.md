@@ -98,7 +98,7 @@ Whole greenhouse, per plot, plant, sample.
 
 1. Understand the basic structure of the metadata model. 
 
-2. Decide on the [what experiments to group into (the investigation and) the study](defining-a-study.md).
+2. Decide on the [what experiments to group into (the investigation and) the study](../defining-a-study.md).
 
 3. Choose the study type (sequencing, phenotyping or combined). Inform DataXR well up front when your study does not fit these types.
 
@@ -192,7 +192,7 @@ Not all steps need to happen in this exact order, but some steps are dependent o
       2. Go to the “Sources table”, by clicking the tab “Study design” (or from the “Single page” view find the “Sources table” in the left menu). Here you find a table with the columns that you have defined. 
       3. Download the template by clicking the button “Batch download to Excel”. 
       4. In the excel, under the Samples tab fill in the data in the fields. 
-            1. Ignore the first two columns.
+         1. Ignore the first two columns.
             2. The Source Name is the name that will be displayed.
             3. Start with the most relevant fields to understand the study and the sources used. The data can be improved on at a later point. Fill in at least the species and the experimental group. 
       5. Save the file. Upload it by under “Upload excel spreadsheet” select “Browse” and click “🟦Upload”. Now there might be an error message. Please read it carefully and adjust the data accordingly.
@@ -204,7 +204,7 @@ Not all steps need to happen in this exact order, but some steps are dependent o
       2. Go to “Samples table” under “Study design”(or from the “Single page” view find the “Samples table” in the left menu).
       3. Download the template by clicking the button “Batch download to Excel”.
       4. In the excel, under the Samples tab fill in the data in the fields. 
-            1. Ignore the first two columns.
+         1. Ignore the first two columns.
             2. Use the Input column to [link to a source](#sample-inputs) defined in the previous step.
             3. The subject_id is the name that will be displayed.
             4. There is a mandatory column called protocol. The text should refer to a registered SOP.
