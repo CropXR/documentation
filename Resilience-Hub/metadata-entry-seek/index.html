@@ -886,21 +886,27 @@
 <h1 id="instructions-for-researchers-entering-metadata-in-the-catalogue">Instructions for researchers entering metadata in the catalogue<a class="headerlink" href="#instructions-for-researchers-entering-metadata-in-the-catalogue" title="Permanent link">&para;</a></h1>
 <h3 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="#introduction">Introduction</a></li>
+<li><a href="#introduction">Introduction</a><ul>
 <li><a href="#process-outline">Process outline</a></li>
 <li><a href="#isa-fairdomseek-structure">ISA FairdomSEEK structure</a></li>
 <li><a href="#miappe-and-ena-in-fairdomseek">MIAPPE and ENA in FairdomSEEK</a></li>
-<li><a href="#detailed-instructions">Detailed instructions</a></li>
+</ul>
+</li>
+<li><a href="#detailed-instructions">Detailed instructions</a><ul>
 <li><a href="#phase-0">Phase 0</a></li>
 <li><a href="#phase-1">Phase 1</a></li>
 <li><a href="#phase-2">Phase 2</a> </li>
 <li><a href="#phase-3">Phase 3</a></li>
-<li><a href="#reference-instructions">Reference instructions</a></li>
+</ul>
+</li>
+<li><a href="#reference-instructions">Reference instructions</a><ul>
 <li><a href="#naming-conventions">Naming conventions</a></li>
 <li><a href="#references-inside-sample-templates">References inside sample templates</a></li>
 <li><a href="#defining-assays">Defining assays</a></li>
 <li><a href="#registering-data-files">Registering data files</a></li>
 <li><a href="#grouping-samples">Grouping samples</a></li>
+</ul>
+</li>
 <li><a href="#high-level-example">High level example</a></li>
 <li><a href="#short-guide">Short guide</a></li>
 </ul>
@@ -968,14 +974,14 @@ step 4 analysis (input data -&gt; output data)
 </li>
 <li>
 <p>Find or create an investigation.</p>
-</li>
-<li>To find an investigation, click on “🔎Browse” (click the menu first when using a narrow window) in the top left corner and select “Investigations”.  </li>
-<li>
-<p>If your investigation is not yet registered, click on “➕Create” and select “Investigations”. Add a Title and select a Project and click on “Create”.</p>
+<ol>
+<li>To find an investigation, click on “🔎Browse” (click the menu first when using a narrow window) in the top left corner and select “Investigations”.</li>
+<li>If your investigation is not yet registered, click on “➕Create” and select “Investigations”. Add a Title and select a Project and click on “Create”.</li>
+</ol>
 </li>
 <li>
 <p>From within the investigation, create a new study by clicking “➕Design Study” at the top. </p>
-</li>
+<ol>
 <li>Create a tile using the naming convention.</li>
 <li>
 <p>Choose the extended metadata type that is relevant for your study. </p>
@@ -999,6 +1005,8 @@ step 4 analysis (input data -&gt; output data)
 <li>
 <p>Click on “🟦Create”</p>
 </li>
+</ol>
+</li>
 <li>
 <p>Make a plan for how to define the Assay Streams and Assays. (read here)</p>
 </li>
@@ -1008,11 +1016,13 @@ step 4 analysis (input data -&gt; output data)
 </ol>
 <p>If needed, select the “Extended metadata” for the assay stream. Skip all other fields for now and click on “🟦Create”.</p>
 <ol>
-<li>From the created Assay Stream, create an assay by clicking “➕Design Assay”</li>
+<li>From the created Assay Stream, create an assay by clicking “➕Design Assay”<ol>
 <li>Enter a title (following the naming convention)</li>
 <li>For now skip the fields “Sharing”, “Creators”, “SOPs”, “Publications”, “Documents” and “Channel discussions”. </li>
 <li>At “Define Sample type for Assay” start at the “Existing Templates”. Depending on the type of assay you are making (based on the plan made in step 4), change the “ISA Level” drop down to “assay - data file” or leave it as is. Choose the latest version of the relevant template in the drop down menu and “Apply”. </li>
 <li>The sample type can be expanded with additional columns that should be included as metadata. This is relevant for assays where most parameters are kept constant, but some are varied between measurements/samples. If the fields is related to the assay performed, the column “ISA Tag” should be set to “parameter_value”, if it is about the output data file set it to “data_file_characteristic”. </li>
+</ol>
+</li>
 <li>If needed (not included already in the assay), create the next assay of the type data file for the raw data. </li>
 <li>If needed, create the next assay of the type data file for the derived data.</li>
 </ol>
@@ -1020,80 +1030,82 @@ step 4 analysis (input data -&gt; output data)
 <h2 id="phase-2">Phase 2<a class="headerlink" href="#phase-2" title="Permanent link">&para;</a></h2>
 <p>Not all steps need to happen in this exact order, but some steps are dependent on each other: study sources need to be created before study samples and study samples before assay row entries. Data files need to be registered before they can be referenced.</p>
 <ol>
-<li>Register your data files</li>
+<li>
+<p>Register your data files</p>
+<ol>
 <li>At the top menu under “➕Create” choose “Data file” </li>
 <li>Choose how you want to <a href="#registering-data-files">register your data</a>. Find the URL at the data location (Research Drive).</li>
 <li>Under the tab “Remote URL” past the URL of the data location and “🟦Register”. Do not mind a warning about the URL in a yellow box. If there is an error and the URL cannot be registered please check if the URL is correct. </li>
 <li>Fill in a “Title”, a “Description”, select a “Project”, click “🟦Next, and “🟦Next” </li>
 <li>Select a license. The license can be adapted later if needed. At no license the consortium agreement applies to all people users that this data is shared with. </li>
 <li>Adapt the sharing of the data, either on group level or per group. At a later stage, the permissions set here automatically apply to where the data is stored. For now, that is still handled separately in the research drive. </li>
-<li>
-<p>Skip “Associated Assays” and “Other associated items”by clicking “🟦Next, and “🟦Create”</p>
+<li>Skip “Associated Assays” and “Other associated items”by clicking “🟦Next, and “🟦Create”</li>
+</ol>
 </li>
 <li>
 <p>Add SOPs (Standard operating procedure) (can also be done later).
     Each step can reference a protocol that was used: creation of samples and the grouping of observation units at the study level, the assaying protocols at assay level and the data transformation steps.</p>
-</li>
+<ol>
 <li>At the top menu under “➕Create” choose “SOP”</li>
 <li>Click “Browse” to upload a local file.</li>
 <li>Add a “Title”. This needs to be specific enough to find the SOP back between other SOPs from different studies.</li>
 <li>Add a “Description”, select a “Project” and a “License”. Skip “Discussion Channels”, adapt “Sharing”, skip “Creators”, “Tags” and “Attributions”</li>
 <li>If the SOP is related to an assay, it can be linked under “Experimental assays and Modelling analyses”. This can also be done at the assay. </li>
 <li>If a data processing step is described by a registered workflow/processing pipeline, it can be linked under “Workflows”. </li>
-<li>
-<p>Click “🟦Register”</p>
+<li>Click “🟦Register”</li>
+</ol>
 </li>
 <li>
 <p>Edit the study by going to “⚙️Actions” in the top corner and then “📝Edit ISA Study”</p>
-</li>
+<ol>
 <li>Fill in the description</li>
 <li>Fill in extended metadata. Focus on the fields most relevant to understand the study. Skip the fields that do not apply. The fields can always be revised later. </li>
 <li>Under “SOPs” select the SOP(s) that describe the sampling and the experimental design map. </li>
-<li>
-<p>Click “🟦Update” to apply the changes.</p>
+<li>Click “🟦Update” to apply the changes.</li>
+</ol>
 </li>
 <li>
 <p>Define study source samples</p>
-</li>
+<ol>
 <li>Choose <a href="#study-source">how to group/define the sources</a>.</li>
 <li>Go to the “Sources table”, by clicking the tab “Study design” (or from the “Single page” view find the “Sources table” in the left menu). Here you find a table with the columns that you have defined. </li>
 <li>Download the template by clicking the button “Batch download to Excel”. </li>
-<li>In the excel, under the Samples tab fill in the data in the fields. <ol>
-<li>Ignore the first two columns.</li>
-<li>The Source Name is the name that will be displayed.</li>
-<li>Start with the most relevant fields to understand the study and the sources used. The data can be improved on at a later point. Fill in at least the species and the experimental group. </li>
-</ol>
-</li>
+<li>In the excel, under the Samples tab fill in the data in the fields. 
+        1. Ignore the first two columns.
+        2. The Source Name is the name that will be displayed.
+        3. Start with the most relevant fields to understand the study and the sources used. The data can be improved on at a later point. Fill in at least the species and the experimental group. </li>
 <li>
 <p>Save the file. Upload it by under “Upload excel spreadsheet” select “Browse” and click “🟦Upload”. Now there might be an error message. Please read it carefully and adjust the data accordingly.</p>
 <p>Be aware, if you upload the same excel multiple times, a new sample will be created with the same name. To check how to update existing samples, check the phase 3 instructions.</p>
 </li>
-<li>
-<p>Define study samples</p>
-</li>
-<li><a href="#study-samples">Choose what type are needed</a>.</li>
-<li>Go to “Samples table” under “Study design”(or from the “Single page” view find the “Samples table” in the left menu).</li>
-<li>Download the template by clicking the button “Batch download to Excel”.</li>
-<li>In the excel, under the Samples tab fill in the data in the fields. <ol>
-<li>Ignore the first two columns.</li>
-<li>Use the Input column to <a href="#sample-inputs">link to a source</a> defined in the previous step.</li>
-<li>The subject_id is the name that will be displayed.</li>
-<li>There is a mandatory column called protocol. The text should refer to a registered SOP.</li>
-<li>Start with the most relevant fields. The data can be improved on at a later point. </li>
 </ol>
 </li>
 <li>
-<p>Save the file. Upload it by under “Upload excel spreadsheet” select “Browse” and click “🟦Upload”. Now there might be an error message. Please read it carefully and adjust the data accordingly.</p>
+<p>Define study samples</p>
+<ol>
+<li><a href="#study-samples">Choose what type are needed</a>.</li>
+<li>Go to “Samples table” under “Study design”(or from the “Single page” view find the “Samples table” in the left menu).</li>
+<li>Download the template by clicking the button “Batch download to Excel”.</li>
+<li>In the excel, under the Samples tab fill in the data in the fields. 
+        1. Ignore the first two columns.
+        2. Use the Input column to <a href="#sample-inputs">link to a source</a> defined in the previous step.
+        3. The subject_id is the name that will be displayed.
+        4. There is a mandatory column called protocol. The text should refer to a registered SOP.
+        5. Start with the most relevant fields. The data can be improved on at a later point. </li>
+<li>Save the file. Upload it by under “Upload excel spreadsheet” select “Browse” and click “🟦Upload”. Now there might be an error message. Please read it carefully and adjust the data accordingly.</li>
+</ol>
 </li>
 <li>
 <p>Fill in the assay stream extended metadata by going to  “⚙️Actions” in the top corner and then “📝Edit Assay Stream”. Focus on the fields that are most important and “🟦Update” to save.</p>
 </li>
 <li>
 <p>For each assay defined in phase 1, enter the row data, the same way as the study source and sample: download the template, fill in the data, save and upload the template.</p>
-</li>
+<ol>
 <li>For the first assay of an assay stream the input should be a study sample (so this is a sample of observation unit). For additional assays the input is an output of the previous assay. </li>
 <li>To link a registered data file as file location, use the <a href="#data-files">required format</a>.</li>
 <li>For the file name, use the relative path of the exact file inside the registered file location. </li>
+</ol>
+</li>
 </ol>
 <h2 id="phase-3">Phase 3<a class="headerlink" href="#phase-3" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1107,10 +1119,10 @@ step 4 analysis (input data -&gt; output data)
 </li>
 <li>
 <p>Updating existing samples [todo: expand]</p>
-</li>
+<ol>
 <li>make sure it’s selected before downloaded, so there is no new sample with the same name</li>
-<li>
-<p>You can upload multiple in multiple steps, but be aware that if you re-upload samples with the same name, a new sample will be created. Only upload new samples.</p>
+<li>You can upload multiple in multiple steps, but be aware that if you re-upload samples with the same name, a new sample will be created. Only upload new samples.</li>
+</ol>
 </li>
 <li>
 <p>Adding additional columns  [todo: expand] (under “ “⚙️Actions” in the top corner and then “📝Edit ..”)</p>
@@ -1212,18 +1224,24 @@ Measurements:
 </ol>
 <p>Start with the metadata entry in FairdomSEEK</p>
 <ol>
-<li>create a study</li>
+<li>create a study<ol>
 <li>choose an extended metadata type</li>
 <li>set the sharing of the study</li>
 <li>choose a template for the study source. Add additional fields if needed.</li>
 <li>choose a template for the study sample (sample only, observation unit, or combined)</li>
-<li>for each assay type create an assay stream</li>
+</ol>
+</li>
+<li>for each assay type create an assay stream<ol>
 <li>select the right extended metadata</li>
 <li>set the sharing</li>
-<li>within the assay stream create one or more assays </li>
+</ol>
+</li>
+<li>within the assay stream create one or more assays <ol>
 <li>choose a sample template that fits the type of assay (choose between material and data file + choose the full or condensed + choose sequencing or observation)</li>
 <li>add additional fields if needed</li>
 <li>add additional assays for data files that were generate from the first assay output</li>
+</ol>
+</li>
 </ol>
 <p>Now the study has been defined, continue with the minimally needed metadata.</p>
 <ol>
