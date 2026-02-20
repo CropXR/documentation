@@ -886,28 +886,28 @@
 <h1 id="instructions-for-researchers-entering-metadata-in-the-catalogue">Instructions for researchers entering metadata in the catalogue<a class="headerlink" href="#instructions-for-researchers-entering-metadata-in-the-catalogue" title="Permanent link">&para;</a></h1>
 <h3 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="introduction">Introduction</a></li>
-<li><a href="process_outline">Process outline</a></li>
-<li><a href="isa_seek_structure">ISA SEEK structure</a></li>
-<li><a href="miappe_ena_in_seek">MIAPPE and ENA in FairdomSEEK</a></li>
-<li><a href="detailed_instructions">Detailed instructions</a></li>
-<li><a href="phase0">Phase 0</a></li>
-<li><a href="phase1">Phase 1</a></li>
-<li><a href="phase2">Phase 2</a> </li>
-<li>Phase 3</li>
-<li>Reference instructions</li>
-<li>Naming conventions</li>
-<li>FairdomSEEK references inside Excel sample templates</li>
-<li>Defining Assay Streams and Assays</li>
-<li>Registering data files</li>
-<li>Grouping Samples</li>
-<li>High level example </li>
-<li>Short guide</li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#process-outline">Process outline</a></li>
+<li><a href="#isa-fairdomseek-structure">ISA FairdomSEEK structure</a></li>
+<li><a href="#miappe-and-ena-in-fairdomseek">MIAPPE and ENA in FairdomSEEK</a></li>
+<li><a href="#detailed-instructions">Detailed instructions</a></li>
+<li><a href="#phase-0">Phase 0</a></li>
+<li><a href="#phase-1">Phase 1</a></li>
+<li><a href="#phase-2">Phase 2</a> </li>
+<li><a href="#phase-3">Phase 3</a></li>
+<li><a href="#reference-instructions">Reference instructions</a></li>
+<li><a href="#naming-conventions">Naming conventions</a></li>
+<li><a href="#references-inside-sample-templates">References inside sample templates</a></li>
+<li><a href="#defining-assays">Defining assays</a></li>
+<li><a href="#registering-data-files">Registering data files</a></li>
+<li><a href="#grouping-samples">Grouping samples</a></li>
+<li><a href="#high-level-example">High level example</a></li>
+<li><a href="#short-guide">Short guide</a></li>
 </ul>
-<h1 id="introduction">Introduction <a name="introduction"></a><a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
 <p>The ResilienceHub uses FairdomSEEK with ISA settings as the metadata catalogue. This document describes how metadata can be uploaded in the right format. This document contains a detailed step by step guide for first time data entry. A shorter reference guide for additional studies will be included later.</p>
 <p>There is a format to stick to, but also the format accommodates for many type of studies, so it leaves room to fill out differently. This puts some responsibility on the researcher for how to use this format and to really understand the model. The documents guide you through the choices you need to make, and how you can make them. Do plan time for this, especially the first time.  If you are stuck at any point, things are unclear or you need help, please reach out to the DataXR team at data@cropxr.org</p>
-<h2 id="process-outline">Process outline  <a name="process_outline"></a><a class="headerlink" href="#process-outline" title="Permanent link">&para;</a></h2>
+<h2 id="process-outline">Process outline<a class="headerlink" href="#process-outline" title="Permanent link">&para;</a></h2>
 <p>We suggest you do phase 0 a few days before you plan to do your metadata entry and that you do step 1 and 2 in one session. </p>
 <h3 id="phase-0-preparations">Phase 0: preparations<a class="headerlink" href="#phase-0-preparations" title="Permanent link">&para;</a></h3>
 <p>Get an overview over the process and prepare data entry. Importantly, <strong>read this document all the way through</strong> (except the detailed step-wise instructions of phase 2, 3 and 4). Try to understand the process, the metadata model, and the concepts. You will define the study by choosing what experiments to include and make sure you are <strong>registered upfront</strong>. An admin from DataXR might need to approve requests, so make sure to do this a few days before your planned data entry. You gather files that contain metadata regarding your study.</p>
@@ -917,7 +917,7 @@
 <p>Decide how to the metadata should be entered, to capture all information that is needed, by grouping conditions and samples. In the web interface, fill in all the fields that are essential to understand the study, focusing on key aspects, such as species and assay type. In this phase you also link the data to the performed experiments, so others can find and understand your data. </p>
 <h3 id="phase-3-improving-metadata">Phase 3: improving metadata<a class="headerlink" href="#phase-3-improving-metadata" title="Permanent link">&para;</a></h3>
 <p>When the fields have been defined, at any point in time you can save the metadata and edit it later. Add the additional metadata that was collected, and improves the re-usability of your data. You can also manage who can see your metadata at any time.</p>
-<h2 id="isa-seek-structure">ISA SEEK structure <a name="isa_seek_structure"></a><a class="headerlink" href="#isa-seek-structure" title="Permanent link">&para;</a></h2>
+<h2 id="isa-fairdomseek-structure">ISA FairdomSEEK structure<a class="headerlink" href="#isa-fairdomseek-structure" title="Permanent link">&para;</a></h2>
 <p>The ISA format is widely used to represent research data. It is often used to represent MIAPPE data. FairdomSEEK uses the ISA structure, somewhat adapted.</p>
 <h3 id="assay-and-sample-definition">Assay and sample definition<a class="headerlink" href="#assay-and-sample-definition" title="Permanent link">&para;</a></h3>
 <p>In the ISA format, you can perform assays on samples. It assumes that in an experiment, there are several steps called a process. Each process has an input and an output and a protocol, that describes how the output was created from the input. The input can be either a material or data, and the output as well. These processes can be chained together. Here is an example:</p>
@@ -930,30 +930,30 @@ step 4 analysis (input data -&gt; output data)
 <h3 id="isa-in-fairdomseek">ISA in FairdomSEEK<a class="headerlink" href="#isa-in-fairdomseek" title="Permanent link">&para;</a></h3>
 <p>In FairdomSEEK, the processes that are grouped under the assay, are all called an assay even if the input and output are both a material object, or both data files. This does not fit with the classical meaning of the word ‘assay’, but it implements the same functionality as ISA. The assays can be connected into an assay stream. </p>
 <p>Each row, that can describe a sample, but also an assay performed on a sample, or a derivation of a data file, is called always a ‘sample’ in FairdomSEEK.</p>
-<h2 id="miappe-and-ena-in-fairdomseek">MIAPPE and ENA in FairdomSEEK <a name="miappe_ena_in_seek"></a><a class="headerlink" href="#miappe-and-ena-in-fairdomseek" title="Permanent link">&para;</a></h2>
+<h2 id="miappe-and-ena-in-fairdomseek">MIAPPE and ENA in FairdomSEEK<a class="headerlink" href="#miappe-and-ena-in-fairdomseek" title="Permanent link">&para;</a></h2>
 <p>[todo: write]</p>
 <p><img alt="" src="../../img/ExampleFairdomSEEKschematic.png" /></p>
 <p>intro to data model</p>
 <h3 id="observation-units-and-samples">Observation units and samples<a class="headerlink" href="#observation-units-and-samples" title="Permanent link">&para;</a></h3>
 <p>Level where a measurement is done.</p>
 <p>Whole greenhouse, per plot, plant, sample.</p>
-<h1 id="detailed-instructions">Detailed instructions <a name="detailed_instructions"></a><a class="headerlink" href="#detailed-instructions" title="Permanent link">&para;</a></h1>
-<h2 id="phase-0">Phase 0 <a name="phase_0"></a><a class="headerlink" href="#phase-0" title="Permanent link">&para;</a></h2>
+<h1 id="detailed-instructions">Detailed instructions<a class="headerlink" href="#detailed-instructions" title="Permanent link">&para;</a></h1>
+<h2 id="phase-0">Phase 0<a class="headerlink" href="#phase-0" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Understand the basic structure of the metadata model. </p>
 </li>
 <li>
-<p>Decide on the <a href="">what experiments to group into (the investigation and) the study</a>.</p>
+<p>Decide on the <a href="../defining-a-study/">what experiments to group into (the investigation and) the study</a>.</p>
 </li>
 <li>
 <p>Choose the study type (sequencing, phenotyping or combined). Inform DataXR well up front when your study does not fit these types.</p>
 </li>
 <li>
-<p>Make sure that you have registered your study in this <a href="">form</a>. After the admin has checked the registration, you will receive a study id you need when entering the metadata, as well as storage for your experimental data. </p>
+<p>Make sure that you have registered your study in this <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u">form</a>. After the admin has checked the registration, you will receive a study id you need when entering the metadata, as well as storage for your experimental data. </p>
 </li>
 <li>
-<p>Create an account for the <a href="">catalogue</a> and log in.
+<p>Create an account for the <a href="https://catalogue.cropresilience.org">catalogue</a> and log in.
     [Write about normal or KeyCloak?]</p>
 <p>Request to be added to a project. This is done by a project admin. </p>
 </li>
@@ -961,7 +961,7 @@ step 4 analysis (input data -&gt; output data)
 <p>Gather the files with the metadata that you already collected. This includes e-lab journal entries, files that outline experimental conditions per plant, files that link output files to the experiment, etc.</p>
 </li>
 </ol>
-<h2 id="phase-1">Phase 1 <a name="phase1"></a><a class="headerlink" href="#phase-1" title="Permanent link">&para;</a></h2>
+<h2 id="phase-1">Phase 1<a class="headerlink" href="#phase-1" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Log in to the FairdomSEEK webpage.</p>
@@ -1017,12 +1017,12 @@ step 4 analysis (input data -&gt; output data)
 <li>If needed, create the next assay of the type data file for the derived data.</li>
 </ol>
 <p>Now you have the outline of your metadata structure. The actual metadata can be uploaded.</p>
-<h2 id="phase-2">Phase 2 <a name="phase2"></a><a class="headerlink" href="#phase-2" title="Permanent link">&para;</a></h2>
+<h2 id="phase-2">Phase 2<a class="headerlink" href="#phase-2" title="Permanent link">&para;</a></h2>
 <p>Not all steps need to happen in this exact order, but some steps are dependent on each other: study sources need to be created before study samples and study samples before assay row entries. Data files need to be registered before they can be referenced.</p>
 <ol>
 <li>Register your data files</li>
 <li>At the top menu under “➕Create” choose “Data file” </li>
-<li>Choose how you want to <a href="">register your data</a>. Find the URL at the data location (Research Drive).</li>
+<li>Choose how you want to <a href="#registering-data-files">register your data</a>. Find the URL at the data location (Research Drive).</li>
 <li>Under the tab “Remote URL” past the URL of the data location and “🟦Register”. Do not mind a warning about the URL in a yellow box. If there is an error and the URL cannot be registered please check if the URL is correct. </li>
 <li>Fill in a “Title”, a “Description”, select a “Project”, click “🟦Next, and “🟦Next” </li>
 <li>Select a license. The license can be adapted later if needed. At no license the consortium agreement applies to all people users that this data is shared with. </li>
@@ -1055,7 +1055,7 @@ step 4 analysis (input data -&gt; output data)
 <li>
 <p>Define study source samples</p>
 </li>
-<li>Choose <a href="">how to group/define the sources</a>.</li>
+<li>Choose <a href="#study-source">how to group/define the sources</a>.</li>
 <li>Go to the “Sources table”, by clicking the tab “Study design” (or from the “Single page” view find the “Sources table” in the left menu). Here you find a table with the columns that you have defined. </li>
 <li>Download the template by clicking the button “Batch download to Excel”. </li>
 <li>In the excel, under the Samples tab fill in the data in the fields. <ol>
@@ -1071,12 +1071,12 @@ step 4 analysis (input data -&gt; output data)
 <li>
 <p>Define study samples</p>
 </li>
-<li><a href="">Choose what type are needed</a>.</li>
+<li><a href="#study-samples">Choose what type are needed</a>.</li>
 <li>Go to “Samples table” under “Study design”(or from the “Single page” view find the “Samples table” in the left menu).</li>
 <li>Download the template by clicking the button “Batch download to Excel”.</li>
 <li>In the excel, under the Samples tab fill in the data in the fields. <ol>
 <li>Ignore the first two columns.</li>
-<li>Use the Input column to <a href="">link to a source</a> defined in the previous step.</li>
+<li>Use the Input column to <a href="#sample-inputs">link to a source</a> defined in the previous step.</li>
 <li>The subject_id is the name that will be displayed.</li>
 <li>There is a mandatory column called protocol. The text should refer to a registered SOP.</li>
 <li>Start with the most relevant fields. The data can be improved on at a later point. </li>
@@ -1092,7 +1092,7 @@ step 4 analysis (input data -&gt; output data)
 <p>For each assay defined in phase 1, enter the row data, the same way as the study source and sample: download the template, fill in the data, save and upload the template.</p>
 </li>
 <li>For the first assay of an assay stream the input should be a study sample (so this is a sample of observation unit). For additional assays the input is an output of the previous assay. </li>
-<li>To link a registered data file as file location, use the <a href="">required format</a>.</li>
+<li>To link a registered data file as file location, use the <a href="#data-files">required format</a>.</li>
 <li>For the file name, use the relative path of the exact file inside the registered file location. </li>
 </ol>
 <h2 id="phase-3">Phase 3<a class="headerlink" href="#phase-3" title="Permanent link">&para;</a></h2>
@@ -1117,7 +1117,17 @@ step 4 analysis (input data -&gt; output data)
 </li>
 </ol>
 <h1 id="reference-instructions">Reference instructions<a class="headerlink" href="#reference-instructions" title="Permanent link">&para;</a></h1>
-<h2 id="fairdomseek-references-inside-excel-sample-templates">FairdomSEEK references inside Excel sample templates<a class="headerlink" href="#fairdomseek-references-inside-excel-sample-templates" title="Permanent link">&para;</a></h2>
+<h2 id="naming-conventions">Naming conventions<a class="headerlink" href="#naming-conventions" title="Permanent link">&para;</a></h2>
+<p>[todo: finish]</p>
+<p>Study:</p>
+<div class="highlight"><pre><span></span><code>&lt;received study id&gt; - &lt;study name&gt;
+example “CXRS4 - Drought response of arabidopsis after hormal treatment with PAMP”
+</code></pre></div>
+<p>Assay stream:</p>
+<div class="highlight"><pre><span></span><code>&lt;received study id&gt; - &lt;descriptive assay name&gt;
+</code></pre></div>
+<p>Assay: </p>
+<h2 id="references-inside-sample-templates">References inside sample templates<a class="headerlink" href="#references-inside-sample-templates" title="Permanent link">&para;</a></h2>
 <h3 id="sample-inputs">Sample inputs<a class="headerlink" href="#sample-inputs" title="Permanent link">&para;</a></h3>
 <p>Unfortunately in FairdomSEEK the names of the samples are not used as identifiers. For this reason the column where you link to samples from the previous section (marked Input) needs to be formatted like this: </p>
 <div class="highlight"><pre><span></span><code>[{&quot;id&quot;=&gt;343, &quot;type&quot;=&gt;&quot;Sample&quot;, &quot;title&quot;=&gt;&quot;yeast_wgs_02&quot;}]
@@ -1131,17 +1141,7 @@ step 4 analysis (input data -&gt; output data)
 <div class="highlight"><pre><span></span><code>{&quot;id&quot;=&gt;1, &quot;type&quot;=&gt;&quot;DataFile&quot;, &quot;title&quot;=&gt;&quot;File from data access layer&quot;}
 </code></pre></div>
 <p>Find the data file ID, by going to the data file in the interface, and checking the number at the end of the URL https://catalogue.cropresilience.org/data_files/1 </p>
-<h2 id="naming-conventions">Naming conventions<a class="headerlink" href="#naming-conventions" title="Permanent link">&para;</a></h2>
-<p>[todo: finish]</p>
-<p>Study:</p>
-<div class="highlight"><pre><span></span><code>&lt;received study id&gt; - &lt;study name&gt;
-example “CXRS4 - Drought response of arabidopsis after hormal treatment with PAMP”
-</code></pre></div>
-<p>Assay stream:</p>
-<div class="highlight"><pre><span></span><code>&lt;received study id&gt; - &lt;descriptive assay name&gt;
-</code></pre></div>
-<p>Assay: </p>
-<h2 id="defining-assay-streams-and-assays">Defining Assay Streams and Assays<a class="headerlink" href="#defining-assay-streams-and-assays" title="Permanent link">&para;</a></h2>
+<h2 id="defining-assays">Defining assays<a class="headerlink" href="#defining-assays" title="Permanent link">&para;</a></h2>
 <p>There is some flexibility in how to define assays. In FairdomSEEK, an assay (called assay stream) can be split into steps (called assays) that output material or a data file.</p>
 <h3 id="default-strategy">Default strategy<a class="headerlink" href="#default-strategy" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1177,7 +1177,7 @@ the same permissions apply to the whole folder
 <p>An example would be: the all raw reads of a sequencing experiment.</p>
 <p>The metadata is used to link certain experiments and samples to the files. Here you can indicate what file in the registered folder contains what data.</p>
 <p>At a later stage, the permission set in SEEK will be applied to the data download. If you only register the whole study as a single data file, it is not possible to apply granular permissions on who can download your data.</p>
-<h2 id="grouping-samples">Grouping Samples<a class="headerlink" href="#grouping-samples" title="Permanent link">&para;</a></h2>
+<h2 id="grouping-samples">Grouping samples<a class="headerlink" href="#grouping-samples" title="Permanent link">&para;</a></h2>
 <p>[consider moving to top section explaining the model]</p>
 <h3 id="study-source">Study source<a class="headerlink" href="#study-source" title="Permanent link">&para;</a></h3>
 <p>Choose the granularity that is needed for your metadata. The sources are used to specify the biological material, as well as the growth conditions. At least each experimental block needs to be defined as a separate source. If the metadata and a sample needs to be traced back to a certain plant, you might define a source per plant.</p>
