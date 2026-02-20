@@ -1,25 +1,26 @@
 # Instructions for researchers entering metadata in the catalogue
 
 ### Contents
-- [Introduction](introduction)
-  - [Process outline](process_outline)
-  - [ISA SEEK structure](isa_seek_structure)
-  - [MIAPPE and ENA in FairdomSEEK](miappe_ena_in_seek)
-- [Detailed instructions](detailed_instructions)
-  - [Phase 0](phase0)
-  - [Phase 1](phase1)
-  - [Phase 2](phase2) 
-  - Phase 3
-- Reference instructions
-  - Naming conventions
-  - FairdomSEEK references inside Excel sample templates
-  - Defining Assay Streams and Assays
-  - Registering data files
-  - Grouping Samples
-- High level example 
-- Short guide
+- [Introduction](#introduction)
+  - [Process outline](#process-outline)
+  - [ISA FairdomSEEK structure](#isa-fairdomseek-structure)
+  - [MIAPPE and ENA in FairdomSEEK](#miappe-and-ena-in-fairdomseek)
+- [Detailed instructions](#detailed-instructions)
+  - [Phase 0](#phase-0)
+  - [Phase 1](#phase-1)
+  - [Phase 2](#phase-2) 
+  - [Phase 3](#phase-3)
+- [Reference instructions](#reference-instructions)
+  - [Naming conventions](#naming-conventions)
+  - [References inside sample templates](#references-inside-sample-templates)
+  - [Defining assays](#defining-assays)
+  - [Registering data files](#registering-data-files)
+  - [Grouping samples](#grouping-samples)
+- [High level example](#high-level-example)
+- [Short guide](#short-guide)
 
-# Introduction <a name="introduction"></a>
+
+# Introduction
 
 The ResilienceHub uses FairdomSEEK with ISA settings as the metadata catalogue. This document describes how metadata can be uploaded in the right format. This document contains a detailed step by step guide for first time data entry. A shorter reference guide for additional studies will be included later.
 
@@ -27,7 +28,7 @@ The ResilienceHub uses FairdomSEEK with ISA settings as the metadata catalogue. 
 There is a format to stick to, but also the format accommodates for many type of studies, so it leaves room to fill out differently. This puts some responsibility on the researcher for how to use this format and to really understand the model. The documents guide you through the choices you need to make, and how you can make them. Do plan time for this, especially the first time.  If you are stuck at any point, things are unclear or you need help, please reach out to the DataXR team at data@cropxr.org
 
 
-## Process outline  <a name="process_outline"></a>
+## Process outline
 
 We suggest you do phase 0 a few days before you plan to do your metadata entry and that you do step 1 and 2 in one session. 
  
@@ -51,7 +52,7 @@ When the fields have been defined, at any point in time you can save the metadat
 
 
 
-## ISA SEEK structure <a name="isa_seek_structure"></a>
+## ISA FairdomSEEK structure
 
 The ISA format is widely used to represent research data. It is often used to represent MIAPPE data. FairdomSEEK uses the ISA structure, somewhat adapted.
 
@@ -77,7 +78,7 @@ In FairdomSEEK, the processes that are grouped under the assay, are all called a
 Each row, that can describe a sample, but also an assay performed on a sample, or a derivation of a data file, is called always a ‘sample’ in FairdomSEEK.
 
  
-## MIAPPE and ENA in FairdomSEEK <a name="miappe_ena_in_seek"></a>
+## MIAPPE and ENA in FairdomSEEK
 [todo: write]
 
 ![](../img/ExampleFairdomSEEKschematic.png)
@@ -92,18 +93,18 @@ Level where a measurement is done.
 Whole greenhouse, per plot, plant, sample.
 
  
-# Detailed instructions <a name="detailed_instructions"></a>
-## Phase 0 <a name="phase_0"></a>
+# Detailed instructions
+## Phase 0
 
 1. Understand the basic structure of the metadata model. 
 
-2. Decide on the [what experiments to group into (the investigation and) the study]().
+2. Decide on the [what experiments to group into (the investigation and) the study](defining-a-study.md).
 
 3. Choose the study type (sequencing, phenotyping or combined). Inform DataXR well up front when your study does not fit these types.
 
-4. Make sure that you have registered your study in this [form](). After the admin has checked the registration, you will receive a study id you need when entering the metadata, as well as storage for your experimental data. 
+4. Make sure that you have registered your study in this [form](https://forms.office.com/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u). After the admin has checked the registration, you will receive a study id you need when entering the metadata, as well as storage for your experimental data. 
 
-5. Create an account for the [catalogue]() and log in.
+5. Create an account for the [catalogue](https://catalogue.cropresilience.org) and log in.
     [Write about normal or KeyCloak?]
 
     Request to be added to a project. This is done by a project admin. 
@@ -111,7 +112,7 @@ Whole greenhouse, per plot, plant, sample.
 6. Gather the files with the metadata that you already collected. This includes e-lab journal entries, files that outline experimental conditions per plant, files that link output files to the experiment, etc.
 
  
-## Phase 1 <a name="phase1"></a>
+## Phase 1
 
 1. Log in to the FairdomSEEK webpage.
 
@@ -157,13 +158,13 @@ Whole greenhouse, per plot, plant, sample.
 
 Now you have the outline of your metadata structure. The actual metadata can be uploaded.
 
-## Phase 2 <a name="phase2"></a>
+## Phase 2
 
 Not all steps need to happen in this exact order, but some steps are dependent on each other: study sources need to be created before study samples and study samples before assay row entries. Data files need to be registered before they can be referenced.
 
 1. Register your data files
    1. At the top menu under “➕Create” choose “Data file” 
-   2. Choose how you want to [register your data](). Find the URL at the data location (Research Drive).
+   2. Choose how you want to [register your data](#registering-data-files). Find the URL at the data location (Research Drive).
    3. Under the tab “Remote URL” past the URL of the data location and “🟦Register”. Do not mind a warning about the URL in a yellow box. If there is an error and the URL cannot be registered please check if the URL is correct. 
    4. Fill in a “Title”, a “Description”, select a “Project”, click “🟦Next, and “🟦Next” 
    5. Select a license. The license can be adapted later if needed. At no license the consortium agreement applies to all people users that this data is shared with. 
@@ -187,7 +188,7 @@ Not all steps need to happen in this exact order, but some steps are dependent o
    4. Click “🟦Update” to apply the changes.
 
 4. Define study source samples
-   1. Choose [how to group/define the sources]().
+   1. Choose [how to group/define the sources](#study-source).
    2. Go to the “Sources table”, by clicking the tab “Study design” (or from the “Single page” view find the “Sources table” in the left menu). Here you find a table with the columns that you have defined. 
    3. Download the template by clicking the button “Batch download to Excel”. 
    4. In the excel, under the Samples tab fill in the data in the fields. 
@@ -199,12 +200,12 @@ Not all steps need to happen in this exact order, but some steps are dependent o
       Be aware, if you upload the same excel multiple times, a new sample will be created with the same name. To check how to update existing samples, check the phase 3 instructions.
 
 5. Define study samples
-   1. [Choose what type are needed]().
+   1. [Choose what type are needed](#study-samples).
    2. Go to “Samples table” under “Study design”(or from the “Single page” view find the “Samples table” in the left menu).
    3. Download the template by clicking the button “Batch download to Excel”.
    4. In the excel, under the Samples tab fill in the data in the fields. 
       1. Ignore the first two columns.
-      2. Use the Input column to [link to a source]() defined in the previous step.
+      2. Use the Input column to [link to a source](#sample-inputs) defined in the previous step.
       3. The subject_id is the name that will be displayed.
       4. There is a mandatory column called protocol. The text should refer to a registered SOP.
       5. Start with the most relevant fields. The data can be improved on at a later point. 
@@ -214,7 +215,7 @@ Not all steps need to happen in this exact order, but some steps are dependent o
 
 7. For each assay defined in phase 1, enter the row data, the same way as the study source and sample: download the template, fill in the data, save and upload the template.
    1. For the first assay of an assay stream the input should be a study sample (so this is a sample of observation unit). For additional assays the input is an output of the previous assay. 
-   2. To link a registered data file as file location, use the [required format]().
+   2. To link a registered data file as file location, use the [required format](#data-files).
    3. For the file name, use the relative path of the exact file inside the registered file location. 
 
 
@@ -236,7 +237,22 @@ Not all steps need to happen in this exact order, but some steps are dependent o
 
 # Reference instructions
 
-## FairdomSEEK references inside Excel sample templates
+## Naming conventions
+[todo: finish]
+
+Study:
+    
+    <received study id> - <study name>
+    example “CXRS4 - Drought response of arabidopsis after hormal treatment with PAMP”
+
+Assay stream:
+
+    <received study id> - <descriptive assay name>
+
+Assay: 
+
+
+## References inside sample templates
 ### Sample inputs
 
 Unfortunately in FairdomSEEK the names of the samples are not used as identifiers. For this reason the column where you link to samples from the previous section (marked Input) needs to be formatted like this: 
@@ -259,23 +275,8 @@ To link a registered data file use the following format.
 
 Find the data file ID, by going to the data file in the interface, and checking the number at the end of the URL https://catalogue.cropresilience.org/data_files/1 
 
-
-## Naming conventions
-[todo: finish]
-
-Study:
-    
-    <received study id> - <study name>
-    example “CXRS4 - Drought response of arabidopsis after hormal treatment with PAMP”
-
-Assay stream:
-
-    <received study id> - <descriptive assay name>
-
-Assay: 
-
  
-## Defining Assay Streams and Assays
+## Defining assays
 
 There is some flexibility in how to define assays. In FairdomSEEK, an assay (called assay stream) can be split into steps (called assays) that output material or a data file.
 
@@ -334,7 +335,7 @@ The metadata is used to link certain experiments and samples to the files. Here 
 At a later stage, the permission set in SEEK will be applied to the data download. If you only register the whole study as a single data file, it is not possible to apply granular permissions on who can download your data.
 
  
-## Grouping Samples
+## Grouping samples
 [consider moving to top section explaining the model]
 ### Study source
 
