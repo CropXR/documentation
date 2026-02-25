@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation" class="md-skip">
+        <a href="#requirements" class="md-skip">
           Skip to content
         </a>
       
@@ -1126,6 +1126,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1303,6 +1314,11 @@
 
 <p>Rclone is a powerful, open-source command-line program designed for managing files across cloud storage platforms. Often described as the "Swiss Army knife" of cloud storage management, Rclone allows users to sync, copy, and transfer files between various cloud storage providers including Google Drive, Dropbox, Amazon S3, Microsoft OneDrive, and many others. Since its creation in 2012 by Nick Craig-Wood, Rclone has become an essential tool for system administrators, developers, and tech-savvy individuals who need to efficiently handle data across multiple cloud environments. With its robust encryption capabilities, extensive configuration options, and ability to handle files of virtually any size, Rclone provides a versatile solution for both personal and enterprise cloud storage management needs. </p>
 <p>Reference instructions for mounting on Windows by SURF can be found <a href="https://servicedesk.surf.nl/wiki/spaces/WIKI/pages/117179081/RD+How+to+use+Rclone+with+Research+Drive">here</a> These steps overlap with the instructions below.</p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Version Requirement</p>
+<p>Rclone version <strong>1.63.1 or newer</strong> is required for Nextcloud compatibility. Earlier versions will fail with a chunked upload error.</p>
+</div>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="manual-download-and-install">Manual Download and Install<a class="headerlink" href="#manual-download-and-install" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1318,7 +1334,7 @@
 <ul>
 <li>Go to Research Drive Settings &gt; Security</li>
 <li>Click "Create new app password"</li>
-<li>Note down the password</li>
+<li>Copy the password immediately - it is only displayed once and cannot be retrieved later</li>
 </ul>
 <h2 id="obscure-password">Obscure Password<a class="headerlink" href="#obscure-password" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1330,35 +1346,35 @@
 </ul>
 <h2 id="get-webdav-url">Get WebDAV URL<a class="headerlink" href="#get-webdav-url" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Go to Research Drive &gt; File settings (in bottom left corner) &gt; WebDAV</li>
+<li>Go to Research Drive &gt; Files &gt; Settings (in bottom left corner) &gt; WebDAV</li>
 <li>Copy the WebDAV URL</li>
 </ul>
+<p>The URL should follow this format:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://&lt;your-environment&gt;.surf.nl/remote.php/dav/files/&lt;your-username&gt;/
+</code></pre></div></p>
 <h2 id="configuration-setup">Configuration Setup<a class="headerlink" href="#configuration-setup" title="Permanent link">&para;</a></h2>
 <p>Create or edit the rclone configuration file:
 - Linux/MacOS: <code>~/.config/rclone/rclone.conf</code>
 - Windows: <code>%USERPROFILE%\.config\rclone\rclone.conf</code></p>
 <p>Add the following configuration:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[cropxr]
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>type = webdav
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>url = YOUR_WEBDAV_URL
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>vendor = nextcloud
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>user = YOUR_APP_USERNAME 
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>bearer_token_command = exit
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>pass = YOUR_OBSCURED_PASSWORD
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[cropxr]
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>type = webdav
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>url = https://cropxr.data.surf.nl/remote.php/dav/files/&lt;your-username&gt;
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>vendor = nextcloud
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>user = &lt;your-username&gt;
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>pass = &lt;your-obscured-password&gt;
 </code></pre></div></p>
 <p>Replace:
-- <code>YOUR_APP_USERNAME</code> with your email address that you use to login to Research Drive
-- <code>YOUR_OBSCURED_PASSWORD</code> with the obscured password from step 3
-- 'YOUR_WEBDAV_URL' with the URL from step 4</p>
-<p>If you have previously setup this configuration with owncloud, the password needs to be regenerated from within Research Drive, and the password, url and the vendor need to be updated in the config.</p>
+- <code>&lt;your-username&gt;</code> with your email address that you use to login to Research Drive
+- <code>&lt;your-obscured-password&gt;</code> with the obscured password from the previous step</p>
 <h2 id="mounting-commands">Mounting Commands<a class="headerlink" href="#mounting-commands" title="Permanent link">&para;</a></h2>
 <p><strong>Linux/MacOS</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>rclone<span class="w"> </span>mount<span class="w"> </span><span class="s2">&quot;cropxr:research_drive/folder&quot;</span><span class="w"> </span>/local/folder/<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>writes<span class="w"> </span>--use-cookies<span class="w"> </span>-v
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rclone<span class="w"> </span>mount<span class="w"> </span><span class="s2">&quot;cropxr:research_drive/folder&quot;</span><span class="w"> </span>/local/folder/<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>writes<span class="w"> </span>--use-cookies<span class="w"> </span>-v
 </code></pre></div></p>
 <p><strong>Windows</strong>:</p>
 <p>For mounting in Windows, you need to install <a href="https://winfsp.dev/">WinFsp</a>. This means that you need administative priviledge to install programs on your computer, or you need to ask the systems admins for this program in advance.
 In the terminal from the folder that contains rclone:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rclone<span class="w"> </span>mount<span class="w"> </span><span class="s2">&quot;cropxr:research_drive/folder&quot;</span><span class="w"> </span>K:<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>writes<span class="w"> </span>--use-cookies<span class="w"> </span>-v
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rclone<span class="w"> </span>mount<span class="w"> </span><span class="s2">&quot;cropxr:research_drive/folder&quot;</span><span class="w"> </span>K:<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>writes<span class="w"> </span>--use-cookies<span class="w"> </span>-v
 </code></pre></div>
 <p>The <code>--vfs-cache-mode writes</code> flag is an important Rclone configuration option that controls how file data is cached when using Rclone to mount a remote file system.
 When set to "writes", this option means:</p>
@@ -1367,7 +1383,7 @@ When set to "writes", this option means:</p>
 <li>Files opened for writing are cached during the entire upload</li>
 <li>File data read from the remote while a file is open is cached</li>
 </ul>
-<p>The <code>--use-cookies</code> flag in Rclone enables the use of cookies for authentication and session management when connecting to remote servers, particularly WebDAV servers like Research Drive (which is based on OwnCloud).</p>
+<p>The <code>--use-cookies</code> flag in Rclone enables the use of cookies for authentication and session management when connecting to remote servers, particularly WebDAV servers like Research Drive (which is based on Nextcloud).</p>
 <p>Replace the paths in the example command with the actual path needed.
 The path of the folder on the research drive, should be either the complete path, or the path that is visible to/shared with the user.
 This likely looks like this for the full path
@@ -1376,7 +1392,7 @@ or like this for shared folders
 <code>cropxr:study_folder</code></p>
 <p>Best practice is to mount a specific folder (e.g., <code>WPC1</code>) rather than the root of Research Drive. This helps in managing permissions and access control more effectively.</p>
 <h2 id="copy-commands">Copy Commands<a class="headerlink" href="#copy-commands" title="Permanent link">&para;</a></h2>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>/my/source/location<span class="w"> </span><span class="s2">&quot;cropxr:research_drive/destination/folder&quot;</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>/my/source/location<span class="w"> </span><span class="s2">&quot;cropxr:research_drive/destination/folder&quot;</span>
 </code></pre></div>
 Replace the paths in the example command with the actual path needed.
 The path of the folder on the research drive, should be either the complete path, or the path that is visible to/shared with the user.
@@ -1386,7 +1402,7 @@ or like this for shared folders
 <code>cropxr:study_folder</code></p>
 <p>This copies the file from the source to the research drive. When the source location is a folder, all the contents of the folder are copied to the desination.
 For large files it is recommended to add a time-out. The timeout should be 10 min per GB of the largest file that will be copied.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--timeout<span class="w"> </span>50m<span class="w"> </span>/my/source/location<span class="w"> </span><span class="s2">&quot;cropxr:research_drive/destination/folder&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--timeout<span class="w"> </span>50m<span class="w"> </span>/my/source/location<span class="w"> </span><span class="s2">&quot;cropxr:research_drive/destination/folder&quot;</span>
 </code></pre></div>
 
 
