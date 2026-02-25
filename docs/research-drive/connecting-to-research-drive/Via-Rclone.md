@@ -1,8 +1,7 @@
 
 Rclone is a powerful, open-source command-line program designed for managing files across cloud storage platforms. Often described as the "Swiss Army knife" of cloud storage management, Rclone allows users to sync, copy, and transfer files between various cloud storage providers including Google Drive, Dropbox, Amazon S3, Microsoft OneDrive, and many others. Since its creation in 2012 by Nick Craig-Wood, Rclone has become an essential tool for system administrators, developers, and tech-savvy individuals who need to efficiently handle data across multiple cloud environments. With its robust encryption capabilities, extensive configuration options, and ability to handle files of virtually any size, Rclone provides a versatile solution for both personal and enterprise cloud storage management needs. 
 
-Reference instructions for mounting on Windows by SURF can be found [here](https://servicedesk.surf.nl/wiki/spaces/WIKI/pages/102827692/Mounting+Research+Drive+with+Rclone+On+Windows) These steps overlap with the instructions below.
-Other instructions for interacting with the reseach drive using Rclone are [here](https://servicedesk.surf.nl/wiki/spaces/WIKI/pages/102827686/Access+Research+Drive+via+Rclone).
+Reference instructions for mounting on Windows by SURF can be found [here](https://servicedesk.surf.nl/wiki/spaces/WIKI/pages/117179081/RD+How+to+use+Rclone+with+Research+Drive) These steps overlap with the instructions below.
 
 ## Installation
 
