@@ -3,6 +3,11 @@ Rclone is a powerful, open-source command-line program designed for managing fil
 
 Reference instructions for mounting on Windows by SURF can be found [here](https://servicedesk.surf.nl/wiki/spaces/WIKI/pages/117179081/RD+How+to+use+Rclone+with+Research+Drive) These steps overlap with the instructions below.
 
+## Requirements
+
+!!! warning "Version Requirement"
+    Rclone version **1.63.1 or newer** is required for Nextcloud compatibility. Earlier versions will fail with a chunked upload error.
+
 ## Installation
 
 ### Manual Download and Install
@@ -19,7 +24,7 @@ To install rclone on Linux/macOS/BSD systems, run:
 ## Generate App Credentials
 - Go to Research Drive Settings > Security
 - Click "Create new app password"
-- Note down the password
+- Copy the password immediately - it is only displayed once and cannot be retrieved later
 
 ## Obscure Password
 - Open your terminal
@@ -30,8 +35,13 @@ To install rclone on Linux/macOS/BSD systems, run:
 - Copy the outputted obscured password string
 
 ## Get WebDAV URL
-- Go to Research Drive > File settings (in bottom left corner) > WebDAV
+- Go to Research Drive > Files > Settings (in bottom left corner) > WebDAV
 - Copy the WebDAV URL
+
+The URL should follow this format:
+```
+https://<your-environment>.surf.nl/remote.php/dav/files/<your-username>/
+```
 
 ## Configuration Setup
 Create or edit the rclone configuration file:
@@ -42,19 +52,15 @@ Add the following configuration:
 ```
 [cropxr]
 type = webdav
-url = YOUR_WEBDAV_URL
+url = https://cropxr.data.surf.nl/remote.php/dav/files/<your-username>
 vendor = nextcloud
-user = YOUR_APP_USERNAME 
-bearer_token_command = exit
-pass = YOUR_OBSCURED_PASSWORD
+user = <your-username>
+pass = <your-obscured-password>
 ```
 
 Replace:
-- `YOUR_APP_USERNAME` with your email address that you use to login to Research Drive
-- `YOUR_OBSCURED_PASSWORD` with the obscured password from step 3
-- 'YOUR_WEBDAV_URL' with the URL from step 4
-
-If you have previously setup this configuration with owncloud, the password needs to be regenerated from within Research Drive, and the password, url and the vendor need to be updated in the config.
+- `<your-username>` with your email address that you use to login to Research Drive
+- `<your-obscured-password>` with the obscured password from the previous step
 
 ## Mounting Commands
 
@@ -79,7 +85,7 @@ When set to "writes", this option means:
 - Files opened for writing are cached during the entire upload
 - File data read from the remote while a file is open is cached
 
-The `--use-cookies` flag in Rclone enables the use of cookies for authentication and session management when connecting to remote servers, particularly WebDAV servers like Research Drive (which is based on OwnCloud).
+The `--use-cookies` flag in Rclone enables the use of cookies for authentication and session management when connecting to remote servers, particularly WebDAV servers like Research Drive (which is based on Nextcloud).
 
 Replace the paths in the example command with the actual path needed.
 The path of the folder on the research drive, should be either the complete path, or the path that is visible to/shared with the user.
