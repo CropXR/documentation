@@ -1,3 +1,4 @@
+[to do]
 
 ENA MIAPPE combined references etc
 Pictures too
@@ -12,4 +13,5 @@ From general to measurements to data
 
 
 ## Combined study
-For now, there is a separate metadata model between phenotyping and sequencing studies. These aligned to the separate 
+For now, there is a separate metadata model between phenotyping and sequencing studies. 
+These aligned to the separate 
