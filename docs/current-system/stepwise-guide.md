@@ -11,10 +11,12 @@
 
 
 ## Data Upload
-
 Pre-requisites: 
+
 - [access to the Research Drive](research-drive/How-to-get-access.md)
 - Choose a method of [data upload](research-drive/Uploading-data.md), depending on your data size, and set up the required tools.
+
+Steps:
 
 1. Make a plan of [what data should be uploaded](../what-data-to-upload.md) and how it should be organised in folders.
 2. Upload the data inside your designated study folder.
@@ -31,6 +33,17 @@ At any point in time you can save the metadata and edit it later. Add the additi
 ## Other things
 
 ### Adding columns
-hmmm as little as possible
+It is possible to add additional columns to capture metadata relevant, not in the provided columns. 
+Before doing this, please consult an expert of this is not already covered by the existing columns.
 
 ### Combined study
+For instructions on the metadata of a combined study, read [here](introduction-metadata-model.md#combined-study).
+
+### Ontology lookup
+Annotation with ontology terms can greatly improve the clarity of metadata, but finding the right term, 
+spread out over different ontology systems can be challenging and time consuming.
+We are still working on improving the workflow for researchers and are open to suggestions.
+
+If the suggested sources for ontologies do not cover the exact conditions, and you think a specific term could be useful throughout the consortium,
+please contact us. It is likely that there will be a list of CropXR specific terms, that can be referenced.
+

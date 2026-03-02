@@ -9,3 +9,7 @@ MIAPPE: the standards for phenotyping
 There is a lot of overlap: what was grown how
 
 From general to measurements to data
+
+
+## Combined study
+For now, there is a separate metadata model between phenotyping and sequencing studies. These aligned to the separate 

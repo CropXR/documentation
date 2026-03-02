@@ -4,9 +4,10 @@
 All the research produced in the CropXR consortium will be well annotated with metadata following the CropXR standards. 
 
 The metadata annotation will have multiple uses:
-  - Findability of your study, by other researchers in the consortium
-  - Reusability of your data by other users in the consortium
-  - Improvement of your own data annotation
+
+- Findability of your study, by other researchers in the consortium
+- Reusability of your data by other users in the consortium
+- Improvement of your own data annotation
 
 The responsibility to annotate the data lies with the researcher, with the help and tools provided by DataXR.
 
