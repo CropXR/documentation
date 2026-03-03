@@ -4,11 +4,12 @@ Choose your upload method based on file size and quantity and experience level. 
 
 - Best for: Files up to several GB
 - Method: Direct upload through Research Drive interface
-- [Read more](connecting-to-research-drive/Via-a-Browser.md)
+- [Read more](connecting/via-browser.md)
 
 ### 2. NextCloud Clients
 
-> ⚠️ WARNING: This has not yet been tested by the data team.
+!!! warning
+    This has not yet been tested by the data team.
 
 - Best for: Multiple files or large datasets
 - Features: Automatic handling of large files
@@ -21,4 +22,4 @@ Choose your upload method based on file size and quantity and experience level. 
 - Requires: Command line experience
 - Provides maximum upload size capacity
 - Remote access to Research Drive data
-- [Read more](connecting-to-research-drive/Via-Rclone.md)
+- [Read more](connecting/via-rclone.md)

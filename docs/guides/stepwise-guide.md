@@ -3,22 +3,23 @@
 
 ## Preparations
 
-1. Understand the basic structure of the [metadata model](introduction-metadata-model.md).
-2. Decide on the [what experiments to group into the study](defining-a-study.md).
+1. Understand the basic structure of the [metadata model](../concepts/metadata-model.md).
+2. Decide on the [what experiments to group into the study](../concepts/defining-a-study.md).
 3. Choose the study type (sequencing, phenotyping or combined). Inform DataXR well up front when your study does not fit these types.
 4. Make sure that you have registered your study in this [form](https://forms.office.com/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u). After the admin has checked the registration, you will receive a study id you need when entering the metadata, as well as storage for your experimental data.
 6. Gather the files with the metadata that you already collected. This includes e-lab journal entries, files that outline experimental conditions per plant, files that link output files to the experiment, etc.
 
 
 ## Data Upload
-Pre-requisites: 
 
-- [access to the Research Drive](research-drive/How-to-get-access.md)
-- Choose a method of [data upload](research-drive/Uploading-data.md), depending on your data size, and set up the required tools.
+Pre-requisites:
+
+- [access to the Research Drive](../research-drive/getting-access.md)
+- Choose a method of [data upload](../research-drive/uploading-data.md), depending on your data size, and set up the required tools.
 
 Steps:
 
-1. Make a plan of [what data should be uploaded](../what-data-to-upload.md) and how it should be organised in folders.
+1. Make a plan of [what data should be uploaded](../concepts/what-data-to-upload.md) and how it should be organised in folders.
 2. Upload the data inside your designated study folder.
 
 
@@ -37,7 +38,7 @@ It is possible to add additional columns to capture metadata relevant, not in th
 Before doing this, please consult an expert of this is not already covered by the existing columns.
 
 ### Combined study
-For instructions on the metadata of a combined study, read [here](introduction-metadata-model.md#combined-study).
+For instructions on the metadata of a combined study, read [here](../concepts/metadata-model.md#combined-study).
 
 ### Ontology lookup
 Annotation with ontology terms can greatly improve the clarity of metadata, but finding the right term, 

@@ -30,7 +30,7 @@ Each row, that can describe a sample, but also an assay performed on a sample, o
 ## MIAPPE and ENA in FairdomSEEK
 [todo: write]
 
-![](../img/ExampleFairdomSEEKschematic.png)
+![](../../img/ExampleFairdomSEEKschematic.png)
 
 intro to data model
 

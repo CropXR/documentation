@@ -3,7 +3,8 @@ Getting started with CropXR's data resources involves a simple registration proc
 ## Step 1: Project Initiation
 When you're ready to conduct a study using CropXR resources, your first step is to contact our data team.
 
-> 📧 **Contact**: data@cropxr.org
+!!! info "Contact"
+    data@cropxr.org
 
 ## Step 2: Registration
 After your initial contact, you'll receive a link to our project registration form.
@@ -18,5 +19,6 @@ Upon approval:
 - A dedicated storage folder will be created for your project on Research Drive
 - Access invites will be sent to all approved team members
 
-> 💡 **Tip**: Include all team members who need access in your initial registration to streamline the onboarding process.
+!!! tip
+    Include all team members who need access in your initial registration to streamline the onboarding process.
 

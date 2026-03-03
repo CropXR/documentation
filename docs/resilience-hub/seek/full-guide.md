@@ -8,7 +8,7 @@ Any metadata uploaded in the catalogue is not yet backed up.
 
 1. Understand the basic structure of the metadata model. 
 
-2. Decide on the [what experiments to group into (the investigation and) the study](../defining-a-study.md).
+2. Decide on the [what experiments to group into (the investigation and) the study](../../concepts/defining-a-study.md).
 
 3. Choose the study type (sequencing, phenotyping or combined). Inform DataXR well up front when your study does not fit these types.
 
@@ -44,7 +44,7 @@ Any metadata uploaded in the catalogue is not yet backed up.
 
          Please do not remove any fields; this will make your study harder to find. All fields not relevant to your study can be left empty.
 
-         ![seek-adding-sample-type-field.png](..\img\seek-adding-sample-type-field.png)
+         ![seek-adding-sample-type-field.png](../../img/seek-adding-sample-type-field.png)
 
       5. Skip “SOPs” for now, these will be added later.
 
