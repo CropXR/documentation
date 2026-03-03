@@ -27,7 +27,7 @@
     
     
       
-        <title>Introduction metadata model - CropXR</title>
+        <title>Introduction Metadata Model - CropXR</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#combined-study" class="md-skip">
+        <a href="#introduction-metadata-model" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction metadata model
+              Introduction Metadata Model
             
           </span>
         </div>
@@ -699,6 +699,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -707,7 +709,7 @@
   <span class="md-ellipsis">
     
   
-    Introduction metadata model
+    Introduction Metadata Model
   
 
     
@@ -725,7 +727,7 @@
   <span class="md-ellipsis">
     
   
-    Introduction metadata model
+    Introduction Metadata Model
   
 
     
@@ -741,6 +743,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -749,13 +753,108 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#combined-study" class="md-nav__link">
+  <a href="#standards-to-write" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Combined study
+        Standards [to write]
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phenotyping-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phenotyping template
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phenotyping template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sections
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequencing-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequencing template
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sequencing template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sections_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sections
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outlook-to-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outlook [to write]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-to-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical [to write]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical [to write]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#combined-study-to-refine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combined study [to refine]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1232,19 +1331,72 @@
 
 
 
-  <h1>Introduction metadata model</h1>
-
-<p>[to do]</p>
-<p>ENA MIAPPE combined references etc
-Pictures too</p>
-<p>Source:
-ENA 35 &amp; 37 + additional that turned out quite relevant
-MIAPPE: the standards for phenotyping</p>
-<p>There is a lot of overlap: what was grown how</p>
-<p>From general to measurements to data</p>
-<h2 id="combined-study">Combined study<a class="headerlink" href="#combined-study" title="Permanent link">&para;</a></h2>
-<p>For now, there is a separate metadata model between phenotyping and sequencing studies. 
-These aligned to the separate </p>
+<h1 id="introduction-metadata-model">Introduction Metadata Model<a class="headerlink" href="#introduction-metadata-model" title="Permanent link">&para;</a></h1>
+<h2 id="standards-to-write">Standards  [to write]<a class="headerlink" href="#standards-to-write" title="Permanent link">&para;</a></h2>
+<p>The CropXR metadata model is made up from a combination of established standards for metadata on plant research:</p>
+<ul>
+<li><strong>Phenotyping</strong> <a href="https://isa-specs.readthedocs.io/en/latest/index.html">ISA</a> + <a href="link with MIAPPE fields">MIAPPE</a></li>
+<li><strong>Sequencing</strong> <a href="https://isa-specs.readthedocs.io/en/latest/index.html">ISA</a> + <a href="ENA35">ENA for plants</a> + <a href="ENA37">ENA for crops</a> + additional fields based on LettuceKnow experience.</li>
+</ul>
+<p>These two models describe in a standardized way, the setup of a study, the experimental conditions, 
+the types of measurements performed and how the output data can be related to that, up to sample level.
+This detailed standardized description facilitates that the findability and reusability of the data.</p>
+<p>There is a lot of overlap between the phenotyping and sequencing metadata: 
+they both provide general information about the goal of the study, the plant material, the growth conditions and the treatment.</p>
+<p>For much of this overlapping information, it is not evident from the template, 
+because the templates are as close to the original standard as possible, and are organised in a different way.</p>
+<p>The main differences between the templates are:</p>
+<ul>
+<li>The phenotyping template has the same information split into more different separate sections than the sequencing template</li>
+<li>The phenotyping template has a more free structure than sequencing</li>
+</ul>
+<h2 id="phenotyping-template">Phenotyping template<a class="headerlink" href="#phenotyping-template" title="Permanent link">&para;</a></h2>
+<p>Well separated into sections.
+Overwheling at first, many references needed, but in the end less duplicated info. 
+All samples from the same plant can refer to it, rather than copying the info for each row.</p>
+<p>Any type of measurement, but you have to describe it</p>
+<p>Add any important parameter (env, etc), you need to think which ones to include</p>
+<h3 id="sections">Sections<a class="headerlink" href="#sections" title="Permanent link">&para;</a></h3>
+<p>[include diagram]</p>
+<p>things that are true for whole study
+- location
+- environment
+- events</p>
+<p>defined experimental conditions</p>
+<p>define obs units: whatever you want for measuring + apply conditions</p>
+<p>link output</p>
+<h2 id="sequencing-template">Sequencing template<a class="headerlink" href="#sequencing-template" title="Permanent link">&para;</a></h2>
+<p>Quite condensed, lot of data duplication / mixed responsibilities , but less sections.</p>
+<p>Fixed fields that prompt you, but a lot of unnesessary fields to skip</p>
+<h3 id="sections_1">Sections<a class="headerlink" href="#sections_1" title="Permanent link">&para;</a></h3>
+<p>[include diagram]</p>
+<p>sample also describes most of the conditions</p>
+<p>experiments = experiment on a sample</p>
+<h2 id="outlook-to-write">Outlook  [to write]<a class="headerlink" href="#outlook-to-write" title="Permanent link">&para;</a></h2>
+<p>In the future catalogue, these will be combined, so the information about the experiment and treatment is captured once.
+You describe the plants and conditions, and from there start multiple types of measurements.</p>
+<p>What will stay:
+- same info can be filled, slightly differently organized
+- optional to define for whole study (phen) or per subunit
+- same concepts like defining observation units
+- still thinking what is important to you</p>
+<p>Different organization for the same fields. 
+Combination of web interface + excel templates.</p>
+<h2 id="practical-to-write">Practical [to write]<a class="headerlink" href="#practical-to-write" title="Permanent link">&para;</a></h2>
+<p>Excel templates (for now)</p>
+<p>Inv and study id you get, the rest you make up.
+Make sure that everything you reference exists.</p>
+<p>Not all columns are relevant to each study.</p>
+<h3 id="combined-study-to-refine">Combined study  [to refine]<a class="headerlink" href="#combined-study-to-refine" title="Permanent link">&para;</a></h3>
+<p>For now, there is a separate metadata template for phenotyping and sequencing studies.
+Choose the template that allows you to describe the general information and experimental conditions.
+That includes the following sheets:</p>
+<ul>
+<li>Phenotyping: Investigation, Study, Person, Biological material, Environment, Event, Experimental factor</li>
+<li>Sequencing: Investigation, Study, Sample</li>
+</ul>
+<p>The for the remaining sections, use both sheets to properly capture the experiments. 
+Make sure to use the same IDs or make references to the IDs used in the other template, so plants/samples can be linked.</p>
 
 
 
