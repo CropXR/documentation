@@ -6,9 +6,9 @@ Choose your upload method based on file size and quantity and experience level. 
 - Method: Direct upload through Research Drive interface
 - [Read more](connecting-to-research-drive/Via-a-Browser.md)
 
-### 2. OwnCloud/NextCloud Clients
+### 2. NextCloud Clients
 
-> ⚠️ WARNING: This is not recommended until the transition to NextCloud is complete.
+> ⚠️ WARNING: This has not yet been tested by the data team.
 
 - Best for: Multiple files or large datasets
 - Features: Automatic handling of large files

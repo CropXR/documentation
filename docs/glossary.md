@@ -2,7 +2,7 @@
 
 [todo: expand, include links]
 
-ResilienceHub - A platform with all services offered by DataXR. Often used to describe the future, more mature state, rather than the current state.
+ResilienceHub - A platform with all services offered by DataXR, including data storage, metadata catalogue, compute and pipelines. Often used to describe the future, more mature state, rather than the current state.
 
 Metadata Management Procedure (MMP) - SharePoint page that describe the process of study registration, data upload and metadata management.
 
