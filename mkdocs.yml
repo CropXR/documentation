@@ -105,6 +105,7 @@ nav:
     - Glossary: getting-started/glossary.md
   - Concepts:
     - concepts/index.md
+    - Introduction: concepts/introduction.md
     - Defining a Study: concepts/defining-a-study.md
     - Metadata Model: concepts/metadata-model.md
     - What Data to Upload: concepts/what-data-to-upload.md
