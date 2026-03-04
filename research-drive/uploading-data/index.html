@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../uploading-data/">
+        <link rel="prev" href="../connecting/via-rclone/">
       
       
-        <link rel="next" href="../../policies/">
+        <link rel="next" href="../sharing-data/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Sharing Data - CropXR</title>
+        <title>Uploading Data - CropXR</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sharing-guidelines" class="md-skip">
+        <a href="#1-browser-upload" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sharing Data
+              Uploading Data
             
           </span>
         </div>
@@ -890,34 +890,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../uploading-data/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Uploading Data
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -935,7 +907,7 @@
   <span class="md-ellipsis">
     
   
-    Sharing Data
+    Uploading Data
   
 
     
@@ -953,7 +925,7 @@
   <span class="md-ellipsis">
     
   
-    Sharing Data
+    Uploading Data
   
 
     
@@ -977,10 +949,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sharing-guidelines" class="md-nav__link">
+  <a href="#1-browser-upload" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sharing Guidelines
+        1. Browser Upload
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-nextcloud-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. NextCloud Clients
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-command-line-tools-curlrclone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Command Line Tools (curl/rclone)
       
     </span>
   </a>
@@ -991,6 +985,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sharing-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sharing Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1392,41 +1414,34 @@
 
 
 
-  <h1>Sharing Data</h1>
+  <h1>Uploading Data</h1>
 
-<p>To share folders or files with other users, you can use the "Share" option in the Research Drive. This allows you to grant access to specific users or groups, enabling them to view or edit the shared content.</p>
-<ol>
-<li><strong>Select the Folder/File</strong>: Navigate to the folder or file you want to share and select it, click on the three dots.</li>
-</ol>
-<p><img alt="" src="../../img/rd-sharing01.png" width="75%" /></p>
-<ol>
-<li><strong>Click on "Details"</strong>: In the dropdown menu, click on the "Details" option.</li>
-</ol>
-<p><img alt="" src="../../img/rd-sharing02.png" width="75%" /></p>
-<ol>
-<li><strong>Click on "Sharing"</strong>: In the dropdown menu, click on the "Sharing" option and add name or email address of the user you want to share with.</li>
-</ol>
-<p><img alt="" src="../../img/rd-sharing03.png" width="75%" /></p>
-<ol>
-<li><strong>Set Permissions</strong>: In the sharing settings, you can add users or groups by entering their email addresses. You can also set their permissions (view or edit) and add a message if needed.</li>
-</ol>
-<p><img alt="" src="../../img/rd-sharing04.png" width="75%" /></p>
-<h2 id="sharing-guidelines">Sharing Guidelines<a class="headerlink" href="#sharing-guidelines" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Sharing Rules:<ul>
-<li>Only share folders with the workpackage prefix (e.g. 'WPXYZ-')</li>
-<li>Never share non-prefixed folders (e.g., 'studies', 'assays', 'raw')</li>
-<li>Always share from the nearest parent folder with 'WPXYZ-' prefix</li>
-<li>This ensures unique folder names and prevents conflicts</li>
-<li>Once you uploaded a dataset, remove the write/change/delete permissions for everyone, to keep the data safe</li>
+<p>Choose your upload method based on file size and quantity and experience level. Here are the recommended methods for uploading data to Research Drive:</p>
+<h3 id="1-browser-upload">1. Browser Upload<a class="headerlink" href="#1-browser-upload" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Best for: Files up to several GB</li>
+<li>Method: Direct upload through Research Drive interface</li>
+<li><a href="../connecting/via-browser/">Read more</a></li>
 </ul>
-</li>
-<li>Examples:<ul>
-<li>✅ CORRECT: Share 'WPXYZ-seq1'</li>
-<li>❌ INCORRECT: Share 'assays' or 'raw' folders directly</li>
+<h3 id="2-nextcloud-clients">2. NextCloud Clients<a class="headerlink" href="#2-nextcloud-clients" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This has not yet been tested by the data team.</p>
+</div>
+<ul>
+<li>Best for: Multiple files or large datasets</li>
+<li>Features: Automatic handling of large files</li>
+<li>Supports upload resumption</li>
+<li>Synchronizes files across devices</li>
 </ul>
-</li>
-</ol>
+<h3 id="3-command-line-tools-curlrclone">3. Command Line Tools (curl/rclone)<a class="headerlink" href="#3-command-line-tools-curlrclone" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Best for: Very large datasets (10-30 GB)</li>
+<li>Requires: Command line experience</li>
+<li>Provides maximum upload size capacity</li>
+<li>Remote access to Research Drive data</li>
+<li><a href="../connecting/via-rclone/">Read more</a></li>
+</ul>
 
 
 
