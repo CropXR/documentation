@@ -110,7 +110,7 @@ nav:
     - What Data to Upload: concepts/what-data-to-upload.md
   - Guides:
     - guides/index.md
-    - Step-by-step Metadata Entry: guides/stepwise-guide.md
+    - General Workflow: guides/stepwise-guide.md
   - Research Drive:
     - research-drive/index.md
     - Getting Access: research-drive/getting-access.md

@@ -1,5 +1,4 @@
-
-# Stepwise guide
+# General Workflow
 
 ## Preparations
 
