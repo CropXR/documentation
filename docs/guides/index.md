@@ -2,9 +2,9 @@
 
 This section provides step-by-step instructions for common tasks in the CropXR data infrastructure.
 
-## Metadata Entry
+## Study Workflow
 
-- [Step-by-step Metadata Entry](stepwise-guide.md) - A guided walkthrough for entering metadata for your study
+- [General Workflow](stepwise-guide.md) - End-to-end guide for study registration, data upload, and metadata entry
 
 ### SEEK Catalogue
 
