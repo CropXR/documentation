@@ -6,4 +6,6 @@ experimental research with artificial intelligence and computational modeling. O
 technologies and methodologies that generate new crop varieties specifically engineered to thrive amid climate change challenges while 
 reducing dependence on environmentally harmful agricultural interventions.
 
-For inquiries, please contact us at [data@cropxr.org](mailto:data@cropxr.org)
+## Getting Help
+
+If something is unclear or not working, [create a GitHub issue](https://github.com/CropXR/documentation/issues), mail us at data@cropxr.org, or ask in the `#research-drive` Slack channel.

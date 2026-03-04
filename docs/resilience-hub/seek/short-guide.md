@@ -1,6 +1,6 @@
 # Short guide
 
-Detailed instructions are found [here](metadata-entry-seek.md)
+Detailed instructions are found [here](full-guide.md)
 
 Prepare
 

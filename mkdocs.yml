@@ -25,7 +25,6 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.sections
-    - navigation.expand
     - navigation.indexes
     - navigation.top
     - toc.integrate
@@ -75,7 +74,7 @@ extra:
   #  - icon: fontawesome/brands/github
   #    link: https://https://github.com/CropXR/cropxr-documentation
   #  - icon: fontawesome/brands/python
-  #    link: https://cropxr.data.surfsara.nl
+  #    link: https://cropxr.data.surf.nl
   copyright: Copyright &copy; 2025 CropXR
   consent:
     title: Cookie consent
@@ -98,3 +97,37 @@ extra:
 
 plugins:
   - search
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - getting-started/index.md
+    - Glossary: getting-started/glossary.md
+  - Concepts:
+    - concepts/index.md
+    - Defining a Study: concepts/defining-a-study.md
+    - Metadata Model: concepts/metadata-model.md
+    - What Data to Upload: concepts/what-data-to-upload.md
+  - Guides:
+    - guides/index.md
+    - Step-by-step Metadata Entry: guides/stepwise-guide.md
+  - Research Drive:
+    - research-drive/index.md
+    - Getting Access: research-drive/getting-access.md
+    - Connecting:
+      - Via Browser: research-drive/connecting/via-browser.md
+      - Via NextCloud: research-drive/connecting/via-nextcloud.md
+      - Via Rclone: research-drive/connecting/via-rclone.md
+    - Uploading Data: research-drive/uploading-data.md
+    - Sharing Data: research-drive/sharing-data.md
+  - Policies:
+    - policies/index.md
+    - Data Sensitivity Levels: policies/data-sensitivity-levels.md
+  - Resilience Hub:
+    - resilience-hub/index.md
+    - SEEK Metadata Entry:
+      - resilience-hub/seek/index.md
+      - Short Guide: resilience-hub/seek/short-guide.md
+      - High-Level Example: resilience-hub/seek/high-level-example.md
+      - Full Guide: resilience-hub/seek/full-guide.md
+      - Reference: resilience-hub/seek/reference.md

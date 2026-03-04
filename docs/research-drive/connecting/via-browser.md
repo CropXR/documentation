@@ -1,11 +1,11 @@
 
-The CropXR project utilizes SURF Research Drive as our Phase II platform for secure data sharing and collaboration. Our Research Drive is hosted at [https://cropxr.data.surfsara.nl/](https://cropxr.data.surfsara.nl/).
+The CropXR project utilizes SURF Research Drive as our Phase II platform for secure data sharing and collaboration. Our Research Drive is hosted at [https://cropxr.data.surf.nl/](https://cropxr.data.surf.nl/).
 
 ## Getting Access
 
 Access to the CropXR Research Drive follows these steps:
 
-1. **Request Access**: [Follow this link](../How-to-get-access.md)
+1. **Request Access**: [Follow this link](../getting-access.md)
 
 - **Institutional Users**: If you're affiliated with a Dutch research institution, you can log in using your institutional Single Sign-On (SSO) credentials.
 
