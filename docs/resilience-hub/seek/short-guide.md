@@ -1,3 +1,6 @@
+!!! warning
+    The catalogue is in testing phase. Any metadata uploaded in the catalogue is not yet backed up.
+
 # Short guide
 
 Detailed instructions are found [here](full-guide.md)

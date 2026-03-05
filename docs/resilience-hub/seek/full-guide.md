@@ -1,7 +1,7 @@
 # Detailed instructions
 
-Important!! This guide is still under development. 
-Any metadata uploaded in the catalogue is not yet backed up.
+!!! warning
+    The catalogue is in testing phase. Any metadata uploaded in the catalogue is not yet backed up. This guide is still under development. 
 
 
 ## Phase 0
