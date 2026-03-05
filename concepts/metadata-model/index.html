@@ -564,10 +564,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#standards-to-write" class="md-nav__link">
+  <a href="#model-flexibility" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Standards [to write]
+        Model flexibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standards
       
     </span>
   </a>
@@ -585,6 +596,28 @@
   
     <nav class="md-nav" aria-label="Phenotyping template">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#split-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Split sections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open format
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#sections" class="md-nav__link">
@@ -615,6 +648,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#combined-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combined sections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closed-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closed format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sections_1" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -631,33 +686,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#outlook-to-write" class="md-nav__link">
+  <a href="#practical" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Outlook [to write]
+        Practical
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IDs
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#practical-to-write" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#relevant-columns" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Practical [to write]
+        Relevant columns
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Practical [to write]">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#combined-study-to-refine" class="md-nav__link">
+  <a href="#fixed-or-free-fields" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Combined study [to refine]
+        Fixed or free fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combined-study" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combined study
       
     </span>
   </a>
@@ -666,6 +743,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outlook-catalogue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outlook: catalogue
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1522,7 +1610,24 @@
 
 
 <h1 id="introduction-metadata-model">Introduction Metadata Model<a class="headerlink" href="#introduction-metadata-model" title="Permanent link">&para;</a></h1>
-<h2 id="standards-to-write">Standards  [to write]<a class="headerlink" href="#standards-to-write" title="Permanent link">&para;</a></h2>
+<p>[WIP, will be refined]</p>
+<p>All the research produced in the CropXR consortium will be well annotated with metadata following the CropXR standards. </p>
+<p>The metadata annotation will have multiple uses:</p>
+<ul>
+<li>Findability of your study, by other researchers in the consortium</li>
+<li>Reusability of your data by other users in the consortium</li>
+<li>Improvement of your own data annotation</li>
+</ul>
+<p>The responsibility to annotate the data lies with the researcher, with the help and tools provided by DataXR.</p>
+<h4 id="model-flexibility">Model flexibility<a class="headerlink" href="#model-flexibility" title="Permanent link">&para;</a></h4>
+<p>A standardized metadata format ensures that the metadata has a predictable structure. 
+There are however many different types of studies in the consortium, with different metadata that is important. 
+To fit all different studies in the same format there is a certain flexibility in the model.
+This puts some responsibility on the researcher for how to use this format and to really understand the model. 
+These documents should provide the information needed to make those choices. 
+For the first time entering metadata, plan sufficient time to understand the model.
+If you are stuck at any point, things are unclear, or you need help, please reach out to the DataXR team at data@cropxr.org</p>
+<h2 id="standards">Standards<a class="headerlink" href="#standards" title="Permanent link">&para;</a></h2>
 <p>The CropXR metadata model is made up from a combination of established standards for metadata on plant research:</p>
 <ul>
 <li><strong>Phenotyping</strong> <a href="https://isa-specs.readthedocs.io/en/latest/index.html">ISA</a> + <a href="link with MIAPPE fields">MIAPPE</a></li>
@@ -1541,43 +1646,70 @@ because the templates are as close to the original standard as possible, and are
 <li>The phenotyping template has a more free structure than sequencing</li>
 </ul>
 <h2 id="phenotyping-template">Phenotyping template<a class="headerlink" href="#phenotyping-template" title="Permanent link">&para;</a></h2>
-<p>Well separated into sections.
-Overwheling at first, many references needed, but in the end less duplicated info. 
-All samples from the same plant can refer to it, rather than copying the info for each row.</p>
-<p>Any type of measurement, but you have to describe it</p>
-<p>Add any important parameter (env, etc), you need to think which ones to include</p>
+<h4 id="split-sections">Split sections<a class="headerlink" href="#split-sections" title="Permanent link">&para;</a></h4>
+<p>The phenotyping template is separated into a high number of sections (sheets).<br />
+It might be overwhelming to understand what each sections contains. 
+There are many references between the sections needed. 
+But the separation also reduces duplicated data. 
+For example, for several samples from the same plant, 
+you can refer to the plant defined in a different section at the samples, rather than copying the info for each row.</p>
+<h4 id="open-format">Open format<a class="headerlink" href="#open-format" title="Permanent link">&para;</a></h4>
+<p>The phenotyping template allows you to describe any type of measurement. 
+This is important, because phenotyping does not rely on a limited set of experiments.
+It does require you to describe the measurement in the format.
+As more people have started with their metadata annotation, it is likely valuable to create a CropXR internal reference,
+where you can find how other people have described similar or the same type of experiments.</p>
+<p>It is also possible to include any type of parameter to describe the growth conditions.
+Find them in the appendix for a predictable description of a condition. 
+Not all conditions are as relevant and need to be included in the metadata.</p>
 <h3 id="sections">Sections<a class="headerlink" href="#sections" title="Permanent link">&para;</a></h3>
 <p>[include diagram]</p>
-<p>things that are true for whole study
-- location
-- environment
-- events</p>
-<p>defined experimental conditions</p>
-<p>define obs units: whatever you want for measuring + apply conditions</p>
-<p>link output</p>
+<p>The overview sheet also contains a description of each section.</p>
+<p>There are several sections that describe properties of the whole study, every plant in it.</p>
+<ul>
+<li>Everything in the study section, including the location</li>
+<li>The environment section</li>
+<li>Events</li>
+</ul>
+<p>The experimental factor section describes all conditions that are varied between different experimental groups.</p>
+<p>The observation unit is the unit of measurement. It can be a plant, a plot, or a whole field.
+You are free to define these as you need, and therefor need to think while defining them.
+It is also used to describe what experimental factor was applied to that plant.</p>
+<p>The observed variable describes the measurement: what was measured and how, including the instrument. </p>
+<p>The data file section is used to link the output to the measurement and the conditions.</p>
 <h2 id="sequencing-template">Sequencing template<a class="headerlink" href="#sequencing-template" title="Permanent link">&para;</a></h2>
-<p>Quite condensed, lot of data duplication / mixed responsibilities , but less sections.</p>
-<p>Fixed fields that prompt you, but a lot of unnesessary fields to skip</p>
+<h4 id="combined-sections">Combined sections<a class="headerlink" href="#combined-sections" title="Permanent link">&para;</a></h4>
+<p>The sequencing template has few sections. 
+These sections contain more fields, and describe multiple concepts.
+There is a duplication of data between the rows.</p>
+<h4 id="closed-format">Closed format<a class="headerlink" href="#closed-format" title="Permanent link">&para;</a></h4>
+<p>The template contains many fields, especially in the sample sections. 
+These fields have been selected because they were considered relevant. 
+If they are not relevant to your study you can leave them empty.</p>
 <h3 id="sections_1">Sections<a class="headerlink" href="#sections_1" title="Permanent link">&para;</a></h3>
 <p>[include diagram]</p>
-<p>sample also describes most of the conditions</p>
-<p>experiments = experiment on a sample</p>
-<h2 id="outlook-to-write">Outlook  [to write]<a class="headerlink" href="#outlook-to-write" title="Permanent link">&para;</a></h2>
-<p>In the future catalogue, these will be combined, so the information about the experiment and treatment is captured once.
-You describe the plants and conditions, and from there start multiple types of measurements.</p>
-<p>What will stay:
-- same info can be filled, slightly differently organized
-- optional to define for whole study (phen) or per subunit
-- same concepts like defining observation units
-- still thinking what is important to you</p>
-<p>Different organization for the same fields. 
-Combination of web interface + excel templates.</p>
-<h2 id="practical-to-write">Practical [to write]<a class="headerlink" href="#practical-to-write" title="Permanent link">&para;</a></h2>
-<p>Excel templates (for now)</p>
-<p>Inv and study id you get, the rest you make up.
-Make sure that everything you reference exists.</p>
+<p>The sample section describes the plant, the growth conditions, the treatment and the sampling.
+The experiment section describes assays performed on a sample.</p>
+<h2 id="practical">Practical<a class="headerlink" href="#practical" title="Permanent link">&para;</a></h2>
+<p>Each study gets one filled in metadata template (with the exception of combined studies, which get two).</p>
+<h4 id="ids">IDs<a class="headerlink" href="#ids" title="Permanent link">&para;</a></h4>
+<p>At registration you receive an investigation id and study id from CropXR. These should be used in the template.</p>
+<p>In other sections of the sheets there are ids needed. You need to provide these yourself. They need to be unique within the study so they can be referenced.
+If you in one section refer to an id, make sure it is defined.
+For example, in the data file section you link a sample to the data file, you need to make sure that that sample id was defined in the sample section.</p>
+<h4 id="relevant-columns">Relevant columns<a class="headerlink" href="#relevant-columns" title="Permanent link">&para;</a></h4>
 <p>Not all columns are relevant to each study.</p>
-<h3 id="combined-study-to-refine">Combined study  [to refine]<a class="headerlink" href="#combined-study-to-refine" title="Permanent link">&para;</a></h3>
+<h4 id="fixed-or-free-fields">Fixed or free fields<a class="headerlink" href="#fixed-or-free-fields" title="Permanent link">&para;</a></h4>
+<p>Each field contains a description of the type. There are a few special cases explained below:
+-   field format: ‘free text, see appendix’ + appendix type: ‘example’ -&gt; not fixed, but useful examples can be found in the appendix.
+    If you have useful fields that we can add to make the lives of others more easy, you can suggest additional examples for us to add.
+-   field format: ‘ + appendix type: ‘pre-defined list’ -&gt; you need to choose one of the values from the appendix. 
+    If you really think you need a value that is not here, you can contact DataXR and we can discuss, but this is not very likely.
+-   field format: ‘ontology with examples’ -&gt; find a relevant term in the listed ontologies. 
+    If there is no term for your situation, and you think we should define a term for CropXR you can again contact us. Many fields offer a free text field next to the ontology field. The ontology is an unambiguous way to describe the field value. If no predefined description fits, I think a free text entry should be sufficient.</p>
+<p>The appendices contain lists. 
+The appendices are not to be filled, they are a reference and help to fill the fields of the main section.</p>
+<h4 id="combined-study">Combined study<a class="headerlink" href="#combined-study" title="Permanent link">&para;</a></h4>
 <p>For now, there is a separate metadata template for phenotyping and sequencing studies.
 Choose the template that allows you to describe the general information and experimental conditions.
 That includes the following sheets:</p>
@@ -1587,6 +1719,23 @@ That includes the following sheets:</p>
 </ul>
 <p>The for the remaining sections, use both sheets to properly capture the experiments. 
 Make sure to use the same IDs or make references to the IDs used in the other template, so plants/samples can be linked.</p>
+<h2 id="outlook-catalogue">Outlook: catalogue<a class="headerlink" href="#outlook-catalogue" title="Permanent link">&para;</a></h2>
+<p>The metadata is currently collected in Excel templates. 
+The metadata that is collected in these templates, will be imported into a catalogue. 
+In this catalogue people of the consortium can find studies, view and download the metadata en view the associated data. 
+In the catalogue, the data producing researchers will also be able to manage who can view their study. 
+It will be made available to you as soon as possible.</p>
+<p>[insert screenshot of catalogue with example studies]</p>
+<p>In the future catalogue, the phenotyping and sequencing templates will be combined, 
+so the information about the experiment and treatment is captured once.
+You describe the plants and conditions, and from there start multiple types of measurements.
+It will also be possible to describe the lineage of derived data files.</p>
+<p>What will stay:
+- the same information can be captured, somewhat differently organized
+- the same concepts and decisions are needed, like the definition of observation units
+- there is still decisions required from the researcher how to best capture what is important to your study
+- sequencing many suggested fields (additional fields can still be added as needed)</p>
+<p>All data filled in the current metadata templates will be ingested into the catalogue. No effort by the users will be lost.</p>
 
 
 
