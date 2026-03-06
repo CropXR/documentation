@@ -112,6 +112,7 @@ nav:
   - Guides:
     - guides/index.md
     - General Workflow: guides/stepwise-guide.md
+    - Uploading Large Datasets: guides/uploading-large-datasets.md
   - Research Drive:
     - research-drive/index.md
     - Getting Access: research-drive/getting-access.md

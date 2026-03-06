@@ -14,6 +14,7 @@ This section provides step-by-step instructions for common tasks in the CropXR d
 
 ## Research Drive
 
+- [Uploading Large Datasets](uploading-large-datasets.md) - Workflow for uploading and securing large datasets
 - [Connecting via Rclone](../research-drive/connecting/via-rclone.md) - Command-line data transfers
 - [Connecting via Browser](../research-drive/connecting/via-browser.md) - Web interface access
 - [Uploading Data](../research-drive/uploading-data.md) - Overview of upload methods
