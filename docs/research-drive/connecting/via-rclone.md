@@ -5,6 +5,38 @@ Rclone is an open-source command-line tool for managing files across cloud stora
 !!! tip "When to use Rclone"
     Use Rclone for large datasets (10+ GB) or when you need scripted/automated transfers. For smaller uploads, the [browser interface](via-browser.md) may be simpler.
 
+## The Command Line
+
+The command line (interface) allows you to interact with a computer through text commands.
+
+The command line has different names, depending on the software platform.
+
+| Operating system | Term|  
+|--------|----------|
+| Windows | Command Prompt|
+| Mac| Terminal|
+| Linux | Terminal|
+
+
+## Accessing the Command Line
+
+### Windows
+
+- Click the Start menu or press the windows key
+- Type `cmd` or `Command Prompt`
+- Click the result
+
+### Mac (macOS)
+
+- Press Command (⌘) + Space bar
+- Type `Terminal`
+- Press Enter
+
+### Linux
+- Press the windows key (Start menu)
+- Type `Terminal`
+- Press Enter
+
 ## Choosing the Right Method
 
 | Method | Best for | Considerations |
@@ -12,6 +44,12 @@ Rclone is an open-source command-line tool for managing files across cloud stora
 | **Copy** | One-time uploads, archiving data | Files are transferred once; no ongoing sync |
 | **Sync** | Keeping folders in sync | Deletes files at destination that don't exist at source |
 | **Mount** | Interactive work, browsing files | Requires stable connection; slower for large operations |
+
+## Obtaining a folder path
+
+rclone commands such as copy & sync require you to specify a local folder path. This is the location of a folder on your machine that you wish to act on.
+
+Drag your desired folder onto the terminal, the terminal automatically receives the path.
 
 ### Copy vs Sync
 
@@ -87,17 +125,26 @@ rclone mount "cropxr:folder" /mount/point --vfs-cache-mode writes
 
 ## Installation
 
+=== "Windows"
+
+    1. Download rclone from [rclone.org/downloads](https://rclone.org/downloads/)
+    2. Extract the download to a folder (e.g., `C:\rclone`)
+    3. Open the rclone folder in File Explorer
+    4. Click the address bar at the top and type 'cmd'
+    5. Press Enter. This opens a command prompt window with the rclone folder set as the working directory
+    6. Run commands from that folder, or add it to your PATH
+
+    When running commands from inside the rclone folder, you must start your commands with .\rclone  to specify that you are running the rclone program within the folder.
+
+    Example:  .\rclone copy "C:\local\dataset" "cropxr:destination/folder"
+
 === "Linux/macOS"
 
     ```bash
     sudo -v ; curl https://rclone.org/install.sh | sudo bash
     ```
 
-=== "Windows"
-
-    1. Download from [rclone.org/downloads](https://rclone.org/downloads/)
-    2. Extract to a folder (e.g., `C:\rclone`)
-    3. Run commands from that folder, or add it to your PATH
+    This is a system-wide install of rclone, which means that rclone can be run from any location within the terminal. You can therefore omit  `./rclone` from the beginning of commands 
 
 Verify installation:
 
@@ -120,7 +167,9 @@ rclone --version
 rclone obscure YOUR_APP_PASSWORD
 ```
 
-Save the output string for the next step.
+NOTE: YOUR_APP_PASSWORD is a placeholder (demonstrative example), please substitute this with your actual app password.
+
+Save the output string (text) for the next step.
 
 ### Step 3: Get Your WebDAV URL
 
@@ -128,27 +177,21 @@ Save the output string for the next step.
 2. Click **Settings** (bottom left corner) > **WebDAV**
 3. Copy the URL (format: `https://cropxr.data.surf.nl/remote.php/dav/files/your@email.com/`)
 
-### Step 4: Create Configuration File
+### Step 4: rclone configuration
 
-Create or edit the rclone configuration file:
-
-| OS | Path |
-|---|---|
-| Linux/macOS | `~/.config/rclone/rclone.conf` |
-| Windows | `%USERPROFILE%\.config\rclone\rclone.conf` |
-
-Add the following:
-
-```ini
-[cropxr]
-type = webdav
-url = https://cropxr.data.surf.nl/remote.php/dav/files/your@email.com
-vendor = nextcloud
-user = your@email.com
-pass = YOUR_OBSCURED_PASSWORD
-```
-
-Replace `your@email.com` with your login email and `YOUR_OBSCURED_PASSWORD` with the output from Step 2.
+1. Open the command line in the rclone folder. 
+2. Run ``` .\rclone config``` (This starts the built-in config setup tool)
+3. Create a new connection by typing `n`
+4. Enter the name for the remote connection e.g. `cropxr`
+5. Scroll through the list for your desired storage type e.g. `webdav` and enter its number.
+6. Enter the connection details
+    - URL: `https://cropxr.data.surf.nl/remote.php/dav/files/your@email.com`  
+    - Vendor: `nextcloud` or 2 
+    - User: enter your login email address  
+    - Password: paste your obscured password (from Step 2)
+7. Confirm the settings when prompted and save the configuration.
+8. Enter `No` for editing advanced config
+9. Enter `Yes` when asked about keeping the newly configured remote connection.
 
 ### Step 5: Test Connection
 
@@ -171,6 +214,19 @@ For large files, add a timeout (approximately 10 minutes per GB):
 ```bash
 rclone copy --timeout 60m /local/source "cropxr:destination/folder"
 ```
+
+### Step 6: Commands for verifying successful file transfer
+
+```.\rclone ls cropxr:destination/folder```
+
+This command shows a list of files stored in the remote destination.
+You can use this to check that your files appear in the list and that the file names look correct.
+
+```.\rclone check "C:\path\to\your\files" cropxr:destination/folder```
+
+This command compares files between your computer and the remote destination.
+
+The absence of errors means that everything matches. Errors indicate that files did not transfer correctly or are missing. In such a case, try repeating the `copy`   and `check` commands.
 
 ### Mounting as Local Drive
 
