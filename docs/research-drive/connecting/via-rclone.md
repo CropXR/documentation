@@ -248,12 +248,12 @@ rclone copy --timeout 60m /local/source "cropxr:destination/folder"
 
 ### Step 6: Commands for verifying successful file transfer
 
-`.\rclone ls cropxr:destination/folder`
+`rclone ls cropxr:destination/folder`
 
 This command shows a list of files stored in the remote destination.
 You can use this to check that your files appear in the list and that the file names look correct.
 
-`.\rclone check "C:\path\to\your\files" cropxr:destination/folder`
+`rclone check "C:\path\to\your\files" cropxr:destination/folder`
 
 This command compares files between your computer and the remote destination.
 
