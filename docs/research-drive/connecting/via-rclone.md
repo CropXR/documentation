@@ -140,8 +140,7 @@ Refer to the table below to easily identify the correct download for your machin
 
 !!! tip
     If downloading and extracting rclone, place the extracted folder on the local drive or OneDrive.
-    Do not place it on a university network drive e.g. //WURNET
-
+    Do not place it on a university network drive e.g. //WURNET.
 
 ### Windows
 
@@ -203,26 +202,16 @@ rclone --version
 3. Under "Devices & sessions", click **Create new app password**
 4. Copy the password immediately (it is only shown once)
 
-### Step 2: Obscure the Password
-
-```bash
-rclone obscure YOUR_APP_PASSWORD
-```
-
-NOTE: YOUR_APP_PASSWORD is a placeholder (demonstrative example), please substitute this with your actual app password.
-
-Save the output string (text) for the next step.
-
-### Step 3: Get Your WebDAV URL
+### Step 2: Get Your WebDAV URL
 
 1. In Research Drive, go to **Files**
 2. Click **Settings** (bottom left corner) > **WebDAV**
 3. Copy the URL (format: `https://cropxr.data.surf.nl/remote.php/dav/files/your@email.com/`)
 
-### Step 4: rclone configuration
+### Step 3: rclone configuration
 
 1. Open the command line in the rclone folder.
-2. Run `.\rclone config` (This starts the built-in config setup tool)
+2. Run `rclone config` (This starts the built-in config setup tool)
 3. Create a new connection by typing `n`
 4. Enter the name for the remote connection e.g. `cropxr`
 5. Scroll through the list for your desired storage type e.g. `webdav` and enter its number.
@@ -230,12 +219,12 @@ Save the output string (text) for the next step.
    - URL: `https://cropxr.data.surf.nl/remote.php/dav/files/your@email.com`
    - Vendor: `nextcloud` or 2
    - User: enter your login email address
-   - Password: enter your login password
+   - Password: enter your app password
 7. Confirm the settings when prompted and save the configuration.
 8. Enter `No` for editing advanced config
 9. Enter `Yes` when asked about keeping the newly configured remote connection.
 
-### Step 5: Test Connection
+### Step 4: Test Connection
 
 ```bash
 rclone lsd cropxr:
