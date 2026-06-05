@@ -37,6 +37,12 @@ The command line has different names, depending on the software platform.
 - Type `Terminal`
 - Press Enter
 
+## Obtaining a folder path
+
+rclone commands such as copy & sync require you to specify a local folder path. This is the location of a folder on your machine that you wish to act on.
+
+Drag your desired folder onto the terminal, the terminal automatically receives the path.
+
 ## Choosing the Right Method
 
 | Method    | Best for                        | Considerations                  |
@@ -44,12 +50,6 @@ The command line has different names, depending on the software platform.
 | **Copy**  | One-time uploads, archiving data | Files are transferred once; no ongoing sync |
 | **Sync**  | Keeping folders in sync         | Deletes files at destination that don't exist at source |
 | **Mount** | Interactive work, browsing files | Requires stable connection; slower for large operations |
-
-## Obtaining a folder path
-
-rclone commands such as copy & sync require you to specify a local folder path. This is the location of a folder on your machine that you wish to act on.
-
-Drag your desired folder onto the terminal, the terminal automatically receives the path.
 
 ### Copy vs Sync
 
