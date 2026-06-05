@@ -17,7 +17,6 @@ The command line has different names, depending on the software platform.
 | Mac| Terminal|
 | Linux | Terminal|
 
-
 ## Accessing the Command Line
 
 ### Windows
@@ -123,28 +122,60 @@ rclone mount "cropxr:folder" /mount/point --vfs-cache-mode writes
 !!! warning "Version Requirement"
     Rclone version **1.63.1 or newer** is required for Nextcloud compatibility. Earlier versions will fail with a chunked upload error.
 
+## Downloading rclone
+
+Download rclone from [rclone.org/downloads](https://rclone.org/downloads/)
+
+Refer to the table below to easily identify the correct download for your machine.
+
+| Your device | What to download |
+|---|---|
+| Windows | Intel/AMD - 64 Bit |
+| Mac (2020 or newer, M1/M2/M3 chip) | ARM - 64 Bit |
+| Mac (2019 or older, Intel chip) | Intel/AMD - 64 Bit |
+| Linux | Intel/AMD - 64 Bit |
+
 ## Installation
+
+!!! tip
+    If downloading and extracting rclone, place the extracted folder on the local drive or OneDrive.
+    Do not place it on a university network drive e.g. //WURNET 
 
 === "Windows"
 
-    1. Download rclone from [rclone.org/downloads](https://rclone.org/downloads/)
-    2. Extract the download to a folder (e.g., `C:\rclone`)
-    3. Open the rclone folder in File Explorer
-    4. Click the address bar at the top and type 'cmd'
-    5. Press Enter. This opens a command prompt window with the rclone folder set as the working directory
-    6. Run commands from that folder, or add it to your PATH
+    1. Extract the download to a folder (e.g., `C:\rclone`)
+    2. Open the rclone folder in File Explorer
+    3. Click the address bar at the top and type 'cmd'
+    4. Press Enter. This opens a command prompt window with the rclone folder set as the working directory
+    5. Run rclone commands from that folder.
 
-    When running commands from inside the rclone folder, you must start your commands with .\rclone  to specify that you are running the rclone program within the folder.
+    When running commands from inside the rclone folder, you must start your command with .\rclone. The `.\` tells your terminal to run the rclone program inside the folder.
 
-    Example:  .\rclone copy "C:\local\dataset" "cropxr:destination/folder"
+    Example: .\rclone copy "C:\local\dataset" "cropxr:destination/folder"
 
-=== "Linux/macOS"
+=== "Linux/macOS (with admin access)"
 
     ```bash
     sudo -v ; curl https://rclone.org/install.sh | sudo bash
     ```
 
-    This is a system-wide install of rclone, which means that rclone can be run from any location within the terminal. You can therefore omit  `./rclone` from the beginning of commands 
+    This is a system-wide install of rclone, which means that rclone can be run from any location within the terminal. You can therefore run rclone commands without the "./" prefix the "./".
+
+    Example: rclone copy /local/dataset "cropxr:destination/folder"
+
+=== "Linux/macOS (without admin access)"
+
+    1. Open your Files app and go to your Downloads folder. 
+    2. Right-click the downloaded file and choose Extract Here.
+    3. Open the extracted folder (it will have a name like `rclone-v1.xx.x-linux-amd64`).
+    4. Inside this folder, you should see a file called `rclone`.
+    5. Right-click inside the folder and choose Open in Terminal
+    6. Make rclone executable by running:
+       chmod +x rclone
+    7. You can now run rclone commands from this terminal window.
+
+    When running commands from inside the rclone folder, you must start your command with `./rclone`. The `./` tells the terminal to run the rclone program inside the folder.
+
 
 Verify installation:
 
@@ -188,7 +219,7 @@ Save the output string (text) for the next step.
     - URL: `https://cropxr.data.surf.nl/remote.php/dav/files/your@email.com`  
     - Vendor: `nextcloud` or 2 
     - User: enter your login email address  
-    - Password: paste your obscured password (from Step 2)
+    - Password: enter your login password 
 7. Confirm the settings when prompted and save the configuration.
 8. Enter `No` for editing advanced config
 9. Enter `Yes` when asked about keeping the newly configured remote connection.
