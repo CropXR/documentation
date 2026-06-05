@@ -3,7 +3,7 @@
 Rclone is an open-source command-line tool for managing files across cloud storage platforms. It supports syncing, copying, and transferring files of virtually any size.
 
 !!! tip "When to use Rclone"
-    Use Rclone for large datasets (10+ GB) or when you need scripted/automated transfers. For smaller uploads, the [browser interface](via-browser.md) may be simpler.
+    Use Rclone for large datasets (10+ GB) or when you need scripted/automated transfers. For smaller uploads, the [browser interface][1] may be simpler.
 
 ## The Command Line
 
@@ -11,11 +11,11 @@ The command line (interface) allows you to interact with a computer through text
 
 The command line has different names, depending on the software platform.
 
-| Operating system | Term|  
-|--------|----------|
-| Windows | Command Prompt|
-| Mac| Terminal|
-| Linux | Terminal|
+| Operating system | Term           |
+| ---------------- | -------------- |
+| Windows          | Command Prompt |
+| Mac              | Terminal       |
+| Linux            | Terminal       |
 
 ## Accessing the Command Line
 
@@ -32,16 +32,17 @@ The command line has different names, depending on the software platform.
 - Press Enter
 
 ### Linux
+
 - Press the windows key (Start menu)
 - Type `Terminal`
 - Press Enter
 
 ## Choosing the Right Method
 
-| Method | Best for | Considerations |
-|--------|----------|----------------|
-| **Copy** | One-time uploads, archiving data | Files are transferred once; no ongoing sync |
-| **Sync** | Keeping folders in sync | Deletes files at destination that don't exist at source |
+| Method    | Best for                        | Considerations                  |
+| --------- | ------------------------------- | ------------------------------- |
+| **Copy**  | One-time uploads, archiving data | Files are transferred once; no ongoing sync |
+| **Sync**  | Keeping folders in sync         | Deletes files at destination that don't exist at source |
 | **Mount** | Interactive work, browsing files | Requires stable connection; slower for large operations |
 
 ## Obtaining a folder path
@@ -82,7 +83,7 @@ Mounting is **not recommended** for:
 
 ## Working with Permissions
 
-Research Drive permissions affect what you can access via Rclone. See [Sharing Data](../sharing-data.md) for details on managing permissions.
+Research Drive permissions affect what you can access via Rclone. See [Sharing Data][2] for details on managing permissions.
 
 ### What You Can See
 
@@ -103,7 +104,7 @@ Before uploading, ensure you have **write access** to the destination folder. If
 4. **Notify the data team** if permissions need adjustment after upload
 
 !!! note "Permissions after upload"
-    Once you upload data to a shared folder, the folder owner controls access. Coordinate with your team about who should have read/write access. See [Sharing Data](../sharing-data.md) for sharing guidelines.
+    Once you upload data to a shared folder, the folder owner controls access. Coordinate with your team about who should have read/write access. See [Sharing Data][2] for sharing guidelines.
 
 ## Quickstart
 
@@ -128,18 +129,18 @@ Download rclone from [rclone.org/downloads](https://rclone.org/downloads/)
 
 Refer to the table below to easily identify the correct download for your machine.
 
-| Your device | What to download |
-|---|---|
-| Windows | Intel/AMD - 64 Bit |
-| Mac (2020 or newer, M1/M2/M3 chip) | ARM - 64 Bit |
-| Mac (2019 or older, Intel chip) | Intel/AMD - 64 Bit |
-| Linux | Intel/AMD - 64 Bit |
+| Your device                        | What to download   |
+| ---------------------------------- | ------------------ |
+| Windows                            | Intel/AMD - 64 Bit |
+| Mac (2020 or newer, M1/M2/M3 chip) | ARM - 64 Bit       |
+| Mac (2019 or older, Intel chip)    | Intel/AMD - 64 Bit |
+| Linux                              | Intel/AMD - 64 Bit |
 
 ## Installation
 
 !!! tip
     If downloading and extracting rclone, place the extracted folder on the local drive or OneDrive.
-    Do not place it on a university network drive e.g. //WURNET 
+    Do not place it on a university network drive e.g. //WURNET
 
 === "Windows"
 
@@ -151,7 +152,11 @@ Refer to the table below to easily identify the correct download for your machin
 
     When running commands from inside the rclone folder, you must start your command with .\rclone. The `.\` tells your terminal to run the rclone program inside the folder.
 
-    Example: .\rclone copy "C:\local\dataset" "cropxr:destination/folder"
+    **Example:**
+
+    ```bat
+    .\rclone copy "C:\local\dataset" "cropxr:destination/folder"
+    ```
 
 === "Linux/macOS (with admin access)"
 
@@ -161,17 +166,22 @@ Refer to the table below to easily identify the correct download for your machin
 
     This is a system-wide install of rclone, which means that rclone can be run from any location within the terminal. You can therefore run rclone commands without the "./" prefix the "./".
 
-    Example: rclone copy /local/dataset "cropxr:destination/folder"
-
+    **Example:**
+    ```bash
+    rclone copy /local/dataset "cropxr:destination/folder"
+    ```
+    
 === "Linux/macOS (without admin access)"
 
-    1. Open your Files app and go to your Downloads folder. 
+    1. Open your Files app and go to your Downloads folder.
     2. Right-click the downloaded file and choose Extract Here.
     3. Open the extracted folder (it will have a name like `rclone-v1.xx.x-linux-amd64`).
     4. Inside this folder, you should see a file called `rclone`.
-    5. Right-click inside the folder and choose Open in Terminal
+    5. Right-click inside the folder and choose **Open in Terminal**
     6. Make rclone executable by running:
-       chmod +x rclone
+    ```bash
+    chmod +x rclone
+    ```
     7. You can now run rclone commands from this terminal window.
 
     When running commands from inside the rclone folder, you must start your command with `./rclone`. The `./` tells the terminal to run the rclone program inside the folder.
@@ -210,16 +220,16 @@ Save the output string (text) for the next step.
 
 ### Step 4: rclone configuration
 
-1. Open the command line in the rclone folder. 
-2. Run ``` .\rclone config``` (This starts the built-in config setup tool)
+1. Open the command line in the rclone folder.
+2. Run `.\rclone config` (This starts the built-in config setup tool)
 3. Create a new connection by typing `n`
 4. Enter the name for the remote connection e.g. `cropxr`
 5. Scroll through the list for your desired storage type e.g. `webdav` and enter its number.
 6. Enter the connection details
-    - URL: `https://cropxr.data.surf.nl/remote.php/dav/files/your@email.com`  
-    - Vendor: `nextcloud` or 2 
-    - User: enter your login email address  
-    - Password: enter your login password 
+   - URL: `https://cropxr.data.surf.nl/remote.php/dav/files/your@email.com`
+   - Vendor: `nextcloud` or 2
+   - User: enter your login email address
+   - Password: enter your login password
 7. Confirm the settings when prompted and save the configuration.
 8. Enter `No` for editing advanced config
 9. Enter `Yes` when asked about keeping the newly configured remote connection.
@@ -248,12 +258,12 @@ rclone copy --timeout 60m /local/source "cropxr:destination/folder"
 
 ### Step 6: Commands for verifying successful file transfer
 
-```.\rclone ls cropxr:destination/folder```
+`.\rclone ls cropxr:destination/folder`
 
 This command shows a list of files stored in the remote destination.
 You can use this to check that your files appear in the list and that the file names look correct.
 
-```.\rclone check "C:\path\to\your\files" cropxr:destination/folder```
+`.\rclone check "C:\path\to\your\files" cropxr:destination/folder`
 
 This command compares files between your computer and the remote destination.
 
@@ -263,17 +273,21 @@ The absence of errors means that everything matches. Errors indicate that files 
 
 === "Linux/macOS"
 
-    ```bash
-    rclone mount "cropxr:folder" /local/mount/point --vfs-cache-mode writes --use-cookies -v
-    ```
+```
+```bash
+rclone mount "cropxr:folder" /local/mount/point --vfs-cache-mode writes --use-cookies -v
+```
+```
 
 === "Windows"
 
-    First install [WinFsp](https://winfsp.dev/) (requires admin privileges).
+```
+First install [WinFsp](https://winfsp.dev/) (requires admin privileges).
 
-    ```bash
-    rclone mount "cropxr:folder" K: --vfs-cache-mode writes --use-cookies -v
-    ```
+```bash
+rclone mount "cropxr:folder" K: --vfs-cache-mode writes --use-cookies -v
+```
+```
 
 !!! note "Path formats"
     Paths can be either the full path or the shared folder name:
@@ -286,21 +300,21 @@ The absence of errors means that everything matches. Errors indicate that files 
 
 ### Command Flags Explained
 
-| Flag | Purpose |
-|------|---------|
+| Flag                      | Purpose                              |
+| ------------------------- | ------------------------------------ |
 | `--vfs-cache-mode writes` | Caches files during upload for reliable transfers |
-| `--use-cookies` | Maintains session with Nextcloud/WebDAV servers |
-| `-v` | Verbose output for monitoring progress |
-| `--timeout` | Maximum time for a single operation |
+| `--use-cookies`           | Maintains session with Nextcloud/WebDAV servers |
+| `-v`                      | Verbose output for monitoring progress |
+| `--timeout`               | Maximum time for a single operation  |
 
 ## Troubleshooting
 
-| Issue | Solution |
-|-------|----------|
-| "chunked upload" error | Update rclone to version 1.63.1 or newer |
-| Connection timeout | Add `--timeout 60m` or increase the value |
-| Permission denied | Verify your app password and username |
-| Mount not working (Windows) | Ensure WinFsp is installed |
+| Issue                       | Solution                          |
+| --------------------------- | --------------------------------- |
+| "chunked upload" error      | Update rclone to version 1.63.1 or newer |
+| Connection timeout          | Add `--timeout 60m` or increase the value |
+| Permission denied           | Verify your app password and username |
+| Mount not working (Windows) | Ensure WinFsp is installed        |
 
 !!! tip "When reporting issues"
     Include the rclone command you ran, the error message, and your rclone version (`rclone --version`). For Research Drive platform issues, see [SURF servicedesk](https://servicedesk.surf.nl/).
@@ -308,9 +322,9 @@ The absence of errors means that everything matches. Errors indicate that files 
 ## See Also
 
 - [Uploading Data](../uploading-data.md) - Overview of upload methods
-- [Via Browser](via-browser.md) - Simpler option for small uploads
+- [Via Browser][1] - Simpler option for small uploads
 - [Via NextCloud](via-nextcloud.md) - Desktop sync client alternative
-- [Sharing Data](../sharing-data.md) - Managing folder permissions
+- [Sharing Data][2] - Managing folder permissions
 
 ## External References
 
@@ -328,3 +342,8 @@ The absence of errors means that everything matches. Errors indicate that files 
 - [Rclone sync](https://rclone.org/commands/rclone_sync/) - Sync command reference
 - [Rclone mount](https://rclone.org/commands/rclone_mount/) - Mount command reference
 - [Rclone flags](https://rclone.org/flags/) - Global flags reference
+
+[1]: via-browser.md
+[2]: ../sharing-data.md
+
+```
