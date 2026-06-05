@@ -142,56 +142,57 @@ Refer to the table below to easily identify the correct download for your machin
     If downloading and extracting rclone, place the extracted folder on the local drive or OneDrive.
     Do not place it on a university network drive e.g. //WURNET
 
-=== "Windows"
 
-    1. Extract the download to a folder (e.g., `C:\rclone`)
-    2. Open the rclone folder in File Explorer
-    3. Click the address bar at the top and type 'cmd'
-    4. Press Enter. This opens a command prompt window with the rclone folder set as the working directory
-    5. Run rclone commands from that folder.
+### Windows
 
-    When running commands from inside the rclone folder, you must start your command with .\rclone. The `.\` tells your terminal to run the rclone program inside the folder.
+1. Extract the download to a folder (e.g., `C:\rclone`)
+2. Open the rclone folder in File Explorer
+3. Click the address bar at the top and type 'cmd'
+4. Press Enter. This opens a command prompt window with the rclone folder set as the working directory
+5. Run rclone commands from that folder.
 
-    **Example:**
+When running commands from inside the rclone folder, you must start your command with .\rclone. The `.\` tells your terminal to run the rclone program inside the folder.
 
-    ```bat
-    .\rclone copy "C:\local\dataset" "cropxr:destination/folder"
-    ```
+**Example:**
 
-=== "Linux/macOS (with admin access)"
+```bat
+.\rclone copy "C:\local\dataset" "cropxr:destination/folder"
+```
 
-    ```bash
-    sudo -v ; curl https://rclone.org/install.sh | sudo bash
-    ```
+### Linux/macOS (with admin access)
 
-    This is a system-wide install of rclone, which means that rclone can be run from any location within the terminal. You can therefore run rclone commands without the "./" prefix the "./".
+```bash
+sudo -v ; curl https://rclone.org/install.sh | sudo bash
+```
 
-    **Example:**
-    ```bash
-    rclone copy /local/dataset "cropxr:destination/folder"
-    ```
+This is a system-wide install of rclone, which means that rclone can be run from any location within the terminal. You can therefore run rclone commands without the "./" prefix.
+
+**Example:**
+```bash
+rclone copy /local/dataset "cropxr:destination/folder"
+```
     
-=== "Linux/macOS (without admin access)"
+### Linux/macOS (without admin access)
 
-    1. Open your Files app and go to your Downloads folder.
-    2. Right-click the downloaded file and choose Extract Here.
-    3. Open the extracted folder (it will have a name like `rclone-v1.xx.x-linux-amd64`).
-    4. Inside this folder, you should see a file called `rclone`.
-    5. Right-click inside the folder and choose **Open in Terminal**
-    6. Make rclone executable by running:
-    ```bash
-    chmod +x rclone
-    ```
-    7. You can now run rclone commands from this terminal window.
+1. Open your Files app and go to your Downloads folder.
+2. Right-click the downloaded file and choose Extract Here.
+3. Open the extracted folder (it will have a name like `rclone-v1.xx.x-linux-amd64`).
+4. Inside this folder, you should see a file called `rclone`.
+5. Right-click inside the folder and choose **Open in Terminal**
+6. Make rclone executable by running:
+```bash
+chmod +x rclone
+```
+7. You can now run rclone commands from this terminal window.
 
-    When running commands from inside the rclone folder, you must start your command with `./rclone`. The `./` tells the terminal to run the rclone program inside the folder.
-
+When running commands from inside the rclone folder, you must start your command with `./rclone`. The `./` tells the terminal to run the rclone program inside the folder.
 
 Verify installation:
 
 ```bash
 rclone --version
 ```
+
 
 ## Configuration
 
