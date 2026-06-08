@@ -3,7 +3,7 @@
 Rclone is an open-source command-line tool for managing files across cloud storage platforms. It supports syncing, copying, and transferring files of virtually any size.
 
 !!! tip "When to use Rclone"
-    Use Rclone for large datasets (10+ GB) or when you need scripted/automated transfers. For smaller uploads, the [browser interface][1] may be simpler.
+    Use Rclone for large datasets (10+ GB) or when you need scripted/automated transfers. For smaller uploads, the [browser interface](via-browser.md) may be simpler.
 
 ## The Command Line
 
@@ -83,7 +83,7 @@ Mounting is **not recommended** for:
 
 ## Working with Permissions
 
-Research Drive permissions affect what you can access via Rclone. See [Sharing Data][2] for details on managing permissions.
+Research Drive permissions affect what you can access via Rclone. See [Sharing Data](../sharing-data.md) for details on managing permissions.
 
 ### What You Can See
 
@@ -104,7 +104,7 @@ Before uploading, ensure you have **write access** to the destination folder. If
 4. **Notify the data team** if permissions need adjustment after upload
 
 !!! note "Permissions after upload"
-    Once you upload data to a shared folder, the folder owner controls access. Coordinate with your team about who should have read/write access. See [Sharing Data][2] for sharing guidelines.
+    Once you upload data to a shared folder, the folder owner controls access. Coordinate with your team about who should have read/write access. See [Sharing Data](../sharing-data.md) for sharing guidelines.
 
 ## Quickstart
 
@@ -246,14 +246,18 @@ For large files, add a timeout (approximately 10 minutes per GB):
 rclone copy --timeout 60m /local/source "cropxr:destination/folder"
 ```
 
-### Step 6: Commands for verifying successful file transfer
+### Commands for verifying successful file transfer
 
-`rclone ls cropxr:destination/folder`
+```bash
+rclone ls cropxr:destination/folder"
+```
 
 This command shows a list of files stored in the remote destination.
 You can use this to check that your files appear in the list and that the file names look correct.
 
-`rclone check "C:\path\to\your\files" cropxr:destination/folder`
+```bat
+rclone check "C:\path\to\your\files" cropxr:destination/folder
+```
 
 This command compares files between your computer and the remote destination.
 
@@ -263,30 +267,26 @@ The absence of errors means that everything matches. Errors indicate that files 
 
 === "Linux/macOS"
 
-```
-```bash
-rclone mount "cropxr:folder" /local/mount/point --vfs-cache-mode writes --use-cookies -v
-```
-```
+    ```bash
+    rclone mount "cropxr:folder" /local/mount/point --vfs-cache-mode writes --use-cookies -v
+    ```
 
 === "Windows"
 
-```
-First install [WinFsp](https://winfsp.dev/) (requires admin privileges).
+    First install [WinFsp](https://winfsp.dev/) (requires admin privileges).
 
-```bash
-rclone mount "cropxr:folder" K: --vfs-cache-mode writes --use-cookies -v
-```
-```
+    ```bash
+    rclone mount "cropxr:folder" K: --vfs-cache-mode writes --use-cookies -v
+    ```
 
-!!! note "Path formats"
-    Paths can be either the full path or the shared folder name:
+    !!! note "Path formats"
+        Paths can be either the full path or the shared folder name:
 
-    - Full path: `cropxr:cropxr (Projectfolder)/investigations/inv_folder/study_folder`
-    - Shared folder: `cropxr:study_folder`
+        - Full path: `cropxr:cropxr (Projectfolder)/investigations/inv_folder/study_folder`
+        - Shared folder: `cropxr:study_folder`
 
-!!! tip "Best practice"
-    Mount a specific folder (e.g., your study folder) rather than the root. This improves performance and simplifies navigation.
+    !!! tip "Best practice"
+        Mount a specific folder (e.g., your study folder) rather than the root. This improves performance and simplifies navigation.
 
 ### Command Flags Explained
 
@@ -312,9 +312,9 @@ rclone mount "cropxr:folder" K: --vfs-cache-mode writes --use-cookies -v
 ## See Also
 
 - [Uploading Data](../uploading-data.md) - Overview of upload methods
-- [Via Browser][1] - Simpler option for small uploads
+- [Via Browser](via-browser.md)  - Simpler option for small uploads
 - [Via NextCloud](via-nextcloud.md) - Desktop sync client alternative
-- [Sharing Data][2] - Managing folder permissions
+- [Sharing Data](../sharing-data.md) - Managing folder permissions
 
 ## External References
 
@@ -332,8 +332,3 @@ rclone mount "cropxr:folder" K: --vfs-cache-mode writes --use-cookies -v
 - [Rclone sync](https://rclone.org/commands/rclone_sync/) - Sync command reference
 - [Rclone mount](https://rclone.org/commands/rclone_mount/) - Mount command reference
 - [Rclone flags](https://rclone.org/flags/) - Global flags reference
-
-[1]: via-browser.md
-[2]: ../sharing-data.md
-
-```
