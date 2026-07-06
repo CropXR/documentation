@@ -5,12 +5,50 @@ Rclone is an open-source command-line tool for managing files across cloud stora
 !!! tip "When to use Rclone"
     Use Rclone for large datasets (10+ GB) or when you need scripted/automated transfers. For smaller uploads, the [browser interface](via-browser.md) may be simpler.
 
+## The Command Line
+
+The command line (interface) allows you to interact with a computer through text commands.
+
+The command line has different names, depending on the software platform.
+
+| Operating system | Term           |
+| ---------------- | -------------- |
+| Windows          | Command Prompt |
+| Mac              | Terminal       |
+| Linux            | Terminal       |
+
+## Accessing the Command Line
+
+### Windows
+
+- Click the Start menu or press the windows key
+- Type `cmd` or `Command Prompt`
+- Click the result
+
+### Mac (macOS)
+
+- Press Command (⌘) + Space bar
+- Type `Terminal`
+- Press Enter
+
+### Linux
+
+- Press the windows key (Start menu)
+- Type `Terminal`
+- Press Enter
+
+## Obtaining a folder path
+
+rclone commands such as copy & sync require you to specify a local folder path. This is the location of a folder on your machine that you wish to act on.
+
+Drag your desired folder onto the terminal, the terminal automatically receives the path.
+
 ## Choosing the Right Method
 
-| Method | Best for | Considerations |
-|--------|----------|----------------|
-| **Copy** | One-time uploads, archiving data | Files are transferred once; no ongoing sync |
-| **Sync** | Keeping folders in sync | Deletes files at destination that don't exist at source |
+| Method    | Best for                        | Considerations                  |
+| --------- | ------------------------------- | ------------------------------- |
+| **Copy**  | One-time uploads, archiving data | Files are transferred once; no ongoing sync |
+| **Sync**  | Keeping folders in sync         | Deletes files at destination that don't exist at source |
 | **Mount** | Interactive work, browsing files | Requires stable connection; slower for large operations |
 
 ### Copy vs Sync
@@ -85,25 +123,75 @@ rclone mount "cropxr:folder" /mount/point --vfs-cache-mode writes
 !!! warning "Version Requirement"
     Rclone version **1.63.1 or newer** is required for Nextcloud compatibility. Earlier versions will fail with a chunked upload error.
 
+## Downloading rclone
+
+Download rclone from [rclone.org/downloads](https://rclone.org/downloads/)
+
+Refer to the table below to easily identify the correct download for your machine.
+
+| Your device                        | What to download   |
+| ---------------------------------- | ------------------ |
+| Windows                            | Intel/AMD - 64 Bit |
+| Mac (2020 or newer, M1/M2/M3 chip) | ARM - 64 Bit       |
+| Mac (2019 or older, Intel chip)    | Intel/AMD - 64 Bit |
+| Linux                              | Intel/AMD - 64 Bit |
+
 ## Installation
 
-=== "Linux/macOS"
+!!! tip
+    If downloading and extracting rclone, place the extracted folder on the local drive or OneDrive.
+    Do not place it on a university network drive e.g. //WURNET.
 
-    ```bash
-    sudo -v ; curl https://rclone.org/install.sh | sudo bash
-    ```
+### Windows
 
-=== "Windows"
+1. Extract the download to a folder (e.g., `C:\rclone`)
+2. Open the rclone folder in File Explorer
+3. Click the address bar at the top and type 'cmd'
+4. Press Enter. This opens a command prompt window with the rclone folder set as the working directory
+5. Run rclone commands from that folder.
 
-    1. Download from [rclone.org/downloads](https://rclone.org/downloads/)
-    2. Extract to a folder (e.g., `C:\rclone`)
-    3. Run commands from that folder, or add it to your PATH
+When running commands from inside the rclone folder, you must start your command with .\rclone. The `.\` tells your terminal to run the rclone program inside the folder.
+
+**Example:**
+
+```bat
+.\rclone copy "C:\local\dataset" "cropxr:destination/folder"
+```
+
+### Linux/macOS (with admin access)
+
+```bash
+sudo -v ; curl https://rclone.org/install.sh | sudo bash
+```
+
+This is a system-wide install of rclone, which means that rclone can be run from any location within the terminal. You can therefore run rclone commands without the "./" prefix.
+
+**Example:**
+```bash
+rclone copy /local/dataset "cropxr:destination/folder"
+```
+    
+### Linux/macOS (without admin access)
+
+1. Open your Files app and go to your Downloads folder.
+2. Right-click the downloaded file and choose Extract Here.
+3. Open the extracted folder (it will have a name like `rclone-v1.xx.x-linux-amd64`).
+4. Inside this folder, you should see a file called `rclone`.
+5. Right-click inside the folder and choose **Open in Terminal**
+6. Make rclone executable by running:
+```bash
+chmod +x rclone
+```
+7. You can now run rclone commands from this terminal window.
+
+When running commands from inside the rclone folder, you must start your command with `./rclone`. The `./` tells the terminal to run the rclone program inside the folder.
 
 Verify installation:
 
 ```bash
 rclone --version
 ```
+
 
 ## Configuration
 
@@ -114,43 +202,29 @@ rclone --version
 3. Under "Devices & sessions", click **Create new app password**
 4. Copy the password immediately (it is only shown once)
 
-### Step 2: Obscure the Password
-
-```bash
-rclone obscure YOUR_APP_PASSWORD
-```
-
-Save the output string for the next step.
-
-### Step 3: Get Your WebDAV URL
+### Step 2: Get Your WebDAV URL
 
 1. In Research Drive, go to **Files**
 2. Click **Settings** (bottom left corner) > **WebDAV**
 3. Copy the URL (format: `https://cropxr.data.surf.nl/remote.php/dav/files/your@email.com/`)
 
-### Step 4: Create Configuration File
+### Step 3: rclone configuration
 
-Create or edit the rclone configuration file:
+1. Open the command line in the rclone folder.
+2. Run `rclone config` (This starts the built-in config setup tool)
+3. Create a new connection by typing `n`
+4. Enter the name for the remote connection e.g. `cropxr`
+5. Scroll through the list for your desired storage type e.g. `webdav` and enter its number.
+6. Enter the connection details
+   - URL: `https://cropxr.data.surf.nl/remote.php/dav/files/your@email.com`
+   - Vendor: `nextcloud` or 2
+   - User: enter your login email address
+   - Password: enter your app password
+7. Confirm the settings when prompted and save the configuration.
+8. Enter `No` for editing advanced config
+9. Enter `Yes` when asked about keeping the newly configured remote connection.
 
-| OS | Path |
-|---|---|
-| Linux/macOS | `~/.config/rclone/rclone.conf` |
-| Windows | `%USERPROFILE%\.config\rclone\rclone.conf` |
-
-Add the following:
-
-```ini
-[cropxr]
-type = webdav
-url = https://cropxr.data.surf.nl/remote.php/dav/files/your@email.com
-vendor = nextcloud
-user = your@email.com
-pass = YOUR_OBSCURED_PASSWORD
-```
-
-Replace `your@email.com` with your login email and `YOUR_OBSCURED_PASSWORD` with the output from Step 2.
-
-### Step 5: Test Connection
+### Step 4: Test Connection
 
 ```bash
 rclone lsd cropxr:
@@ -172,6 +246,23 @@ For large files, add a timeout (approximately 10 minutes per GB):
 rclone copy --timeout 60m /local/source "cropxr:destination/folder"
 ```
 
+### Commands for verifying successful file transfer
+
+```bash
+rclone ls cropxr:destination/folder"
+```
+
+This command shows a list of files stored in the remote destination.
+You can use this to check that your files appear in the list and that the file names look correct.
+
+```bat
+rclone check "C:\path\to\your\files" cropxr:destination/folder
+```
+
+This command compares files between your computer and the remote destination.
+
+The absence of errors means that everything matches. Errors indicate that files did not transfer correctly or are missing. In such a case, try repeating the `copy`   and `check` commands.
+
 ### Mounting as Local Drive
 
 === "Linux/macOS"
@@ -188,32 +279,32 @@ rclone copy --timeout 60m /local/source "cropxr:destination/folder"
     rclone mount "cropxr:folder" K: --vfs-cache-mode writes --use-cookies -v
     ```
 
-!!! note "Path formats"
-    Paths can be either the full path or the shared folder name:
+    !!! note "Path formats"
+        Paths can be either the full path or the shared folder name:
 
-    - Full path: `cropxr:cropxr (Projectfolder)/investigations/inv_folder/study_folder`
-    - Shared folder: `cropxr:study_folder`
+        - Full path: `cropxr:cropxr (Projectfolder)/investigations/inv_folder/study_folder`
+        - Shared folder: `cropxr:study_folder`
 
-!!! tip "Best practice"
-    Mount a specific folder (e.g., your study folder) rather than the root. This improves performance and simplifies navigation.
+    !!! tip "Best practice"
+        Mount a specific folder (e.g., your study folder) rather than the root. This improves performance and simplifies navigation.
 
 ### Command Flags Explained
 
-| Flag | Purpose |
-|------|---------|
+| Flag                      | Purpose                              |
+| ------------------------- | ------------------------------------ |
 | `--vfs-cache-mode writes` | Caches files during upload for reliable transfers |
-| `--use-cookies` | Maintains session with Nextcloud/WebDAV servers |
-| `-v` | Verbose output for monitoring progress |
-| `--timeout` | Maximum time for a single operation |
+| `--use-cookies`           | Maintains session with Nextcloud/WebDAV servers |
+| `-v`                      | Verbose output for monitoring progress |
+| `--timeout`               | Maximum time for a single operation  |
 
 ## Troubleshooting
 
-| Issue | Solution |
-|-------|----------|
-| "chunked upload" error | Update rclone to version 1.63.1 or newer |
-| Connection timeout | Add `--timeout 60m` or increase the value |
-| Permission denied | Verify your app password and username |
-| Mount not working (Windows) | Ensure WinFsp is installed |
+| Issue                       | Solution                          |
+| --------------------------- | --------------------------------- |
+| "chunked upload" error      | Update rclone to version 1.63.1 or newer |
+| Connection timeout          | Add `--timeout 60m` or increase the value |
+| Permission denied           | Verify your app password and username |
+| Mount not working (Windows) | Ensure WinFsp is installed        |
 
 !!! tip "When reporting issues"
     Include the rclone command you ran, the error message, and your rclone version (`rclone --version`). For Research Drive platform issues, see [SURF servicedesk](https://servicedesk.surf.nl/).
@@ -221,7 +312,7 @@ rclone copy --timeout 60m /local/source "cropxr:destination/folder"
 ## See Also
 
 - [Uploading Data](../uploading-data.md) - Overview of upload methods
-- [Via Browser](via-browser.md) - Simpler option for small uploads
+- [Via Browser](via-browser.md)  - Simpler option for small uploads
 - [Via NextCloud](via-nextcloud.md) - Desktop sync client alternative
 - [Sharing Data](../sharing-data.md) - Managing folder permissions
 
