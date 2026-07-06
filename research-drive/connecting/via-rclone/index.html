@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -979,6 +979,78 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#the-command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Command Line
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-the-command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing the Command Line
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessing the Command Line">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mac (macOS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtaining-a-folder-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Obtaining a folder path
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#choosing-the-right-method" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1090,6 +1162,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#downloading-rclone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloading rclone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1097,6 +1180,45 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linuxmacos-with-admin-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux/macOS (with admin access)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linuxmacos-without-admin-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux/macOS (without admin access)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1124,10 +1246,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-obscure-the-password" class="md-nav__link">
+  <a href="#step-2-get-your-webdav-url" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Obscure the Password
+        Step 2: Get Your WebDAV URL
       
     </span>
   </a>
@@ -1135,10 +1257,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-get-your-webdav-url" class="md-nav__link">
+  <a href="#step-3-rclone-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Get Your WebDAV URL
+        Step 3: rclone configuration
       
     </span>
   </a>
@@ -1146,21 +1268,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4-create-configuration-file" class="md-nav__link">
+  <a href="#step-4-test-connection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Create Configuration File
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-test-connection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Test Connection
+        Step 4: Test Connection
       
     </span>
   </a>
@@ -1189,6 +1300,17 @@
     <span class="md-ellipsis">
       
         Copying Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands-for-verifying-successful-file-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands for verifying successful file transfer
       
     </span>
   </a>
@@ -1758,6 +1880,53 @@
 <p class="admonition-title">When to use Rclone</p>
 <p>Use Rclone for large datasets (10+ GB) or when you need scripted/automated transfers. For smaller uploads, the <a href="../via-browser/">browser interface</a> may be simpler.</p>
 </div>
+<h2 id="the-command-line">The Command Line<a class="headerlink" href="#the-command-line" title="Permanent link">&para;</a></h2>
+<p>The command line (interface) allows you to interact with a computer through text commands.</p>
+<p>The command line has different names, depending on the software platform.</p>
+<table>
+<thead>
+<tr>
+<th>Operating system</th>
+<th>Term</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td>Command Prompt</td>
+</tr>
+<tr>
+<td>Mac</td>
+<td>Terminal</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>Terminal</td>
+</tr>
+</tbody>
+</table>
+<h2 id="accessing-the-command-line">Accessing the Command Line<a class="headerlink" href="#accessing-the-command-line" title="Permanent link">&para;</a></h2>
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Click the Start menu or press the windows key</li>
+<li>Type <code>cmd</code> or <code>Command Prompt</code></li>
+<li>Click the result</li>
+</ul>
+<h3 id="mac-macos">Mac (macOS)<a class="headerlink" href="#mac-macos" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Press Command (⌘) + Space bar</li>
+<li>Type <code>Terminal</code></li>
+<li>Press Enter</li>
+</ul>
+<h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Press the windows key (Start menu)</li>
+<li>Type <code>Terminal</code></li>
+<li>Press Enter</li>
+</ul>
+<h2 id="obtaining-a-folder-path">Obtaining a folder path<a class="headerlink" href="#obtaining-a-folder-path" title="Permanent link">&para;</a></h2>
+<p>rclone commands such as copy &amp; sync require you to specify a local folder path. This is the location of a folder on your machine that you wish to act on.</p>
+<p>Drag your desired folder onto the terminal, the terminal automatically receives the path.</p>
 <h2 id="choosing-the-right-method">Choosing the Right Method<a class="headerlink" href="#choosing-the-right-method" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1847,24 +2016,75 @@
 <p class="admonition-title">Version Requirement</p>
 <p>Rclone version <strong>1.63.1 or newer</strong> is required for Nextcloud compatibility. Earlier versions will fail with a chunked upload error.</p>
 </div>
+<h2 id="downloading-rclone">Downloading rclone<a class="headerlink" href="#downloading-rclone" title="Permanent link">&para;</a></h2>
+<p>Download rclone from <a href="https://rclone.org/downloads/">rclone.org/downloads</a></p>
+<p>Refer to the table below to easily identify the correct download for your machine.</p>
+<table>
+<thead>
+<tr>
+<th>Your device</th>
+<th>What to download</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td>Intel/AMD - 64 Bit</td>
+</tr>
+<tr>
+<td>Mac (2020 or newer, M1/M2/M3 chip)</td>
+<td>ARM - 64 Bit</td>
+</tr>
+<tr>
+<td>Mac (2019 or older, Intel chip)</td>
+<td>Intel/AMD - 64 Bit</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>Intel/AMD - 64 Bit</td>
+</tr>
+</tbody>
+</table>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Linux/macOS</label><label for="__tabbed_1_2">Windows</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>-v<span class="w"> </span><span class="p">;</span><span class="w"> </span>curl<span class="w"> </span>https://rclone.org/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>bash
-</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If downloading and extracting rclone, place the extracted folder on the local drive or OneDrive.
+Do not place it on a university network drive e.g. //WURNET.</p>
 </div>
-<div class="tabbed-block">
+<h3 id="windows_1">Windows<a class="headerlink" href="#windows_1" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Download from <a href="https://rclone.org/downloads/">rclone.org/downloads</a></li>
-<li>Extract to a folder (e.g., <code>C:\rclone</code>)</li>
-<li>Run commands from that folder, or add it to your PATH</li>
+<li>Extract the download to a folder (e.g., <code>C:\rclone</code>)</li>
+<li>Open the rclone folder in File Explorer</li>
+<li>Click the address bar at the top and type 'cmd'</li>
+<li>Press Enter. This opens a command prompt window with the rclone folder set as the working directory</li>
+<li>Run rclone commands from that folder.</li>
 </ol>
-</div>
-</div>
-</div>
+<p>When running commands from inside the rclone folder, you must start your command with .\rclone. The <code>.\</code> tells your terminal to run the rclone program inside the folder.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.\rclone copy <span class="s2">&quot;C:\local\dataset&quot;</span> <span class="s2">&quot;cropxr:destination/folder&quot;</span>
+</code></pre></div>
+<h3 id="linuxmacos-with-admin-access">Linux/macOS (with admin access)<a class="headerlink" href="#linuxmacos-with-admin-access" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>-v<span class="w"> </span><span class="p">;</span><span class="w"> </span>curl<span class="w"> </span>https://rclone.org/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>bash
+</code></pre></div>
+<p>This is a system-wide install of rclone, which means that rclone can be run from any location within the terminal. You can therefore run rclone commands without the "./" prefix.</p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>/local/dataset<span class="w"> </span><span class="s2">&quot;cropxr:destination/folder&quot;</span>
+</code></pre></div></p>
+<h3 id="linuxmacos-without-admin-access">Linux/macOS (without admin access)<a class="headerlink" href="#linuxmacos-without-admin-access" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open your Files app and go to your Downloads folder.</li>
+<li>Right-click the downloaded file and choose Extract Here.</li>
+<li>Open the extracted folder (it will have a name like <code>rclone-v1.xx.x-linux-amd64</code>).</li>
+<li>Inside this folder, you should see a file called <code>rclone</code>.</li>
+<li>Right-click inside the folder and choose <strong>Open in Terminal</strong></li>
+<li>Make rclone executable by running:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>chmod<span class="w"> </span>+x<span class="w"> </span>rclone
+</code></pre></div></li>
+<li>You can now run rclone commands from this terminal window.</li>
+</ol>
+<p>When running commands from inside the rclone folder, you must start your command with <code>./rclone</code>. The <code>./</code> tells the terminal to run the rclone program inside the folder.</p>
 <p>Verify installation:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rclone<span class="w"> </span>--version
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>rclone<span class="w"> </span>--version
 </code></pre></div>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <h3 id="step-1-generate-app-password">Step 1: Generate App Password<a class="headerlink" href="#step-1-generate-app-password" title="Permanent link">&para;</a></h3>
@@ -1874,70 +2094,59 @@
 <li>Under "Devices &amp; sessions", click <strong>Create new app password</strong></li>
 <li>Copy the password immediately (it is only shown once)</li>
 </ol>
-<h3 id="step-2-obscure-the-password">Step 2: Obscure the Password<a class="headerlink" href="#step-2-obscure-the-password" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rclone<span class="w"> </span>obscure<span class="w"> </span>YOUR_APP_PASSWORD
-</code></pre></div>
-<p>Save the output string for the next step.</p>
-<h3 id="step-3-get-your-webdav-url">Step 3: Get Your WebDAV URL<a class="headerlink" href="#step-3-get-your-webdav-url" title="Permanent link">&para;</a></h3>
+<h3 id="step-2-get-your-webdav-url">Step 2: Get Your WebDAV URL<a class="headerlink" href="#step-2-get-your-webdav-url" title="Permanent link">&para;</a></h3>
 <ol>
 <li>In Research Drive, go to <strong>Files</strong></li>
 <li>Click <strong>Settings</strong> (bottom left corner) &gt; <strong>WebDAV</strong></li>
 <li>Copy the URL (format: <code>https://cropxr.data.surf.nl/remote.php/dav/files/your@email.com/</code>)</li>
 </ol>
-<h3 id="step-4-create-configuration-file">Step 4: Create Configuration File<a class="headerlink" href="#step-4-create-configuration-file" title="Permanent link">&para;</a></h3>
-<p>Create or edit the rclone configuration file:</p>
-<table>
-<thead>
-<tr>
-<th>OS</th>
-<th>Path</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Linux/macOS</td>
-<td><code>~/.config/rclone/rclone.conf</code></td>
-</tr>
-<tr>
-<td>Windows</td>
-<td><code>%USERPROFILE%\.config\rclone\rclone.conf</code></td>
-</tr>
-</tbody>
-</table>
-<p>Add the following:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">[cropxr]</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">webdav</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="na">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">https://cropxr.data.surf.nl/remote.php/dav/files/your@email.com</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="na">vendor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">nextcloud</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="na">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">your@email.com</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="na">pass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">YOUR_OBSCURED_PASSWORD</span>
-</code></pre></div>
-<p>Replace <code>your@email.com</code> with your login email and <code>YOUR_OBSCURED_PASSWORD</code> with the output from Step 2.</p>
-<h3 id="step-5-test-connection">Step 5: Test Connection<a class="headerlink" href="#step-5-test-connection" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>rclone<span class="w"> </span>lsd<span class="w"> </span>cropxr:
+<h3 id="step-3-rclone-configuration">Step 3: rclone configuration<a class="headerlink" href="#step-3-rclone-configuration" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open the command line in the rclone folder.</li>
+<li>Run <code>rclone config</code> (This starts the built-in config setup tool)</li>
+<li>Create a new connection by typing <code>n</code></li>
+<li>Enter the name for the remote connection e.g. <code>cropxr</code></li>
+<li>Scroll through the list for your desired storage type e.g. <code>webdav</code> and enter its number.</li>
+<li>Enter the connection details</li>
+<li>URL: <code>https://cropxr.data.surf.nl/remote.php/dav/files/your@email.com</code></li>
+<li>Vendor: <code>nextcloud</code> or 2</li>
+<li>User: enter your login email address</li>
+<li>Password: enter your app password</li>
+<li>Confirm the settings when prompted and save the configuration.</li>
+<li>Enter <code>No</code> for editing advanced config</li>
+<li>Enter <code>Yes</code> when asked about keeping the newly configured remote connection.</li>
+</ol>
+<h3 id="step-4-test-connection">Step 4: Test Connection<a class="headerlink" href="#step-4-test-connection" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>rclone<span class="w"> </span>lsd<span class="w"> </span>cropxr:
 </code></pre></div>
 <p>This should list the folders in your Research Drive.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <h3 id="copying-files">Copying Files<a class="headerlink" href="#copying-files" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>/local/source<span class="w"> </span><span class="s2">&quot;cropxr:destination/folder&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>/local/source<span class="w"> </span><span class="s2">&quot;cropxr:destination/folder&quot;</span>
 </code></pre></div>
 <p>For large files, add a timeout (approximately 10 minutes per GB):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--timeout<span class="w"> </span>60m<span class="w"> </span>/local/source<span class="w"> </span><span class="s2">&quot;cropxr:destination/folder&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>--timeout<span class="w"> </span>60m<span class="w"> </span>/local/source<span class="w"> </span><span class="s2">&quot;cropxr:destination/folder&quot;</span>
 </code></pre></div>
+<h3 id="commands-for-verifying-successful-file-transfer">Commands for verifying successful file transfer<a class="headerlink" href="#commands-for-verifying-successful-file-transfer" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>rclone<span class="w"> </span>ls<span class="w"> </span>cropxr:destination/folder<span class="s2">&quot;</span>
+</code></pre></div>
+<p>This command shows a list of files stored in the remote destination.
+You can use this to check that your files appear in the list and that the file names look correct.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>rclone check <span class="s2">&quot;C:\path\to\your\files&quot;</span> cropxr:destination/folder
+</code></pre></div>
+<p>This command compares files between your computer and the remote destination.</p>
+<p>The absence of errors means that everything matches. Errors indicate that files did not transfer correctly or are missing. In such a case, try repeating the <code>copy</code>   and <code>check</code> commands.</p>
 <h3 id="mounting-as-local-drive">Mounting as Local Drive<a class="headerlink" href="#mounting-as-local-drive" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Linux/macOS</label><label for="__tabbed_2_2">Windows</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Linux/macOS</label><label for="__tabbed_1_2">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>rclone<span class="w"> </span>mount<span class="w"> </span><span class="s2">&quot;cropxr:folder&quot;</span><span class="w"> </span>/local/mount/point<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>writes<span class="w"> </span>--use-cookies<span class="w"> </span>-v
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>rclone<span class="w"> </span>mount<span class="w"> </span><span class="s2">&quot;cropxr:folder&quot;</span><span class="w"> </span>/local/mount/point<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>writes<span class="w"> </span>--use-cookies<span class="w"> </span>-v
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <p>First install <a href="https://winfsp.dev/">WinFsp</a> (requires admin privileges).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>rclone<span class="w"> </span>mount<span class="w"> </span><span class="s2">&quot;cropxr:folder&quot;</span><span class="w"> </span>K:<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>writes<span class="w"> </span>--use-cookies<span class="w"> </span>-v
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>rclone<span class="w"> </span>mount<span class="w"> </span><span class="s2">&quot;cropxr:folder&quot;</span><span class="w"> </span>K:<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>writes<span class="w"> </span>--use-cookies<span class="w"> </span>-v
 </code></pre></div>
-</div>
-</div>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Path formats</p>
 <p>Paths can be either the full path or the shared folder name:</p>
@@ -1949,6 +2158,9 @@
 <div class="admonition tip">
 <p class="admonition-title">Best practice</p>
 <p>Mount a specific folder (e.g., your study folder) rather than the root. This improves performance and simplifies navigation.</p>
+</div>
+</div>
+</div>
 </div>
 <h3 id="command-flags-explained">Command Flags Explained<a class="headerlink" href="#command-flags-explained" title="Permanent link">&para;</a></h3>
 <table>
@@ -2011,7 +2223,7 @@
 <h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../../uploading-data/">Uploading Data</a> - Overview of upload methods</li>
-<li><a href="../via-browser/">Via Browser</a> - Simpler option for small uploads</li>
+<li><a href="../via-browser/">Via Browser</a>  - Simpler option for small uploads</li>
 <li><a href="../via-nextcloud/">Via NextCloud</a> - Desktop sync client alternative</li>
 <li><a href="../../sharing-data/">Sharing Data</a> - Managing folder permissions</li>
 </ul>
