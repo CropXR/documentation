@@ -1,5 +1,3 @@
-!!! warning
-    The catalogue is in testing phase. Any metadata uploaded in the catalogue is not yet backed up.
 
 # Short guide
 
@@ -43,4 +41,3 @@ Now that the minimal metadata is added, continue improving the metadata.
 
 13. adapt permissions 
 14. update with additional data
-
