@@ -1,52 +1,7 @@
-!!! warning
-    The catalogue is in testing phase. Any metadata uploaded in the catalogue is not yet backed up.
 
-# Reference
-
-## ISA FairdomSEEK structure
-
-The ISA format is widely used to represent research data. It is often used to represent MIAPPE data. FairdomSEEK uses the ISA structure, somewhat adapted.
-
- 
-### Assay and sample definition
-
-In the ISA format, you can perform assays on samples. It assumes that in an experiment, there are several steps called a process. Each process has an input and an output and a protocol, that describes how the output was created from the input. The input can be either a material or data, and the output as well. These processes can be chained together. Here is an example:
-    
-    step 1 sample collection (input plant material-> output sample)
-    step 2 DNA extraction and library prep (input sample -> output sample) 
-    step 3 sequencing (input sample -> output data)
-    step 4 analysis (input data -> output data)
-
-
-In ISA these processes are organized the following way: the study contains 1 process with a material input (study source) to a material output (study sample). The other processes, however many needed, are grouped under the assay. The assay can consist of several steps/processes and starts with the study sample.
-
- 
-### ISA in FairdomSEEK
-
-In FairdomSEEK, the processes that are grouped under the assay, are all called an assay even if the input and output are both a material object, or both data files. This does not fit with the classical meaning of the word ‘assay’, but it implements the same functionality as ISA. The assays can be connected into an assay stream. 
-
-
-Each row, that can describe a sample, but also an assay performed on a sample, or a derivation of a data file, is called always a ‘sample’ in FairdomSEEK.
-
- 
-## MIAPPE and ENA in FairdomSEEK
-[todo: write]
-
-![](../../img/ExampleFairdomSEEKschematic.png)
-
-intro to data model
-
-### Observation units and samples
-
-
-Level where a measurement is done.
-
-Whole greenhouse, per plot, plant, sample.
-
-
+# Catalogue Reference
 
 ## Naming conventions
-[todo: finish]
 
 Study:
     
@@ -83,7 +38,7 @@ To link a registered data file use the following format.
 
 Find the data file ID, by going to the data file in the interface, and checking the number at the end of the URL https://catalogue.cropresilience.org/data_files/1 
 
- 
+
 ## Defining assays
 
 There is some flexibility in how to define assays. In FairdomSEEK, an assay (called assay stream) can be split into steps (called assays) that output material or a data file.
@@ -113,15 +68,14 @@ Top level environmental measurements, with no distinction between rows/samples, 
 
  
 ### Multiple files per experiment
-
-[rewrite]
-
-If there are still different experimental conditions or if there are multiple data files per experiment: split into assay and data file separately. Add the different parameter on the assay, and link the files in the second data file assay
+If one experimental run creates multiple data files, it is possible to split the experiment and the file into two assay steps.
+In the first step the experiment is described and in the second step the files are linked to the experiment.
 
  
 ### Limitation
 
-It is not possible to link derived data files to input files from multiple assay streams. There is no clear place to list key output artifacts, that summarize the conclusions of the study.
+It is not possible to link derived data files to input files from multiple assay streams. 
+There is no clear place to list key output artifacts, that summarize the conclusions of the study.
 
 
  
@@ -144,7 +98,7 @@ At a later stage, the permission set in SEEK will be applied to the data downloa
 
  
 ## Grouping samples
-[consider moving to top section explaining the model]
+
 ### Study source
 
 Choose the granularity that is needed for your metadata. The sources are used to specify the biological material, as well as the growth conditions. At least each experimental block needs to be defined as a separate source. If the metadata and a sample needs to be traced back to a certain plant, you might define a source per plant.

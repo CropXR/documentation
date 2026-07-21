@@ -1,5 +1,3 @@
-!!! warning
-    The catalogue is in testing phase. Any metadata uploaded in the catalogue is not yet backed up.
 
 # Introduction
 

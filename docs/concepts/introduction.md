@@ -27,9 +27,14 @@ This puts some responsibility on the researcher for how to use this format and t
 If you are stuck at any point, things are unclear, or you need help, please reach out to the DataXR team at data@cropxr.org
 
 ### Catalogue
+The metadata is from now on collected in the Catalogue website. In this catalogue people of the consortium can find studies, view and download the metadata, and view the associated data. In the catalogue, the data producing researchers can manage who can view their study. 
+Follow the instruction for how to enter the metadata in the web interface.
 
-The metadata is currently collected in Excel templates. The metadata that is collected in these templates will be imported into a catalogue. In this catalogue people of the consortium can find studies, view and download the metadata, and view the associated data. In the catalogue, the data producing researchers will also be able to manage who can view their study. It will be made available to you as soon as possible.
+For everyone who has already filled in metadata in the Excel templates, or is already in the process of filling in the metadata in the templates:
+If the template is available to the DataXR team, the entered metadata will imported into the catalogue. It is possible that you will be contacted with some questions about the metadata.
+
 
 ## Data
 
-The data storage is currently the [Research Drive](../research-drive/index.md). In the future there might be other data storages added. The metadata will include a link to where the data is stored.
+The data storage is currently the [Research Drive](../research-drive/index.md). In the near future this will be replaced with a different storage. 
+The metadata will include a link to where the data is stored.

@@ -1,7 +1,5 @@
 # Introduction Metadata Model
 
-[WIP, will be refined]
-
 All the research produced in the CropXR consortium will be well annotated with metadata following the CropXR standards. 
 
 The metadata annotation will have multiple uses:
@@ -30,141 +28,121 @@ The CropXR metadata model is made up from a combination of established standards
 - **Phenotyping** [ISA](https://isa-specs.readthedocs.io/en/latest/index.html) + [MIAPPE](link with MIAPPE fields)
 - **Sequencing** [ISA](https://isa-specs.readthedocs.io/en/latest/index.html) + [ENA for plants](ENA35) + [ENA for crops](ENA37) + additional fields based on LettuceKnow experience.
 
-These two models describe in a standardized way, the setup of a study, the experimental conditions, 
+MIAPPE and ENA describe in a standardized way, the setup of a study, the experimental conditions, 
 the types of measurements performed and how the output data can be related to that, up to sample level.
 This detailed standardized description facilitates that the findability and reusability of the data.
+Because both standards describe the setup of a plant experimental, there is a large overlap between the standards.
+To make the metadata uniform, and to be able to describe combined experiments, the standards have been combined into a unified metadata model.
+In this model, you can describe the plants and growth conditions on study level and from there start multiple types of measurements.
 
-There is a lot of overlap between the phenotyping and sequencing metadata: 
-they both provide general information about the goal of the study, the plant material, the growth conditions and the treatment.
-
-For much of this overlapping information, it is not evident from the template, 
-because the templates are as close to the original standard as possible, and are organised in a different way.
-
-The main differences between the templates are:
-
-- The phenotyping template has the same information split into more different separate sections than the sequencing template
-- The phenotyping template has a more free structure than sequencing
+The ISA format is widely used to represent research data. It is often used to represent MIAPPE data. 
+The catalogue uses the ISA structure, somewhat adapted. This page will explain how the standards fit into the catalogue data model.
 
 
-## Phenotyping template
+### Assay and sample definition
 
-#### Split sections
-The phenotyping template is separated into a high number of sections (sheets).  
-It might be overwhelming to understand what each sections contains. 
-There are many references between the sections needed. 
-But the separation also reduces duplicated data. 
-For example, for several samples from the same plant, 
-you can refer to the plant defined in a different section at the samples, rather than copying the info for each row.
+In the ISA format, you can perform assays on samples. It assumes that in an experiment, there are several steps called a process. Each process has an input and an output and a protocol, that describes how the output was created from the input. The input can be either a material or data, and the output as well. These processes can be chained together. Here is an example:
+    
+    step 1 sample collection (input plant material-> output sample)
+    step 2 DNA extraction and library prep (input sample -> output sample) 
+    step 3 sequencing (input sample -> output data)
+    step 4 analysis (input data -> output data)
 
-#### Open format
-The phenotyping template allows you to describe any type of measurement. 
+
+In ISA these processes are organized the following way: the study contains 1 process with a material input (study source) to a material output (study sample). 
+The other processes, however many needed, are grouped under the assay. The assay can consist of several steps/processes and starts with the study sample.
+
+In the catalogue, the processes that are grouped under the assay, are all called an assay even if the input and output are both a material object, or both data files. 
+This does not fit with the classical meaning of the word ‘assay’, but it implements the same functionality as ISA. The assays can be connected into an assay stream.
+
+Each row, that can describe a sample, but also an assay performed on a sample, or a derivation of a data file, is called always a ‘sample’ in the catalogue.
+
+
+![](../docs/img/SEEKSchematicCombinedStudy.png)
+
+
+## Sections
+
+### Study extended metadata
+
+Information that is the same for the whole study.
+
+### Study sources
+The study sources section describes the plant, the growth conditions, the treatment.
+
+Besides the standard parameters that are suggested, it is possible to include additional parameters.
+Use the MIAPPE lists for growth conditions and experimental factors for predictable descriptors of relevant parameters.
+Not all conditions are as relevant and need to be included in the metadata.
+
+Choose the granularity that is needed for your metadata. 
+The sources are used to specify the biological material, as well as the growth conditions. 
+At least each experimental block needs to be defined as a separate source. 
+If the metadata and a sample needs to be traced back to a certain plant, you might define a source per plant.
+
+
+### Study samples
+
+An observation unit is any level on which a measurement/observation  is done. Examples are a plant, plot or whole field or greenhouse.
+A sample is a special level: it describes a physical subset of the plant that is collected for analysis. It will contain some information about sampling.
+
+Both samples and observation units are listed under the study samples section.
+The units can be nested.
+
+How to define this will depend on the specific design of a study, and typically be the unit for which each experiment generates a file. 
+Think about the assays and the data files when defining the observation units.
+
+### Phenotyping assay extended metadata
+
+Each different type of phenotyping measurement will be represented by an assay stream.
+The observed variable describes the measurement: what was measured and how, including the instrument. 
+It can be used to describe any type of measurement.
 This is important, because phenotyping does not rely on a limited set of experiments.
 It does require you to describe the measurement in the format.
+
 As more people have started with their metadata annotation, it is likely valuable to create a CropXR internal reference,
 where you can find how other people have described similar or the same type of experiments.
 
-It is also possible to include any type of parameter to describe the growth conditions.
-Find them in the appendix for a predictable description of a condition. 
-Not all conditions are as relevant and need to be included in the metadata.
+In the assay stream extended metadata the information that is the same for each individual measurement can be captured.
 
-### Sections
-[include diagram]
 
-The overview sheet also contains a description of each section.
+### Assay rows
 
-There are several sections that describe properties of the whole study, every plant in it.
+Each row describes a measurement on a sample or observation unit.
+Include any info that is different per performed measurement and/or not captured in the assay extended metadata.
+Typically include the data file location of the output of a measurement.
 
-- Everything in the study section, including the location
-- The environment section
-- Events
 
-The experimental factor section describes all conditions that are varied between different experimental groups.
+### General assay
 
-The observation unit is the unit of measurement. It can be a plant, a plot, or a whole field.
-You are free to define these as you need, and therefor need to think while defining them.
-It is also used to describe what experimental factor was applied to that plant.
+When multiple measurements are done, each generating only few outputs, 
+it is easier to describe these measurements without needing to create a separate assay stream for each.
+It is possible to make a general assay that includes multiple measurement types.
 
-The observed variable describes the measurement: what was measured and how, including the instrument. 
+In this assay there is no extended metadata on assay stream level.
+Each row describes the assay: what was measured and how. 
+In a next assay step the data file can be linked to the assay.
 
-The data file section is used to link the output to the measurement and the conditions.
 
-## Sequencing template
+### Derived data files
 
-#### Combined sections
-The sequencing template has few sections. 
-These sections contain more fields, and describe multiple concepts.
-There is a duplication of data between the rows.
-
-#### Closed format
-The template contains many fields, especially in the sample sections. 
-These fields have been selected because they were considered relevant. 
-If they are not relevant to your study you can leave them empty.
-
-### Sections
-[include diagram]
-
-The sample section describes the plant, the growth conditions, the treatment and the sampling.
-The experiment section describes assays performed on a sample.
+For derived data files a separate assay step can be added. 
+The input is an output file from the previous step and the method of data derivation can be included.
 
 
 ## Practical
-Each study gets one filled in metadata template (with the exception of combined studies, which get two).
-
-#### IDs
-At registration you receive an investigation id and study id from CropXR. These should be used in the template.
-
-In other sections of the sheets there are ids needed. You need to provide these yourself. They need to be unique within the study so they can be referenced.
-If you in one section refer to an id, make sure it is defined.
-For example, in the data file section you link a sample to the data file, you need to make sure that that sample id was defined in the sample section.
 
 #### Relevant columns
-Not all columns are relevant to each study.
+Not all fields are relevant to each study.
 
 #### Fixed or free fields
-Each field contains a description of the type. There are a few special cases explained below:
--	field format: ‘free text, see appendix’ + appendix type: ‘example’ -> not fixed, but useful examples can be found in the appendix.
-    If you have useful fields that we can add to make the lives of others more easy, you can suggest additional examples for us to add.
--	field format: ‘ + appendix type: ‘pre-defined list’ -> you need to choose one of the values from the appendix. 
-    If you really think you need a value that is not here, you can contact DataXR and we can discuss, but this is not very likely.
--	field format: ‘ontology with examples’ -> find a relevant term in the listed ontologies. 
-    If there is no term for your situation, and you think we should define a term for CropXR you can again contact us. Many fields offer a free text field next to the ontology field. The ontology is an unambiguous way to describe the field value. If no predefined description fits, I think a free text entry should be sufficient.
-
-The appendices contain lists. 
-The appendices are not to be filled, they are a reference and help to fill the fields of the main section.
+Some fields are free text, some you need to pick from a list (controlled vocabulary), some are free, but with a list of suggestions to pick from.
 
 
-#### Combined study
-For now, there is a separate metadata template for phenotyping and sequencing studies.
-Choose the template that allows you to describe the general information and experimental conditions.
-That includes the following sheets:
+## Outlook
+In the future the catalogue will be extended to cover metabolomics data.
 
-- Phenotyping: Investigation, Study, Person, Biological material, Environment, Event, Experimental factor
-- Sequencing: Investigation, Study, Sample
+The catalogue can be improved with small suggestions based on researcher feedback.
 
-The for the remaining sections, use both sheets to properly capture the experiments. 
-Make sure to use the same IDs or make references to the IDs used in the other template, so plants/samples can be linked.
+There will be an improved integration with the storage.
 
-
-## Outlook: catalogue
-
-The metadata is currently collected in Excel templates. 
-The metadata that is collected in these templates, will be imported into a catalogue. 
-In this catalogue people of the consortium can find studies, view and download the metadata en view the associated data. 
-In the catalogue, the data producing researchers will also be able to manage who can view their study. 
-It will be made available to you as soon as possible.
-
-[insert screenshot of catalogue with example studies]
-
-In the future catalogue, the phenotyping and sequencing templates will be combined, 
-so the information about the experiment and treatment is captured once.
-You describe the plants and conditions, and from there start multiple types of measurements.
-It will also be possible to describe the lineage of derived data files.
-
-What will stay:
-- the same information can be captured, somewhat differently organized
-- the same concepts and decisions are needed, like the definition of observation units
-- there is still decisions required from the researcher how to best capture what is important to your study
-- sequencing many suggested fields (additional fields can still be added as needed)
-
-All data filled in the current metadata templates will be ingested into the catalogue. No effort by the users will be lost.
-
+There will be a way to export the metadata into an ENA format for easy submission. There will be an importer that can import published ENA metadata into the format of the catalogue. 

@@ -1,9 +1,5 @@
 # Detailed instructions
 
-!!! warning
-    The catalogue is in testing phase. Any metadata uploaded in the catalogue is not yet backed up. This guide is still under development. 
-
-
 ## Phase 0
 
 1. Understand the basic structure of the metadata model. 
@@ -14,17 +10,19 @@
 
 4. Make sure that you have registered your study in this [form](https://forms.office.com/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u). After the admin has checked the registration, you will receive a study id you need when entering the metadata, as well as storage for your experimental data. 
 
-5. Create an account for the [catalogue](https://catalogue.cropresilience.org) and log in.
-    [Write about normal or KeyCloak?]
+5. Make sure you have an active account. 
 
-    Request to be added to a project. This is done by a project admin. 
+Select "Login" in the top right corner. Under the tab "KeyCloak" click on "🔒Sign in with KeyCloak" . 
+Click on "SURFContext" to use your university account. For the first login give the needed permissions. 
+
+7. Request to be added to a project if you have not been added already. This is done by a project admin. 
 
 6. Gather the files with the metadata that you already collected. This includes e-lab journal entries, files that outline experimental conditions per plant, files that link output files to the experiment, etc.
 
  
 ## Phase 1
 
-1. Log in to the FairdomSEEK webpage.
+1. Log in to the [Catalogue webpage](https://catalogue.cropresilience.org/).
 
 2. Find or create an investigation.
       1. To find an investigation, click on “🔎Browse” (click the menu first when using a narrow window) in the top left corner and select “Investigations”.
@@ -52,7 +50,7 @@
 
       7. Click on “🟦Create”
  
-4. Make a plan for how to define the Assay Streams and Assays. (read here)
+4. Make a plan for how to define the Assay Streams and Assays. ([read here](reference.md#defining-assays))
 
 5. Click on “➕Design Assay Stream” at the top of the study, enter a title (following the naming convention).
 
@@ -74,12 +72,15 @@ Not all steps need to happen in this exact order, but some steps are dependent o
 
 1. Register your data files
       1. At the top menu under “➕Create” choose “Data file” 
-      2. Choose how you want to [register your data](#registering-data-files). Find the URL at the data location (Research Drive).
+      2. Choose how you want to [register your data](reference.md#registering-data-files). Find the URL at the data location (Research Drive).
       3. Under the tab “Remote URL” past the URL of the data location and “🟦Register”. Do not mind a warning about the URL in a yellow box. If there is an error and the URL cannot be registered please check if the URL is correct. 
       4. Fill in a “Title”, a “Description”, select a “Project”, click “🟦Next, and “🟦Next” 
       5. Select a license. The license can be adapted later if needed. At no license the consortium agreement applies to all people users that this data is shared with. 
       6. Adapt the sharing of the data, either on group level or per group. At a later stage, the permissions set here automatically apply to where the data is stored. For now, that is still handled separately in the research drive. 
       7. Skip “Associated Assays” and “Other associated items”by clicking “🟦Next, and “🟦Create”
+   
+!!! warning "Data files"
+    The data file registration will soon be updated.
 
 2. Add SOPs (Standard operating procedure) (can also be done later).
     Each step can reference a protocol that was used: creation of samples and the grouping of observation units at the study level, the assaying protocols at assay level and the data transformation steps.
@@ -98,7 +99,7 @@ Not all steps need to happen in this exact order, but some steps are dependent o
       4. Click “🟦Update” to apply the changes.
 
 4. Define study source samples
-      1. Choose [how to group/define the sources](#study-source).
+      1. Choose [how to group/define the sources](reference.md#study-source).
       2. Go to the “Sources table”, by clicking the tab “Study design” (or from the “Single page” view find the “Sources table” in the left menu). Here you find a table with the columns that you have defined. 
       3. Download the template by clicking the button “Batch download to Excel”. 
       4. In the excel, under the Samples tab fill in the data in the fields. 
@@ -110,12 +111,12 @@ Not all steps need to happen in this exact order, but some steps are dependent o
          Be aware, if you upload the same excel multiple times, a new sample will be created with the same name. To check how to update existing samples, check the phase 3 instructions.
 
 5. Define study samples
-      1. [Choose what type are needed](#study-samples).
+      1. [Choose what type are needed](reference.md#study-samples).
       2. Go to “Samples table” under “Study design”(or from the “Single page” view find the “Samples table” in the left menu).
       3. Download the template by clicking the button “Batch download to Excel”.
       4. In the excel, under the Samples tab fill in the data in the fields. 
          1. Ignore the first two columns.
-         2. Use the Input column to [link to a source](#sample-inputs) defined in the previous step.
+         2. Use the Input column to [link to a source](reference.md#sample-inputs) defined in the previous step.
          3. The subject_id is the name that will be displayed.
          4. There is a mandatory column called protocol. The text should refer to a registered SOP.
          5. Start with the most relevant fields. The data can be improved on at a later point. 
@@ -125,7 +126,7 @@ Not all steps need to happen in this exact order, but some steps are dependent o
 
 7. For each assay defined in phase 1, enter the row data, the same way as the study source and sample: download the template, fill in the data, save and upload the template.
       1. For the first assay of an assay stream the input should be a study sample (so this is a sample of observation unit). For additional assays the input is an output of the previous assay. 
-      2. To link a registered data file as file location, use the [required format](#data-files).
+      2. To link a registered data file as file location, use the [required format](reference.md#data-files).
       3. For the file name, use the relative path of the exact file inside the registered file location. 
 
 
@@ -143,6 +144,3 @@ Not all steps need to happen in this exact order, but some steps are dependent o
       2. You can upload multiple in multiple steps, but be aware that if you re-upload samples with the same name, a new sample will be created. Only upload new samples.
 
 4. Adding additional columns  [todo: expand] (under “ “⚙️Actions” in the top corner and then “📝Edit ..”)
-
-
- 
