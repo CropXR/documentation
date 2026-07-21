@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1492,10 +1492,6 @@
 
 
 <h1 id="detailed-instructions">Detailed instructions<a class="headerlink" href="#detailed-instructions" title="Permanent link">&para;</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The catalogue is in testing phase. Any metadata uploaded in the catalogue is not yet backed up. This guide is still under development. </p>
-</div>
 <h2 id="phase-0">Phase 0<a class="headerlink" href="#phase-0" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -1511,9 +1507,14 @@
 <p>Make sure that you have registered your study in this <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u">form</a>. After the admin has checked the registration, you will receive a study id you need when entering the metadata, as well as storage for your experimental data. </p>
 </li>
 <li>
-<p>Create an account for the <a href="https://catalogue.cropresilience.org">catalogue</a> and log in.
-    [Write about normal or KeyCloak?]</p>
-<p>Request to be added to a project. This is done by a project admin. </p>
+<p>Make sure you have an active account. </p>
+</li>
+</ol>
+<p>Select "Login" in the top right corner. Under the tab "KeyCloak" click on "🔒Sign in with KeyCloak" . 
+Click on "SURFContext" to use your university account. For the first login give the needed permissions. </p>
+<ol>
+<li>
+<p>Request to be added to a project if you have not been added already. This is done by a project admin. </p>
 </li>
 <li>
 <p>Gather the files with the metadata that you already collected. This includes e-lab journal entries, files that outline experimental conditions per plant, files that link output files to the experiment, etc.</p>
@@ -1522,7 +1523,7 @@
 <h2 id="phase-1">Phase 1<a class="headerlink" href="#phase-1" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Log in to the FairdomSEEK webpage.</p>
+<p>Log in to the <a href="https://catalogue.cropresilience.org/">Catalogue webpage</a>.</p>
 </li>
 <li>
 <p>Find or create an investigation.</p>
@@ -1560,7 +1561,7 @@
 </ol>
 </li>
 <li>
-<p>Make a plan for how to define the Assay Streams and Assays. (read here)</p>
+<p>Make a plan for how to define the Assay Streams and Assays. (<a href="../reference/#defining-assays">read here</a>)</p>
 </li>
 <li>
 <p>Click on “➕Design Assay Stream” at the top of the study, enter a title (following the naming convention).</p>
@@ -1582,11 +1583,9 @@
 <h2 id="phase-2">Phase 2<a class="headerlink" href="#phase-2" title="Permanent link">&para;</a></h2>
 <p>Not all steps need to happen in this exact order, but some steps are dependent on each other: study sources need to be created before study samples and study samples before assay row entries. Data files need to be registered before they can be referenced.</p>
 <ol>
-<li>
-<p>Register your data files</p>
-<ol>
+<li>Register your data files<ol>
 <li>At the top menu under “➕Create” choose “Data file” </li>
-<li>Choose how you want to <a href="#registering-data-files">register your data</a>. Find the URL at the data location (Research Drive).</li>
+<li>Choose how you want to <a href="../reference/#registering-data-files">register your data</a>. Find the URL at the data location (Research Drive).</li>
 <li>Under the tab “Remote URL” past the URL of the data location and “🟦Register”. Do not mind a warning about the URL in a yellow box. If there is an error and the URL cannot be registered please check if the URL is correct. </li>
 <li>Fill in a “Title”, a “Description”, select a “Project”, click “🟦Next, and “🟦Next” </li>
 <li>Select a license. The license can be adapted later if needed. At no license the consortium agreement applies to all people users that this data is shared with. </li>
@@ -1594,6 +1593,12 @@
 <li>Skip “Associated Assays” and “Other associated items”by clicking “🟦Next, and “🟦Create”</li>
 </ol>
 </li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Data files</p>
+<p>The data file registration will soon be updated.</p>
+</div>
+<ol>
 <li>
 <p>Add SOPs (Standard operating procedure) (can also be done later).
     Each step can reference a protocol that was used: creation of samples and the grouping of observation units at the study level, the assaying protocols at assay level and the data transformation steps.</p>
@@ -1619,7 +1624,7 @@
 <li>
 <p>Define study source samples</p>
 <ol>
-<li>Choose <a href="#study-source">how to group/define the sources</a>.</li>
+<li>Choose <a href="../reference/#study-source">how to group/define the sources</a>.</li>
 <li>Go to the “Sources table”, by clicking the tab “Study design” (or from the “Single page” view find the “Sources table” in the left menu). Here you find a table with the columns that you have defined. </li>
 <li>Download the template by clicking the button “Batch download to Excel”. </li>
 <li>In the excel, under the Samples tab fill in the data in the fields. <ol>
@@ -1637,12 +1642,12 @@
 <li>
 <p>Define study samples</p>
 <ol>
-<li><a href="#study-samples">Choose what type are needed</a>.</li>
+<li><a href="../reference/#study-samples">Choose what type are needed</a>.</li>
 <li>Go to “Samples table” under “Study design”(or from the “Single page” view find the “Samples table” in the left menu).</li>
 <li>Download the template by clicking the button “Batch download to Excel”.</li>
 <li>In the excel, under the Samples tab fill in the data in the fields. <ol>
 <li>Ignore the first two columns.</li>
-<li>Use the Input column to <a href="#sample-inputs">link to a source</a> defined in the previous step.</li>
+<li>Use the Input column to <a href="../reference/#sample-inputs">link to a source</a> defined in the previous step.</li>
 <li>The subject_id is the name that will be displayed.</li>
 <li>There is a mandatory column called protocol. The text should refer to a registered SOP.</li>
 <li>Start with the most relevant fields. The data can be improved on at a later point. </li>
@@ -1658,7 +1663,7 @@
 <p>For each assay defined in phase 1, enter the row data, the same way as the study source and sample: download the template, fill in the data, save and upload the template.</p>
 <ol>
 <li>For the first assay of an assay stream the input should be a study sample (so this is a sample of observation unit). For additional assays the input is an output of the previous assay. </li>
-<li>To link a registered data file as file location, use the <a href="#data-files">required format</a>.</li>
+<li>To link a registered data file as file location, use the <a href="../reference/#data-files">required format</a>.</li>
 <li>For the file name, use the relative path of the exact file inside the registered file location. </li>
 </ol>
 </li>
@@ -1810,7 +1815,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.indexes", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reference" class="md-skip">
+        <a href="#catalogue-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -1405,73 +1405,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#isa-fairdomseek-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ISA FairdomSEEK structure
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ISA FairdomSEEK structure">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#assay-and-sample-definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Assay and sample definition
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#isa-in-fairdomseek" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ISA in FairdomSEEK
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#miappe-and-ena-in-fairdomseek" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MIAPPE and ENA in FairdomSEEK
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="MIAPPE and ENA in FairdomSEEK">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#observation-units-and-samples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Observation units and samples
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#naming-conventions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1684,33 +1617,8 @@
 
 
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The catalogue is in testing phase. Any metadata uploaded in the catalogue is not yet backed up.</p>
-</div>
-<h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h1>
-<h2 id="isa-fairdomseek-structure">ISA FairdomSEEK structure<a class="headerlink" href="#isa-fairdomseek-structure" title="Permanent link">&para;</a></h2>
-<p>The ISA format is widely used to represent research data. It is often used to represent MIAPPE data. FairdomSEEK uses the ISA structure, somewhat adapted.</p>
-<h3 id="assay-and-sample-definition">Assay and sample definition<a class="headerlink" href="#assay-and-sample-definition" title="Permanent link">&para;</a></h3>
-<p>In the ISA format, you can perform assays on samples. It assumes that in an experiment, there are several steps called a process. Each process has an input and an output and a protocol, that describes how the output was created from the input. The input can be either a material or data, and the output as well. These processes can be chained together. Here is an example:</p>
-<div class="highlight"><pre><span></span><code>step 1 sample collection (input plant material-&gt; output sample)
-step 2 DNA extraction and library prep (input sample -&gt; output sample) 
-step 3 sequencing (input sample -&gt; output data)
-step 4 analysis (input data -&gt; output data)
-</code></pre></div>
-<p>In ISA these processes are organized the following way: the study contains 1 process with a material input (study source) to a material output (study sample). The other processes, however many needed, are grouped under the assay. The assay can consist of several steps/processes and starts with the study sample.</p>
-<h3 id="isa-in-fairdomseek">ISA in FairdomSEEK<a class="headerlink" href="#isa-in-fairdomseek" title="Permanent link">&para;</a></h3>
-<p>In FairdomSEEK, the processes that are grouped under the assay, are all called an assay even if the input and output are both a material object, or both data files. This does not fit with the classical meaning of the word ‘assay’, but it implements the same functionality as ISA. The assays can be connected into an assay stream. </p>
-<p>Each row, that can describe a sample, but also an assay performed on a sample, or a derivation of a data file, is called always a ‘sample’ in FairdomSEEK.</p>
-<h2 id="miappe-and-ena-in-fairdomseek">MIAPPE and ENA in FairdomSEEK<a class="headerlink" href="#miappe-and-ena-in-fairdomseek" title="Permanent link">&para;</a></h2>
-<p>[todo: write]</p>
-<p><img alt="" src="../../../img/ExampleFairdomSEEKschematic.png" /></p>
-<p>intro to data model</p>
-<h3 id="observation-units-and-samples">Observation units and samples<a class="headerlink" href="#observation-units-and-samples" title="Permanent link">&para;</a></h3>
-<p>Level where a measurement is done.</p>
-<p>Whole greenhouse, per plot, plant, sample.</p>
+<h1 id="catalogue-reference">Catalogue Reference<a class="headerlink" href="#catalogue-reference" title="Permanent link">&para;</a></h1>
 <h2 id="naming-conventions">Naming conventions<a class="headerlink" href="#naming-conventions" title="Permanent link">&para;</a></h2>
-<p>[todo: finish]</p>
 <p>Study:</p>
 <div class="highlight"><pre><span></span><code>&lt;received study id&gt; - &lt;study name&gt;
 example “CXRS4 - Drought response of arabidopsis after hormal treatment with PAMP”
@@ -1754,10 +1662,11 @@ example “CXRS4 - Drought response of arabidopsis after hormal treatment with P
 <li>Create a next assay of the type data file. Each row links the output file to the described measurement.</li>
 </ol>
 <h3 id="multiple-files-per-experiment">Multiple files per experiment<a class="headerlink" href="#multiple-files-per-experiment" title="Permanent link">&para;</a></h3>
-<p>[rewrite]</p>
-<p>If there are still different experimental conditions or if there are multiple data files per experiment: split into assay and data file separately. Add the different parameter on the assay, and link the files in the second data file assay</p>
+<p>If one experimental run creates multiple data files, it is possible to split the experiment and the file into two assay steps.
+In the first step the experiment is described and in the second step the files are linked to the experiment.</p>
 <h3 id="limitation">Limitation<a class="headerlink" href="#limitation" title="Permanent link">&para;</a></h3>
-<p>It is not possible to link derived data files to input files from multiple assay streams. There is no clear place to list key output artifacts, that summarize the conclusions of the study.</p>
+<p>It is not possible to link derived data files to input files from multiple assay streams. 
+There is no clear place to list key output artifacts, that summarize the conclusions of the study.</p>
 <h2 id="registering-data-files">Registering data files<a class="headerlink" href="#registering-data-files" title="Permanent link">&para;</a></h2>
 <p>You can register a URL that contains a file or a folder.</p>
 <p>The advise is to register a folder that is both </p>
@@ -1770,7 +1679,6 @@ the same permissions apply to the whole folder
 <p>The metadata is used to link certain experiments and samples to the files. Here you can indicate what file in the registered folder contains what data.</p>
 <p>At a later stage, the permission set in SEEK will be applied to the data download. If you only register the whole study as a single data file, it is not possible to apply granular permissions on who can download your data.</p>
 <h2 id="grouping-samples">Grouping samples<a class="headerlink" href="#grouping-samples" title="Permanent link">&para;</a></h2>
-<p>[consider moving to top section explaining the model]</p>
 <h3 id="study-source">Study source<a class="headerlink" href="#study-source" title="Permanent link">&para;</a></h3>
 <p>Choose the granularity that is needed for your metadata. The sources are used to specify the biological material, as well as the growth conditions. At least each experimental block needs to be defined as a separate source. If the metadata and a sample needs to be traced back to a certain plant, you might define a source per plant.</p>
 <h3 id="study-samples">Study samples<a class="headerlink" href="#study-samples" title="Permanent link">&para;</a></h3>
@@ -1902,7 +1810,7 @@ Observation units are any level, where a measurement/observation is done. How to
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.indexes", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
