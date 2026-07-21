@@ -4,7 +4,9 @@
 ## Experimental design
 
 2 varieties (col-0, ler) and 2 watering regimes (well watered, drought) -> 4 experimental groups.
+
 Measurements:
+
 - RNA-seq of root and and leaf samples
 - Canopy coverage per experimental group
 - Some general measurements from the greenhouse.
