@@ -4,14 +4,16 @@
 ## Experimental design
 
 2 varieties (col-0, ler) and 2 watering regimes (well watered, drought) -> 4 experimental groups.
+
 Measurements:
+
 - RNA-seq of root and and leaf samples
 - Canopy coverage per experimental group
 - Some general measurements from the greenhouse.
 
 ## Study general
 
-Choose combined sequencing and phenotyping study. Add SOP with experimental design map for MIAPPE.
+Choose combined sequencing and phenotyping study. Optionally, add an [SOP](../../getting-started/glossary.md) with the experimental design map for MIAPPE — this can also be added later.
 
 ## Study source 
 
@@ -36,5 +38,5 @@ Create one sequencing assay stream. Describe the library construction and sequen
 
 Create one phenotyping assay stream for the greenhouse sensors. Create an assay for the measurements of the output material with the template observation. Define one row per environment variable measured by the greenhouse sensors, describing the variable, the sensor and the scale. This can be one row for temperature and one for humidity. The input is the study observation unit greenhouse. Create a next assay in the stream for the data files, one row for each file, with as input the assay row defined in the previous assay. Describe the and link to the data. 
 
- ![](../../docs/img/SEEKSchematicCombinedStudy.png)
+ ![](../../img/SEEKSchematicCombinedStudy.png)
  
