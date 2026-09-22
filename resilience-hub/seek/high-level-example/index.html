@@ -1504,13 +1504,15 @@
 
 <h1 id="high-level-example">High level example<a class="headerlink" href="#high-level-example" title="Permanent link">&para;</a></h1>
 <h2 id="experimental-design">Experimental design<a class="headerlink" href="#experimental-design" title="Permanent link">&para;</a></h2>
-<p>2 varieties (col-0, ler) and 2 watering regimes (well watered, drought) -&gt; 4 experimental groups.
-Measurements:
-- RNA-seq of root and and leaf samples
-- Canopy coverage per experimental group
-- Some general measurements from the greenhouse.</p>
+<p>2 varieties (col-0, ler) and 2 watering regimes (well watered, drought) -&gt; 4 experimental groups.</p>
+<p>Measurements:</p>
+<ul>
+<li>RNA-seq of root and and leaf samples</li>
+<li>Canopy coverage per experimental group</li>
+<li>Some general measurements from the greenhouse.</li>
+</ul>
 <h2 id="study-general">Study general<a class="headerlink" href="#study-general" title="Permanent link">&para;</a></h2>
-<p>Choose combined sequencing and phenotyping study. Add SOP with experimental design map for MIAPPE.</p>
+<p>Choose combined sequencing and phenotyping study. Optionally, add an <a href="../../../getting-started/glossary/">SOP</a> with the experimental design map for MIAPPE — this can also be added later.</p>
 <h2 id="study-source">Study source<a class="headerlink" href="#study-source" title="Permanent link">&para;</a></h2>
 <p>Create one source per experimental group. Specify the variety and watering regime. Add additional information that is relevant.</p>
 <h2 id="study-samples">Study samples<a class="headerlink" href="#study-samples" title="Permanent link">&para;</a></h2>
@@ -1522,7 +1524,7 @@ Measurements:
 <p>Create one phenotyping assay stream for canopy coverage and fill in all the information about the trait and the method. Create an assay with as output a data file. Create a row for each separate measurement/experimental group, with as input the observation unit plots.  Describe the output data file of the measurement and link to the data. </p>
 <p>Create one sequencing assay stream. Describe the library construction and sequencing. Create an assay with as output a data file. Create a row for each measurement, with as input a sample. Describe the output data file of the measurement and link to the data. </p>
 <p>Create one phenotyping assay stream for the greenhouse sensors. Create an assay for the measurements of the output material with the template observation. Define one row per environment variable measured by the greenhouse sensors, describing the variable, the sensor and the scale. This can be one row for temperature and one for humidity. The input is the study observation unit greenhouse. Create a next assay in the stream for the data files, one row for each file, with as input the assay row defined in the previous assay. Describe the and link to the data. </p>
-<p><img alt="" src="../../docs/img/SEEKSchematicCombinedStudy.png" /></p>
+<p><img alt="" src="../../../img/SEEKSchematicCombinedStudy.png" /></p>
 
 
 

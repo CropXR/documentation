@@ -1630,15 +1630,15 @@ example “CXRS4 - Drought response of arabidopsis after hormal treatment with P
 <h2 id="references-inside-sample-templates">References inside sample templates<a class="headerlink" href="#references-inside-sample-templates" title="Permanent link">&para;</a></h2>
 <h3 id="sample-inputs">Sample inputs<a class="headerlink" href="#sample-inputs" title="Permanent link">&para;</a></h3>
 <p>Unfortunately in FairdomSEEK the names of the samples are not used as identifiers. For this reason the column where you link to samples from the previous section (marked Input) needs to be formatted like this: </p>
-<div class="highlight"><pre><span></span><code>[{&quot;id&quot;=&gt;343, &quot;type&quot;=&gt;&quot;Sample&quot;, &quot;title&quot;=&gt;&quot;yeast_wgs_02&quot;}]
+<div class="highlight"><pre><span></span><code>[{"id"=&gt;343, "type"=&gt;"Sample", "title"=&gt;"yeast_wgs_02"}]
 </code></pre></div>
 <p>You can read more <a href="https://docs.seek4science.org/help/user-guide/create-sample-isajson-compliant">here</a>.</p>
 <p>When you are entering this data, it might be convenient to make a column with the ids that the catalogue has generated, and one with the sample titles, and use excel formulas to create the required format, and copy the values into the upload sheet.</p>
-<div class="highlight"><pre><span></span><code>=&quot;[{&quot;&quot;id&quot;&quot;=&gt;&quot;&amp;A1&amp;&quot;, &quot;&quot;type&quot;&quot;=&gt;&quot;&quot;Sample&quot;&quot;, &quot;&quot;title&quot;&quot;=&gt;&quot;&quot;&quot;&amp;B1&amp;&quot;&quot;&quot;}]&quot;
+<div class="highlight"><pre><span></span><code>="[{""id""=&gt;"&amp;A1&amp;", ""type""=&gt;""Sample"", ""title""=&gt;"""&amp;B1&amp;"""}]"
 </code></pre></div>
 <h3 id="data-files">Data files<a class="headerlink" href="#data-files" title="Permanent link">&para;</a></h3>
 <p>To link a registered data file use the following format. </p>
-<div class="highlight"><pre><span></span><code>{&quot;id&quot;=&gt;1, &quot;type&quot;=&gt;&quot;DataFile&quot;, &quot;title&quot;=&gt;&quot;File from data access layer&quot;}
+<div class="highlight"><pre><span></span><code>{"id"=&gt;1, "type"=&gt;"DataFile", "title"=&gt;"File from data access layer"}
 </code></pre></div>
 <p>Find the data file ID, by going to the data file in the interface, and checking the number at the end of the URL https://catalogue.cropresilience.org/data_files/1 </p>
 <h2 id="defining-assays">Defining assays<a class="headerlink" href="#defining-assays" title="Permanent link">&para;</a></h2>

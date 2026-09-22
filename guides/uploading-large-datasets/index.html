@@ -1520,15 +1520,15 @@
 </ul>
 <h2 id="step-1-upload-with-rclone-copy">Step 1: Upload with rclone copy<a class="headerlink" href="#step-1-upload-with-rclone-copy" title="Permanent link">&para;</a></h2>
 <p>For large datasets, use <code>rclone copy</code> rather than mounting. Mounting relies on a continuous network connection, which can cause issues during long transfers.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>/local/path<span class="w"> </span><span class="s2">&quot;cropxr:destination/folder&quot;</span><span class="w"> </span>--timeout<span class="w"> </span>60m<span class="w"> </span>-v
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>/local/path<span class="w"> </span><span class="s2">"cropxr:destination/folder"</span><span class="w"> </span>--timeout<span class="w"> </span>60m<span class="w"> </span>-v
 </code></pre></div>
 <p>The <code>--timeout</code> flag prevents timeouts during large file transfers (allow approximately 10 minutes per GB). The <code>-v</code> flag provides progress output.</p>
 <p>For very large uploads, consider using <code>--progress</code> for a summary view:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>/local/path<span class="w"> </span><span class="s2">&quot;cropxr:destination/folder&quot;</span><span class="w"> </span>--timeout<span class="w"> </span>120m<span class="w"> </span>--progress
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rclone<span class="w"> </span>copy<span class="w"> </span>/local/path<span class="w"> </span><span class="s2">"cropxr:destination/folder"</span><span class="w"> </span>--timeout<span class="w"> </span>120m<span class="w"> </span>--progress
 </code></pre></div>
 <h2 id="step-2-verify-the-transfer">Step 2: Verify the transfer<a class="headerlink" href="#step-2-verify-the-transfer" title="Permanent link">&para;</a></h2>
 <p>After the upload completes, verify that all files transferred correctly:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>rclone<span class="w"> </span>check<span class="w"> </span>/local/path<span class="w"> </span><span class="s2">&quot;cropxr:destination/folder&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>rclone<span class="w"> </span>check<span class="w"> </span>/local/path<span class="w"> </span><span class="s2">"cropxr:destination/folder"</span>
 </code></pre></div>
 <p>This compares the source and destination, reporting any differences. If files are missing or mismatched, re-run the copy command—rclone will only transfer files that need updating.</p>
 <h2 id="step-3-clean-up-local-files">Step 3: Clean up local files<a class="headerlink" href="#step-3-clean-up-local-files" title="Permanent link">&para;</a></h2>
