@@ -62,11 +62,11 @@ Each row, that can describe a sample, but also an assay performed on a sample, o
 
 ## Entity-relationship diagrams
 
-The diagrams below are drawn from the template definitions (model 1.3.0). Every box is a table in the catalogue, and every row of every table is a "sample" to SEEK. `PK` marks the column SEEK displays as the row's name; it must be unique within the table. `FK` marks the `Input` column, a list of rows from the table one level up. `cv` is a controlled vocabulary, `link` is a reference to a record registered elsewhere in the catalogue. Fields without a marker are optional.
+The diagrams below show model 1.0, the last per-file state of the definitions from 260727 before templates were renamed by stream. Every box is a table in the catalogue, and every row of every table is a "sample" to SEEK. `PK` marks the column SEEK displays as the row's name; it must be unique within the table. `FK` marks the `Input` column, a list of rows from the table one level up. `cv` is a controlled vocabulary, `link` is a reference to a record registered elsewhere in the catalogue. Fields marked `REQ` are required; the rest are optional.
 
 ### Containers and study-level metadata
 
-Whole-study and whole-assay properties do not sit in the tables. They sit on the Study and the assay stream as extended metadata, one type per stream. The study types embed nested records for location, experimental design, growth facility and the data access protocol.
+Whole-study and whole-assay properties do not sit in the tables. They sit on the Study and the assay stream as extended metadata, one type per stream. The phenotyping and combined study types embed nested records for location, experimental design and growth facility. The sequencing study type carries only the study id and the dates.
 
 ```mermaid
 erDiagram
@@ -78,13 +78,12 @@ erDiagram
     STUDY_METADATA ||--o| LOCATION : links
     STUDY_METADATA ||--o| EXPERIMENTAL_DESIGN : links
     STUDY_METADATA ||--o| GROWTH_FACILITY : links
-    STUDY_METADATA ||--o| DATA_ACCESS_PROTOCOL : links
     STUDY ||--|| SOURCE_TABLE : "study source"
     STUDY ||--|{ SAMPLE_TABLE : "study sample"
     ASSAY ||--|| ASSAY_TABLE : "assay - material or assay - data file"
 
     STUDY_METADATA {
-        string study_id PK
+        string study_id PK "REQ"
         string study_start_date
         string study_end_date
         text cultural_practices
@@ -106,33 +105,18 @@ erDiagram
         text growth_facility_description
         string growth_facility
     }
-    DATA_ACCESS_PROTOCOL {
-        text dataset_dois
-        string data_management_plan
-        cv non_research_use
-        cv student_use
-        cv teaching_use
-        cv limited_to_organisations
-        cv commercial_use
-        cv limited_to_regions
-        cv motivation_required
-        cv usage_costs
-        text request_deciders
-        text request_handler
-        string response_time
-    }
 ```
 
-The study types are `CropXR phenotyping study`, `CropXR sequencing study`, `CropXR metabolomics study` and `CropXR combined study`. The sequencing study type carries only the study id, the dates and the data access protocol. The assay types are shown in the stream diagrams below.
+The study types are `CropXR phenotyping study`, `CropXR sequencing study` and `CropXR combined study`. The assay types are shown in the stream diagrams below.
 
-### The source, shared by every stream
+### The source, shared by both streams
 
 One source row is a genotype or seed batch together with the conditions it was grown under before treatment (`growth_*`) and during treatment (`treatment_*`). Those conditions apply to every sample and file derived from the row, so anything that varies per plant belongs on the sample instead. A source can hold one treatment.
 
 ```mermaid
 erDiagram
     SOURCE {
-        string Source_Name PK
+        string Source_Name PK "REQ"
         cv country
         int taxon_id
         string species_name
@@ -172,22 +156,24 @@ erDiagram
 
 ### Sequencing stream
 
-The library fields follow ENA and sit on the assay stream's extended metadata, because they hold for every sample sequenced in that assay. The assay row therefore carries little more than an id and the protocol.
+The library fields follow ENA and sit on the assay stream's extended metadata, because they hold for every sample sequenced in that assay. The assay row therefore carries little more than an id and the library construction protocol. Two layouts exist: the two-table form, `CropXR sequencing assay condensed` followed by `CropXR sequencing data file`, and the one-table form `CropXR sequencing assay and data file`, which records the design description per file and links straight from the sample.
 
 ```mermaid
 erDiagram
-    SOURCE }|--o{ SEQUENCING_SAMPLE : Input
-    SEQUENCING_SAMPLE }|--o{ SEQUENCING_ASSAY : Input
-    SEQUENCING_ASSAY }|--o{ SEQUENCING_DATA_FILE : Input
-    SEQUENCING_DATA_FILE }o--o| DATA_FILE_RECORD : file_location
-    SEQUENCING_ASSAY_METADATA ||--o{ SEQUENCING_ASSAY : "assay stream"
+    SOURCE }|--o{ SAMPLE : Input
+    SAMPLE }|--o{ SEQUENCING_ASSAY_CONDENSED : Input
+    SEQUENCING_ASSAY_CONDENSED }|--o{ SEQUENCING_DATA_FILE : Input
+    SAMPLE }|--o{ SEQUENCING_ASSAY_AND_DATA_FILE : Input
+    SEQUENCING_DATA_FILE }o--|| DATA_FILE_RECORD : file_location
+    SEQUENCING_ASSAY_AND_DATA_FILE }o--|| DATA_FILE_RECORD : file_location
+    SEQUENCING_ASSAY_METADATA ||--o{ SEQUENCING_ASSAY_CONDENSED : "assay stream"
 
-    SEQUENCING_SAMPLE {
-        link Input FK
-        string subject_id PK
-        string title
+    SAMPLE {
+        link Input FK "REQ"
+        string subject_id PK "REQ"
+        string title "REQ"
         string description
-        string protocol
+        string protocol "REQ"
         date collection_date
         date biochemical_extraction_date
         date sequencing_submission_date
@@ -200,19 +186,31 @@ erDiagram
         string external_id
         text remarks
     }
-    SEQUENCING_ASSAY {
-        link Input FK
-        string experiment_id PK
-        string protocol
+    SEQUENCING_ASSAY_CONDENSED {
+        link Input FK "REQ"
+        string experiment_id PK "REQ"
+        string library_construction_protocol "REQ"
         string design_description
         string external_id
     }
     SEQUENCING_DATA_FILE {
-        link Input FK
-        string file_name PK
-        link file_location
+        link Input FK "REQ"
+        string file_name PK "REQ"
+        link file_location "REQ"
         text file_description
-        string protocol
+        string protocol "REQ"
+        cv file_type
+        string md5_checksum
+        string external_id
+        cv raw_or_derived
+    }
+    SEQUENCING_ASSAY_AND_DATA_FILE {
+        link Input FK "REQ"
+        string design_description
+        string file_name PK "REQ"
+        link file_location "REQ"
+        text file_description
+        string protocol "REQ"
         cv file_type
         string md5_checksum
         string external_id
@@ -239,22 +237,24 @@ erDiagram
 
 ### Phenotyping stream
 
-The study sample is an observation unit: the plant, plot, greenhouse or other level on which a measurement is made. Units can nest through `parent_subject_id`, which is a name and not a checked link. The observed variable, method, instrument and scale can be described once on the assay stream's extended metadata, or per row when they differ between rows.
+The study sample is an observation unit: the plant, plot, greenhouse or other level on which a measurement is made. Units can nest through `parent_subject_id`, which is a name and not a checked link. The observed variable, method, instrument and scale can be described once on the assay stream's extended metadata, or per row in `CropXR observation` when they differ between rows. As in sequencing, a one-table form exists: `CropXR condensed observation assay with data file` links files straight from the observation unit.
 
 ```mermaid
 erDiagram
     SOURCE }|--o{ OBSERVATION_UNIT : Input
-    OBSERVATION_UNIT }|--o{ PHENOTYPING_ASSAY : Input
-    PHENOTYPING_ASSAY }|--o{ PHENOTYPING_DATA_FILE : Input
-    PHENOTYPING_DATA_FILE }o--o| DATA_FILE_RECORD : file_location
-    PHENOTYPING_ASSAY_METADATA ||--o{ PHENOTYPING_ASSAY : "assay stream"
+    OBSERVATION_UNIT }|--o{ OBSERVATION : Input
+    OBSERVATION }|--o{ DATA_FILE : Input
+    OBSERVATION_UNIT }|--o{ CONDENSED_OBSERVATION_ASSAY_WITH_DATA_FILE : Input
+    DATA_FILE }o--|| DATA_FILE_RECORD : file_location
+    CONDENSED_OBSERVATION_ASSAY_WITH_DATA_FILE }o--|| DATA_FILE_RECORD : file_location
+    PHENOTYPING_ASSAY_METADATA ||--o{ OBSERVATION : "assay stream"
 
     OBSERVATION_UNIT {
-        link Input FK
-        string subject_id PK
-        string title
+        link Input FK "REQ"
+        string subject_id PK "REQ"
+        string title "REQ"
         string description
-        string protocol
+        string type "REQ, the protocol"
         string plant_structure_ontology
         string plant_structure
         string age
@@ -265,13 +265,13 @@ erDiagram
         string spatial_distribution
         text remarks
     }
-    PHENOTYPING_ASSAY {
-        link Input FK
-        string experiment_id PK
+    OBSERVATION {
+        link Input FK "REQ"
+        string experiment_id PK "REQ"
         string variable_name
         string variable_accession_number
         string trait
-        string protocol
+        string method "REQ, the protocol"
         string method_accession_number
         string method_description
         string reference_method
@@ -281,12 +281,22 @@ erDiagram
         string scale_accession_number
         string time_scale
     }
-    PHENOTYPING_DATA_FILE {
-        link Input FK
-        string file_name PK
-        link file_location
+    DATA_FILE {
+        link Input FK "REQ"
+        string file_name PK "REQ"
+        link file_location "REQ"
         text file_description
-        string protocol
+        string protocol "REQ"
+        string file_type
+        string md5_checksum
+        cv raw_or_derived
+    }
+    CONDENSED_OBSERVATION_ASSAY_WITH_DATA_FILE {
+        link Input FK "REQ"
+        string protocol "REQ"
+        string file_name PK "REQ"
+        link file_location "REQ"
+        text file_description
         string file_type
         string md5_checksum
         cv raw_or_derived
@@ -311,102 +321,23 @@ erDiagram
     }
 ```
 
-### Metabolomics stream
+### Combined sample or observation unit
 
-One assay row is one extract measured by one technique. The instrument and protocol parameters sit on the assay stream's extended metadata, with one type per technique: `CropXR LC-MS assay`, `CropXR GC-MS assay` or `CropXR NMR assay`. The diagram shows the LC-MS type; GC-MS adds an autosampler model and guard column, NMR replaces the chromatography and mass spectrometry fields with tube, solvent, probe, pulse sequence and field strength.
-
-```mermaid
-erDiagram
-    SOURCE }|--o{ METABOLOMICS_SAMPLE : Input
-    METABOLOMICS_SAMPLE }|--o{ METABOLOMICS_ASSAY : Input
-    METABOLOMICS_ASSAY }|--o{ METABOLOMICS_DATA_FILE : Input
-    METABOLOMICS_DATA_FILE }o--o| DATA_FILE_RECORD : file_location
-    LCMS_ASSAY_METADATA ||--o{ METABOLOMICS_ASSAY : "assay stream"
-
-    METABOLOMICS_SAMPLE {
-        link Input FK
-        string subject_id PK
-        string title
-        string description
-        string protocol
-        string sample_type
-        date collection_date
-        date biochemical_extraction_date
-        string plant_structure_ontology
-        string plant_structure
-        string age
-        string plant_developmental_stage_text
-        string plant_developmental_stage_ontology
-        string spatial_distribution
-        string external_id
-        text remarks
-    }
-    METABOLOMICS_ASSAY {
-        link Input FK
-        string experiment_id PK
-        cv technique
-        string protocol
-        string extract_name
-        string labeled_extract_name
-        string normalization_name
-        string data_transformation_name
-        string external_id
-    }
-    METABOLOMICS_DATA_FILE {
-        link Input FK
-        string file_name PK
-        cv file_role
-        link file_location
-        text file_description
-        string protocol
-        cv file_type
-        string md5_checksum
-        string external_id
-        cv raw_or_derived
-    }
-    LCMS_ASSAY_METADATA {
-        string extraction_protocol
-        string post_extraction
-        string derivatization
-        string chromatography_protocol
-        string chromatography_instrument
-        string column_model
-        cv column_type
-        string label
-        string mass_spectrometry_protocol
-        cv scan_polarity
-        string scan_mz_range
-        string instrument
-        cv ion_source
-        cv mass_analyzer
-        string data_transformation_protocol
-        string metabolite_identification_protocol
-        link metabolite_assignment_file
-    }
-    DATA_FILE_RECORD {
-        string title
-        string remote_url
-    }
-```
-
-### Combined sample
-
-A study that holds both physical samples and observation units can use `CropXR combined sample` instead of a stream's own sample template. It carries the union of the sequencing sample and observation unit fields plus a required `subject_type` that says which one a row is.
+A study that holds both physical samples and observation units can use `CropXR sample or observation unit` instead of a stream's own sample template. It carries the union of the sequencing sample and observation unit fields plus a required `subject_type` that says which one a row is.
 
 ```mermaid
 erDiagram
-    SOURCE }|--o{ COMBINED_SAMPLE : Input
-    COMBINED_SAMPLE }|--o{ SEQUENCING_ASSAY : Input
-    COMBINED_SAMPLE }|--o{ PHENOTYPING_ASSAY : Input
-    COMBINED_SAMPLE }|--o{ METABOLOMICS_ASSAY : Input
+    SOURCE }|--o{ SAMPLE_OR_OBSERVATION_UNIT : Input
+    SAMPLE_OR_OBSERVATION_UNIT }|--o{ SEQUENCING_ASSAY_CONDENSED : Input
+    SAMPLE_OR_OBSERVATION_UNIT }|--o{ OBSERVATION : Input
 
-    COMBINED_SAMPLE {
-        link Input FK
-        string subject_id PK
-        cv subject_type
-        string title
+    SAMPLE_OR_OBSERVATION_UNIT {
+        link Input FK "REQ"
+        string subject_id PK "REQ"
+        cv subject_type "REQ"
+        string title "REQ"
         string description
-        string protocol
+        string protocol "REQ"
         date collection_date
         string biochemical_extraction_date
         date sequencing_submission_date
@@ -429,9 +360,9 @@ erDiagram
 - A derived file whose inputs come from two assay streams.
 - More than one treatment on a source.
 - An observation unit hierarchy that the catalogue checks.
+- Metabolomics measurements.
 
-Field descriptions and vocabulary terms are listed in the [sample types reference](https://gitlab.ewi.tudelft.nl/reit/dataXR/seek-metadata-definitions) of the metadata definitions repository.
-
+Field descriptions and vocabulary terms are listed in the [metadata definitions repository](https://gitlab.ewi.tudelft.nl/reit/dataXR/seek-metadata-definitions).
 
 
 ## Sections
