@@ -1412,6 +1412,11 @@
 
 <h1 id="short-guide">Short guide<a class="headerlink" href="#short-guide" title="Permanent link">&para;</a></h1>
 <p>Detailed instructions are found <a href="../full-guide/">here</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Always select the highest ID</p>
+<p>Every template list below shows all released versions under the same name. Select the
+entry with the highest ID; that is the latest version.</p>
+</div>
 <p>Prepare</p>
 <ol>
 <li>register the study in the form and get storage </li>
@@ -1423,7 +1428,9 @@
 <li>choose an extended metadata type</li>
 <li>set the sharing of the study</li>
 <li>choose a template for the study source. Add additional fields if needed.</li>
-<li>choose a template for the study sample (sample only, observation unit, or combined)</li>
+<li>choose a template for the study sample, matching your stream: “CropXR sequencing sample”,
+     “CropXR phenotyping observation unit”, “CropXR metabolomics sample”, or “CropXR combined
+     sample” when the study holds both samples and measurements on another level</li>
 </ol>
 </li>
 <li>for each assay type create an assay stream<ol>
@@ -1432,30 +1439,74 @@
 </ol>
 </li>
 <li>within the assay stream create one or more assays <ol>
-<li>choose a sample template that fits the type of assay (choose between material and data file + choose the full or condensed + choose sequencing or observation)</li>
+<li>choose the assay template matching your stream and ISA level: “assay - material” for the
+     experiment itself (“CropXR sequencing assay”, “CropXR phenotyping assay”, “CropXR
+     metabolomics assay”), “assay - data file” for the files it produces (“CropXR sequencing
+     data file”, “CropXR phenotyping data file”, “CropXR metabolomics data file”)</li>
 <li>add additional fields if needed</li>
 <li>add additional assays for data files that were generate from the first assay output</li>
 </ol>
 </li>
 </ol>
 <p>Now the study has been defined, continue with the minimally needed metadata.</p>
+<p>Sources, samples and assay rows are all entered the same way — download, fill, upload. The order
+is fixed: first the “Sources table”, then the “Samples table” (both under “Study design”), then
+each assay’s own table. Finish one table before opening the next.</p>
+<p>For each table in turn:</p>
+<ul>
+<li>open it and click “Batch download to Excel”</li>
+<li>fill the data in the <strong>Samples</strong> sheet of the workbook, leaving the first two columns (<code>id</code> and
+  <code>uuid</code>) empty — SEEK fills those, and they are how you read the ids back later</li>
+<li>save the file, then under “Upload excel spreadsheet” click “Browse” and “🟦Upload”. Read any
+  error message carefully and correct the sheet</li>
+</ul>
+<p>Download a table only after the previous one has been uploaded. SEEK identifies rows by catalogue
+id, not by name, so the Input column linking a table to the one before it can only be filled once
+those rows exist and have ids. See the <a href="../reference/#sample-inputs">format for sample inputs</a>.</p>
+<p>Uploading a row whose name already exists creates a second row rather than updating the first.
+To revise rows that are already there, select them before downloading.</p>
 <ol>
-<li>Register Data files by linking the URL to the file or folder. Manage the permissions on the file. </li>
-<li>Register protocols under SOPs and manage the permissions. </li>
+<li>Register protocols under SOPs and manage the permissions.</li>
 <li>Edit the study to fill the extend metadata and link SOPs.</li>
-<li>Define sources, based on your specific study and the level of granularity needed.</li>
+<li>
+<p>Define sources, based on your specific study and the level of granularity needed.</p>
+<p>Enter the data with the download, fill, upload cycle above.</p>
+</li>
+<li>
+<p>Define samples, based on your specific study and the level of granularity needed.</p>
+<p>Enter the data with the same cycle, referencing the study sources by name and id in the Input column.</p>
+</li>
+<li>
+<p>Edit assay metadata</p>
+</li>
+<li>Enter assay row data with the same cycle. Leave the file location column empty: it takes a
+    reference to a data file already registered in SEEK, not a path, so the file must exist as a
+    record first. That happens in the next step.</li>
 </ol>
-<p>Enter the data by downloading the template, filling the data and uploading.
-10. Define samples/observation units, based on your specific study and the level of granularity needed.</p>
-<div class="highlight"><pre><span></span><code>Enter the data by downloading the template, filling the data, referencing the study sources by name and id, and uploading the template in the interface.
-</code></pre></div>
+<p>The metadata now stands on its own. The second step is to add the data.</p>
+<div class="admonition note">
+<p class="admonition-title">This step will change</p>
+<p>Adding data will move to the data access layer. Until it does, you register the location of
+your data yourself, as described below.</p>
+</div>
 <ol>
-<li>Edit assay metadata </li>
-<li>Enter assay row data + link data files</li>
+<li>Register your data files. SEEK stores a link to the data, not a copy: the files stay where
+    they are on the Research Drive.<ol>
+<li>under “➕Create” choose “Data file”, and under the “Remote URL” tab paste the URL of a
+     file or folder on the Research Drive</li>
+<li>register one folder per set of files that hold a single data type and share the same
+     permissions — assay rows point at the individual files inside it by relative path</li>
+<li>set the sharing. These permissions will govern who can download the data, so registering
+     a whole study as one data file leaves no way to grant access to part of it</li>
+</ol>
+</li>
+<li>Link each registered data file into the assay rows it belongs to, using the <a href="../reference/#data-files">format for data
+    files</a>. Select the rows before downloading, so the upload revises
+    them instead of adding a second set.</li>
 </ol>
 <p>Now that the minimal metadata is added, continue improving the metadata.</p>
 <ol>
-<li>adapt permissions </li>
+<li>adapt permissions</li>
 <li>update with additional data</li>
 </ol>
 
