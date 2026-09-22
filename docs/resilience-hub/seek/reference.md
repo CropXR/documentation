@@ -29,12 +29,26 @@ When you are entering this data, it might be convenient to make a column with th
 
     ="[{""id""=>"&A1&", ""type""=>""Sample"", ""title""=>"""&B1&"""}]"
 
+The string is fragile, and a broken one is not reported as broken. If SEEK cannot parse the cell it treats it as empty and answers `Input (...): ["is required"]`, which points at the wrong problem. When you see that error, the cell almost always contains something rather than nothing.
+
+Three things break it:
+
+- **A missing quote after a key.** `"type"=>` is correct; `"type=>` parses as nothing. This is the easiest one to miss by eye.
+- **Smart quotes.** Excel's autocorrect rewrites `"` as `“` and `”`, which SEEK cannot read. Turn the substitution off before pasting, and check the cell afterwards.
+- **A pasted formula.** Copy the formula's result into the upload sheet with paste-as-values; the formula itself refers to cells in the other workbook and evaluates to nothing.
+
+Writing the id as a quoted string (`"id"=>"343"`) is accepted, though the bare number above is the form to prefer.
+
+The id is what SEEK resolves. The title is not checked against the record and does not have to match — a row with the wrong title still links correctly, and the interface displays the real name. Keep it accurate anyway: tooling that reads these workbooks parses the title back out of the string, so a wrong one is invisible in the catalogue but misleading later.
+
  
 ### Data files
 
 To link a registered data file use the following format. 
 
     {"id"=>1, "type"=>"DataFile", "title"=>"File from data access layer"}
+
+Note that this form has no square brackets, where a sample input does, and that the type is `DataFile` rather than `Sample`. The id is the data file's own id, not the id of any sample or assay row.
 
 Find the data file ID, by going to the data file in the interface, and checking the number at the end of the URL https://catalogue.cropresilience.org/data_files/1 
 
@@ -68,7 +82,7 @@ Top level environmental measurements, with no distinction between rows/samples, 
 
  
 ### Multiple files per experiment
-If one experimental run creates multiple data files, it is possible to split the experiment and the file into two assay steps.
+If a single measurement produces multiple data files, it is possible to split the experiment and the file into two assay steps.
 In the first step the experiment is described and in the second step the files are linked to the experiment.
 
  

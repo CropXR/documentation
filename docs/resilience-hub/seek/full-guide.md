@@ -1,6 +1,6 @@
 # Detailed instructions
 
-## Phase 0
+## Phase 0 (getting investigation and study IDs)
 
 1. Understand the basic structure of the metadata model. 
 
@@ -20,7 +20,17 @@ Click on "SURFContext" to use your university account. For the first login give 
 6. Gather the files with the metadata that you already collected. This includes e-lab journal entries, files that outline experimental conditions per plant, files that link output files to the experiment, etc.
 
  
-## Phase 1
+## Phase 1 (creating the template)
+
+!!! warning "Always select the highest ID"
+    This phase asks you to choose a template four times: for the study source, for the study
+    sample or observation unit, and for each assay. Every one of those lists shows **every
+    version of the template that has been released, all under the same name**. Nothing in the
+    name tells the versions apart. The ID does: the highest ID is the most recent version.
+
+    Whenever the selection tool offers more than one entry with the same name, select the one
+    with the highest ID. A lower one gives your study an outdated set of fields, and the
+    template of a sample type cannot be changed once samples have been created from it.
 
 1. Log in to the [Catalogue webpage](https://catalogue.cropresilience.org/).
 
@@ -36,7 +46,7 @@ Click on "SURFContext" to use your university account. For the first login give 
 
       3. For now, skip the fields “Study position”, “Sharing”, “Creators”, “Publications”, and “Discussion Channels”. The fields “Sharing”, “Creators”, “Publications” can be reviewed and modified later.
 
-      4. At “Define Sample type for Source”, select an “Existing template”. Choose the default template “CropXR source” and click “Apply”. Now review the predefined parameters that are collected for the study source. These are the fields that will be used to describe your experimental setup and conditions. If there are any missing, you can add them at the bottom by selecting “➕Add new attribute”. Make sure that the column “ISA Tag” is set to “source_characteristic”. Additional fields can also be added later.
+      4. At “Define Sample type for Source”, select an “Existing template”. Choose the default template “CropXR source” — where the list holds several entries under that name, take the one with the highest ID — and click “Apply”. Now review the predefined parameters that are collected for the study source. These are the fields that will be used to describe your experimental setup and conditions. If there are any missing, you can add them at the bottom by selecting “➕Add new attribute”. Make sure that the column “ISA Tag” is set to “source_characteristic”. Additional fields can also be added later.
        
          In MIAPPE there are many suggestions for [environmental parameters](https://github.com/MIAPPE/MIAPPE/blob/master/MIAPPE_Appendix_Environment.tsv) and [experimental factors](https://github.com/MIAPPE/MIAPPE/blob/master/MIAPPE_Appendix_Experimental_Factor.tsv) to collect. Please reference these lists, to get a predictable field name.
 
@@ -46,9 +56,9 @@ Click on "SURFContext" to use your university account. For the first login give 
 
       5. Skip “SOPs” for now, these will be added later.
 
-      6. At “Define Sample type for Sample” at select an “Existing template” you need to “Choose a template” in the drop down selection. Templates are named and grouped by stream, so pick the set matching your study. Select, depending on the units of measurement: “CropXR sequencing sample” when there are samples only, “CropXR combined sample” if there are both samples in your study as well as measurements on a different level, and “CropXR phenotyping observation unit” when there are no samples. Choose the latest version of the template you need, and click “Apply”. Here you can also check the fields and add additional fields when needed, as describe for the source, while it is likely not needed.
+      6. At “Define Sample type for Sample” at select an “Existing template” you need to “Choose a template” in the drop down selection. Templates are named and grouped by stream, so pick the set matching your study. Select, depending on the units of measurement: “CropXR sequencing sample” when there are samples only, “CropXR combined sample” if there are both samples in your study as well as measurements on a different level, and “CropXR phenotyping study” when there are no samples. Take the entry with the highest ID, which is the latest version of that template, and click “Apply”. Here you can also check the fields and add additional fields when needed, as describe for the source, while it is likely not needed.
 
-         The assay templates follow the same grouping. At “assay - material” choose “CropXR sequencing assay” or “CropXR phenotyping assay”; at “assay - data file” choose “CropXR sequencing data file” or “CropXR phenotyping data file”, or one of “CropXR sequencing assay with data file” and “CropXR phenotyping assay with data file” where a single step both performs the assay and produces its files.
+         The assay templates follow the same grouping. At “assay - material” choose “CropXR sequencing assay”, “CropXR phenotyping assay” or “CropXR metabolomics assay”; at “assay - data file” choose “CropXR sequencing data file”, “CropXR phenotyping data file” or “CropXR metabolomics data file”.
 
       7. Click on “🟦Create”
  
@@ -61,7 +71,7 @@ Click on "SURFContext" to use your university account. For the first login give 
 6. From the created Assay Stream, create an assay by clicking “➕Design Assay”
       1. Enter a title (following the naming convention)
       2. For now skip the fields “Sharing”, “Creators”, “SOPs”, “Publications”, “Documents” and “Channel discussions”. 
-      3. At “Define Sample type for Assay” start at the “Existing Templates”. Depending on the type of assay you are making (based on the plan made in step 4), change the “ISA Level” drop down to “assay - data file” or leave it as is. Choose the latest version of the relevant template in the drop down menu and “Apply”. 
+      3. At “Define Sample type for Assay” start at the “Existing Templates”. Depending on the type of assay you are making (based on the plan made in step 4), change the “ISA Level” drop down to “assay - data file” or leave it as is. In the drop down menu choose the relevant template, taking the entry with the highest ID, and “Apply”. 
       4. The sample type can be expanded with additional columns that should be included as metadata. This is relevant for assays where most parameters are kept constant, but some are varied between measurements/samples. If the fields is related to the assay performed, the column “ISA Tag” should be set to “parameter_value”, if it is about the output data file set it to “data_file_characteristic”. 
 7. If needed (not included already in the assay), create the next assay of the type data file for the raw data. 
 8. If needed, create the next assay of the type data file for the derived data.
@@ -70,21 +80,11 @@ Now you have the outline of your metadata structure. The actual metadata can be 
 
 ## Phase 2
 
-Not all steps need to happen in this exact order, but some steps are dependent on each other: study sources need to be created before study samples and study samples before assay row entries. Data files need to be registered before they can be referenced.
+Enter the metadata first; adding the data is the second step. Not all steps need to happen in this exact order, but some steps are dependent on each other: study sources need to be created before study samples, and study samples before assay row entries.
 
-1. Register your data files
-      1. At the top menu under “➕Create” choose “Data file” 
-      2. Choose how you want to [register your data](reference.md#registering-data-files). Find the URL at the data location (Research Drive).
-      3. Under the tab “Remote URL” past the URL of the data location and “🟦Register”. Do not mind a warning about the URL in a yellow box. If there is an error and the URL cannot be registered please check if the URL is correct. 
-      4. Fill in a “Title”, a “Description”, select a “Project”, click “🟦Next, and “🟦Next” 
-      5. Select a license. The license can be adapted later if needed. At no license the consortium agreement applies to all people users that this data is shared with. 
-      6. Adapt the sharing of the data, either on group level or per group. At a later stage, the permissions set here automatically apply to where the data is stored. For now, that is still handled separately in the research drive. 
-      7. Skip “Associated Assays” and “Other associated items”by clicking “🟦Next, and “🟦Create”
-   
-!!! warning "Data files"
-    The data file registration will soon be updated.
+Work through those tables one at a time, downloading each only after the previous one has been uploaded. SEEK identifies rows by the id the catalogue generates, not by name, so the Input column that links a table to the one before it cannot be filled until those rows exist. Downloading every workbook up front leaves you with Input columns you have no ids for.
 
-2. Add SOPs (Standard operating procedure) (can also be done later).
+1. Add SOPs (Standard operating procedure) (can also be done later).
     Each step can reference a protocol that was used: creation of samples and the grouping of observation units at the study level, the assaying protocols at assay level and the data transformation steps.
       1. At the top menu under “➕Create” choose “SOP”
       2. Click “Browse” to upload a local file.
@@ -94,13 +94,13 @@ Not all steps need to happen in this exact order, but some steps are dependent o
       6. If a data processing step is described by a registered workflow/processing pipeline, it can be linked under “Workflows”. 
       7. Click “🟦Register”
 
-3. Edit the study by going to “⚙️Actions” in the top corner and then “📝Edit ISA Study”
+2. Edit the study by going to “⚙️Actions” in the top corner and then “📝Edit ISA Study”
       1. Fill in the description
       2. Fill in extended metadata. Focus on the fields most relevant to understand the study. Skip the fields that do not apply. The fields can always be revised later. 
       3. Under “SOPs” select the SOP(s) that describe the sampling and the experimental design map. 
       4. Click “🟦Update” to apply the changes.
 
-4. Define study source samples
+3. Define study source samples
       1. Choose [how to group/define the sources](reference.md#study-source).
       2. Go to the “Sources table”, by clicking the tab “Study design” (or from the “Single page” view find the “Sources table” in the left menu). Here you find a table with the columns that you have defined. 
       3. Download the template by clicking the button “Batch download to Excel”. 
@@ -112,7 +112,7 @@ Not all steps need to happen in this exact order, but some steps are dependent o
            
          Be aware, if you upload the same excel multiple times, a new sample will be created with the same name. To check how to update existing samples, check the phase 3 instructions.
 
-5. Define study samples
+4. Define study samples
       1. [Choose what type are needed](reference.md#study-samples).
       2. Go to “Samples table” under “Study design”(or from the “Single page” view find the “Samples table” in the left menu).
       3. Download the template by clicking the button “Batch download to Excel”.
@@ -124,12 +124,31 @@ Not all steps need to happen in this exact order, but some steps are dependent o
          5. Start with the most relevant fields. The data can be improved on at a later point. 
       5. Save the file. Upload it by under “Upload excel spreadsheet” select “Browse” and click “🟦Upload”. Now there might be an error message. Please read it carefully and adjust the data accordingly.
 
-6. Fill in the assay stream extended metadata by going to  “⚙️Actions” in the top corner and then “📝Edit Assay Stream”. Focus on the fields that are most important and “🟦Update” to save.
+5. Fill in the assay stream extended metadata by going to  “⚙️Actions” in the top corner and then “📝Edit Assay Stream”. Focus on the fields that are most important and “🟦Update” to save.
 
-7. For each assay defined in phase 1, enter the row data, the same way as the study source and sample: download the template, fill in the data, save and upload the template.
+6. For each assay defined in phase 1, enter the row data, the same way as the study source and sample: download the template, fill in the data, save and upload the template.
       1. For the first assay of an assay stream the input should be a study sample (so this is a sample of observation unit). For additional assays the input is an output of the previous assay. 
-      2. To link a registered data file as file location, use the [required format](reference.md#data-files).
-      3. For the file name, use the relative path of the exact file inside the registered file location. 
+      2. Leave the file location empty for now. That column takes a reference to a data file already registered in SEEK — not a path or a URL — so the file has to exist as a record before the cell can be filled. Registering and linking happen in the second step, below.
+
+The metadata now stands on its own. The second step is to add the data.
+
+!!! note "This step will change"
+    Registering data will move to the data access layer. Until it does, you register the
+    location of your data yourself, as described here.
+
+7. Register your data files
+      1. At the top menu under “➕Create” choose “Data file” 
+      2. Choose how you want to [register your data](reference.md#registering-data-files). Find the URL at the data location (Research Drive).
+      3. Under the tab “Remote URL” past the URL of the data location and “🟦Register”. Do not mind a warning about the URL in a yellow box. If there is an error and the URL cannot be registered please check if the URL is correct. 
+      4. Fill in a “Title”, a “Description”, select a “Project”, click “🟦Next, and “🟦Next” 
+      5. Select a license. The license can be adapted later if needed. At no license the consortium agreement applies to all people users that this data is shared with. 
+      6. Adapt the sharing of the data, either on group level or per group. At a later stage, the permissions set here automatically apply to where the data is stored. For now, that is still handled separately in the research drive. 
+      7. Skip “Associated Assays” and “Other associated items”by clicking “🟦Next, and “🟦Create”
+
+8. Link the registered data files into the assay rows
+      1. To link a registered data file as file location, use the [required format](reference.md#data-files). The id in it is the data file's own id, read from the end of its URL (`…/data_files/1`), not the id of any sample or assay row.
+      2. For the file name, use the relative path of the exact file inside the registered file location.
+      3. Select the rows before downloading, so that uploading revises them instead of creating a second set with the same names.
 
 
 ## Phase 3
