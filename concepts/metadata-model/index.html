@@ -603,6 +603,100 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#entity-relationship-diagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entity-relationship diagrams
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entity-relationship diagrams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#containers-and-study-level-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Containers and study-level metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-source-shared-by-every-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The source, shared by every stream
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequencing-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequencing stream
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phenotyping-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phenotyping stream
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metabolomics-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metabolomics stream
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combined-sample" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combined sample
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-model-cannot-express" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the model cannot express
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sections" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1671,7 +1765,345 @@ The other processes, however many needed, are grouped under the assay. The assay
 <p>In the catalogue, the processes that are grouped under the assay, are all called an assay even if the input and output are both a material object, or both data files. 
 This does not fit with the classical meaning of the word ‘assay’, but it implements the same functionality as ISA. The assays can be connected into an assay stream.</p>
 <p>Each row, that can describe a sample, but also an assay performed on a sample, or a derivation of a data file, is called always a ‘sample’ in the catalogue.</p>
-<p><img alt="" src="../docs/img/SEEKSchematicCombinedStudy.png" /></p>
+<p><img alt="" src="../../img/SEEKSchematicCombinedStudy.png" /></p>
+<h2 id="entity-relationship-diagrams">Entity-relationship diagrams<a class="headerlink" href="#entity-relationship-diagrams" title="Permanent link">&para;</a></h2>
+<p>The diagrams below are drawn from the template definitions (model 1.3.0). Every box is a table in the catalogue, and every row of every table is a "sample" to SEEK. <code>PK</code> marks the column SEEK displays as the row's name; it must be unique within the table. <code>FK</code> marks the <code>Input</code> column, a list of rows from the table one level up. <code>cv</code> is a controlled vocabulary, <code>link</code> is a reference to a record registered elsewhere in the catalogue. Fields without a marker are optional.</p>
+<h3 id="containers-and-study-level-metadata">Containers and study-level metadata<a class="headerlink" href="#containers-and-study-level-metadata" title="Permanent link">&para;</a></h3>
+<p>Whole-study and whole-assay properties do not sit in the tables. They sit on the Study and the assay stream as extended metadata, one type per stream. The study types embed nested records for location, experimental design, growth facility and the data access protocol.</p>
+<pre class="mermaid"><code>erDiagram
+    INVESTIGATION ||--o{ STUDY : contains
+    STUDY ||--o{ ASSAY_STREAM : contains
+    ASSAY_STREAM ||--|{ ASSAY : contains
+    STUDY ||--o| STUDY_METADATA : "extended metadata"
+    ASSAY_STREAM ||--o| ASSAY_METADATA : "extended metadata"
+    STUDY_METADATA ||--o| LOCATION : links
+    STUDY_METADATA ||--o| EXPERIMENTAL_DESIGN : links
+    STUDY_METADATA ||--o| GROWTH_FACILITY : links
+    STUDY_METADATA ||--o| DATA_ACCESS_PROTOCOL : links
+    STUDY ||--|| SOURCE_TABLE : "study source"
+    STUDY ||--|{ SAMPLE_TABLE : "study sample"
+    ASSAY ||--|| ASSAY_TABLE : "assay - material or assay - data file"
+
+    STUDY_METADATA {
+        string study_id PK
+        string study_start_date
+        string study_end_date
+        text cultural_practices
+    }
+    LOCATION {
+        string experimental_site_name
+        string latitude
+        string longitude
+        string altitude
+        cv country
+    }
+    EXPERIMENTAL_DESIGN {
+        text experimental_design_description
+        string experimental_design_type
+        string observation_unit_level_hierarchy
+        text observation_unit_description
+    }
+    GROWTH_FACILITY {
+        text growth_facility_description
+        string growth_facility
+    }
+    DATA_ACCESS_PROTOCOL {
+        text dataset_dois
+        string data_management_plan
+        cv non_research_use
+        cv student_use
+        cv teaching_use
+        cv limited_to_organisations
+        cv commercial_use
+        cv limited_to_regions
+        cv motivation_required
+        cv usage_costs
+        text request_deciders
+        text request_handler
+        string response_time
+    }</code></pre>
+<p>The study types are <code>CropXR phenotyping study</code>, <code>CropXR sequencing study</code>, <code>CropXR metabolomics study</code> and <code>CropXR combined study</code>. The sequencing study type carries only the study id, the dates and the data access protocol. The assay types are shown in the stream diagrams below.</p>
+<h3 id="the-source-shared-by-every-stream">The source, shared by every stream<a class="headerlink" href="#the-source-shared-by-every-stream" title="Permanent link">&para;</a></h3>
+<p>One source row is a genotype or seed batch together with the conditions it was grown under before treatment (<code>growth_*</code>) and during treatment (<code>treatment_*</code>). Those conditions apply to every sample and file derived from the row, so anything that varies per plant belongs on the sample instead. A source can hold one treatment.</p>
+<pre class="mermaid"><code>erDiagram
+    SOURCE {
+        string Source_Name PK
+        cv country
+        int taxon_id
+        string species_name
+        string genotype
+        string genebank
+        string ecotype
+        string cultivar
+        string latitude
+        string longitude
+        string altitude
+        string sex
+        string seed_batch_id
+        string growth_conditions
+        string growth_facility_description
+        string growth_facility
+        cv growth_medium
+        string growth_light_regimen
+        real growth_temperature_day
+        real growth_temperature_night
+        real growth_light_intensity
+        real growth_light_rfr_ratio
+        cv experimental_group
+        text treatment
+        string treatment_ontology
+        string treatment_growth_medium
+        string treatment_light_regimen
+        real treatment_temperature_day
+        real treatment_temperature_night
+        real treatment_light_intensity
+        real treatment_light_rfr_ratio
+        string treatment_time_duration
+        string treatment_time_of_day
+        string treatment_chemical
+        string treatment_chemical_cas_id
+    }</code></pre>
+<h3 id="sequencing-stream">Sequencing stream<a class="headerlink" href="#sequencing-stream" title="Permanent link">&para;</a></h3>
+<p>The library fields follow ENA and sit on the assay stream's extended metadata, because they hold for every sample sequenced in that assay. The assay row therefore carries little more than an id and the protocol.</p>
+<pre class="mermaid"><code>erDiagram
+    SOURCE }|--o{ SEQUENCING_SAMPLE : Input
+    SEQUENCING_SAMPLE }|--o{ SEQUENCING_ASSAY : Input
+    SEQUENCING_ASSAY }|--o{ SEQUENCING_DATA_FILE : Input
+    SEQUENCING_DATA_FILE }o--o| DATA_FILE_RECORD : file_location
+    SEQUENCING_ASSAY_METADATA ||--o{ SEQUENCING_ASSAY : "assay stream"
+
+    SEQUENCING_SAMPLE {
+        link Input FK
+        string subject_id PK
+        string title
+        string description
+        string protocol
+        date collection_date
+        date biochemical_extraction_date
+        date sequencing_submission_date
+        string plant_structure_ontology
+        string plant_structure
+        string age
+        string plant_developmental_stage_text
+        string plant_developmental_stage_ontology
+        string spatial_distribution
+        string external_id
+        text remarks
+    }
+    SEQUENCING_ASSAY {
+        link Input FK
+        string experiment_id PK
+        string protocol
+        string design_description
+        string external_id
+    }
+    SEQUENCING_DATA_FILE {
+        link Input FK
+        string file_name PK
+        link file_location
+        text file_description
+        string protocol
+        cv file_type
+        string md5_checksum
+        string external_id
+        cv raw_or_derived
+    }
+    SEQUENCING_ASSAY_METADATA {
+        string study_external_id
+        cv study_type
+        string library_construction_protocol
+        string design_description
+        cv library_source
+        cv library_strategy
+        cv library_selection
+        cv library_layout
+        string insert_size
+        cv platform
+        cv instrument_model
+    }
+    DATA_FILE_RECORD {
+        string title
+        string remote_url
+    }</code></pre>
+<h3 id="phenotyping-stream">Phenotyping stream<a class="headerlink" href="#phenotyping-stream" title="Permanent link">&para;</a></h3>
+<p>The study sample is an observation unit: the plant, plot, greenhouse or other level on which a measurement is made. Units can nest through <code>parent_subject_id</code>, which is a name and not a checked link. The observed variable, method, instrument and scale can be described once on the assay stream's extended metadata, or per row when they differ between rows.</p>
+<pre class="mermaid"><code>erDiagram
+    SOURCE }|--o{ OBSERVATION_UNIT : Input
+    OBSERVATION_UNIT }|--o{ PHENOTYPING_ASSAY : Input
+    PHENOTYPING_ASSAY }|--o{ PHENOTYPING_DATA_FILE : Input
+    PHENOTYPING_DATA_FILE }o--o| DATA_FILE_RECORD : file_location
+    PHENOTYPING_ASSAY_METADATA ||--o{ PHENOTYPING_ASSAY : "assay stream"
+
+    OBSERVATION_UNIT {
+        link Input FK
+        string subject_id PK
+        string title
+        string description
+        string protocol
+        string plant_structure_ontology
+        string plant_structure
+        string age
+        string plant_developmental_stage_text
+        string plant_developmental_stage_ontology
+        string observation_unit_type
+        string parent_subject_id
+        string spatial_distribution
+        text remarks
+    }
+    PHENOTYPING_ASSAY {
+        link Input FK
+        string experiment_id PK
+        string variable_name
+        string variable_accession_number
+        string trait
+        string protocol
+        string method_accession_number
+        string method_description
+        string reference_method
+        string instrument
+        string instrument_metadata
+        string scale
+        string scale_accession_number
+        string time_scale
+    }
+    PHENOTYPING_DATA_FILE {
+        link Input FK
+        string file_name PK
+        link file_location
+        text file_description
+        string protocol
+        string file_type
+        string md5_checksum
+        cv raw_or_derived
+    }
+    PHENOTYPING_ASSAY_METADATA {
+        string variable_name
+        string variable_accession_number
+        string trait
+        string method
+        string method_accession_number
+        string method_description
+        string reference_method
+        string instrument
+        link instrument_metadata
+        string scale
+        string scale_accession_number
+        string time_scale
+    }
+    DATA_FILE_RECORD {
+        string title
+        string remote_url
+    }</code></pre>
+<h3 id="metabolomics-stream">Metabolomics stream<a class="headerlink" href="#metabolomics-stream" title="Permanent link">&para;</a></h3>
+<p>One assay row is one extract measured by one technique. The instrument and protocol parameters sit on the assay stream's extended metadata, with one type per technique: <code>CropXR LC-MS assay</code>, <code>CropXR GC-MS assay</code> or <code>CropXR NMR assay</code>. The diagram shows the LC-MS type; GC-MS adds an autosampler model and guard column, NMR replaces the chromatography and mass spectrometry fields with tube, solvent, probe, pulse sequence and field strength.</p>
+<pre class="mermaid"><code>erDiagram
+    SOURCE }|--o{ METABOLOMICS_SAMPLE : Input
+    METABOLOMICS_SAMPLE }|--o{ METABOLOMICS_ASSAY : Input
+    METABOLOMICS_ASSAY }|--o{ METABOLOMICS_DATA_FILE : Input
+    METABOLOMICS_DATA_FILE }o--o| DATA_FILE_RECORD : file_location
+    LCMS_ASSAY_METADATA ||--o{ METABOLOMICS_ASSAY : "assay stream"
+
+    METABOLOMICS_SAMPLE {
+        link Input FK
+        string subject_id PK
+        string title
+        string description
+        string protocol
+        string sample_type
+        date collection_date
+        date biochemical_extraction_date
+        string plant_structure_ontology
+        string plant_structure
+        string age
+        string plant_developmental_stage_text
+        string plant_developmental_stage_ontology
+        string spatial_distribution
+        string external_id
+        text remarks
+    }
+    METABOLOMICS_ASSAY {
+        link Input FK
+        string experiment_id PK
+        cv technique
+        string protocol
+        string extract_name
+        string labeled_extract_name
+        string normalization_name
+        string data_transformation_name
+        string external_id
+    }
+    METABOLOMICS_DATA_FILE {
+        link Input FK
+        string file_name PK
+        cv file_role
+        link file_location
+        text file_description
+        string protocol
+        cv file_type
+        string md5_checksum
+        string external_id
+        cv raw_or_derived
+    }
+    LCMS_ASSAY_METADATA {
+        string extraction_protocol
+        string post_extraction
+        string derivatization
+        string chromatography_protocol
+        string chromatography_instrument
+        string column_model
+        cv column_type
+        string label
+        string mass_spectrometry_protocol
+        cv scan_polarity
+        string scan_mz_range
+        string instrument
+        cv ion_source
+        cv mass_analyzer
+        string data_transformation_protocol
+        string metabolite_identification_protocol
+        link metabolite_assignment_file
+    }
+    DATA_FILE_RECORD {
+        string title
+        string remote_url
+    }</code></pre>
+<h3 id="combined-sample">Combined sample<a class="headerlink" href="#combined-sample" title="Permanent link">&para;</a></h3>
+<p>A study that holds both physical samples and observation units can use <code>CropXR combined sample</code> instead of a stream's own sample template. It carries the union of the sequencing sample and observation unit fields plus a required <code>subject_type</code> that says which one a row is.</p>
+<pre class="mermaid"><code>erDiagram
+    SOURCE }|--o{ COMBINED_SAMPLE : Input
+    COMBINED_SAMPLE }|--o{ SEQUENCING_ASSAY : Input
+    COMBINED_SAMPLE }|--o{ PHENOTYPING_ASSAY : Input
+    COMBINED_SAMPLE }|--o{ METABOLOMICS_ASSAY : Input
+
+    COMBINED_SAMPLE {
+        link Input FK
+        string subject_id PK
+        cv subject_type
+        string title
+        string description
+        string protocol
+        date collection_date
+        string biochemical_extraction_date
+        date sequencing_submission_date
+        string plant_structure_ontology
+        string plant_structure
+        string age
+        string plant_developmental_stage_text
+        string plant_developmental_stage_ontology
+        string observation_unit_type
+        string parent_subject_id
+        string spatial_distribution
+        string external_id
+        text remarks
+    }</code></pre>
+<h3 id="what-the-model-cannot-express">What the model cannot express<a class="headerlink" href="#what-the-model-cannot-express" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A link between rows of different studies.</li>
+<li>A derived file whose inputs come from two assay streams.</li>
+<li>More than one treatment on a source.</li>
+<li>An observation unit hierarchy that the catalogue checks.</li>
+</ul>
+<p>Field descriptions and vocabulary terms are listed in the <a href="https://gitlab.ewi.tudelft.nl/reit/dataXR/seek-metadata-definitions">sample types reference</a> of the metadata definitions repository.</p>
 <h2 id="sections">Sections<a class="headerlink" href="#sections" title="Permanent link">&para;</a></h2>
 <h3 id="study-extended-metadata">Study extended metadata<a class="headerlink" href="#study-extended-metadata" title="Permanent link">&para;</a></h3>
 <p>Information that is the same for the whole study.</p>
