@@ -130,6 +130,7 @@ nav:
     - Upload and Download: resilience-hub/cli-guide.md
     - SEEK Metadata Entry:
       - resilience-hub/seek/index.md
+      - Before You Upload: resilience-hub/seek/upload-prerequisites.md
       - Short Guide: resilience-hub/seek/short-guide.md
       - High-Level Example: resilience-hub/seek/high-level-example.md
       - Full Guide: resilience-hub/seek/full-guide.md
