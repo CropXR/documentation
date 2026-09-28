@@ -27,19 +27,18 @@ If any of these do not apply to you, the upcoming sections will guide you throug
 
 ## 2. Confirm you've been added to your project
 
-Every CropXR Work Package maps to a single project in SEEK. Projects are visible to everyone, even if you have never joined one.
-. You can browse projects by clicking the 'Browse' tab in the navigation bar, and selecting 'Projects'.
+Every CropXR Work Package maps to a single project in SEEK. Projects are visible to everyone, even if you have never joined one. You can browse projects by clicking the 'Browse' tab in the navigation bar, and selecting 'Projects'.
 
 If you're not yet a member of your Work Package's project, you can request membership from the
 project's page. Every project has a **Work Package Lead**, who acts as the Project Administrator and
 approves join requests. If you do not know who your Work Package Lead is, please contact the DataXR team (data@cropxr.org).
 
-Access to project studies, assays and data files are not automatically granted to project members. Access to such material must be shared separately.
+Access to project studies, assays and data files is not automatically granted to project members. Access to such material must be shared separately
  (see [Permission levels](#permission-levels), below).
 
 ## 3. Get edit access to the assay
 
-Uploading requires **Editing** access on the assay itself — not just the study it belongs to, or
+Uploading requires **Editing** access on the assay itself, not just the study it belongs to, or
 the investigation the study belongs to.
 
 !!! warning "Access doesn't cascade"
@@ -67,8 +66,6 @@ read it off the address bar:
 
 ```
 https://catalogue.cropresilience.org/assays/123
-                                             ^^^
-                                          SEEK ID
 ```
 
 The same pattern applies to studies, investigations, and data files.
