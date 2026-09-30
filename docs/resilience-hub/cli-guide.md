@@ -30,6 +30,8 @@ You do this once.
     winget install Git.Git
     ```
 
+    The first time, winget asks you to agree to the terms of its package source. Type `Y` and press Enter. An installer window opens, keep the default choices.
+
 ### Install uv
 
 === "macOS"
@@ -117,7 +119,9 @@ Open https://auth.cropresilience.org/realms/dev/device?user_code=WDJB-MJHT
 Waiting for approval...
 ```
 
-Open the link in your browser, sign in, and approve. The terminal continues by itself.
+Open the link in your browser and sign in. The browser then asks whether you grant the tool access. Click "Yes". The terminal continues by itself.
+
+![The page that asks to grant access to the Resilience Hub CLI, with the buttons Yes and No](../img/rhub-login-consent.png)
 
 You sign in once. The tool remembers it.
 
