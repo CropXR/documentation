@@ -55,7 +55,7 @@ Close the terminal and open a new one.
 ### Install rhub
 
 ```bash
-uv tool install --with "rclone-bin==1.74.1" "git+https://gitlab.ewi.tudelft.nl/reit/dataXR/resilience-hub-cli.git@v0.1.0"
+uv tool install --with "rclone-bin==1.74.1" "git+https://gitlab.ewi.tudelft.nl/reit/dataXR/resilience-hub-cli.git@v0.1.1"
 ```
 
 If uv says that the tool folder is not on your `PATH`, run `uv tool update-shell`.
@@ -97,7 +97,7 @@ rhub whoami
 The answer looks like this.
 
 ```
-0.1.0
+0.1.1
 signed in as: nobody, run rhub login
 backend url: https://test.data.resiliencehub.ewi.tudelft.nl/api
 ```
@@ -240,7 +240,7 @@ Write to the DataXR team at [data@cropxr.org](mailto:data@cropxr.org). Include t
 
 ## 7. Update or remove the tool
 
-To move to a new version, run the command of [Install rhub](#install-rhub) again, with the new version number in place of `v0.1.0`.
+To move to a new version, run the command of [Install rhub](#install-rhub) again, with the new version number in place of `v0.1.1`.
 
 These commands remove the stored sign-in and the tool.
 
