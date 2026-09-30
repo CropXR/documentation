@@ -128,9 +128,10 @@ nav:
   - Resilience Hub:
     - resilience-hub/index.md
     - Upload and Download: resilience-hub/cli-guide.md
+    - Upload Prerequisites (SEEK): resilience-hub/seek/upload-prerequisites.md
     - SEEK Metadata Entry:
       - resilience-hub/seek/index.md
-      - Before You Upload: resilience-hub/seek/upload-prerequisites.md
+      - Permissions in FairdomSEEK: resilience-hub/seek/permissions-in-fairdomseek.md
       - Short Guide: resilience-hub/seek/short-guide.md
       - High-Level Example: resilience-hub/seek/high-level-example.md
       - Full Guide: resilience-hub/seek/full-guide.md
