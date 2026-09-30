@@ -127,6 +127,7 @@ nav:
     - Data Sensitivity Levels: policies/data-sensitivity-levels.md
   - Resilience Hub:
     - resilience-hub/index.md
+    - Upload and Download: resilience-hub/cli-guide.md
     - SEEK Metadata Entry:
       - resilience-hub/seek/index.md
       - Short Guide: resilience-hub/seek/short-guide.md
