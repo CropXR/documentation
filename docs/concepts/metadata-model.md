@@ -60,6 +60,83 @@ Each row, that can describe a sample, but also an assay performed on a sample, o
 
 ![](../img/SEEKSchematicCombinedStudy.png)
 
+## Practical
+
+#### Relevant columns
+Not all fields are relevant to each study.
+
+#### Fixed or free fields
+Some fields are free text, some you need to pick from a list (controlled vocabulary), some are free, but with a list of suggestions to pick from.
+
+
+## Sections
+
+### Study extended metadata
+
+Information that is the same for the whole study.
+
+### Study sources
+The study sources section describes the plant, the growth conditions, the treatment.
+
+Besides the standard parameters that are suggested, it is possible to include additional parameters.
+Use the MIAPPE lists for growth conditions and experimental factors for predictable descriptors of relevant parameters.
+Not all conditions are as relevant and need to be included in the metadata.
+
+Choose the granularity that is needed for your metadata. 
+The sources are used to specify the biological material, as well as the growth conditions. 
+At least each experimental block needs to be defined as a separate source. 
+If the metadata and a sample needs to be traced back to a certain plant, you might define a source per plant.
+
+
+### Study samples
+
+An observation unit is any level on which a measurement/observation  is done. Examples are a plant, plot or whole field or greenhouse.
+A sample is a special level: it describes a physical subset of the plant that is collected for analysis. It will contain some information about sampling.
+
+Both samples and observation units are listed under the study samples section.
+The units can be nested.
+
+How to define this will depend on the specific design of a study, and typically be the unit for which each experiment generates a file. 
+Think about the assays and the data files when defining the observation units.
+
+### Phenotyping assay extended metadata
+
+Each different type of phenotyping measurement will be represented by an assay stream.
+The observed variable describes the measurement: what was measured and how, including the instrument. 
+It can be used to describe any type of measurement.
+This is important, because phenotyping does not rely on a limited set of experiments.
+It does require you to describe the measurement in the format.
+
+As more people have started with their metadata annotation, it is likely valuable to create a CropXR internal reference,
+where you can find how other people have described similar or the same type of experiments.
+
+In the assay stream extended metadata the information that is the same for each individual measurement can be captured.
+
+
+### Assay rows
+
+Each row describes a measurement on a sample or observation unit.
+Include any info that is different per performed measurement and/or not captured in the assay extended metadata.
+Typically include the data file location of the output of a measurement.
+
+
+### General assay
+
+When multiple measurements are done, each generating only few outputs, 
+it is easier to describe these measurements without needing to create a separate assay stream for each.
+It is possible to make a general assay that includes multiple measurement types.
+
+In this assay there is no extended metadata on assay stream level.
+Each row describes the assay: what was measured and how. 
+In a next assay step the data file can be linked to the assay.
+
+
+### Derived data files
+
+For derived data files a separate assay step can be added. 
+The input is an output file from the previous step and the method of data derivation can be included.
+
+
 ## Entity-relationship diagrams
 
 The diagrams below show model 1.0, the last per-file state of the definitions from 260727 before templates were renamed by stream. Every box is a table in the catalogue, and every row of every table is a "sample" to SEEK. `PK` marks the column SEEK displays as the row's name; it must be unique within the table. `FK` marks the `Input` column, a list of rows from the table one level up. `cv` is a controlled vocabulary, `link` is a reference to a record registered elsewhere in the catalogue. Fields marked `REQ` are required; the rest are optional.
@@ -365,88 +442,10 @@ erDiagram
 Field descriptions and vocabulary terms are listed in the [metadata definitions repository](https://gitlab.ewi.tudelft.nl/reit/dataXR/seek-metadata-definitions).
 
 
-## Sections
-
-### Study extended metadata
-
-Information that is the same for the whole study.
-
-### Study sources
-The study sources section describes the plant, the growth conditions, the treatment.
-
-Besides the standard parameters that are suggested, it is possible to include additional parameters.
-Use the MIAPPE lists for growth conditions and experimental factors for predictable descriptors of relevant parameters.
-Not all conditions are as relevant and need to be included in the metadata.
-
-Choose the granularity that is needed for your metadata. 
-The sources are used to specify the biological material, as well as the growth conditions. 
-At least each experimental block needs to be defined as a separate source. 
-If the metadata and a sample needs to be traced back to a certain plant, you might define a source per plant.
-
-
-### Study samples
-
-An observation unit is any level on which a measurement/observation  is done. Examples are a plant, plot or whole field or greenhouse.
-A sample is a special level: it describes a physical subset of the plant that is collected for analysis. It will contain some information about sampling.
-
-Both samples and observation units are listed under the study samples section.
-The units can be nested.
-
-How to define this will depend on the specific design of a study, and typically be the unit for which each experiment generates a file. 
-Think about the assays and the data files when defining the observation units.
-
-### Phenotyping assay extended metadata
-
-Each different type of phenotyping measurement will be represented by an assay stream.
-The observed variable describes the measurement: what was measured and how, including the instrument. 
-It can be used to describe any type of measurement.
-This is important, because phenotyping does not rely on a limited set of experiments.
-It does require you to describe the measurement in the format.
-
-As more people have started with their metadata annotation, it is likely valuable to create a CropXR internal reference,
-where you can find how other people have described similar or the same type of experiments.
-
-In the assay stream extended metadata the information that is the same for each individual measurement can be captured.
-
-
-### Assay rows
-
-Each row describes a measurement on a sample or observation unit.
-Include any info that is different per performed measurement and/or not captured in the assay extended metadata.
-Typically include the data file location of the output of a measurement.
-
-
-### General assay
-
-When multiple measurements are done, each generating only few outputs, 
-it is easier to describe these measurements without needing to create a separate assay stream for each.
-It is possible to make a general assay that includes multiple measurement types.
-
-In this assay there is no extended metadata on assay stream level.
-Each row describes the assay: what was measured and how. 
-In a next assay step the data file can be linked to the assay.
-
-
-### Derived data files
-
-For derived data files a separate assay step can be added. 
-The input is an output file from the previous step and the method of data derivation can be included.
-
-
-## Practical
-
-#### Relevant columns
-Not all fields are relevant to each study.
-
-#### Fixed or free fields
-Some fields are free text, some you need to pick from a list (controlled vocabulary), some are free, but with a list of suggestions to pick from.
-
 
 ## Outlook
 In the future the catalogue will be extended to cover metabolomics data.
 
 The catalogue can be improved with small suggestions based on researcher feedback.
-
-There will be an improved integration with the storage.
 
 There will be a way to export the metadata into an ENA format for easy submission. There will be an importer that can import published ENA metadata into the format of the catalogue. 
