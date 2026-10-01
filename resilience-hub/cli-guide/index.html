@@ -1734,7 +1734,7 @@
 </div>
 <p>Close the terminal and open a new one.</p>
 <h3 id="install-rhub">Install rhub<a class="headerlink" href="#install-rhub" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>--with<span class="w"> </span><span class="s2">"rclone-bin==1.74.1"</span><span class="w"> </span><span class="s2">"git+https://gitlab.ewi.tudelft.nl/reit/dataXR/resilience-hub-cli.git@v0.1.1"</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span><span class="s2">"git+https://gitlab.ewi.tudelft.nl/reit/dataXR/resilience-hub-cli.git@v0.2.0"</span>
 </code></pre></div>
 <p>If uv says that the tool folder is not on your <code>PATH</code>, run <code>uv tool update-shell</code>.</p>
 <h3 id="set-the-addresses">Set the addresses<a class="headerlink" href="#set-the-addresses" title="Permanent link">&para;</a></h3>
@@ -1764,7 +1764,7 @@
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>rhub<span class="w"> </span>whoami
 </code></pre></div>
 <p>The answer looks like this.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>0.1.1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>0.2.0
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>signed in as: nobody, run rhub login
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>backend url: https://test.data.resiliencehub.ewi.tudelft.nl/api
 </code></pre></div>
@@ -1926,7 +1926,7 @@
 <h2 id="6-questions-and-feedback">6. Questions and feedback<a class="headerlink" href="#6-questions-and-feedback" title="Permanent link">&para;</a></h2>
 <p>Write to the DataXR team at <a href="mailto:data@cropxr.org">data@cropxr.org</a>. Include the output of <code>rhub --version</code> and <code>rhub whoami</code>, the command you ran, and what the tool printed. Never send a password or a token.</p>
 <h2 id="7-update-or-remove-the-tool">7. Update or remove the tool<a class="headerlink" href="#7-update-or-remove-the-tool" title="Permanent link">&para;</a></h2>
-<p>To move to a new version, run the command of <a href="#install-rhub">Install rhub</a> again, with the new version number in place of <code>v0.1.1</code>.</p>
+<p>To move to a new version, run the command of <a href="#install-rhub">Install rhub</a> again, with the new version number in place of <code>v0.2.0</code>.</p>
 <p>These commands remove the stored sign-in and the tool.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>rhub<span class="w"> </span><span class="nb">logout</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>uv<span class="w"> </span>tool<span class="w"> </span>uninstall<span class="w"> </span>resilience-hub-cli
