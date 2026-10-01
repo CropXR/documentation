@@ -709,10 +709,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-upload" class="md-nav__link">
+  <a href="#minimal-metadata-entry" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Upload
+        Minimal metadata entry
       
     </span>
   </a>
@@ -720,10 +720,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#minimal-metadata-entry" class="md-nav__link">
+  <a href="#data-upload" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Minimal metadata entry
+        Data upload
       
     </span>
   </a>
@@ -1797,24 +1797,31 @@
 <h2 id="preparations">Preparations<a class="headerlink" href="#preparations" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Understand the basic structure of the <a href="../../concepts/metadata-model/">metadata model</a>.</li>
-<li>Decide on the <a href="../../concepts/defining-a-study/">what experiments to group into the study</a>.</li>
+<li>Decide <a href="../../concepts/defining-a-study/">what experiments to group into the study</a>.</li>
 <li>Choose the study type (sequencing, phenotyping or combined). Inform DataXR well up front when your study does not fit these types.</li>
-<li>Make sure that you have registered your study in this <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u">form</a>. After the admin has checked the registration, you will receive a study id you need when entering the metadata, as well as storage for your experimental data.</li>
+<li>Make sure that you have registered your study in this <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u">form</a>. After the admin has checked the registration, you will receive a study id you need when entering the metadata.</li>
 <li>Gather the files with the metadata that you already collected. This includes e-lab journal entries, files that outline experimental conditions per plant, files that link output files to the experiment, etc.</li>
+<li>Make a plan of <a href="../../concepts/what-data-to-upload/">what data should be uploaded</a> and how it should be organised into datasets. Each dataset is uploaded as one folder and belongs to one assay.</li>
 </ol>
-<h2 id="data-upload">Data Upload<a class="headerlink" href="#data-upload" title="Permanent link">&para;</a></h2>
+<h2 id="minimal-metadata-entry">Minimal metadata entry<a class="headerlink" href="#minimal-metadata-entry" title="Permanent link">&para;</a></h2>
+<p>Decide how the metadata should be entered, to capture all information that is needed, by grouping conditions and samples. In the <a href="../../resilience-hub/seek/">catalogue</a>, fill in all the fields that are essential to understand the study, focusing on key aspects, such as species and assay type. Make sure every assay you want to upload data to exists, so others can find and understand your data.</p>
+<h2 id="data-upload">Data upload<a class="headerlink" href="#data-upload" title="Permanent link">&para;</a></h2>
+<p>Your metadata has to be in the catalogue before you can upload, because each dataset is uploaded to an assay.</p>
 <p>Pre-requisites:</p>
 <ul>
-<li><a href="../../research-drive/getting-access/">access to the Research Drive</a></li>
-<li>Choose a method of <a href="../../research-drive/uploading-data/">data upload</a>, depending on your data size, and set up the required tools.</li>
+<li><a href="../../resilience-hub/cli-tool/cli-install/">Install the command line tool</a> <code>rhub</code> and sign in. You do this once.</li>
+<li>Check that you have <a href="../../resilience-hub/seek/upload-prerequisites/">access to the assay</a> you are uploading to, and know its assay id.</li>
 </ul>
 <p>Steps:</p>
 <ol>
-<li>Make a plan of <a href="../../concepts/what-data-to-upload/">what data should be uploaded</a> and how it should be organised in folders.</li>
-<li>Upload the data inside your designated study folder.</li>
+<li>Put everything that belongs to a dataset into one folder.</li>
+<li><a href="../../resilience-hub/cli-tool/cli-upload/">Upload the folder</a> to the matching assay with <code>rhub upload</code>.</li>
+<li>Your work package lead approves the upload, after which the dataset appears in the catalogue.</li>
 </ol>
-<h2 id="minimal-metadata-entry">Minimal metadata entry<a class="headerlink" href="#minimal-metadata-entry" title="Permanent link">&para;</a></h2>
-<p>Decide how to the metadata should be entered, to capture all information that is needed, by grouping conditions and samples. In the web interface, fill in all the fields that are essential to understand the study, focusing on key aspects, such as species and assay type. In this phase you also link the data to the performed experiments, so others can find and understand your data. </p>
+<div class="admonition warning">
+<p class="admonition-title">Research Drive</p>
+<p>Uploads to Research Drive are no longer possible for new studies.</p>
+</div>
 <h2 id="improving-metadata">Improving metadata<a class="headerlink" href="#improving-metadata" title="Permanent link">&para;</a></h2>
 <p>At any point in time you can save the metadata and edit it later. Add the additional metadata that was collected, and improves the re-usability of your data.</p>
 <h2 id="other-things">Other things<a class="headerlink" href="#other-things" title="Permanent link">&para;</a></h2>
@@ -1822,7 +1829,7 @@
 <p>It is possible to add additional columns to capture metadata relevant, not in the provided columns. 
 Before doing this, please consult an expert of this is not already covered by the existing columns.</p>
 <h3 id="combined-study">Combined study<a class="headerlink" href="#combined-study" title="Permanent link">&para;</a></h3>
-<p>For instructions on the metadata of a combined study, read <a href="../../concepts/metadata-model/#combined-study">here</a>.</p>
+<p>For instructions on the metadata of a combined study, read <a href="../../concepts/metadata-model/#assay-and-sample-definition">here</a>.</p>
 <h3 id="ontology-lookup">Ontology lookup<a class="headerlink" href="#ontology-lookup" title="Permanent link">&para;</a></h3>
 <p>Annotation with ontology terms can greatly improve the clarity of metadata, but finding the right term, 
 spread out over different ontology systems can be challenging and time consuming.
