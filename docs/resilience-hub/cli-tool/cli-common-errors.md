@@ -2,8 +2,8 @@
 
 | The message says | What to do |
 |---|---|
-| `RHUB_BACKEND_URL is not set` | Set the addresses, see [Set the addresses](#set-the-addresses), and open a new terminal |
-| `rclone was not found` | Run the install command again, see [Install rhub](#install-rhub) |
+| `RHUB_BACKEND_URL is not set` | Set the addresses, see [Set the addresses](cli-install.md#set-the-addresses), and open a new terminal |
+| `rclone was not found` | Run the install command again, see [Install rhub](cli-install.md#install-rhub) |
 | `Not signed in` or `The stored sign-in could not be renewed` | Run `rhub login` |
 | `The backend did not accept your sign-in` | Run `rhub login`. If the message stays, sign in to the catalogue in your browser once |
 | `Could not reach the backend` | Check your connection. The Resilience Hub answers only on a TU Delft network or through eduVPN |

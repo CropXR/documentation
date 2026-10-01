@@ -123,7 +123,7 @@ Waiting for approval...
 
 Open the link in your browser and sign in. The browser then asks whether you grant the tool access. Click "Yes". The terminal continues by itself.
 
-![The page that asks to grant access to the Resilience Hub CLI, with the buttons Yes and No](../img/rhub-login-consent.png)
+![The page that asks to grant access to the Resilience Hub CLI, with the buttons Yes and No](../../img/rhub-login-consent.png)
 
 You sign in once. The tool remembers it.
 

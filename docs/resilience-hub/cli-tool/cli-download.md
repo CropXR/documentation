@@ -1,4 +1,4 @@
-## Download a dataset
+# Download a dataset
 You need to first install the tool on your computer. Follow the [installation guide](cli-install.md).
 
 Copy each command from this page into the terminal and press Enter. Some commands hold example values that you replace with your own. The page says which.
@@ -9,7 +9,7 @@ You browse datasets in the catalogue. Find the dataset you want to download ther
 
 On the page of the dataset, stay on the tab "Overview". The line "Filename" holds the identifier of the dataset, a long code of letters, digits and hyphens. It is marked in yellow in the picture.
 
-![The page of a dataset in the catalogue, with the line Filename marked](../img/rhub-download-identifier.png)
+![The page of a dataset in the catalogue, with the line Filename marked](../../img/rhub-download-identifier.png)
 
 Copy the identifier.
 

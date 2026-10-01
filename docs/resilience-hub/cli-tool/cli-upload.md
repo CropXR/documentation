@@ -21,14 +21,14 @@ Waiting for approval...
 
 Open the link in your browser and sign in. The browser then asks whether you grant the tool access. Click "Yes". The terminal continues by itself.
 
-![The page that asks to grant access to the Resilience Hub CLI, with the buttons Yes and No](../img/rhub-login-consent.png)
+![The page that asks to grant access to the Resilience Hub CLI, with the buttons Yes and No](../../img/rhub-login-consent.png)
 
 You sign in once. The tool remembers it.
 
 ## Upload a dataset
 
 !!! note "Before you can upload"
-    Your metadata has to be in the catalogue first, with the assay that the dataset belongs to. If it is not there yet, see [SEEK Metadata Entry](seek/index.md).
+    Your metadata has to be in the catalogue first, with the assay that the dataset belongs to. If it is not there yet, see [SEEK Metadata Entry](../seek/index.md).
 
 ### Find the assay id
 
@@ -92,7 +92,7 @@ Write to the DataXR team at [data@cropxr.org](mailto:data@cropxr.org). Include t
 
 ## Update or remove the tool
 
-To move to a new version, run the command of [Install rhub](#install-rhub) again, with the new version number in place of `v0.2.0`.
+To move to a new version, run the command of [Install rhub](cli-install.md#install-rhub) again, with the new version number in place of `v0.2.0`.
 
 These commands remove the stored sign-in and the tool.
 

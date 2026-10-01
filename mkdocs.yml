@@ -113,6 +113,22 @@ nav:
     - guides/index.md
     - General Workflow: guides/stepwise-guide.md
     - Uploading Large Datasets: guides/uploading-large-datasets.md
+  - Resilience Hub:
+    - resilience-hub/index.md
+    - Upload Prerequisites: resilience-hub/seek/upload-prerequisites.md
+    - Command Line Tool:
+      - resilience-hub/cli-tool/index.md
+      - Install the data tool: resilience-hub/cli-tool/cli-install.md
+      - Upload a dataset: resilience-hub/cli-tool/cli-upload.md
+      - Download a dataset: resilience-hub/cli-tool/cli-download.md
+      - Common errors: resilience-hub/cli-tool/cli-common-errors.md
+    - SEEK Metadata Entry:
+      - resilience-hub/seek/index.md
+      - Permissions in FairdomSEEK: resilience-hub/seek/permissions-in-fairdomseek.md
+      - Short Guide: resilience-hub/seek/short-guide.md
+      - High-Level Example: resilience-hub/seek/high-level-example.md
+      - Full Guide: resilience-hub/seek/full-guide.md
+      - Reference: resilience-hub/seek/reference.md
   - Research Drive:
     - research-drive/index.md
     - Getting Access: research-drive/getting-access.md
@@ -125,17 +141,3 @@ nav:
   - Policies:
     - policies/index.md
     - Data Sensitivity Levels: policies/data-sensitivity-levels.md
-  - Resilience Hub:
-    - resilience-hub/index.md
-    - Upload Prerequisites: resilience-hub/seek/upload-prerequisites.md
-    - Install the data tool: resilience-hub/cli-install.md
-    - Upload a dataset: resilience-hub/cli-upload.md
-    - Download a dataset: resilience-hub/cli-download.md
-    - Common errors: resilience-hub/cli-common-errors.md
-    - SEEK Metadata Entry:
-      - resilience-hub/seek/index.md
-      - Permissions in FairdomSEEK: resilience-hub/seek/permissions-in-fairdomseek.md
-      - Short Guide: resilience-hub/seek/short-guide.md
-      - High-Level Example: resilience-hub/seek/high-level-example.md
-      - Full Guide: resilience-hub/seek/full-guide.md
-      - Reference: resilience-hub/seek/reference.md
