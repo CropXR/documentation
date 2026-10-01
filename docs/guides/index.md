@@ -8,6 +8,7 @@ This section provides step-by-step instructions for common tasks in the CropXR d
 
 ### SEEK Catalogue
 
+- [Before You Upload](../resilience-hub/seek/upload-prerequisites.md) - Prerequisites, permissions, and finding data before uploading a dataset
 - [Short Guide](../resilience-hub/seek/short-guide.md) - Quick reference for SEEK metadata entry
 - [Full Guide](../resilience-hub/seek/full-guide.md) - Detailed step-by-step instructions
 - [High-Level Example](../resilience-hub/seek/high-level-example.md) - Example study walkthrough
