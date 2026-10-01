@@ -24,13 +24,11 @@ Start with the metadata entry in FairdomSEEK
 4. for each assay type create an assay stream
       1. select the right extended metadata
       2. set the sharing
-5. within the assay stream create one or more assays 
-      1. choose the assay template matching your stream and ISA level: “assay - material” for the
-         experiment itself (“CropXR sequencing assay”, “CropXR phenotyping assay”, “CropXR
-         metabolomics assay”), “assay - data file” for the files it produces (“CropXR sequencing
-         data file”, “CropXR phenotyping data file”, “CropXR metabolomics data file”)
-      2. add additional fields if needed
-      3. add additional assays for data files that were generate from the first assay output
+5. within the assay stream create two assays, always in this order
+      1. first an assay at the ISA level “assay - material” for the experiment itself (“CropXR sequencing assay”, “CropXR phenotyping assay”, “CropXR metabolomics assay”)
+      2. then an assay at the ISA level “assay - data file” for the files it produces (“CropXR sequencing data file”, “CropXR phenotyping data file”, “CropXR metabolomics data file”); create it with “Insert a new Assay” on the first assay's page, not with “Design Assay” on the stream
+      3. add additional fields if needed
+      4. add further data file assays, inserted the same way, for data files derived from the previous assay's output
 
 Now the study has been defined, continue with the minimally needed metadata.
 
