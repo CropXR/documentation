@@ -13,7 +13,7 @@ permissions work, and how to find data you are already entitled to access.
 - [ ] You have an active FairdomSEEK account.
 - [ ] You've been added to your Work Package's FairdomSEEK project.
 - [ ] You have editing access to the FairdomSEEK assay you're uploading to.
-- [ ] You know the assay's FairdomSEEK ID.
+- [ ] You know the assay ID.
 
 If any of these do not apply to you, the upcoming sections will guide you through how to get there. Otherwise, you're all ready to upload!
 
@@ -75,9 +75,9 @@ If the assay doesn't exist yet, it needs to be created before you can upload. Se
 - Connect it to the correct study and investigation.
 - Set-up its metadata skeleton (choosing the right templates).
 
-## 4. Find the assay's FairdomSEEK ID
+## 4. Find the assay ID
 
-The FairdomSEEK ID is the number at the end of the assay's URL. Open the assay in FairdomSEEK and
+The assay ID is the number at the end of the assay's URL. Open the assay in FairdomSEEK and
 read it off the address bar:
 
 ```
