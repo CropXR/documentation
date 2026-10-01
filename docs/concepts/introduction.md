@@ -27,14 +27,21 @@ This puts some responsibility on the researcher for how to use this format and t
 If you are stuck at any point, things are unclear, or you need help, please reach out to the DataXR team at data@cropxr.org
 
 ### Catalogue
-The metadata is from now on collected in the Catalogue website. In this catalogue people of the consortium can find studies, view and download the metadata, and view the associated data. In the catalogue, the data producing researchers can manage who can view their study. 
-Follow the instruction for how to enter the metadata in the web interface.
+The metadata is from now on collected in the [Catalogue website](https://catalogue.cropresilience.org). In this catalogue people of the consortium can find studies, view and download the metadata, and view the associated data. Data producing researchers can manage who can view their study. 
+Detailed instructions on how to fill in metadata can be found [here](../resilience-hub/seek/index.md).
 
 For everyone who has already filled in metadata in the Excel templates, or is already in the process of filling in the metadata in the templates:
-If the template is available to the DataXR team, the entered metadata will imported into the catalogue. It is possible that you will be contacted with some questions about the metadata.
+If the template is available to the DataXR team, the team will support the entry of your metadata into the catalogue. It is possible that you will be contacted with some questions about the metadata.
 
 
 ## Data
 
-The data storage is currently the [Research Drive](../research-drive/index.md). In the near future this will be replaced with a different storage. 
-The metadata will include a link to where the data is stored.
+Data is stored in the Resilience Hub, together with the metadata in the catalogue. Each dataset is linked to an assay in the catalogue, so others can see what experiment the data comes from. Who can download a dataset follows the sharing settings of the study in the catalogue.
+
+Data is uploaded and downloaded with the [command line tool](../resilience-hub/cli-tool/index.md):
+
+- **Uploading:** enter your metadata in the catalogue first, then upload a folder of data to the matching assay.
+- **Downloading:** find the dataset in the catalogue and use its identifier to download it.
+
+!!! note "Research Drive"
+    Data was previously stored on [Research Drive](../research-drive/index.md). It is no longer used for new studies, but existing data remains available there for now.
