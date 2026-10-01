@@ -62,23 +62,34 @@ Click on "SURFContext" to use your university account. For the first login give 
 
       7. Click on “🟦Create”
  
-4. Make a plan for how to define the Assay Streams and Assays. ([read here](reference.md#defining-assays))
+4. Decide which assay streams the study needs: one for each type of assay performed. ([read here](reference.md#defining-assays))
 
 5. Click on “➕Design Assay Stream” at the top of the study, enter a title (following the naming convention).
 
-   If needed, select the “Extended metadata” for the assay stream. Skip all other fields for now and click on “🟦Create”.
+    If needed, select the “Extended metadata” for the assay stream. Skip all other fields for now and click on “🟦Create”.
 
-6. From the created Assay Stream, create the first assay by clicking “➕Design Assay”. The first assay of a stream is always of the ISA level “assay - material” ([why](reference.md#defining-assays)).
+6. Create the backbone of the assay stream before entering any metadata. The backbone is the same for every assay stream: a first assay of the ISA level “assay - material”, followed by a second assay of the ISA level “assay - data file”. Steps 7 and 8 create them.
+
+    !!! tip "The assays must be in the order Materials, then Data file"
+        The Input column of an assay links to the table before it in the stream: the material assay takes the study samples as input, and the data file assay takes the rows of the material assay. The position of an assay cannot be changed afterwards; an assay created in the wrong position has to be deleted and created again.
+
+    !!! warning "Click “🟦Create” once"
+        Every click on “🟦Create” creates a new assay. SEEK does not check whether an assay with the same title already exists, so a second click leaves two assays in the stream. Click once and wait for the page to load. If duplicates were created, delete the extra assays before continuing.
+
+7. From the created Assay Stream, create the first assay by clicking “➕Design Assay”.
       1. Enter a title (following the naming convention)
       2. For now skip the fields “Sharing”, “Creators”, “SOPs”, “Publications”, “Documents” and “Channel discussions”. 
       3. At “Define Sample type for Assay” start at the “Existing Templates”. Leave the “ISA Level” drop down at “assay - material”. In the drop down menu choose the assay template of your stream, taking the entry with the highest ID, and “Apply”. 
       4. The sample type can be expanded with additional columns that should be included as metadata. This is relevant for assays where most parameters are kept constant, but some are varied between measurements/samples. Set the column “ISA Tag” of such a field to “parameter_value”. 
-7. Create the second assay, of the ISA level “assay - data file”, for the raw data.
-      1. Open the assay created in step 6 and click “Insert a new Assay” there. Do not click “➕Design Assay” on the assay stream a second time: that places the new assay before the existing one, and SEEK relinks the inputs of both assays to match that order.
-      2. Enter a title and skip the same fields as in step 6.
+      5. Click on “🟦Create”
+8. Create the second assay, for the raw data files.
+      1. Open the assay created in step 7 and click “Insert a new Assay” there. Do not click “➕Design Assay” on the assay stream a second time: that places the new assay before the existing one, and SEEK relinks the inputs of both assays to match that order.
+      2. Enter a title and skip the same fields as in step 7.
       3. At “Define Sample type for Assay” change the “ISA Level” drop down to “assay - data file”. Choose the data file template of your stream, taking the entry with the highest ID, and “Apply”.
       4. Additional columns that describe the output file take the “ISA Tag” “data_file_comment”.
-8. If needed, create a further assay of the ISA level “assay - data file” for the derived data, inserted from the assay of step 7 in the same way.
+      5. Click on “🟦Create”
+
+The backbone is complete. A study with derived data gets one further assay of the ISA level “assay - data file” per processing step, inserted from the last assay of the stream in the same way as step 8.
 
 Now you have the outline of your metadata structure. The actual metadata can be uploaded.
 

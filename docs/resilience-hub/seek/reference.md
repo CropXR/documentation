@@ -57,25 +57,20 @@ Find the data file ID, by going to the data file in the interface, and checking 
 
 In FairdomSEEK, an assay (called assay stream) is split into steps (called assays). Each step outputs either material or a data file.
 
-### Order of the assays
+### Backbone of an assay stream
 
-Every assay stream holds at least two assays, in this order:
-
-1. An assay of the ISA level “assay - material”. Each row describes one measurement, library or extract.
-2. An assay of the ISA level “assay - data file”. Each row is one file.
-
-The order is fixed because the Input column of an assay links to the table before it in the stream: the first assay takes the study samples as input, the second takes the rows of the first. Several file rows can reference the same row of the first assay, so a measurement that produces more than one file, such as a paired-end library with two FASTQ files, is described once.
-
-A data file assay cannot be the first assay of a stream: the data file templates hold no fields that describe the measurement. Where the template list still offers an entry named “… assay with data file”, do not select it. Those templates merged both tables into one and are no longer part of the metadata model.
-
-### Default strategy
+Every assay stream is built the same way, and the backbone is created before any metadata is entered:
 
 1. Create one assay stream of each type of assay performed.
 2. At the assay stream, choose the extended metadata type that fits the type of assay. 
 3. Fill in all the information that is the same for each measurement in this extended metadata fields.
-4. Create inside this assay stream a first assay of the type material. Each row describes one measurement, with the measured unit/plant/sample as input.
+4. Create inside this assay stream a first assay of the ISA level “assay - material”. Each row describes one measurement, library or extract, with the measured unit/plant/sample as input.
 5. Add fields for the parameters that are different per measurement.
-6. Create a second assay of the type data file. Each row links one output file to the row of the first assay that produced it.
+6. Create a second assay of the ISA level “assay - data file”. Each row is one file and links it to the row of the first assay that produced it.
+
+The order is fixed because the Input column of an assay links to the table before it in the stream: the first assay takes the study samples as input, the second takes the rows of the first. Several file rows can reference the same row of the first assay, so a measurement that produces more than one file, such as a paired-end library with two FASTQ files, is described once.
+
+A data file assay cannot be the first assay of a stream: the data file templates hold no fields that describe the measurement. Templates named “… assay with data file”, which merged both tables into one, are no longer part of the metadata model; do not select one where a template list still offers it.
 
 ### At significant data processing
 
