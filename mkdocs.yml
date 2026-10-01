@@ -127,8 +127,11 @@ nav:
     - Data Sensitivity Levels: policies/data-sensitivity-levels.md
   - Resilience Hub:
     - resilience-hub/index.md
-    - Upload and Download: resilience-hub/cli-guide.md
-    - Upload Prerequisites (SEEK): resilience-hub/seek/upload-prerequisites.md
+    - Upload Prerequisites: resilience-hub/seek/upload-prerequisites.md
+    - Install the data tool: resilience-hub/cli-install.md
+    - Upload a dataset: resilience-hub/cli-upload.md
+    - Download a dataset: resilience-hub/cli-download.md
+    - Common errors: resilience-hub/cli-common-errors.md
     - SEEK Metadata Entry:
       - resilience-hub/seek/index.md
       - Permissions in FairdomSEEK: resilience-hub/seek/permissions-in-fairdomseek.md
