@@ -70,7 +70,7 @@ Every assay stream is built the same way, and the backbone is created before any
 
 The order is fixed because the Input column of an assay links to the table before it in the stream: the first assay takes the study samples as input, the second takes the rows of the first. Several file rows can reference the same row of the first assay, so a measurement that produces more than one file, such as a paired-end library with two FASTQ files, is described once.
 
-A data file assay cannot be the first assay of a stream: the data file templates hold no fields that describe the measurement. Templates named “… assay with data file”, which merged both tables into one, are no longer part of the metadata model; do not select one where a template list still offers it.
+A data file assay cannot be the first assay of a stream: the data file templates hold no fields that describe the measurement. There is deliberately one way to build an assay stream. The combined templates named “… assay with data file” merged both tables into one; offering them as a second way added complexity and confused users, so they are being removed from the catalogue. Do not select one where a template list still offers it.
 
 ### At significant data processing
 
