@@ -115,10 +115,10 @@ nav:
     - Uploading Large Datasets: guides/uploading-large-datasets.md
   - Resilience Hub:
     - resilience-hub/index.md
-    - Upload Prerequisites: resilience-hub/seek/upload-prerequisites.md
     - Command Line Tool:
       - resilience-hub/cli-tool/index.md
       - Install the data tool: resilience-hub/cli-tool/cli-install.md
+      - Upload Prerequisites: resilience-hub/seek/upload-prerequisites.md
       - Upload a dataset: resilience-hub/cli-tool/cli-upload.md
       - Download a dataset: resilience-hub/cli-tool/cli-download.md
       - Common errors: resilience-hub/cli-tool/cli-common-errors.md
