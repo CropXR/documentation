@@ -1,5 +1,9 @@
 # Research Drive
 
+## Getting access
+
+Research Drive is no longer used for new data, but existing data remains available, mainly for download. To get access, mail the DataXR team at [data@cropxr.org](mailto:data@cropxr.org). You will then receive an invitation email from Research Drive.
+
 ## Quickstart
 
 After receiving your invitation email:
@@ -13,7 +17,7 @@ For detailed instructions, see the [SURF Research Drive documentation](https://s
 
 ## What is Research Drive?
 
-Research Drive is SURF's secure cloud storage and collaboration platform designed specifically for the Dutch research community. For the CropXR project, Research Drive serves as our Phase II data sharing infrastructure, providing:
+Research Drive is SURF's secure cloud storage and collaboration platform designed specifically for the Dutch research community. For the CropXR project, Research Drive served as our Phase II data sharing infrastructure, providing:
 
 - **Secure Data Storage**: Enterprise-grade security for sensitive research data
 - **Collaborative Workspace**: Shared environment for interdisciplinary collaboration
@@ -35,9 +39,6 @@ Research Drive is SURF's secure cloud storage and collaboration platform designe
 - **Security**: End-to-end encryption for data transfer and storage
 - **Backup**: Automated backup systems with redundancy
 - **Support**: Technical support provided by both SURF and the CropXR data team
-
-!!! note
-    Research Drive is intended for active research data. For long-term archival purposes, completed projects should transition to the [Resilience Hub](../resilience-hub/index.md).
 
 ## Accessing the Platform
 Our Research Drive instance is hosted at [https://cropxr.data.surf.nl/](https://cropxr.data.surf.nl/)
