@@ -27,7 +27,7 @@ You can read more [here](https://docs.seek4science.org/help/user-guide/create-sa
 
 When you are entering this data, it might be convenient to make a column with the ids that the catalogue has generated, and one with the sample titles, and use excel formulas to create the required format, and copy the values into the upload sheet.
 
-    ="[{""id""=>"&A1&", ""type""=>""Sample"", ""title""=>"""&B1&"""}]"
+    ="[{""id""=>"&A2&", ""type""=>""Sample"", ""title""=>"""&B2&"""}]"
 
 The string is fragile, and a broken one is not reported as broken. If SEEK cannot parse the cell it treats it as empty and answers `Input (...): ["is required"]`, which points at the wrong problem. When you see that error, the cell almost always contains something rather than nothing.
 
