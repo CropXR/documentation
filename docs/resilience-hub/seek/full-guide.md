@@ -232,7 +232,7 @@ Go to **⚙️ Actions** in the top corner and then **📝 Edit ISA Study**.
 3. Download the template by clicking **Batch download to Excel**.
 4. In the Excel, under the **Samples** tab, fill in the data in the fields:
     - **Ignore** the first two columns.
-    - Use the **Input** column to [link to a source](reference.md#sample-inputs) defined in the previous step.
+    - Use the **Input** column to link each sample to its source. The ids you need come from the Sources table you **just uploaded**. Follow [how to fill the Input column](reference.md#how-to-fill-the-input-column).
     - The **subject_id** is the name that will be displayed.
     - There is a mandatory column called **protocol**. The text should refer to a registered SOP.
     - Start with the most relevant fields. The data can be improved on at a later point.
@@ -248,7 +248,20 @@ Go to **⚙️ Actions** in the top corner and then **📝 Edit Assay Stream**. 
 
 For each assay defined in phase 1, enter the row data the same way as the study source and sample: download the template, fill in the data, save and upload the template.
 
-- **Input:** for the first assay of an assay stream the input should be a study sample (so this is a sample of observation unit). For additional assays the input is an output of the previous assay.
+**Input column.** Each assay row says what it was made from:
+
+- **First assay of an assay stream:** the input is a study sample (so this is a sample or observation unit). The ids come from the **Samples table**.
+- **Later assays:** the input is a row from the **previous assay**. The ids come from that assay's table.
+
+**For example**, if the first assay is an RNA extraction and the second is sequencing, each sequencing row points to the RNA extract it used:
+
+```mermaid
+flowchart LR
+    S["Study sample"] -->|input of| A1["Assay 1: RNA extraction"]
+    A1 -->|output = input of| A2["Assay 2: sequencing"]
+```
+
+So enter the assays **in order**, and upload each one before you start the next. To fill the **Input column** in the excel sheets, follow [How to fill the Input column](../reference.md#how-to-fill-the-input-column).
 
 !!! note "Leave the file location empty for now"
     That column takes a reference to a data file already registered in SEEK — not a path or a URL — so the file has to exist as a record before the cell can be filled. Registering and linking happen in the second step, below.
