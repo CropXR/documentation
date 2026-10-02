@@ -1548,8 +1548,6 @@
       
         
       
-        
-      
     
     
     
@@ -1610,34 +1608,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../research-drive/getting-access/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Getting Access
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
@@ -1657,10 +1627,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
         
           
-          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
             
   
   
@@ -1678,8 +1648,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2057,6 +2027,15 @@ In a next assay step the data file can be linked to the assay.</p>
 <p>For derived data files a separate assay step can be added. 
 The input is an output file from the previous step and the method of data derivation can be included.</p>
 <h2 id="entity-relationship-diagrams">Entity-relationship diagrams<a class="headerlink" href="#entity-relationship-diagrams" title="Permanent link">&para;</a></h2>
+<p>Not every diagram applies to every study. Jump to the ones you need:</p>
+<ul>
+<li><strong><a href="#containers-and-study-level-metadata">Containers and study-level metadata</a></strong>: properties of the whole study and assay stream. <em>All studies.</em></li>
+<li><strong><a href="#the-source-shared-by-both-streams">The source</a></strong>: the plant, its growth conditions and treatment. <em>All studies.</em></li>
+<li><strong><a href="#sequencing-stream">Sequencing stream</a></strong>: samples, sequencing assays and data files. <em>Sequencing studies.</em></li>
+<li><strong><a href="#phenotyping-stream">Phenotyping stream</a></strong>: observation units, observations and data files. <em>Phenotyping studies.</em></li>
+<li><strong><a href="#combined-sample-or-observation-unit">Combined sample or observation unit</a></strong>: one sample template for studies with both physical samples and observation units, used with the assays of both streams. <em>Combined studies.</em></li>
+<li><strong><a href="#what-the-model-cannot-express">What the model cannot express</a></strong>: known limitations. <em>Worth reading before you start.</em></li>
+</ul>
 <p>The diagrams below show model 1.0, the last per-file state of the definitions from 260727 before templates were renamed by stream. Every box is a table in the catalogue, and every row of every table is a "sample" to SEEK. <code>PK</code> marks the column SEEK displays as the row's name; it must be unique within the table. <code>FK</code> marks the <code>Input</code> column, a list of rows from the table one level up. <code>cv</code> is a controlled vocabulary, <code>link</code> is a reference to a record registered elsewhere in the catalogue. Fields marked <code>REQ</code> are required; the rest are optional.</p>
 <h3 id="containers-and-study-level-metadata">Containers and study-level metadata<a class="headerlink" href="#containers-and-study-level-metadata" title="Permanent link">&para;</a></h3>
 <p>Whole-study and whole-assay properties do not sit in the tables. They sit on the Study and the assay stream as extended metadata, one type per stream. The phenotyping and combined study types embed nested records for location, experimental design and growth facility. The sequencing study type carries only the study id and the dates.</p>
