@@ -52,17 +52,17 @@ approves join requests. If you do not know who your Work Package Lead is, please
 Access to project studies, assays and data files is not automatically granted to project members. Access to such material must be shared separately
  (see [Permission levels](permissions-in-fairdomseek.md#permission-levels)).
 
-## 3. Get edit access to the assay
+## 3. Be a creator of the assay
 
-Uploading requires **Editing** access on the assay itself, not just the study it belongs to, or
-the investigation the study belongs to.
+Uploading requires that you are the **submitter**, a **creator** or a **manager** of the assay itself, not just of the study it belongs to, or
+the investigation the study belongs to. Editing access alone is not enough for an upload.
 
 !!! warning "Access does not cascade"
     Having access to a study does not automatically give you access to its assays. Similarly, having access to an
     assay does not give you access to its data files. Each is shared independently, so please check
     permissions on the specific assay you intend to upload to.
 
-If you don't have editing access, you must request edit permission from the creator/submitter of the assay, or the Work Package Lead. If you can't find the assay at all, it may be shared privately with people other than yourself (see [Finding data you're entitled to access](permissions-in-fairdomseek.md#finding-data-youre-entitled-to-access)).
+If you are none of these, ask the submitter of the assay, or the Work Package Lead, to add you as a creator of the assay. An assay can have several creators. If you can't find the assay at all, it may be shared privately with people other than yourself (see [Finding data you're entitled to access](permissions-in-fairdomseek.md#finding-data-youre-entitled-to-access)).
 
 
 The image below of an assay page shows where to find the creator/submitter.
