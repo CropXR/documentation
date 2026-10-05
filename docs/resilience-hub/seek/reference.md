@@ -18,16 +18,60 @@ Assay:
 ## References inside sample templates
 ### Sample inputs
 
-Unfortunately in FairdomSEEK the names of the samples are not used as identifiers. For this reason the column where you link to samples from the previous section (marked Input) needs to be formatted like this: 
+In FairdomSEEK, the names of samples are not used as identifiers. So the **Input** column, which links each row to a row in the previous table, needs a special format that includes the id SEEK generated.
 
-    [{"id"=>343, "type"=>"Sample", "title"=>"yeast_wgs_02"}]
+**Example** of a filled-in Input cell (your values will be different):
 
+```
+[{"id"=>343, "type"=>"Sample", "title"=>"yeast_wgs_02"}]
+```
 
-You can read more [here](https://docs.seek4science.org/help/user-guide/create-sample-isajson-compliant).
+- `343` is the id SEEK generated for the row you are linking to.
+- `yeast_wgs_02` is the name of that row.
 
-When you are entering this data, it might be convenient to make a column with the ids that the catalogue has generated, and one with the sample titles, and use excel formulas to create the required format, and copy the values into the upload sheet.
+You don't need to type these by hand. Use a formula to generate them, as described below. You can read more [here](https://docs.seek4science.org/help/user-guide/create-sample-isajson-compliant).
 
-    ="[{""id""=>"&A1&", ""type""=>""Sample"", ""title""=>"""&B1&"""}]"
+#### Which table to link to
+
+| You are filling in… | The Input links to… |
+|---|---|
+| Samples table | Sources table |
+| First assay of an assay stream | Samples table |
+| Any later assay in the stream | The previous assay |
+
+#### How to fill the Input column
+
+SEEK only creates the ids when a table is uploaded. So you get them by downloading the **previous** table again after uploading it.
+
+1. **Upload the previous table first.** For example, upload the Sources table before you fill in the Samples table.
+
+2. **Download the previous table again.** Use **Export CSV** on that table. <!-- TODO: check whether there is another download option, and name the button here -->
+
+    SEEK has now filled in the first two columns of this file. The first column holds the id.
+
+3. **Add the formula in this downloaded file.** In the first empty column, in row 2, paste:
+
+```
+    ="[{""id""=>"&A2&", ""type""=>""Sample"", ""title""=>"""&B2&"""}]"
+```
+
+    - `A2` must point to the **id** column.
+    - `B2` must point to the **name** column (for example *Source Name* or *subject_id*).
+
+    Change the letters if your columns are in a different place.
+
+4. **Fill the formula down.** Drag the formula down to the last row. Each row now shows a ready-made Input value.
+
+5. **Copy those cells.**
+
+6. **Paste the values into the table you are filling in.** Open the new template, click the right cell in the **Input** column, and paste with ++ctrl+shift+v++. This pastes the values, not the formula.
+
+    !!! warning "Paste as values"
+        A normal paste copies the formula. The formula refers to the other file, so it ends up empty, and SEEK reports `Input (...): ["is required"]`.
+
+7. **Check each row links to the right input.** For example, make sure a sample's row gets the Input of the source it actually came from.
+
+#### If the upload fails
 
 The string is fragile, and a broken one is not reported as broken. If SEEK cannot parse the cell it treats it as empty and answers `Input (...): ["is required"]`, which points at the wrong problem. When you see that error, the cell almost always contains something rather than nothing.
 
