@@ -1273,6 +1273,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Sample inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-table-to-link-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which table to link to
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-fill-the-input-column" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to fill the Input column
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-the-upload-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If the upload fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1855,13 +1894,78 @@ example “CXRS4 - Drought response of arabidopsis after hormal treatment with P
 <p>Assay: </p>
 <h2 id="references-inside-sample-templates">References inside sample templates<a class="headerlink" href="#references-inside-sample-templates" title="Permanent link">&para;</a></h2>
 <h3 id="sample-inputs">Sample inputs<a class="headerlink" href="#sample-inputs" title="Permanent link">&para;</a></h3>
-<p>Unfortunately in FairdomSEEK the names of the samples are not used as identifiers. For this reason the column where you link to samples from the previous section (marked Input) needs to be formatted like this: </p>
-<div class="highlight"><pre><span></span><code>[{"id"=&gt;343, "type"=&gt;"Sample", "title"=&gt;"yeast_wgs_02"}]
+<p>In FairdomSEEK, the names of samples are not used as identifiers. So the <strong>Input</strong> column, which links each row to a row in the previous table, needs a special format that includes the id SEEK generated.</p>
+<p><strong>Example</strong> of a filled-in Input cell (your values will be different):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[{"id"=&gt;343, "type"=&gt;"Sample", "title"=&gt;"yeast_wgs_02"}]
 </code></pre></div>
-<p>You can read more <a href="https://docs.seek4science.org/help/user-guide/create-sample-isajson-compliant">here</a>.</p>
-<p>When you are entering this data, it might be convenient to make a column with the ids that the catalogue has generated, and one with the sample titles, and use excel formulas to create the required format, and copy the values into the upload sheet.</p>
-<div class="highlight"><pre><span></span><code>="[{""id""=&gt;"&amp;A1&amp;", ""type""=&gt;""Sample"", ""title""=&gt;"""&amp;B1&amp;"""}]"
+<ul>
+<li><code>343</code> is the id SEEK generated for the row you are linking to.</li>
+<li><code>yeast_wgs_02</code> is the name of that row.</li>
+</ul>
+<p>You don't need to type these by hand. Use a formula to generate them, as described below. You can read more <a href="https://docs.seek4science.org/help/user-guide/create-sample-isajson-compliant">here</a>.</p>
+<h4 id="which-table-to-link-to">Which table to link to<a class="headerlink" href="#which-table-to-link-to" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>You are filling in…</th>
+<th>The Input links to…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Samples table</td>
+<td>Sources table</td>
+</tr>
+<tr>
+<td>First assay of an assay stream</td>
+<td>Samples table</td>
+</tr>
+<tr>
+<td>Any later assay in the stream</td>
+<td>The previous assay</td>
+</tr>
+</tbody>
+</table>
+<h4 id="how-to-fill-the-input-column">How to fill the Input column<a class="headerlink" href="#how-to-fill-the-input-column" title="Permanent link">&para;</a></h4>
+<p>SEEK only creates the ids when a table is uploaded. So you get them by downloading the <strong>previous</strong> table again after uploading it.</p>
+<ol>
+<li>
+<p><strong>Upload the previous table first.</strong> For example, upload the Sources table before you fill in the Samples table.</p>
+</li>
+<li>
+<p><strong>Download the previous table again.</strong> Use <strong>Export CSV</strong> on that table. <!-- TODO: check whether there is another download option, and name the button here --></p>
+<p>SEEK has now filled in the first two columns of this file. The first column holds the id.</p>
+</li>
+<li>
+<p><strong>Add the formula in this downloaded file.</strong> In the first empty column, in row 2, paste:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    ="[{""id""=&gt;"&amp;A2&amp;", ""type""=&gt;""Sample"", ""title""=&gt;"""&amp;B2&amp;"""}]"
 </code></pre></div>
+<div class="highlight"><pre><span></span><code>- `A2` must point to the **id** column.
+- `B2` must point to the **name** column (for example *Source Name* or *subject_id*).
+
+Change the letters if your columns are in a different place.
+</code></pre></div>
+<ol>
+<li>
+<p><strong>Fill the formula down.</strong> Drag the formula down to the last row. Each row now shows a ready-made Input value.</p>
+</li>
+<li>
+<p><strong>Copy those cells.</strong></p>
+</li>
+<li>
+<p><strong>Paste the values into the table you are filling in.</strong> Open the new template, click the right cell in the <strong>Input</strong> column, and paste with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-v">V</kbd></span>. This pastes the values, not the formula.</p>
+<div class="admonition warning">
+<p class="admonition-title">Paste as values</p>
+<p>A normal paste copies the formula. The formula refers to the other file, so it ends up empty, and SEEK reports <code>Input (...): ["is required"]</code>.</p>
+</div>
+</li>
+<li>
+<p><strong>Check each row links to the right input.</strong> For example, make sure a sample's row gets the Input of the source it actually came from.</p>
+</li>
+</ol>
+<h4 id="if-the-upload-fails">If the upload fails<a class="headerlink" href="#if-the-upload-fails" title="Permanent link">&para;</a></h4>
 <p>The string is fragile, and a broken one is not reported as broken. If SEEK cannot parse the cell it treats it as empty and answers <code>Input (...): ["is required"]</code>, which points at the wrong problem. When you see that error, the cell almost always contains something rather than nothing.</p>
 <p>Three things break it:</p>
 <ul>

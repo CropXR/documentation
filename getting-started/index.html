@@ -1623,34 +1623,99 @@
 
 
 <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
-<p>This section provides essential information for researchers new to the CropXR data infrastructure.</p>
-<h2 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
-<ol>
-<li><a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u">Register your study</a> and receive a study ID by email (this process might take some time)</li>
-<li>
-<p>Enter metadata in <a href="../resilience-hub/seek/">the catalogue</a> (new workflow)</p>
-<div class="admonition tip">
-<p class="admonition-title">Using metadata excel sheets? (old workflow)</p>
-<p>If you have filled in your metadata in the old excel templates and are ready to upload, mail data@cropxr.org</p>
-</div>
-</li>
-<li>
-<p>Upload your data using our <a href="../resilience-hub/cli-tool/">command line tool</a></p>
-<div class="admonition warning">
-<p class="admonition-title">ResearchDrive uploads not possible</p>
-<p>Uploads to ResearchDrive are not possible for new studies.</p>
-</div>
-</li>
-</ol>
-<h2 id="whats-in-this-documentation">What's in this documentation<a class="headerlink" href="#whats-in-this-documentation" title="Permanent link">&para;</a></h2>
+<p>This page walks you through what you will do as a researcher, in the order that you will usually do it.</p>
+<h2 id="getting-your-research-data-on-the-resilience-hub">Getting your research data on the Resilience Hub<a class="headerlink" href="#getting-your-research-data-on-the-resilience-hub" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart LR
+    A["0. Defining your study"] --&gt; B["1. Register you study"]
+    B --&gt;|study ID by email| C["2. Setup metadata structure"]
+    C --&gt; D["3. Upload metadata"]
+    D --&gt; E["4. Upload data"]
+    E --&gt; F(("Findable &amp;&lt;br/&gt;reusable data"))
+
+    click B "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u" _blank
+    click A "../concepts/defining-a-study/" _self
+    click C "../resilience-hub/seek/" _self
+    click E "../resilience-hub/cli-tool/" _self</code></pre>
+<h2 id="what-do-you-want-to-do">What do you want to do?<a class="headerlink" href="#what-do-you-want-to-do" title="Permanent link">&para;</a></h2>
+<div class="grid cards">
 <ul>
-<li><strong>New to CropXR?</strong> Start with <a href="../concepts/">Concepts</a></li>
-<li><strong>Ready to upload or find data?</strong> Go to the <a href="../resilience-hub/seek/">Resilience Hub</a></li>
-<li><strong>Need step-by-step help?</strong> See the <a href="../guides/">Guides</a></li>
-<li><strong>Looking for older data?</strong> It's still available on <a href="../research-drive/">Research Drive</a></li>
-<li><strong>Sharing sensitive data?</strong> Check the <a href="../policies/">Policies</a></li>
-<li><strong>Unfamiliar term?</strong> See the <a href="glossary/">Glossary</a></li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> <strong>Know the metadata models</strong></p>
+<hr />
+<p>Understand how studies, samples, assays and data files are described before you start.</p>
+<p><a href="../concepts/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Metadata models</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.25 1.44 12.53.64 11 1.2c-.86.3-1.5.96-1.82 1.8H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-7 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1M7 7h10V5h2v14H5V5h2zm10 4H7V9h10zm-2 4H7v-2h8z"/></svg></span> <strong>Define a study</strong></p>
+<hr />
+<p>Register your study, get a study ID, and decide what it contains.</p>
+<p><a href="../concepts/defining-a-study/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Define a study</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 3h14a2 2 0 0 1 2 2v7.08a6 6 0 0 0-4.32.92H12v4h1.08c-.11.68-.11 1.35 0 2H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2m0 4v4h6V7zm8 0v4h6V7zm-8 6v4h6v-4zm17.94 4.5h-2v4h-2v-4h-2l3-3z"/></svg></span> <strong>Upload metadata</strong></p>
+<hr />
+<p>Describe your study, samples and assays in the catalogue.</p>
+<p><a href="../resilience-hub/seek/full-guide/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Upload metadata</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 20q-2.28 0-3.89-1.57Q1 16.85 1 14.58q0-1.95 1.17-3.48 1.18-1.53 3.08-1.95.63-2.3 2.5-3.72Q9.63 4 12 4q2.93 0 4.96 2.04Q19 8.07 19 11q1.73.2 2.86 1.5 1.14 1.28 1.14 3 0 1.88-1.31 3.19T18.5 20H13q-.82 0-1.41-.59Q11 18.83 11 18v-5.15L9.4 14.4 8 13l4-4 4 4-1.4 1.4-1.6-1.55V18h5.5q1.05 0 1.77-.73.73-.72.73-1.77t-.73-1.77Q19.55 13 18.5 13H17v-2q0-2.07-1.46-3.54Q14.08 6 12 6 9.93 6 8.46 7.46 7 8.93 7 11h-.5q-1.45 0-2.47 1.03Q3 13.05 3 14.5T4.03 17q1.02 1 2.47 1H9v2m3-7"/></svg></span> <strong>Upload data</strong></p>
+<hr />
+<p>Send your data files with the command line tool.</p>
+<p><a href="../resilience-hub/cli-tool/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Upload data</a></p>
+</li>
 </ul>
+</div>
+<h2 id="step-by-step">Step by step<a class="headerlink" href="#step-by-step" title="Permanent link">&para;</a></h2>
+<h3 id="1-register-and-define-your-study">1. Register and define your study<a class="headerlink" href="#1-register-and-define-your-study" title="Permanent link">&para;</a></h3>
+<p><a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u">Register your study</a>. You will receive a study ID by email. This can take some time, so do it early.</p>
+<p>While you wait, read up on the <a href="../concepts/">metadata models</a> so you know what information you will need to collect.</p>
+<h3 id="2-upload-metadata">2. Upload metadata<a class="headerlink" href="#2-upload-metadata" title="Permanent link">&para;</a></h3>
+<p>Enter your metadata in <a href="../resilience-hub/seek/">the catalogue</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Using the old Excel templates?</p>
+<p>If you've already filled in your metadata in the old Excel templates, email <a href="mailto:data@cropxr.org">data@cropxr.org</a> and we will help you upload it.</p>
+</div>
+<h3 id="3-upload-data">3. Upload data<a class="headerlink" href="#3-upload-data" title="Permanent link">&para;</a></h3>
+<p>Upload your data files using our <a href="../resilience-hub/cli-tool/">command line tool</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">ResearchDrive uploads are not possible for new studies</p>
+<p>Use the command line tool instead. Older data remains available on <a href="../research-drive/">Research Drive</a>.</p>
+</div>
+<h2 id="more-help">More help<a class="headerlink" href="#more-help" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>If you…</th>
+<th>Go to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>are new to CropXR</td>
+<td><a href="../concepts/">Concepts</a></td>
+</tr>
+<tr>
+<td>need a step-by-step walkthrough</td>
+<td><a href="../guides/">Guides</a></td>
+</tr>
+<tr>
+<td>are looking for older data</td>
+<td><a href="../research-drive/">Research Drive</a></td>
+</tr>
+<tr>
+<td>are sharing sensitive data</td>
+<td><a href="../policies/">Policies</a></td>
+</tr>
+<tr>
+<td>came across an unfamiliar term</td>
+<td><a href="glossary/">Glossary</a></td>
+</tr>
+<tr>
+<td>are stuck</td>
+<td>email <a href="mailto:data@cropxr.org">data@cropxr.org</a></td>
+</tr>
+</tbody>
+</table>
 
 
 
