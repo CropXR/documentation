@@ -6,15 +6,16 @@ This page walks you through what you will do as a researcher, in the order that 
 
 ```mermaid
 flowchart LR
-    A["1. Register your study"] -->|study ID by email| B["2. Define your study"]
-    B --> C["3. Upload metadata"]
-    C --> D["4. Upload data"]
-    D --> F(("Findable &<br/>reusable data"))
+    A["0. Defining your study"] --> B["1. Register you study"]
+    B -->|study ID by email| C["2. Setup metadata structure"]
+    C --> D["3. Upload metadata"]
+    D --> E["4. Upload data"]
+    E --> F(("Findable &<br/>reusable data"))
 
-    click A "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u" _blank
-    click B "../concepts/defining-a-study/" _self
+    click B "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u" _blank
+    click A "../concepts/defining-a-study/" _self
     click C "../resilience-hub/seek/" _self
-    click D "../resilience-hub/cli-tool/" _self
+    click E "../resilience-hub/cli-tool/" _self
 ```
 
 ## What do you want to do?

@@ -40,6 +40,8 @@ Setting up a study happens in four phases. Work through them in order.
     - etc.
 
 ---
+!!! warning "FairdomSEEK can be slow, do not click again while loading"
+    Be aware, if you click twice on "create" while it is loading, it can create the same resource multiple times.
 
 ## Phase 1: Create the template
 
@@ -218,12 +220,13 @@ Go to **⚙️ Actions** in the top corner and then **📝 Edit ISA Study**.
     - **Ignore** the first two columns.
     - The **Source Name** is the name that will be displayed.
     - Start with the most relevant fields to understand the study and the sources used. The data can be improved on at a later point. Fill in at least the species and the experimental group.
-5. Save the file. Upload it under **Upload excel spreadsheet**: select **Browse** and click **🟦 Upload**.
-
-    Now there might be an error message. Please read it carefully and adjust the data accordingly.
 
 !!! warning "Uploading twice creates duplicates"
     Be aware, if you upload the same excel multiple times, a new sample will be created with the same name. To check how to update existing samples, check the [phase 3 instructions](#phase-3-refine-and-share).
+
+5. Save the file. Upload it under **Upload excel spreadsheet**: select **Browse** and click **🟦 Upload**.
+
+    Now there might be an error message. Please read it carefully and adjust the data accordingly.
 
 ### Step 4: Define study samples
 
@@ -264,17 +267,11 @@ flowchart LR
 So enter the assays **in order**, and upload each one before you start the next. To fill the **Input column** in the excel sheets, follow [How to fill the Input column](../reference.md#how-to-fill-the-input-column).
 
 !!! note "Leave the file location empty for now"
-    That column takes a reference to a data file already registered in SEEK — not a path or a URL — so the file has to exist as a record before the cell can be filled. Registering and linking happen in the second step, below.
+    That column takes a reference to a data file already registered in SEEK — not a path or a URL — so the file has to exist as a record before the cell can be filled.
 
 !!! success "Metadata done"
-    The metadata now stands on its own. The data can be added now.
+    The metadata now stands on its own. The data can be [added now](../cli-tool/index.md).
 
-
-<!-- ### Step 8: Link the registered data files into the assay rows
-
-1. **File location:** to link a registered data file as file location, use the [required format](reference.md#data-files). The id in it is the data file's own id, read from the end of its URL (`…/data_files/1`), not the id of any sample or assay row.
-2. **File name:** use the relative path of the exact file inside the registered file location.
-3. **Select the rows before downloading**, so that uploading revises them instead of creating a second set with the same names. -->
 
 ---
 
