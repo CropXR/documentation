@@ -6,7 +6,7 @@ Copy each command from this page into the terminal and press Enter. Some command
 
 ## Sign in
 
-If you have never signed in to the [catalogue](https://test.catalogue.resiliencehub.ewi.tudelft.nl), do that once in your browser first. The Resilience Hub knows you only after that.
+If you have never signed in to the [catalogue](https://catalogue.cropresilience.org), do that once in your browser first. The Resilience Hub knows you only after that.
 
 ```bash
 rhub login
@@ -15,7 +15,7 @@ rhub login
 The tool prints a link and waits.
 
 ```
-Open https://auth.cropresilience.org/realms/dev/device?user_code=WDJB-MJHT
+Open https://auth.cropresilience.org/realms/resilience-hub/device?user_code=WDJB-MJHT
 Waiting for approval...
 ```
 
@@ -35,7 +35,7 @@ You sign in once. The tool remembers it.
 Open the assay in the catalogue. The assay id is the number at the end of the address in the address bar of your browser.
 
 ```
-https://test.catalogue.resiliencehub.ewi.tudelft.nl/assays/42
+https://catalogue.cropresilience.org/assays/42
 ```
 
 In this example the assay id is `42`.
@@ -71,7 +71,7 @@ A large dataset takes longer. Keep your laptop charging and make sure that it do
 
 ```
 Upload verified.
-https://test.data.resiliencehub.ewi.tudelft.nl/register/17
+https://data.cropresilience.org/register/17
 ```
 
 "Upload verified." means that all your files arrived unchanged. The work package lead of your project gets an email with the link in the last line and registers the dataset.
