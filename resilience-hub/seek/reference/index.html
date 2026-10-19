@@ -1343,10 +1343,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#default-strategy" class="md-nav__link">
+  <a href="#backbone-of-an-assay-stream" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Default strategy
+        Backbone of an assay stream
       
     </span>
   </a>
@@ -1369,17 +1369,6 @@
     <span class="md-ellipsis">
       
         Top level sensors
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiple-files-per-experiment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Multiple files per experiment
       
     </span>
   </a>
@@ -1982,18 +1971,21 @@ Change the letters if your columns are in a different place.
 <p>Note that this form has no square brackets, where a sample input does, and that the type is <code>DataFile</code> rather than <code>Sample</code>. The id is the data file's own id, not the id of any sample or assay row.</p>
 <p>Find the data file ID, by going to the data file in the interface, and checking the number at the end of the URL https://catalogue.cropresilience.org/data_files/1 </p>
 <h2 id="defining-assays">Defining assays<a class="headerlink" href="#defining-assays" title="Permanent link">&para;</a></h2>
-<p>There is some flexibility in how to define assays. In FairdomSEEK, an assay (called assay stream) can be split into steps (called assays) that output material or a data file.</p>
-<h3 id="default-strategy">Default strategy<a class="headerlink" href="#default-strategy" title="Permanent link">&para;</a></h3>
+<p>In FairdomSEEK, an assay (called assay stream) is split into steps (called assays). Each step outputs either material or a data file.</p>
+<h3 id="backbone-of-an-assay-stream">Backbone of an assay stream<a class="headerlink" href="#backbone-of-an-assay-stream" title="Permanent link">&para;</a></h3>
+<p>Every assay stream is built the same way, and the backbone is created before any metadata is entered:</p>
 <ol>
 <li>Create one assay stream of each type of assay performed.</li>
 <li>At the assay stream, choose the extended metadata type that fits the type of assay. </li>
 <li>Fill in all the information that is the same for each measurement in this extended metadata fields.</li>
-<li>Create inside this assay stream a single assay of the type data file. </li>
+<li>Create inside this assay stream a first assay of the ISA level “assay - material”. Each row describes one measurement, library or extract, with the measured unit/plant/sample as input.</li>
 <li>Add fields for the parameters that are different per measurement.</li>
-<li>Is the rows/samples of the assay to link the output files of the assay to the measured unit/plant/sample.</li>
+<li>Create a second assay of the ISA level “assay - data file”. Each row is one file and links it to the row of the first assay that produced it.</li>
 </ol>
+<p>The order is fixed because the Input column of an assay links to the table before it in the stream: the first assay takes the study samples as input, the second takes the rows of the first. Several file rows can reference the same row of the first assay, so a measurement that produces more than one file, such as a paired-end library with two FASTQ files, is described once.</p>
+<p>A data file assay cannot be the first assay of a stream: the data file templates hold no fields that describe the measurement. There is deliberately one way to build an assay stream. The combined templates named “… assay with data file” merged both tables into one; offering them as a second way added complexity and confused users, so they are being removed from the catalogue. Do not select one where a template list still offers it.</p>
 <h3 id="at-significant-data-processing">At significant data processing<a class="headerlink" href="#at-significant-data-processing" title="Permanent link">&para;</a></h3>
-<p>Create a next assay in the same assay stream. The protocol contains the performed data processing step. The output files can be explicitly linked to the input files.</p>
+<p>Create a next assay of the type data file in the same assay stream, after the assay that holds the raw data files. The protocol contains the performed data processing step. The output files can be explicitly linked to the input files.</p>
 <h3 id="top-level-sensors">Top level sensors<a class="headerlink" href="#top-level-sensors" title="Permanent link">&para;</a></h3>
 <p>Top level environmental measurements, with no distinction between rows/samples, can be grouped together in a single assay stream. This allows for linking the data files with the specs of the measurement/instrument, without a large part of the interface being taken up by sensor measurements, that are not relevant for the understanding the study. </p>
 <ol>
@@ -2001,9 +1993,6 @@ Change the letters if your columns are in a different place.
 <li>Create an assay of the type observation with a material output. In this assay each row describes a type of measurement done. </li>
 <li>Create a next assay of the type data file. Each row links the output file to the described measurement.</li>
 </ol>
-<h3 id="multiple-files-per-experiment">Multiple files per experiment<a class="headerlink" href="#multiple-files-per-experiment" title="Permanent link">&para;</a></h3>
-<p>If a single measurement produces multiple data files, it is possible to split the experiment and the file into two assay steps.
-In the first step the experiment is described and in the second step the files are linked to the experiment.</p>
 <h3 id="limitation">Limitation<a class="headerlink" href="#limitation" title="Permanent link">&para;</a></h3>
 <p>It is not possible to link derived data files to input files from multiple assay streams. 
 There is no clear place to list key output artifacts, that summarize the conclusions of the study.</p>

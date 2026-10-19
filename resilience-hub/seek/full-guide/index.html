@@ -1270,10 +1270,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4-plan-your-assay-streams-and-assays" class="md-nav__link">
+  <a href="#step-4-plan-your-assay-streams" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Plan your assay streams and assays
+        Step 4: Plan your assay streams
       
     </span>
   </a>
@@ -1292,10 +1292,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-6-create-an-assay" class="md-nav__link">
+  <a href="#step-6-create-the-material-assay" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 6: Create an assay
+        Step 6: Create the material assay
       
     </span>
   </a>
@@ -1303,10 +1303,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-7-raw-data-assay-if-needed" class="md-nav__link">
+  <a href="#step-7-create-the-data-file-assay" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 7: Raw data assay (if needed)
+        Step 7: Create the data file assay
       
     </span>
   </a>
@@ -2109,8 +2109,8 @@ template of a sample type cannot be changed once samples have been created from 
 <p>Click <strong>🟦 Create</strong>.</p>
 </li>
 </ol>
-<h3 id="step-4-plan-your-assay-streams-and-assays">Step 4: Plan your assay streams and assays<a class="headerlink" href="#step-4-plan-your-assay-streams-and-assays" title="Permanent link">&para;</a></h3>
-<p>Make a plan for how to define the Assay Streams and Assays. (<a href="../reference/#defining-assays">read here</a>)</p>
+<h3 id="step-4-plan-your-assay-streams">Step 4: Plan your assay streams<a class="headerlink" href="#step-4-plan-your-assay-streams" title="Permanent link">&para;</a></h3>
+<p>Decide which assay streams the study needs: one for each type of assay performed. (<a href="../reference/#defining-assays">read here</a>)</p>
 <h3 id="step-5-create-an-assay-stream">Step 5: Create an assay stream<a class="headerlink" href="#step-5-create-an-assay-stream" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click <strong>➕ Design Assay Stream</strong> at the top of the study.</li>
@@ -2118,42 +2118,12 @@ template of a sample type cannot be changed once samples have been created from 
 <li>If needed, select the <strong>Extended metadata</strong> for the assay stream.</li>
 <li>Skip all other fields for now and click <strong>🟦 Create</strong>.</li>
 </ol>
-<h3 id="step-6-create-an-assay">Step 6: Create an assay<a class="headerlink" href="#step-6-create-an-assay" title="Permanent link">&para;</a></h3>
-<p>From the created Assay Stream, create an assay by clicking <strong>➕ Design Assay</strong>.</p>
-<ol>
-<li><strong>Enter a title</strong> (following the naming convention).</li>
-<li><strong>Skip for now:</strong> “Sharing”, “Creators”, “SOPs”, “Publications”, “Documents” and “Channel discussions”.</li>
-<li><strong>Define Sample type for Assay:</strong><ol>
-<li>Start at <strong>Existing Templates</strong>.</li>
-<li>Depending on the type of assay you are making (based on the plan made in step 4), change the <strong>ISA Level</strong> drop-down to “assay - data file” or leave it as is.</li>
-<li>In the drop-down menu choose the relevant template, taking the entry with the highest ID, and click <strong>Apply</strong>.</li>
-</ol>
-</li>
-<li>
-<p><strong>Extra columns (optional):</strong> the sample type can be expanded with additional columns that should be included as metadata. This is relevant for assays where most parameters are kept constant, but some are varied between measurements/samples. Set the <strong>ISA Tag</strong> column to:</p>
-<table>
-<thead>
-<tr>
-<th>If the field is about…</th>
-<th>ISA Tag</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>the assay performed</td>
-<td><code>parameter_value</code></td>
-</tr>
-<tr>
-<td>the output data file</td>
-<td><code>data_file_characteristic</code></td>
-</tr>
-</tbody>
-</table>
-</li>
-</ol>
-<h3 id="step-7-raw-data-assay-if-needed">Step 7: Raw data assay (if needed)<a class="headerlink" href="#step-7-raw-data-assay-if-needed" title="Permanent link">&para;</a></h3>
-<p>If needed (not included already in the assay), create the next assay of the type data file for the raw data.</p>
-<p>The assay templates follow the same grouping:</p>
+<p>Create the backbone of the assay stream before entering any metadata. The backbone is the same for every assay stream: a first assay of the ISA level “assay - material” (step 6), followed by a second assay of the ISA level “assay - data file” (step 7).</p>
+<div class="admonition tip">
+<p class="admonition-title">The assays must be in the order “assay - material”, then “assay - data file”</p>
+<p>The Input column of an assay links to the table before it in the stream: the material assay takes the study samples as input, and the data file assay takes the rows of the material assay. The position of an assay cannot be changed afterwards; an assay created in the wrong position has to be deleted and created again.</p>
+</div>
+<p>The templates per ISA level:</p>
 <table>
 <thead>
 <tr>
@@ -2172,8 +2142,30 @@ template of a sample type cannot be changed once samples have been created from 
 </tr>
 </tbody>
 </table>
+<h3 id="step-6-create-the-material-assay">Step 6: Create the material assay<a class="headerlink" href="#step-6-create-the-material-assay" title="Permanent link">&para;</a></h3>
+<p>From the created Assay Stream, create the first assay by clicking <strong>➕ Design Assay</strong>.</p>
+<ol>
+<li><strong>Enter a title</strong> (following the naming convention).</li>
+<li><strong>Skip for now:</strong> “Sharing”, “Creators”, “SOPs”, “Publications”, “Documents” and “Channel discussions”.</li>
+<li><strong>Define Sample type for Assay:</strong><ol>
+<li>Start at <strong>Existing Templates</strong>.</li>
+<li>Leave the <strong>ISA Level</strong> drop-down at “assay - material”.</li>
+<li>Choose the assay template of your stream, taking the entry with the highest ID, and click <strong>Apply</strong>.</li>
+</ol>
+</li>
+<li><strong>Extra columns (optional):</strong> the sample type can be expanded with additional columns that should be included as metadata. This is relevant for assays where most parameters are kept constant, but some are varied between measurements/samples. Set the <strong>ISA Tag</strong> column to <code>parameter_value</code>.</li>
+<li>Click <strong>🟦 Create</strong> once. If duplicate assays were created, delete the extra ones before continuing.</li>
+</ol>
+<h3 id="step-7-create-the-data-file-assay">Step 7: Create the data file assay<a class="headerlink" href="#step-7-create-the-data-file-assay" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open the assay created in step 6 and click <strong>Insert a new Assay</strong> there. Do not click <strong>➕ Design Assay</strong> on the assay stream a second time: that places the new assay before the existing one, and SEEK relinks the inputs of both assays to match that order.</li>
+<li>Enter a title and skip the same fields as in step 6.</li>
+<li><strong>Define Sample type for Assay:</strong> change the <strong>ISA Level</strong> drop-down to “assay - data file”, choose the data file template of your stream, taking the entry with the highest ID, and click <strong>Apply</strong>.</li>
+<li><strong>Extra columns (optional):</strong> columns that describe the output file take the <strong>ISA Tag</strong> <code>data_file_comment</code>.</li>
+<li>Click <strong>🟦 Create</strong> once.</li>
+</ol>
 <h3 id="step-8-derived-data-assay-if-needed">Step 8: Derived data assay (if needed)<a class="headerlink" href="#step-8-derived-data-assay-if-needed" title="Permanent link">&para;</a></h3>
-<p>If needed, create the next assay of the type data file for the derived data.</p>
+<p>A study with derived data gets one further assay of the ISA level “assay - data file” per processing step, inserted from the last assay of the stream in the same way as step 7.</p>
 <div class="admonition success">
 <p class="admonition-title">Phase 1 done</p>
 <p>Now you have the outline of your metadata structure. The actual metadata can be uploaded.</p>
