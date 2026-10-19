@@ -32,9 +32,9 @@ Create a sample of type ‘observation_unit’ that combine all sources. The lev
  
 ## Assays
 
-Create one phenotyping assay stream for canopy coverage and fill in all the information about the trait and the method. Create an assay with as output a data file. Create a row for each separate measurement/experimental group, with as input the observation unit plots.  Describe the output data file of the measurement and link to the data. 
+Create one phenotyping assay stream for canopy coverage and fill in all the information about the trait and the method. Create a first assay with as output material. Create a row for each separate measurement/experimental group, with as input the observation unit plots. Create a next assay in the stream for the data files, one row for each file, with as input the assay row defined in the previous assay. Describe the output data file of the measurement and link to the data. 
 
-Create one sequencing assay stream. Describe the library construction and sequencing. Create an assay with as output a data file. Create a row for each measurement, with as input a sample. Describe the output data file of the measurement and link to the data. 
+Create one sequencing assay stream. Describe the library construction and sequencing. Create a first assay with as output material. Create a row for each library, with as input a sample. Create a next assay in the stream for the data files, one row for each file, with as input the assay row defined in the previous assay. Describe the output data file and link to the data. 
 
 Create one phenotyping assay stream for the greenhouse sensors. Create an assay for the measurements of the output material with the template observation. Define one row per environment variable measured by the greenhouse sensors, describing the variable, the sensor and the scale. This can be one row for temperature and one for humidity. The input is the study observation unit greenhouse. Create a next assay in the stream for the data files, one row for each file, with as input the assay row defined in the previous assay. Describe the and link to the data. 
 
