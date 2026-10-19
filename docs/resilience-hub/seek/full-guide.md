@@ -70,7 +70,7 @@ Click on "SURFContext" to use your university account. For the first login give 
 
 6. Create the backbone of the assay stream before entering any metadata. The backbone is the same for every assay stream: a first assay of the ISA level “assay - material”, followed by a second assay of the ISA level “assay - data file”. Steps 7 and 8 create them.
 
-    !!! tip "The assays must be in the order Materials, then Data file"
+    !!! tip "The assays must be in the order “assay - material”, then “assay - data file”"
         The Input column of an assay links to the table before it in the stream: the material assay takes the study samples as input, and the data file assay takes the rows of the material assay. The position of an assay cannot be changed afterwards; an assay created in the wrong position has to be deleted and created again.
 
     !!! warning "Click “🟦Create” once"
