@@ -13,9 +13,13 @@ This section provides step-by-step instructions for common tasks in the CropXR d
 - [Full Guide](../resilience-hub/seek/full-guide.md) - Detailed step-by-step instructions
 - [High-Level Example](../resilience-hub/seek/high-level-example.md) - Example study walkthrough
 
-## Research Drive
+### Command Line Tool
 
-- [Uploading Large Datasets](uploading-large-datasets.md) - Workflow for uploading and securing large datasets
-- [Connecting via Rclone](../research-drive/connecting/via-rclone.md) - Command-line data transfers
-- [Connecting via Browser](../research-drive/connecting/via-browser.md) - Web interface access
-- [Uploading Data](../research-drive/uploading-data.md) - Overview of upload methods
+- [Install the Data Tool](../resilience-hub/cli-tool/cli-install.md) - Install `rhub` and sign in
+- [Upload a Dataset](../resilience-hub/cli-tool/cli-upload.md) - Upload a folder of data to an assay in the catalogue
+- [Download a Dataset](../resilience-hub/cli-tool/cli-download.md) - Download a dataset you found in the catalogue
+- [Common Errors](../resilience-hub/cli-tool/cli-common-errors.md) - What to do when a command gives an error
+
+### Research Drive
+
+Research Drive is no longer used for new data; to access existing data, see the [Research Drive documentation](../research-drive/index.md).

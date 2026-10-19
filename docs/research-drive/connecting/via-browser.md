@@ -5,7 +5,7 @@ The CropXR project utilizes SURF Research Drive as our Phase II platform for sec
 
 Access to the CropXR Research Drive follows these steps:
 
-1. **Request Access**: [Follow this link](../getting-access.md)
+1. **Request Access**: Mail [data@cropxr.org](mailto:data@cropxr.org), see [Getting access](../index.md#getting-access)
 
 - **Institutional Users**: If you're affiliated with a Dutch research institution, you can log in using your institutional Single Sign-On (SSO) credentials.
 

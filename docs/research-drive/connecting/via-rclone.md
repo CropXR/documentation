@@ -94,7 +94,7 @@ Rclone can only access folders that are:
 
 ### Upload Permissions
 
-Before uploading, ensure you have **write access** to the destination folder. If you only have read access, uploads will fail. See [Getting Access](../getting-access.md) if you need to request permissions.
+Before uploading, ensure you have **write access** to the destination folder. If you only have read access, uploads will fail. Mail [data@cropxr.org](mailto:data@cropxr.org) if you need to request permissions.
 
 ### Best Practice Workflow
 

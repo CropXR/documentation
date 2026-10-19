@@ -1,25 +1,91 @@
 # Getting Started
 
-This section provides essential information for researchers new to the CropXR data infrastructure.
+This page walks you through what you will do as a researcher, in the order that you will usually do it.
 
-## Quick start
+## Getting your research data on the Resilience Hub
 
-1. [Register your study](https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u) and receive a study ID by email (this process might take some time)
-2. Enter metadata in [the catalogue](../resilience-hub/seek/index.md) (new workflow)
+```mermaid
+flowchart LR
+    A["0. Defining your study"] --> B["1. Register you study"]
+    B -->|study ID by email| C["2. Setup metadata structure"]
+    C --> D["3. Upload metadata"]
+    D --> E["4. Upload data"]
+    E --> F(("Findable &<br/>reusable data"))
 
-    !!! tip "Using metadata excel sheets? (old workflow)"
-        If you have filled in your metadata in the old excel templates and are ready to upload, mail data@cropxr.org
+    click B "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u" _blank
+    click A "../concepts/defining-a-study/" _self
+    click C "../resilience-hub/seek/" _self
+    click E "../resilience-hub/cli-tool/" _self
+```
 
-3. Upload your data using our [command line tool](../resilience-hub/cli-tool/index.md)
+## What do you want to do?
 
-    !!! warning "ResearchDrive uploads not possible"
-        Uploads to ResearchDrive are not possible for new studies.
+<div class="grid cards" markdown>
 
-## What's in this documentation
+-   :material-book-open-variant: **Know the metadata models**
 
-- **New to CropXR?** Start with [Concepts](../concepts/index.md)
-- **Ready to upload or find data?** Go to the [Resilience Hub](../resilience-hub/seek/index.md)
-- **Need step-by-step help?** See the [Guides](../guides/index.md)
-- **Looking for older data?** It's still available on [Research Drive](../research-drive/index.md)
-- **Sharing sensitive data?** Check the [Policies](../policies/index.md)
-- **Unfamiliar term?** See the [Glossary](glossary.md)
+    ---
+
+    Understand how studies, samples, assays and data files are described before you start.
+
+    [:octicons-arrow-right-24: Metadata models](../concepts/index.md)
+
+-   :material-clipboard-text-outline: **Define a study**
+
+    ---
+
+    Register your study, get a study ID, and decide what it contains.
+
+    [:octicons-arrow-right-24: Define a study](../concepts/defining-a-study/)
+
+-   :material-table-arrow-up: **Upload metadata**
+
+    ---
+
+    Describe your study, samples and assays in the catalogue.
+
+    [:octicons-arrow-right-24: Upload metadata](../resilience-hub/seek/full-guide.md)
+
+-   :material-cloud-upload-outline: **Upload data**
+
+    ---
+
+    Send your data files with the command line tool.
+
+    [:octicons-arrow-right-24: Upload data](../resilience-hub/cli-tool/index.md)
+
+</div>
+
+## Step by step
+
+### 1. Register and define your study
+
+[Register your study](https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u). You will receive a study ID by email. This can take some time, so do it early.
+
+While you wait, read up on the [metadata models](../concepts/index.md) so you know what information you will need to collect.
+
+### 2. Upload metadata
+
+Enter your metadata in [the catalogue](../resilience-hub/seek/index.md).
+
+!!! tip "Using the old Excel templates?"
+    If you've already filled in your metadata in the old Excel templates, email [data@cropxr.org](mailto:data@cropxr.org) and we will help you upload it.
+
+### 3. Upload data
+
+Upload your data files using our [command line tool](../resilience-hub/cli-tool/index.md).
+
+!!! warning "ResearchDrive uploads are not possible for new studies"
+    Use the command line tool instead. Older data remains available on [Research Drive](../research-drive/index.md).
+
+
+## More help
+
+| If you… | Go to |
+|---|---|
+| are new to CropXR | [Concepts](../concepts/index.md) |
+| need a step-by-step walkthrough | [Guides](../guides/index.md) |
+| are looking for older data | [Research Drive](../research-drive/index.md) |
+| are sharing sensitive data | [Policies](../policies/index.md) |
+| came across an unfamiliar term | [Glossary](glossary.md) |
+| are stuck | email [data@cropxr.org](mailto:data@cropxr.org) |

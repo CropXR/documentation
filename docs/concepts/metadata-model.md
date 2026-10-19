@@ -139,6 +139,15 @@ The input is an output file from the previous step and the method of data deriva
 
 ## Entity-relationship diagrams
 
+Not every diagram applies to every study. Jump to the ones you need:
+
+- **[Containers and study-level metadata](#containers-and-study-level-metadata)**: properties of the whole study and assay stream. *All studies.*
+- **[The source](#the-source-shared-by-both-streams)**: the plant, its growth conditions and treatment. *All studies.*
+- **[Sequencing stream](#sequencing-stream)**: samples, sequencing assays and data files. *Sequencing studies.*
+- **[Phenotyping stream](#phenotyping-stream)**: observation units, observations and data files. *Phenotyping studies.*
+- **[Combined sample or observation unit](#combined-sample-or-observation-unit)**: one sample template for studies with both physical samples and observation units, used with the assays of both streams. *Combined studies.*
+- **[What the model cannot express](#what-the-model-cannot-express)**: known limitations. *Worth reading before you start.*
+
 The diagrams below show model 1.0, the last per-file state of the definitions from 260727 before templates were renamed by stream. Every box is a table in the catalogue, and every row of every table is a "sample" to SEEK. `PK` marks the column SEEK displays as the row's name; it must be unique within the table. `FK` marks the `Input` column, a list of rows from the table one level up. `cv` is a controlled vocabulary, `link` is a reference to a record registered elsewhere in the catalogue. Fields marked `REQ` are required; the rest are optional.
 
 ### Containers and study-level metadata

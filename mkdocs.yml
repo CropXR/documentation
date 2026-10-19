@@ -131,7 +131,6 @@ nav:
       - Reference: resilience-hub/seek/reference.md
   - Research Drive:
     - research-drive/index.md
-    - Getting Access: research-drive/getting-access.md
     - Connecting:
       - Via Browser: research-drive/connecting/via-browser.md
       - Via NextCloud: research-drive/connecting/via-nextcloud.md

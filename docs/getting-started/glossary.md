@@ -6,8 +6,9 @@ This glossary defines key terms used throughout the CropXR documentation.
 
 | Term | Definition |
 |------|------------|
-| Resilience Hub | A platform providing all services offered by DataXR, including data storage, metadata catalogue, compute and pipelines. The term often refers to the future, more mature state of the infrastructure rather than the current state. |
-| Research Drive | The current storage platform for research data within CropXR, hosted by SURF. See [Research Drive](../research-drive/index.md). |
+| Resilience Hub | The CropXR platform for sharing research data, provided by DataXR. It combines the metadata catalogue with data storage, and will be extended with services such as compute and pipelines. See [Resilience Hub](../resilience-hub/index.md). |
+| Research Drive | The previous storage platform for research data within CropXR, hosted by SURF. It is no longer used for new data, but existing data remains available. See [Research Drive](../research-drive/index.md). |
+| rhub | The command line tool for uploading data to and downloading data from the Resilience Hub. See [Command Line Tool](../resilience-hub/cli-tool/index.md). |
 | Catalogue | A searchable registry where researchers can find studies, models and pipelines within the consortium. The catalogue is built on FairdomSEEK. |
 | FairdomSEEK | The open-source platform used for the CropXR metadata catalogue. It implements the ISA framework for organizing research data. See [SEEK Metadata Entry](../resilience-hub/seek/index.md). |
 | SharePoint | A shared document repository for policies, procedures, and administrative information within CropXR. |
@@ -38,7 +39,7 @@ This glossary defines key terms used throughout the CropXR documentation.
 | Term | Definition |
 |------|------------|
 | Consortium Agreement | The legal document governing collaboration, intellectual property, and data sharing within the CropXR consortium. |
-| Data Access Policy | A document specifying data sharing policies for cases not covered by the consortium agreement. See [Data Sensitivity Levels](../policies/data-sensitivity-levels.md). |
+| Data Access and Deposit Manual | A document specifying data sharing policies for the consortium, internally as well as externally, available on SharePoint. See [Policies](../policies/index.md) and [Data Sensitivity Levels](../policies/data-sensitivity-levels.md). |
 | MMP | Metadata Management Procedure. The SharePoint documentation describing the process of study registration, data upload, and metadata management. |
 | SOP | Standard Operating Procedure. A documented protocol describing how an experimental or analytical procedure is performed. SOPs can be linked to studies and assays in the catalogue. |
 
