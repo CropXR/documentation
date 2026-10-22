@@ -71,22 +71,22 @@ The tool has to know where the Resilience Hub is and where you sign in.
 === "macOS"
 
     ```bash
-    echo 'export RHUB_BACKEND_URL="https://test.data.resiliencehub.ewi.tudelft.nl/api"' >> ~/.zshrc
-    echo 'export RHUB_AUTH_ISSUER="https://auth.cropresilience.org/realms/dev"' >> ~/.zshrc
+    echo 'export RHUB_BACKEND_URL="https://data.cropresilience.org/api"' >> ~/.zshrc
+    echo 'export RHUB_AUTH_ISSUER="https://auth.cropresilience.org/realms/resilience-hub"' >> ~/.zshrc
     ```
 
 === "Linux"
 
     ```bash
-    echo 'export RHUB_BACKEND_URL="https://test.data.resiliencehub.ewi.tudelft.nl/api"' >> ~/.bashrc
-    echo 'export RHUB_AUTH_ISSUER="https://auth.cropresilience.org/realms/dev"' >> ~/.bashrc
+    echo 'export RHUB_BACKEND_URL="https://data.cropresilience.org/api"' >> ~/.bashrc
+    echo 'export RHUB_AUTH_ISSUER="https://auth.cropresilience.org/realms/resilience-hub"' >> ~/.bashrc
     ```
 
 === "Windows"
 
     ```powershell
-    setx RHUB_BACKEND_URL "https://test.data.resiliencehub.ewi.tudelft.nl/api"
-    setx RHUB_AUTH_ISSUER "https://auth.cropresilience.org/realms/dev"
+    setx RHUB_BACKEND_URL "https://data.cropresilience.org/api"
+    setx RHUB_AUTH_ISSUER "https://auth.cropresilience.org/realms/resilience-hub"
     ```
 
 Close the terminal and open a new one.
@@ -103,12 +103,12 @@ The answer looks like this.
 ```
 0.2.0
 signed in as: nobody, run rhub login
-backend url: https://test.data.resiliencehub.ewi.tudelft.nl/api
+backend url: https://data.cropresilience.org/api
 ```
 
 ## Sign in
 
-If you have never signed in to the [catalogue](https://test.catalogue.resiliencehub.ewi.tudelft.nl), do that once in your browser first. The Resilience Hub knows you only after that.
+If you have never signed in to the [catalogue](https://catalogue.cropresilience.org), do that once in your browser first. The Resilience Hub knows you only after that.
 
 ```bash
 rhub login
@@ -117,7 +117,7 @@ rhub login
 The tool prints a link and waits.
 
 ```
-Open https://auth.cropresilience.org/realms/dev/device?user_code=WDJB-MJHT
+Open https://auth.cropresilience.org/realms/resilience-hub/device?user_code=WDJB-MJHT
 Waiting for approval...
 ```
 
