@@ -1769,11 +1769,11 @@
 <p>You need to first install the tool on your computer. Follow the <a href="../cli-install/">installation guide</a>.</p>
 <p>Copy each command from this page into the terminal and press Enter. Some commands hold example values that you replace with your own. The page says which.</p>
 <h2 id="sign-in">Sign in<a class="headerlink" href="#sign-in" title="Permanent link">&para;</a></h2>
-<p>If you have never signed in to the <a href="https://test.catalogue.resiliencehub.ewi.tudelft.nl">catalogue</a>, do that once in your browser first. The Resilience Hub knows you only after that.</p>
+<p>If you have never signed in to the <a href="https://catalogue.cropresilience.org">catalogue</a>, do that once in your browser first. The Resilience Hub knows you only after that.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>rhub<span class="w"> </span>login
 </code></pre></div>
 <p>The tool prints a link and waits.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Open https://auth.cropresilience.org/realms/dev/device?user_code=WDJB-MJHT
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Open https://auth.cropresilience.org/realms/resilience-hub/device?user_code=WDJB-MJHT
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Waiting for approval...
 </code></pre></div>
 <p>Open the link in your browser and sign in. The browser then asks whether you grant the tool access. Click "Yes". The terminal continues by itself.</p>
@@ -1786,7 +1786,7 @@
 </div>
 <h3 id="find-the-assay-id">Find the assay id<a class="headerlink" href="#find-the-assay-id" title="Permanent link">&para;</a></h3>
 <p>Open the assay in the catalogue. The assay id is the number at the end of the address in the address bar of your browser.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>https://test.catalogue.resiliencehub.ewi.tudelft.nl/assays/42
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>https://catalogue.cropresilience.org/assays/42
 </code></pre></div>
 <p>In this example the assay id is <code>42</code>.</p>
 <h3 id="command-to-upload-data">Command to upload data<a class="headerlink" href="#command-to-upload-data" title="Permanent link">&para;</a></h3>
@@ -1824,7 +1824,7 @@
 <p>A large dataset takes longer. Keep your laptop charging and make sure that it does not go to sleep.</p>
 <h3 id="data-upload-successful">Data upload successful<a class="headerlink" href="#data-upload-successful" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Upload verified.
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>https://test.data.resiliencehub.ewi.tudelft.nl/register/17
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>https://data.cropresilience.org/register/17
 </code></pre></div>
 <p>"Upload verified." means that all your files arrived unchanged. The work package lead of your project gets an email with the link in the last line and registers the dataset.</p>
 <div class="admonition warning">
