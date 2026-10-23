@@ -5,12 +5,12 @@
 
 Study:
     
-    <received study id> - <study name>
-    example “CXRS4 - Drought response of arabidopsis after hormal treatment with PAMP”
+    <study name>
+    example “Drought response of arabidopsis after hormonal treatment with PAMP”
 
 Assay stream:
 
-    <received study id> - <descriptive assay name>
+    <descriptive assay name>
 
 Assay: 
 

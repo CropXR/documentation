@@ -9,22 +9,24 @@ Detailed instructions are found [here](full-guide.md)
 
 Prepare
 
-1. register the study in the form and get storage 
-2. gather relevant documents, such as lab notes and experimental design overviews
+1. gather relevant documents, such as lab notes and experimental design overviews
+
+!!! note "No separate registration step"
+    There is no separate registration form. All metadata goes into the [data catalogue](https://catalogue.cropresilience.org/), and that is where you register your investigation and study.
 
 Start with the metadata entry in FairdomSEEK
 
-3. create a study
+2. create a study
       1. choose an extended metadata type
       2. set the sharing of the study
       3. choose a template for the study source. Add additional fields if needed.
       4. choose a template for the study sample, matching your stream: “CropXR sequencing sample”,
          “CropXR phenotyping observation unit”, “CropXR metabolomics sample”, or “CropXR combined
          sample” when the study holds both samples and measurements on another level
-4. for each assay type create an assay stream
+3. for each assay type create an assay stream
       1. select the right extended metadata
       2. set the sharing
-5. within the assay stream create the backbone before entering any metadata: two assays, which must be in the order “assay - material”, then “assay - data file”
+4. within the assay stream create the backbone before entering any metadata: two assays, which must be in the order “assay - material”, then “assay - data file”
       1. first an assay at the ISA level “assay - material” for the experiment itself (“CropXR sequencing assay”, “CropXR phenotyping assay”, “CropXR metabolomics assay”)
       2. then an assay at the ISA level “assay - data file” for the files it produces (“CropXR sequencing data file”, “CropXR phenotyping data file”, “CropXR metabolomics data file”); create it with “Insert a new Assay” on the first assay's page, not with “Design Assay” on the stream
       3. click “Create” once per assay: every click creates a new assay, and duplicates have to be deleted again
@@ -52,18 +54,18 @@ those rows exist and have ids. See the [format for sample inputs](reference.md#s
 Uploading a row whose name already exists creates a second row rather than updating the first.
 To revise rows that are already there, select them before downloading.
 
-6. Register protocols under SOPs and manage the permissions.
-7. Edit the study to fill the extended metadata and link SOPs.
-8. Define sources, based on your specific study and the level of granularity needed.
+5. Register protocols under SOPs and manage the permissions.
+6. Edit the study to fill the extended metadata and link SOPs.
+7. Define sources, based on your specific study and the level of granularity needed.
 
     Enter the data with the download, fill, upload cycle above.
 
-9. Define samples, based on your specific study and the level of granularity needed.
+8. Define samples, based on your specific study and the level of granularity needed.
 
     Enter the data with the same cycle, referencing the study sources by name and id in the Input column.
 
-10. Edit assay metadata
-11. Enter assay row data with the same cycle. Leave the file location column empty: it takes a
+9. Edit assay metadata
+10. Enter assay row data with the same cycle. Leave the file location column empty: it takes a
     reference to a data file already registered in SEEK, not a path, so the file must exist as a
     record first. That happens in the next step.
 
@@ -73,7 +75,7 @@ The metadata now stands on its own. The second step is to add the data.
     Adding data will move to the data access layer. Until it does, you register the location of
     your data yourself, as described below.
 
-12. Register your data files. SEEK stores a link to the data, not a copy: the files stay where
+11. Register your data files. SEEK stores a link to the data, not a copy: the files stay where
     they are on the Research Drive.
       1. under “➕Create” choose “Data file”, and under the “Remote URL” tab paste the URL of a
          file or folder on the Research Drive
@@ -81,11 +83,11 @@ The metadata now stands on its own. The second step is to add the data.
          permissions — assay rows point at the individual files inside it by relative path
       3. set the sharing. These permissions will govern who can download the data, so registering
          a whole study as one data file leaves no way to grant access to part of it
-13. Link each registered data file into the assay rows it belongs to, using the [format for data
+12. Link each registered data file into the assay rows it belongs to, using the [format for data
     files](reference.md#data-files). Select the rows before downloading, so the upload revises
     them instead of adding a second set.
 
 Now that the minimal metadata is added, continue improving the metadata.
 
-14. adapt permissions
-15. update with additional data
+13. adapt permissions
+14. update with additional data

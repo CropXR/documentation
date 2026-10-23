@@ -4,7 +4,7 @@ This section provides step-by-step instructions for common tasks in the CropXR d
 
 ## Study Workflow
 
-- [General Workflow](stepwise-guide.md) - End-to-end guide for study registration, data upload, and metadata entry
+- [General Workflow](stepwise-guide.md) - End-to-end guide for study preparation, data upload, and metadata entry
 
 ### SEEK Catalogue
 

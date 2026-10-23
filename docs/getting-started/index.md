@@ -6,13 +6,11 @@ This page walks you through what you will do as a researcher, in the order that 
 
 ```mermaid
 flowchart LR
-    A["0. Defining your study"] --> B["1. Register you study"]
-    B -->|study ID by email| C["2. Set up metadata structure"]
-    C --> D["3. Upload metadata"]
-    D --> E["4. Upload data"]
+    A["0. Defining your study"] --> C["1. Set up metadata structure"]
+    C --> D["2. Upload metadata"]
+    D --> E["3. Upload data"]
     E --> F(("Findable &<br/>reusable data"))
 
-    click B "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u" _blank
     click A "../concepts/defining-a-study/" _self
     click C "../resilience-hub/seek/" _self
     click E "../resilience-hub/cli-tool/" _self
@@ -34,7 +32,7 @@ flowchart LR
 
     ---
 
-    Register your study, get a study ID, and decide what it contains.
+    Decide what your study contains and how to name it.
 
     [:octicons-arrow-right-24: Define a study](../concepts/defining-a-study/)
 
@@ -58,11 +56,12 @@ flowchart LR
 
 ## Step by step
 
-### 1. Register and define your study
+### 1. Define your study
 
-[Register your study](https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u). You will receive a study ID by email. This can take some time, so do it early.
+Decide [what your study contains](../concepts/defining-a-study.md) and read up on the [metadata models](../concepts/index.md) so you know what information you will need to collect.
 
-While you wait, read up on the [metadata models](../concepts/index.md) so you know what information you will need to collect.
+!!! note "No separate registration step"
+    There is no separate registration form. All metadata goes into the [data catalogue](https://catalogue.cropresilience.org/), and that is where you register your investigation and study.
 
 ### 2. Upload metadata
 

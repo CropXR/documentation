@@ -73,7 +73,7 @@ The experiment section describes assays performed on a sample.
 Each study gets one filled in metadata template (with the exception of combined studies, which get two).
 
 #### IDs
-At registration you receive an investigation id and study id from CropXR. These should be used in the template.
+The template needs an investigation id and a study id. Use the ids of your investigation and study in the [data catalogue](https://catalogue.cropresilience.org/).
 
 In other sections of the sheets there are ids needed. You need to provide these yourself. They need to be unique within the study so they can be referenced.
 If you in one section refer to an id, make sure it is defined.

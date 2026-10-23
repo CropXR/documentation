@@ -40,6 +40,6 @@ This glossary defines key terms used throughout the CropXR documentation.
 |------|------------|
 | Consortium Agreement | The legal document governing collaboration, intellectual property, and data sharing within the CropXR consortium. |
 | Data Access and Deposit Manual | A document specifying data sharing policies for the consortium, internally as well as externally, available on SharePoint. See [Policies](../policies/index.md) and [Data Sensitivity Levels](../policies/data-sensitivity-levels.md). |
-| MMP | Metadata Management Procedure. The SharePoint documentation describing the process of study registration, data upload, and metadata management. |
+| MMP | Metadata Management Procedure. The SharePoint documentation describing the process of study setup, data upload, and metadata management. |
 | SOP | Standard Operating Procedure. A documented protocol describing how an experimental or analytical procedure is performed. SOPs can be linked to studies and assays in the catalogue. |
 
