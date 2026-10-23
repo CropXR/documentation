@@ -4,14 +4,14 @@ Setting up a study happens in four phases. Work through them in order.
 
 | Phase | What you do |
 |---|---|
-| [Phase 0](#phase-0-get-your-investigation-and-study-ids) | Get your investigation and study IDs |
+| [Phase 0](#phase-0-prepare) | Prepare your study |
 | [Phase 1](#phase-1-create-the-template) | Create the template |
 | [Phase 2](#phase-2-enter-the-metadata-then-add-the-data) | Enter the metadata |
 | [Phase 3](#phase-3-refine-and-share) | Update permissions and complete the metadata |
 
 ---
 
-## Phase 0: Get your investigation and study IDs
+## Phase 0: Prepare
 
 1. **Understand the basic structure of the metadata model.**
 
@@ -22,22 +22,23 @@ Setting up a study happens in four phases. Work through them in order.
     !!! info
         Inform DataXR well up front when your study does not fit these types.
 
-4. **Register your study.** Make sure that you have registered your study in this [form](https://forms.office.com/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u). After the admin has checked the registration, you will receive a study ID, which you need when entering the metadata.
-
-5. **Make sure you have an active account.** FairdomSEEK is the data catalogue. Log in with the following steps: 
+4. **Make sure you have an active account.** FairdomSEEK is the data catalogue. Log in with the following steps: 
     1. Select **Login** in the top right corner.
     2. Under the tab **KeyCloak**, click **🔒 Sign in with KeyCloak**.
     3. Click **SURFconext** to use your university account.
     4. For the first login, give the needed permissions.
 
-6. **Request to be added to a project** if you have not been added already. This is done by a project admin.
+5. **Request to be added to a project** if you have not been added already. This is done by a project admin.
 
-7. **Gather the files with the metadata that you already collected.** This includes:
+6. **Gather the files with the metadata that you already collected.** This includes:
 
     - e-lab journal entries
     - files that outline experimental conditions per plant
     - files that link output files to the experiment
     - etc.
+
+!!! note "No separate registration step"
+    There is no separate registration form. All metadata goes into the [data catalogue](https://catalogue.cropresilience.org/), and that is where you register your investigation and study.
 
 ---
 !!! warning "FairdomSEEK can be slow, do not click again while loading"
@@ -69,7 +70,7 @@ Log in to the [Catalogue webpage](https://catalogue.cropresilience.org/).
 
 === "Create a new investigation"
 
-    If your investigation is not yet registered:
+    If your investigation does not exist in the catalogue yet:
 
     1. Click **➕ Create** and select **Investigations**.
     2. Add a **Title** and select a **Project**.

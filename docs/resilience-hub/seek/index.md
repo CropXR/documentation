@@ -16,7 +16,7 @@ We suggest you do phase 0 a few days before you plan to do your metadata entry a
  
 ### Phase 0: preparations
 
-Get an overview of the process and prepare data entry. Importantly, **read this document all the way through** (except the detailed step-wise instructions of phase 2, 3 and 4). Try to understand the process, the metadata model, and the concepts. You will define the study by choosing what experiments to include and make sure you are **registered upfront**. An admin from DataXR might need to approve requests, so make sure to do this a few days before your planned data entry. You gather files that contain metadata regarding your study.
+Get an overview of the process and prepare data entry. Importantly, **read this document all the way through** (except the detailed step-wise instructions of phase 2, 3 and 4). Try to understand the process, the metadata model, and the concepts. You will define the study by choosing what experiments to include. You gather files that contain metadata regarding your study.
 
 ### Phase 1: define study, assays and sample templates
 
