@@ -1979,7 +1979,7 @@
 <p><strong>Register your study.</strong> Make sure that you have registered your study in this <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u">form</a>. After the admin has checked the registration, you will receive a study ID, which you need when entering the metadata.</p>
 </li>
 <li>
-<p><strong>Make sure you have an active account.</strong> We use FairdomSEEK as the data catalogue, try to login with the following steps. </p>
+<p><strong>Make sure you have an active account.</strong> FairdomSEEK is the data catalogue. Log in with the following steps: </p>
 <ol>
 <li>Select <strong>Login</strong> in the top right corner.</li>
 <li>Under the tab <strong>KeyCloak</strong>, click <strong>🔒 Sign in with KeyCloak</strong>.</li>
@@ -2180,7 +2180,7 @@ template of a sample type cannot be changed once samples have been created from 
 <p>Work through those tables one at a time, downloading each only after the previous one has been uploaded. SEEK identifies rows by the id the catalogue generates, not by name, so the Input column that links a table to the one before it cannot be filled until those rows exist. Downloading every workbook up front leaves you with Input columns you have no ids for.</p>
 </div>
 <h3 id="step-1-add-sops-can-also-be-done-later">Step 1: Add SOPs (can also be done later)<a class="headerlink" href="#step-1-add-sops-can-also-be-done-later" title="Permanent link">&para;</a></h3>
-<p>SOP = Standard operating procedure. Each step can reference a protocol that was used: creation of samples and the grouping of observation units at the study level, the assaying protocols at assay level and the data transformation steps.</p>
+<p>SOP stands for standard operating procedure. Each step can refer to the protocol that was used: at study level, how samples were created and observation units grouped; at assay level, the assay protocols and the data processing steps.</p>
 <ol>
 <li>At the top menu under <strong>➕ Create</strong> choose <strong>SOP</strong>.</li>
 <li>Click <strong>Browse</strong> to upload a local file.</li>
@@ -2211,18 +2211,18 @@ template of a sample type cannot be changed once samples have been created from 
 <li>
 <p>Download the template by clicking <strong>Batch download to Excel</strong>.</p>
 </li>
-<li>In the Excel, under the <strong>Samples</strong> tab, fill in the data:<ul>
+<li>
+<p>In the Excel, under the <strong>Samples</strong> tab, fill in the data:</p>
+<ul>
 <li><strong>Ignore</strong> the first two columns.</li>
 <li>The <strong>Source Name</strong> is the name that will be displayed.</li>
 <li>Start with the most relevant fields to understand the study and the sources used. The data can be improved on at a later point. Fill in at least the species and the experimental group.</li>
 </ul>
-</li>
-</ol>
 <div class="admonition warning">
 <p class="admonition-title">Uploading twice creates duplicates</p>
-<p>Be aware, if you upload the same excel multiple times, a new sample will be created with the same name. To check how to update existing samples, check the <a href="#phase-3-refine-and-share">phase 3 instructions</a>.</p>
+<p>If you upload the same Excel file more than once, a new sample with the same name is created each time. To update existing samples, see the <a href="#phase-3-refine-and-share">phase 3 instructions</a>.</p>
 </div>
-<ol>
+</li>
 <li>
 <p>Save the file. Upload it under <strong>Upload excel spreadsheet</strong>: select <strong>Browse</strong> and click <strong>🟦 Upload</strong>.</p>
 <p>Now there might be an error message. Please read it carefully and adjust the data accordingly.</p>
@@ -2230,7 +2230,7 @@ template of a sample type cannot be changed once samples have been created from 
 </ol>
 <h3 id="step-4-define-study-samples">Step 4: Define study samples<a class="headerlink" href="#step-4-define-study-samples" title="Permanent link">&para;</a></h3>
 <ol>
-<li><a href="../reference/#study-samples">Choose what type are needed</a>.</li>
+<li><a href="../reference/#study-samples">Choose which types are needed</a>.</li>
 <li>Go to <strong>Samples table</strong> under <strong>Study design</strong>.</li>
 <li>Download the template by clicking <strong>Batch download to Excel</strong>.</li>
 <li>In the Excel, under the <strong>Samples</strong> tab, fill in the data in the fields:<ul>
@@ -2259,7 +2259,7 @@ template of a sample type cannot be changed once samples have been created from 
 <pre class="mermaid"><code>flowchart LR
     S["Study sample"] --&gt;|input of| A1["Assay 1: RNA extraction"]
     A1 --&gt;|output = input of| A2["Assay 2: sequencing"]</code></pre>
-<p>So enter the assays <strong>in order</strong>, and upload each one before you start the next. To fill the <strong>Input column</strong> in the excel sheets, follow <a href="../reference.md#how-to-fill-the-input-column">How to fill the Input column</a>.</p>
+<p>So enter the assays <strong>in order</strong>, and upload each one before you start the next. To fill the <strong>Input column</strong> in the excel sheets, follow <a href="../reference/#how-to-fill-the-input-column">How to fill the Input column</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Leave the file location empty for now</p>
 <p>That column takes a reference to a data file already registered in SEEK — not a path or a URL — so the file has to exist as a record before the cell can be filled.</p>
@@ -2286,8 +2286,8 @@ template of a sample type cannot be changed once samples have been created from 
 <h3 id="step-3-updating-existing-samples">Step 3: Updating existing samples<a class="headerlink" href="#step-3-updating-existing-samples" title="Permanent link">&para;</a></h3>
 <p>[todo: expand]</p>
 <ul>
-<li>Make sure it's selected before downloaded, so there is no new sample with the same name.</li>
-<li>You can upload multiple in multiple steps, but be aware that if you re-upload samples with the same name, a new sample will be created. Only upload new samples.</li>
+<li>Select the samples before you download the table, so that no new samples with the same name are created.</li>
+<li>You can upload samples in several rounds, but re-uploading a sample with the same name creates a new sample. Only upload new samples.</li>
 </ul>
 <h3 id="step-4-adding-additional-columns">Step 4: Adding additional columns<a class="headerlink" href="#step-4-adding-additional-columns" title="Permanent link">&para;</a></h3>
 <p>[todo: expand] (under <strong>⚙️ Actions</strong> in the top corner and then <strong>📝 Edit ..</strong>)</p>
