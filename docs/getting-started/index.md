@@ -7,7 +7,7 @@ This page walks you through what you will do as a researcher, in the order that 
 ```mermaid
 flowchart LR
     A["0. Defining your study"] --> B["1. Register you study"]
-    B -->|study ID by email| C["2. Setup metadata structure"]
+    B -->|study ID by email| C["2. Set up metadata structure"]
     C --> D["3. Upload metadata"]
     D --> E["4. Upload data"]
     E --> F(("Findable &<br/>reusable data"))

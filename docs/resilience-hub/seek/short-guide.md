@@ -53,7 +53,7 @@ Uploading a row whose name already exists creates a second row rather than updat
 To revise rows that are already there, select them before downloading.
 
 6. Register protocols under SOPs and manage the permissions.
-7. Edit the study to fill the extend metadata and link SOPs.
+7. Edit the study to fill the extended metadata and link SOPs.
 8. Define sources, based on your specific study and the level of granularity needed.
 
     Enter the data with the download, fill, upload cycle above.

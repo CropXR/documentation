@@ -18,7 +18,7 @@ To share folders or files with other users, you can use the "Share" option in th
 
 ## Sharing Guidelines
 1. Sharing Rules:
-    - Only share folders with the workpackage prefix (e.g. 'WPXYZ-')
+    - Only share folders with the work package prefix (e.g. 'WPXYZ-')
     - Never share non-prefixed folders (e.g., 'studies', 'assays', 'raw')
     - Always share from the nearest parent folder with 'WPXYZ-' prefix
     - This ensures unique folder names and prevents conflicts

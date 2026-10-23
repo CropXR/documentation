@@ -6,7 +6,7 @@ In the first phase of the CropXR program Excel templates have been used to colle
 Only read this section if you need to understand the older Excel templates. For new metadata entry enter the data in the catalogue.
 
 There were two separate templates for phenotyping and sequencing experiments.
-The templates were more close to the original metadata standards and therefor the are differences between the templates:
+The templates were more close to the original metadata standards and therefore there are differences between the templates:
 - The phenotyping template has the same information split into more different separate sections than the sequencing template
 - The phenotyping template has a more free structure than sequencing
 
@@ -45,7 +45,7 @@ There are several sections that describe properties of the whole study, every pl
 The experimental factor section describes all conditions that are varied between different experimental groups.
 
 The observation unit is the unit of measurement. It can be a plant, a plot, or a whole field.
-You are free to define these as you need, and therefor need to think while defining them.
+You are free to define these as you need, and therefore need to think while defining them.
 It is also used to describe what experimental factor was applied to that plant.
 
 The observed variable describes the measurement: what was measured and how, including the instrument. 
@@ -101,6 +101,6 @@ That includes the following sheets:
 - Phenotyping: Investigation, Study, Person, Biological material, Environment, Event, Experimental factor
 - Sequencing: Investigation, Study, Sample
 
-The for the remaining sections, use both sheets to properly capture the experiments. 
+For the remaining sections, use both sheets to properly capture the experiments. 
 Make sure to use the same IDs or make references to the IDs used in the other template, so plants/samples can be linked.
 

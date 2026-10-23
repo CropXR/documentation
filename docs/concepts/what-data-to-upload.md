@@ -18,9 +18,9 @@ In case of unambiguous processing, it is possible to label processed data as raw
 
 ## Processed data
 It is also important to share certain processed data.
-This includes output artifacts that are important to understand the study and it's outcomes, 
+This includes output artifacts that are important to understand the study and its outcomes, 
 as well as processed data that might be used directly in a secondary analysis,
-especially if the data was produced by one of the CropXR standerdized pipelines or scripts, 
+especially if the data was produced by one of the CropXR standardized pipelines or scripts, 
 and especially if the analysis is computationally heavy.
 
 For this processed data it is important to include information on how it was generated.

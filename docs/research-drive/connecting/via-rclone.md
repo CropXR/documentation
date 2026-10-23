@@ -249,7 +249,7 @@ rclone copy --timeout 60m /local/source "cropxr:destination/folder"
 ### Commands for verifying successful file transfer
 
 ```bash
-rclone ls cropxr:destination/folder"
+rclone ls "cropxr:destination/folder"
 ```
 
 This command shows a list of files stored in the remote destination.

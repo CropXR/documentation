@@ -30,8 +30,8 @@ The CropXR metadata model is made up from a combination of established standards
 
 MIAPPE and ENA describe in a standardized way, the setup of a study, the experimental conditions, 
 the types of measurements performed and how the output data can be related to that, up to sample level.
-This detailed standardized description facilitates that the findability and reusability of the data.
-Because both standards describe the setup of a plant experimental, there is a large overlap between the standards.
+This detailed standardized description facilitates the findability and reusability of the data.
+Because both standards describe the setup of a plant experiment, there is a large overlap between the standards.
 To make the metadata uniform, and to be able to describe combined experiments, the standards have been combined into a unified metadata model.
 In this model, you can describe the plants and growth conditions on study level and from there start multiple types of measurements.
 
@@ -55,7 +55,7 @@ The other processes, however many needed, are grouped under the assay. The assay
 In the catalogue, the processes that are grouped under the assay, are all called an assay even if the input and output are both a material object, or both data files. 
 This does not fit with the classical meaning of the word ‘assay’, but it implements the same functionality as ISA. The assays can be connected into an assay stream.
 
-Each row, that can describe a sample, but also an assay performed on a sample, or a derivation of a data file, is called always a ‘sample’ in the catalogue.
+Each row, that can describe a sample, but also an assay performed on a sample, or a derivation of a data file, is always called a ‘sample’ in the catalogue.
 
 
 ![](../img/SEEKSchematicCombinedStudy.png)
@@ -90,7 +90,7 @@ If the metadata and a sample needs to be traced back to a certain plant, you mig
 
 ### Study samples
 
-An observation unit is any level on which a measurement/observation  is done. Examples are a plant, plot or whole field or greenhouse.
+An observation unit is any level on which a measurement/observation is done. Examples are a plant, plot or whole field or greenhouse.
 A sample is a special level: it describes a physical subset of the plant that is collected for analysis. It will contain some information about sampling.
 
 Both samples and observation units are listed under the study samples section.

@@ -22,7 +22,7 @@ If any of these do not apply to you, the upcoming sections will guide you throug
 1. Go to [FairdomSEEK](https://catalogue.cropresilience.org/) & select "Log in" at the
    top right corner.
 2. Under the "KeyCloak" tab, click "Sign in with KeyCloak".
-3. Click "SURFcontext" and sign in with your university account.
+3. Click "SURFconext" and sign in with your university account.
 4. On first login, grant the requested permissions. Please contact data@cropxr.org if you are unable to login.
 
 ## 2. Confirm you've been added to your project

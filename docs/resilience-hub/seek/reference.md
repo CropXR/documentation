@@ -123,7 +123,7 @@ Create a next assay of the type data file in the same assay stream, after the as
  
 ### Top level sensors
 
-Top level environmental measurements, with no distinction between rows/samples, can be grouped together in a single assay stream. This allows for linking the data files with the specs of the measurement/instrument, without a large part of the interface being taken up by sensor measurements, that are not relevant for the understanding the study. 
+Top level environmental measurements, with no distinction between rows/samples, can be grouped together in a single assay stream. This allows for linking the data files with the specs of the measurement/instrument, without a large part of the interface being taken up by sensor measurements, that are not relevant for understanding the study. 
 
 1. Create assay stream for these grouped measurements. Do not choose any extended metadata. 
 2. Create an assay of the type observation with a material output. In this assay each row describes a type of measurement done. 
@@ -141,14 +141,14 @@ There is no clear place to list key output artifacts, that summarize the conclus
 
 You can register a URL that contains a file or a folder.
 
-The advise is to register a folder that is both 
+The advice is to register a folder that is both 
 
      easy to navigate inside, 
     containing for example only one data type and no different types of sub-folders
 
     the same permissions apply to the whole folder
 
-An example would be: the all raw reads of a sequencing experiment.
+An example would be: all the raw reads of a sequencing experiment.
 
 The metadata is used to link certain experiments and samples to the files. Here you can indicate what file in the registered folder contains what data.
 

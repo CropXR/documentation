@@ -27,7 +27,7 @@ Setting up a study happens in four phases. Work through them in order.
 5. **Make sure you have an active account.** We use FairdomSEEK as the data catalogue, try to login with the following steps. 
     1. Select **Login** in the top right corner.
     2. Under the tab **KeyCloak**, click **🔒 Sign in with KeyCloak**.
-    3. Click **SURFContext** to use your university account.
+    3. Click **SURFconext** to use your university account.
     4. For the first login, give the needed permissions.
 
 6. **Request to be added to a project** if you have not been added already. This is done by a project admin.

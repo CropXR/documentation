@@ -41,7 +41,7 @@ At any point in time you can save the metadata and edit it later. Add the additi
 
 ### Adding columns
 It is possible to add additional columns to capture metadata relevant, not in the provided columns. 
-Before doing this, please consult an expert of this is not already covered by the existing columns.
+Before doing this, please consult an expert if this is not already covered by the existing columns.
 
 ### Combined study
 For instructions on the metadata of a combined study, read [here](../concepts/metadata-model.md#assay-and-sample-definition).
