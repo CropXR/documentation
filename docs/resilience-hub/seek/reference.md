@@ -51,9 +51,9 @@ SEEK only creates the ids when a table is uploaded. So you get them by downloadi
 
 3. **Add the formula in this downloaded file.** In the first empty column, in row 2, paste:
 
-```
+    ```
     ="[{""id""=>"&A2&", ""type""=>""Sample"", ""title""=>"""&B2&"""}]"
-```
+    ```
 
     - `A2` must point to the **id** column.
     - `B2` must point to the **name** column (for example *Source Name* or *subject_id*).
@@ -123,7 +123,7 @@ Create a next assay of the type data file in the same assay stream, after the as
  
 ### Top level sensors
 
-Top level environmental measurements, with no distinction between rows/samples, can be grouped together in a single assay stream. This allows for linking the data files with the specs of the measurement/instrument, without a large part of the interface being taken up by sensor measurements, that are not relevant for understanding the study. 
+Top level environmental measurements, with no distinction between rows/samples, can be grouped together in a single assay stream. This links the data files to the details of the measurement and instrument, without sensor measurements taking up a large part of the interface when they matter little for understanding the study. 
 
 1. Create assay stream for these grouped measurements. Do not choose any extended metadata. 
 2. Create an assay of the type observation with a material output. In this assay each row describes a type of measurement done. 
@@ -141,12 +141,10 @@ There is no clear place to list key output artifacts, that summarize the conclus
 
 You can register a URL that contains a file or a folder.
 
-The advice is to register a folder that is both 
+The advice is to register a folder that is both:
 
-     easy to navigate inside, 
-    containing for example only one data type and no different types of sub-folders
-
-    the same permissions apply to the whole folder
+- easy to navigate inside, containing for example only one data type and no different types of sub-folders
+- the same permissions apply to the whole folder
 
 An example would be: all the raw reads of a sequencing experiment.
 
@@ -159,10 +157,10 @@ At a later stage, the permission set in SEEK will be applied to the data downloa
 
 ### Study source
 
-Choose the granularity that is needed for your metadata. The sources are used to specify the biological material, as well as the growth conditions. At least each experimental block needs to be defined as a separate source. If the metadata and a sample needs to be traced back to a certain plant, you might define a source per plant.
+Choose the granularity that is needed for your metadata. The sources are used to specify the biological material, as well as the growth conditions. At least each experimental block needs to be defined as a separate source. If you need to trace a sample back to an individual plant, define one source per plant.
 
  
 ### Study samples
 
 The study samples section is used both for samples, as well as for defining observation units. 
-Observation units are any level, where a measurement/observation is done. How to define this will depend on the specific design of a study, and typically be the unit for which each experiment generates a file. Think about the assays and the data files when defining the observation units.
+An observation unit is any level at which a measurement or observation is made. How you define them depends on the design of your study. Usually it is the unit for which an experiment produces a file. Think about the assays and the data files when defining the observation units.

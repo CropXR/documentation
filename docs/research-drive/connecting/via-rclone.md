@@ -179,9 +179,11 @@ rclone copy /local/dataset "cropxr:destination/folder"
 4. Inside this folder, you should see a file called `rclone`.
 5. Right-click inside the folder and choose **Open in Terminal**
 6. Make rclone executable by running:
-```bash
-chmod +x rclone
-```
+
+    ```bash
+    chmod +x rclone
+    ```
+
 7. You can now run rclone commands from this terminal window.
 
 When running commands from inside the rclone folder, you must start your command with `./rclone`. The `./` tells the terminal to run the rclone program inside the folder.

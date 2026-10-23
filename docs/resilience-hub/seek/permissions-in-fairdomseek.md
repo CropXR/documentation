@@ -8,7 +8,7 @@ FAIRDOM-SEEK has fine grained sharing permissions. You can choose to set an item
 | View | A user can see only the title and description of the resource. |
 | Download | A user has access to the resource. |
 | Edit | A user can update and modify metadata fields or attributes. This setting is needed to be able to upload a dataset. |
-| Manage | A user can delete, change project assignments, sharing permissions, creators or to add a temporary sharing link. |
+| Manage | A user can delete the resource, change its project, sharing permissions and creators, and add a temporary sharing link. |
 
 Each level includes everything below it. Sharing can be set for specific people, or for everyone
 in the project, and it's set independently on every resource. A study, its assays, and its data

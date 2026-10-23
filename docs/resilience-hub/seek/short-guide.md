@@ -31,7 +31,7 @@ Start with the metadata entry in FairdomSEEK
       4. add additional fields if needed
       5. for derived data, add a further data file assay per processing step, inserted the same way
 
-Now the study has been defined, continue with the minimally needed metadata.
+Now that the study is defined, continue with the minimum metadata that is needed.
 
 Sources, samples and assay rows are all entered the same way — download, fill, upload. The order
 is fixed: first the “Sources table”, then the “Samples table” (both under “Study design”), then

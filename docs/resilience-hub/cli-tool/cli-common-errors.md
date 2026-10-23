@@ -6,8 +6,8 @@
 | `rclone was not found` | Run the install command again, see [Install rhub](cli-install.md#install-rhub) |
 | `Not signed in` or `The stored sign-in could not be renewed` | Run `rhub login` |
 | `The backend did not accept your sign-in` | Run `rhub login`. If the message stays, sign in to the catalogue in your browser once |
-| `Could not reach the backend` | Check your connection. The Resilience Hub answers only on a TU Delft network or through eduVPN |
-| `Invalid value for 'source'` or `Got unexpected extra argument` | Keep the quotes around the place of the folder and around the title, and check the place of the folder |
+| `Could not reach the backend` | Check your connection. The Resilience Hub can only be reached from a TU Delft network or through eduVPN |
+| `Invalid value for 'source'` or `Got unexpected extra argument` | Keep the quotes around the folder location and around the title, and check the folder location |
 | You may not upload to the assay | Check the assay id. If it is right, ask the person who submitted the assay to add you as a creator |
 | The credentials expired during the transfer | For an upload, split the dataset. For a download, run the command again with `--merge` |
 | The folder already holds files | Choose a folder that does not exist yet, or add `--merge` to continue a download |

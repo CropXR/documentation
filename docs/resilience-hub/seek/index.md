@@ -1,13 +1,13 @@
 
 # Introduction
 
-The ResilienceHub uses FairdomSEEK with ISA settings as the metadata catalogue. This document describes how metadata can be uploaded in the right format. This document contains a detailed step by step guide for first time data entry. A shorter reference guide for additional studies will be included later.
+The ResilienceHub uses FairdomSEEK with ISA settings as the metadata catalogue. This section describes how to enter metadata in the right format, with a detailed step by step guide for entering data for the first time. A shorter reference guide for additional studies will be included later.
 
 If you already have an assay to upload to and just want to check you're set up correctly, see
 [Before You Upload](upload-prerequisites.md).
 
 
-There is a format to stick to, but also the format accommodates for many types of studies, so it leaves room to fill out differently. This puts some responsibility on the researcher for how to use this format and to really understand the model. The documents guide you through the choices you need to make, and how you can make them. Do plan time for this, especially the first time.  If you are stuck at any point, things are unclear or you need help, please reach out to the DataXR team at data@cropxr.org
+The format has a fixed structure, but it is flexible enough to fit many types of studies. This means you need to understand the model well and decide how to apply it to your study. The documents guide you through the choices you need to make, and how you can make them. Do plan time for this, especially the first time.  If you are stuck at any point, things are unclear or you need help, please reach out to the DataXR team at data@cropxr.org
 
 
 ## Process outline
@@ -25,11 +25,11 @@ In the web interface, create (an investigation and) study. Choose what fields to
  
 ### Phase 2: critical metadata entry
 
-Decide how the metadata should be entered, to capture all information that is needed, by grouping conditions and samples. In the web interface, fill in all the fields that are essential to understand the study, focusing on key aspects, such as species and assay type. In this phase you also link the data to the performed experiments, so others can find and understand your data. 
+Decide how to group conditions and samples, so that all the information you need is captured. In the web interface, fill in all the fields that are essential to understand the study, focusing on key aspects, such as species and assay type. In this phase you also link the data to the performed experiments, so others can find and understand your data. 
 
  
 ### Phase 3: improving metadata
 
-When the fields have been defined, at any point in time you can save the metadata and edit it later. Add the additional metadata that was collected, and improves the re-usability of your data. You can also manage who can see your metadata at any time.
+When the fields have been defined, at any point in time you can save the metadata and edit it later. Add any additional metadata you collected; this makes your data easier to reuse. You can also manage who can see your metadata at any time.
 
 

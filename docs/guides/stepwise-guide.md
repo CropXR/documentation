@@ -11,7 +11,7 @@
 
 
 ## Minimal metadata entry
-Decide how the metadata should be entered, to capture all information that is needed, by grouping conditions and samples. In the [catalogue](../resilience-hub/seek/index.md), fill in all the fields that are essential to understand the study, focusing on key aspects, such as species and assay type. Make sure every assay you want to upload data to exists, so others can find and understand your data.
+Decide how to group conditions and samples, so that all the information you need is captured. In the [catalogue](../resilience-hub/seek/index.md), fill in all the fields that are essential to understand the study, focusing on key aspects, such as species and assay type. Make sure every assay you want to upload data to exists, so others can find and understand your data.
 
 
 ## Data upload
@@ -34,21 +34,21 @@ Steps:
 
 
 ## Improving metadata
-At any point in time you can save the metadata and edit it later. Add the additional metadata that was collected, and improves the re-usability of your data.
+At any point in time you can save the metadata and edit it later. Add any additional metadata you collected; this makes your data easier to reuse.
 
 
 ## Other things
 
 ### Adding columns
-It is possible to add additional columns to capture metadata relevant, not in the provided columns. 
-Before doing this, please consult an expert if this is not already covered by the existing columns.
+You can add columns for relevant metadata that the provided columns do not cover.
+Before you do, please ask an expert to check that the information is not already covered by an existing column.
 
 ### Combined study
 For instructions on the metadata of a combined study, read [here](../concepts/metadata-model.md#assay-and-sample-definition).
 
 ### Ontology lookup
-Annotation with ontology terms can greatly improve the clarity of metadata, but finding the right term, 
-spread out over different ontology systems can be challenging and time consuming.
+Ontology terms make metadata much clearer, but finding the right term across different ontologies
+can be difficult and time consuming.
 We are still working on improving the workflow for researchers and are open to suggestions.
 
 If the suggested sources for ontologies do not cover the exact conditions, and you think a specific term could be useful throughout the consortium,

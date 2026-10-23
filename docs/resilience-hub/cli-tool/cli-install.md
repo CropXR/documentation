@@ -1,9 +1,10 @@
 # Install data tool
 
-The data upload and download is done using a command line tool for the Resilience Hub, `rhub`. 
-Features of the tool
-Upload a folder of data and connect it with your metadata in the catalogue.
-Download the data you have access to. 
+Data is uploaded and downloaded with `rhub`, the command line tool for the Resilience Hub.
+Features of the tool:
+
+- Upload a folder of data and connect it with your metadata in the catalogue.
+- Download the data you have access to.
 
 This page explains both. You use the tool in a terminal. The terminal is the program "Terminal" on macOS and "PowerShell" on Windows. You find it by typing its name into the search of your computer.
 

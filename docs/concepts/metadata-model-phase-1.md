@@ -6,7 +6,8 @@ In the first phase of the CropXR program Excel templates have been used to colle
 Only read this section if you need to understand the older Excel templates. For new metadata entry enter the data in the catalogue.
 
 There were two separate templates for phenotyping and sequencing experiments.
-The templates were more close to the original metadata standards and therefore there are differences between the templates:
+Both templates closely followed the original metadata standards, so they differ from each other:
+
 - The phenotyping template has the same information split into more different separate sections than the sequencing template
 - The phenotyping template has a more free structure than sequencing
 
@@ -25,8 +26,8 @@ you can refer to the plant defined in a different section at the samples, rather
 The phenotyping template allows you to describe any type of measurement. 
 This is important, because phenotyping does not rely on a limited set of experiments.
 It does require you to describe the measurement in the format.
-As more people have started with their metadata annotation, it is likely valuable to create a CropXR internal reference,
-where you can find how other people have described similar or the same type of experiments.
+As more people annotate their metadata, it will be valuable to create a CropXR internal reference
+that shows how others have described the same or similar experiments.
 
 It is also possible to include any type of parameter to describe the growth conditions.
 Find them in the appendix for a predictable description of a condition. 
@@ -83,12 +84,13 @@ Not all columns are relevant to each study.
 
 #### Fixed or free fields
 Each field contains a description of the type. There are a few special cases explained below:
+
 -	field format: ‘free text, see appendix’ + appendix type: ‘example’ -> not fixed, but useful examples can be found in the appendix.
     If you have useful fields that we can add to make the lives of others more easy, you can suggest additional examples for us to add.
 -	field format: ‘ + appendix type: ‘pre-defined list’ -> you need to choose one of the values from the appendix. 
     If you really think you need a value that is not here, you can contact DataXR and we can discuss, but this is not very likely.
 -	field format: ‘ontology with examples’ -> find a relevant term in the listed ontologies. 
-    If there is no term for your situation, and you think we should define a term for CropXR you can again contact us. Many fields offer a free text field next to the ontology field. The ontology is an unambiguous way to describe the field value. If no predefined description fits, I think a free text entry should be sufficient.
+    If there is no term for your situation, and you think we should define a term for CropXR you can again contact us. Many fields offer a free text field next to the ontology field. The ontology is an unambiguous way to describe the field value. If no ontology term fits, a free text entry is sufficient.
 
 The appendices contain lists. 
 The appendices are not to be filled, they are a reference and help to fill the fields of the main section.

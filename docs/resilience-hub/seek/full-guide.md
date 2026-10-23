@@ -24,7 +24,7 @@ Setting up a study happens in four phases. Work through them in order.
 
 4. **Register your study.** Make sure that you have registered your study in this [form](https://forms.office.com/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u). After the admin has checked the registration, you will receive a study ID, which you need when entering the metadata.
 
-5. **Make sure you have an active account.** We use FairdomSEEK as the data catalogue, try to login with the following steps. 
+5. **Make sure you have an active account.** FairdomSEEK is the data catalogue. Log in with the following steps: 
     1. Select **Login** in the top right corner.
     2. Under the tab **KeyCloak**, click **🔒 Sign in with KeyCloak**.
     3. Click **SURFconext** to use your university account.
@@ -189,7 +189,7 @@ flowchart LR
 
 ### Step 1: Add SOPs (can also be done later)
 
-SOP = Standard operating procedure. Each step can reference a protocol that was used: creation of samples and the grouping of observation units at the study level, the assaying protocols at assay level and the data transformation steps.
+SOP stands for standard operating procedure. Each step can refer to the protocol that was used: at study level, how samples were created and observation units grouped; at assay level, the assay protocols and the data processing steps.
 
 1. At the top menu under **➕ Create** choose **SOP**.
 2. Click **Browse** to upload a local file.
@@ -225,8 +225,8 @@ Go to **⚙️ Actions** in the top corner and then **📝 Edit ISA Study**.
     - The **Source Name** is the name that will be displayed.
     - Start with the most relevant fields to understand the study and the sources used. The data can be improved on at a later point. Fill in at least the species and the experimental group.
 
-!!! warning "Uploading twice creates duplicates"
-    Be aware, if you upload the same excel multiple times, a new sample will be created with the same name. To check how to update existing samples, check the [phase 3 instructions](#phase-3-refine-and-share).
+    !!! warning "Uploading twice creates duplicates"
+        If you upload the same Excel file more than once, a new sample with the same name is created each time. To update existing samples, see the [phase 3 instructions](#phase-3-refine-and-share).
 
 5. Save the file. Upload it under **Upload excel spreadsheet**: select **Browse** and click **🟦 Upload**.
 
@@ -234,7 +234,7 @@ Go to **⚙️ Actions** in the top corner and then **📝 Edit ISA Study**.
 
 ### Step 4: Define study samples
 
-1. [Choose what type are needed](reference.md#study-samples).
+1. [Choose which types are needed](reference.md#study-samples).
 2. Go to **Samples table** under **Study design**.
 3. Download the template by clicking **Batch download to Excel**.
 4. In the Excel, under the **Samples** tab, fill in the data in the fields:
@@ -268,7 +268,7 @@ flowchart LR
     A1 -->|output = input of| A2["Assay 2: sequencing"]
 ```
 
-So enter the assays **in order**, and upload each one before you start the next. To fill the **Input column** in the excel sheets, follow [How to fill the Input column](../reference.md#how-to-fill-the-input-column).
+So enter the assays **in order**, and upload each one before you start the next. To fill the **Input column** in the excel sheets, follow [How to fill the Input column](reference.md#how-to-fill-the-input-column).
 
 !!! note "Leave the file location empty for now"
     That column takes a reference to a data file already registered in SEEK — not a path or a URL — so the file has to exist as a record before the cell can be filled.
@@ -300,8 +300,8 @@ Update the study and assay extended metadata to make the metadata more complete 
 
 [todo: expand]
 
-- Make sure it's selected before downloaded, so there is no new sample with the same name.
-- You can upload multiple in multiple steps, but be aware that if you re-upload samples with the same name, a new sample will be created. Only upload new samples.
+- Select the samples before you download the table, so that no new samples with the same name are created.
+- You can upload samples in several rounds, but re-uploading a sample with the same name creates a new sample. Only upload new samples.
 
 ### Step 4: Adding additional columns
 

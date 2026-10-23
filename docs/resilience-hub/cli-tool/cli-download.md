@@ -34,7 +34,7 @@ Fetching 3 files, 195.3 KiB.
 Done. The resource is in /path/to/folder.
 ```
 
-If a download was stopped, run the same command again and add `--merge` at the end. The files that finished are skipped.
+If a download was stopped, run the same command again and add `--merge` at the end. Files that were already downloaded are skipped.
 
 ## Questions and feedback
 

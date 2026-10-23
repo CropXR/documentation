@@ -52,11 +52,11 @@ Replace the three example values with your own.
 
 | Example value | Replace it with |
 |---|---|
-| `/path/to/data` | The place of your folder on your computer. On macOS you can drag the folder into the terminal. On Windows it looks like `C:\Users\anna\data\trial` |
+| `/path/to/data` | The location of your folder on your computer. On macOS you can drag the folder into the terminal. On Windows it looks like `C:\Users\anna\data\trial` |
 | `42` | Your assay id |
 | `Dataset Title` | The title of your dataset in the catalogue |
 
-Keep the quotes around the place of the folder and around the title.
+Keep the quotes around the folder location and around the title.
 
 Once the upload has started, the tool reads every file once and then sends the files. It shows you the status.
 

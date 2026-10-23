@@ -22,16 +22,15 @@ CropXR uses established standards for metadata on plant research, combining elem
 
 A standardized metadata format ensures that the metadata has a predictable structure. There are however many different types of studies in the consortium, with different metadata that is important. To fit all different studies in the same format there is a certain flexibility in the model.
 
-This puts some responsibility on the researcher for how to use this format and to really understand the model. These documents should provide the information needed to make those choices. For the first time entering metadata, plan sufficient time to understand the model.
+This means you need to understand the model well and decide how to apply it to your study. These documents should provide the information needed to make those choices. For the first time entering metadata, plan sufficient time to understand the model.
 
 If you are stuck at any point, things are unclear, or you need help, please reach out to the DataXR team at data@cropxr.org
 
 ### Catalogue
-The metadata is from now on collected in the [Catalogue website](https://catalogue.cropresilience.org). In this catalogue people of the consortium can find studies, view and download the metadata, and view the associated data. Data producing researchers can manage who can view their study. 
+Metadata is now collected in the [Catalogue website](https://catalogue.cropresilience.org). In this catalogue people of the consortium can find studies, view and download the metadata, and view the associated data. The researchers who produced the data decide who can view their study. 
 Detailed instructions on how to fill in metadata can be found [here](../resilience-hub/seek/index.md).
 
-For everyone who has already filled in metadata in the Excel templates, or is already in the process of filling in the metadata in the templates:
-If the template is available to the DataXR team, the team will support the entry of your metadata into the catalogue. It is possible that you will be contacted with some questions about the metadata.
+If you have already filled in the Excel templates, or have started filling them in, contact the DataXR team at [data@cropxr.org](mailto:data@cropxr.org). The team will help you enter your metadata into the catalogue.
 
 
 ## Data

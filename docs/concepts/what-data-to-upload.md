@@ -12,18 +12,18 @@ To discuss data sharing with consortium members, join the Slack channel #researc
 Raw data makes it possible to re-use data from different studies and process it all in the exact same way.
 There is no universal understanding of what is considered raw data. 
 It typically is the data as outputted by the instrument or received from the external company. 
-The data should not be processed in a way in which assumptions and context influence the outcome of the data processing.
-In case of unambiguous processing, it is possible to label processed data as raw data, for example the called bases (fastq), rather than the raw reads (pod5 or similar). 
+Raw data should not have been processed in a way where assumptions or context affect the result.
+If a processing step is unambiguous, its output can be treated as raw data. For example, you can share the called bases (fastq) instead of the raw reads (pod5 or similar). 
 
 
 ## Processed data
 It is also important to share certain processed data.
-This includes output artifacts that are important to understand the study and its outcomes, 
-as well as processed data that might be used directly in a secondary analysis,
-especially if the data was produced by one of the CropXR standardized pipelines or scripts, 
-and especially if the analysis is computationally heavy.
+This includes output that is needed to understand the study and its outcomes.
+It also includes processed data that others might use directly in a secondary analysis,
+especially if it was produced by one of the CropXR standardized pipelines or scripts,
+or if the analysis takes a lot of computing power.
 
-For this processed data it is important to include information on how it was generated.
+For processed data, always describe how it was generated.
 
 Do not include intermediates that can be regenerated from the raw data and have no direct value.
 
