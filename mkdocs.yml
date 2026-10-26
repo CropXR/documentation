@@ -122,6 +122,7 @@ nav:
       - Upload a dataset: resilience-hub/cli-tool/cli-upload.md
       - Download a dataset: resilience-hub/cli-tool/cli-download.md
       - Common errors: resilience-hub/cli-tool/cli-common-errors.md
+    - Register a dataset: resilience-hub/register-a-dataset.md
     - SEEK Metadata Entry:
       - resilience-hub/seek/index.md
       - Permissions in FairdomSEEK: resilience-hub/seek/permissions-in-fairdomseek.md
