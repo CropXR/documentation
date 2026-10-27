@@ -74,7 +74,7 @@ Upload verified.
 https://data.cropresilience.org/register/17
 ```
 
-"Upload verified." means that all your files arrived unchanged. The work package lead of your project gets an email with the link in the last line and registers the dataset.
+"Upload verified." means that all your files arrived unchanged. The work package lead of your project gets an email with the link in the last line and [registers the dataset](../register-a-dataset.md). Until then, nobody can find or download it. If your work package lead did not get the email, send them the link.
 
 !!! warning "An upload cannot be changed afterwards"
     To correct a dataset, fix the folder on your computer and upload it again.
