@@ -15,7 +15,7 @@ in the project, and it's set independently on every resource. A study, its assay
 files can each have completely different sharing settings. See the
 [Full Guide](full-guide.md#phase-3) for how to change sharing settings on a resource.
 
-After you upload, your Work Package Lead reviews the dataset and [registers it](../register-a-dataset.md) in FairdomSEEK. If your
+After you upload, your Work Package Lead reviews and approves the registration in FairdomSEEK. If your
 upload isn't showing up yet, that review step is the most likely reason. Please check with them before
 assuming something went wrong.
 
