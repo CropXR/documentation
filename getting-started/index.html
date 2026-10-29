@@ -1656,13 +1656,11 @@
 <p>This page walks you through what you will do as a researcher, in the order that you will usually do it.</p>
 <h2 id="getting-your-research-data-on-the-resilience-hub">Getting your research data on the Resilience Hub<a class="headerlink" href="#getting-your-research-data-on-the-resilience-hub" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart LR
-    A["0. Defining your study"] --&gt; B["1. Register you study"]
-    B --&gt;|study ID by email| C["2. Set up metadata structure"]
-    C --&gt; D["3. Upload metadata"]
-    D --&gt; E["4. Upload data"]
+    A["0. Defining your study"] --&gt; C["1. Set up metadata structure"]
+    C --&gt; D["2. Upload metadata"]
+    D --&gt; E["3. Upload data"]
     E --&gt; F(("Findable &amp;&lt;br/&gt;reusable data"))
 
-    click B "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u" _blank
     click A "../concepts/defining-a-study/" _self
     click C "../resilience-hub/seek/" _self
     click E "../resilience-hub/cli-tool/" _self</code></pre>
@@ -1678,7 +1676,7 @@
 <li>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.25 1.44 12.53.64 11 1.2c-.86.3-1.5.96-1.82 1.8H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-7 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1M7 7h10V5h2v14H5V5h2zm10 4H7V9h10zm-2 4H7v-2h8z"/></svg></span> <strong>Define a study</strong></p>
 <hr />
-<p>Register your study, get a study ID, and decide what it contains.</p>
+<p>Decide what your study contains and how to name it.</p>
 <p><a href="../concepts/defining-a-study/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Define a study</a></p>
 </li>
 <li>
@@ -1696,9 +1694,12 @@
 </ul>
 </div>
 <h2 id="step-by-step">Step by step<a class="headerlink" href="#step-by-step" title="Permanent link">&para;</a></h2>
-<h3 id="1-register-and-define-your-study">1. Register and define your study<a class="headerlink" href="#1-register-and-define-your-study" title="Permanent link">&para;</a></h3>
-<p><a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u">Register your study</a>. You will receive a study ID by email. This can take some time, so do it early.</p>
-<p>While you wait, read up on the <a href="../concepts/">metadata models</a> so you know what information you will need to collect.</p>
+<h3 id="1-define-your-study">1. Define your study<a class="headerlink" href="#1-define-your-study" title="Permanent link">&para;</a></h3>
+<p>Decide <a href="../concepts/defining-a-study/">what your study contains</a> and read up on the <a href="../concepts/">metadata models</a> so you know what information you will need to collect.</p>
+<div class="admonition note">
+<p class="admonition-title">No separate registration step</p>
+<p>There is no separate registration form. All metadata goes into the <a href="https://catalogue.cropresilience.org/">data catalogue</a>, and that is where you register your investigation and study.</p>
+</div>
 <h3 id="2-upload-metadata">2. Upload metadata<a class="headerlink" href="#2-upload-metadata" title="Permanent link">&para;</a></h3>
 <p>Enter your metadata in <a href="../resilience-hub/seek/">the catalogue</a>.</p>
 <div class="admonition tip">
