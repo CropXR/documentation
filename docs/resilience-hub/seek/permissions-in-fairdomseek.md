@@ -15,6 +15,16 @@ in the project, and it's set independently on every resource. A study, its assay
 files can each have completely different sharing settings. See the
 [Full Guide](full-guide.md#phase-3) for how to change sharing settings on a resource.
 
+## Roles
+
+FairdomSEEK shows these roles on the pages of projects and resources.
+
+| Role | Who it is | What it means |
+|---|---|---|
+| Submitter | The person who added the resource to FairdomSEEK | Can view, edit, upload and manage the resource. The work package lead becomes the submitter of a dataset they register. |
+| Creator | A person listed as having made the resource. A resource can have several creators | Can view, edit, upload data to the assay.|
+| Asset gatekeeper | The work package lead of the project | Receives the registration link for every dataset uploaded in the project, and [registers the dataset](../register-a-dataset.md) |
+
 After you upload, your Work Package Lead reviews the dataset and [registers it](../register-a-dataset.md) in FairdomSEEK. If your
 upload isn't showing up yet, that review step is the most likely reason. Please check with them before
 assuming something went wrong.
