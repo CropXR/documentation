@@ -9,11 +9,13 @@ Every dataset is linked to an assay in the catalogue, so the data always comes w
 
 ## How it works
 
-1. **Register your study** in the [intake form](https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u) and receive a study ID
-2. [**Enter your metadata**](./seek/) in the catalogue: the study, its assays and samples
-3. [**Upload your data**](./cli-tool/) to the matching assay with the command line tool
-4. Your work package lead [**registers the dataset**](register-a-dataset.md) with the registration link
-5. Others can download the dataset, according to the sharing settings of your study
+1. [**Enter your metadata**](./seek/) in the catalogue: the study, its assays and samples
+2. [**Upload your data**](./cli-tool/) to the matching assay with the command line tool
+3. Your work package lead [**registers the dataset**](register-a-dataset.md) with the registration link
+4. Others can download the dataset, according to the sharing settings of your study
+
+!!! note "No separate registration step"
+    There is no separate registration form. All metadata goes into the [data catalogue](https://catalogue.cropresilience.org/), and that is where you register your investigation and study.
 
 ## In this section
 

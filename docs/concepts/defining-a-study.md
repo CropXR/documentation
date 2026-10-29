@@ -18,13 +18,11 @@ Choose a name that tells other researchers in the consortium what the study is a
 - includes the organism or crop
 - avoids abbreviations and internal project codes that only your group knows
 
-In the catalogue, the study name is preceded by the study ID you receive after registering your study:
+For example:
 
-    <received study id> - <study name>
-    example: CXRS4 - Drought response of arabidopsis after hormonal treatment with PAMP
+    Drought response of arabidopsis after hormonal treatment with PAMP
 
 The naming conventions for assays and other items in the catalogue can be found in the [Catalogue Reference](../resilience-hub/seek/reference.md#naming-conventions).
 
-## Registering your study
-
-Once you have defined your study, register it in the [intake form](https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIe9rk7LtjOclKu9pKlmXMf-xUMzVUVFpYVkxZTE9VNTFXTVBMSU1EN1paTC4u). You will receive a study ID by email, which you need when entering metadata in the catalogue. This process might take some time, so register well before you plan to enter your metadata.
+!!! note "No separate registration step"
+    There is no separate registration form. All metadata goes into the [data catalogue](https://catalogue.cropresilience.org/), and that is where you register your investigation and study.
