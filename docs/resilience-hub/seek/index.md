@@ -1,5 +1,5 @@
 
-# Introduction
+# SEEK Metadata Entry
 
 The ResilienceHub uses FairdomSEEK with ISA settings as the metadata catalogue. This section describes how to enter metadata in the right format, with a detailed step by step guide for entering data for the first time. A shorter reference guide for additional studies will be included later.
 

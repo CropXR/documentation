@@ -2,6 +2,12 @@
 
 This page walks you through what you will do as a researcher, in the order that you will usually do it.
 
+## Why upload to the Resilience Hub?
+
+- **Findable:** researchers across the consortium can find your study in the catalogue.
+- **Reusable:** your data comes with the details of your experiment, so others can understand and reuse it.
+- **In your control:** you decide who can see and download your data.
+
 ## Getting your research data on the Resilience Hub
 
 ```mermaid
@@ -26,7 +32,7 @@ flowchart LR
 
     Understand how studies, samples, assays and data files are described before you start.
 
-    [:octicons-arrow-right-24: Metadata models](../concepts/index.md)
+    [:octicons-arrow-right-24: Metadata models](../concepts/metadata-model.md)
 
 -   :material-clipboard-text-outline: **Define a study**
 
@@ -53,30 +59,6 @@ flowchart LR
     [:octicons-arrow-right-24: Upload data](../resilience-hub/cli-tool/index.md)
 
 </div>
-
-## Step by step
-
-### 1. Define your study
-
-Decide [what your study contains](../concepts/defining-a-study.md) and read up on the [metadata models](../concepts/index.md) so you know what information you will need to collect.
-
-!!! note "No separate registration step"
-    There is no separate registration form. All metadata goes into the [data catalogue](https://catalogue.cropresilience.org/), and that is where you register your investigation and study.
-
-### 2. Upload metadata
-
-Enter your metadata in [the catalogue](../resilience-hub/seek/index.md).
-
-!!! tip "Using the old Excel templates?"
-    If you've already filled in your metadata in the old Excel templates, email [data@cropxr.org](mailto:data@cropxr.org) and we will help you upload it.
-
-### 3. Upload data
-
-Upload your data files using our [command line tool](../resilience-hub/cli-tool/index.md).
-
-!!! warning "ResearchDrive uploads are not possible for new studies"
-    Use the command line tool instead. Older data remains available on [Research Drive](../research-drive/index.md).
-
 
 ## More help
 
