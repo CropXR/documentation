@@ -792,10 +792,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#combined-sample-or-observation-unit" class="md-nav__link">
+  <a href="#combined-sample" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Combined sample or observation unit
+        Combined sample
       
     </span>
   </a>
@@ -2063,7 +2063,7 @@ The input is an output file from the previous step and the method of data deriva
 <li><strong><a href="#the-source-shared-by-both-streams">The source</a></strong>: the plant, its growth conditions and treatment. <em>All studies.</em></li>
 <li><strong><a href="#sequencing-stream">Sequencing stream</a></strong>: samples, sequencing assays and data files. <em>Sequencing studies.</em></li>
 <li><strong><a href="#phenotyping-stream">Phenotyping stream</a></strong>: observation units, observations and data files. <em>Phenotyping studies.</em></li>
-<li><strong><a href="#combined-sample-or-observation-unit">Combined sample or observation unit</a></strong>: one sample template for studies with both physical samples and observation units, used with the assays of both streams. <em>Combined studies.</em></li>
+<li><strong><a href="#combined-sample">Combined sample</a></strong>: one sample template for studies that record more than one stream, used with the assays of each stream it records. <em>Combined studies.</em></li>
 <li><strong><a href="#what-the-model-cannot-express">What the model cannot express</a></strong>: known limitations. <em>Worth reading before you start.</em></li>
 </ul>
 <p>The diagrams below show model 1.0, the last per-file state of the definitions from 260727 before templates were renamed by stream. Every box is a table in the catalogue, and every row of every table is a "sample" to SEEK. <code>PK</code> marks the column SEEK displays as the row's name; it must be unique within the table. <code>FK</code> marks the <code>Input</code> column, a list of rows from the table one level up. <code>cv</code> is a controlled vocabulary, <code>link</code> is a reference to a record registered elsewhere in the catalogue. Fields marked <code>REQ</code> are required; the rest are optional.</p>
@@ -2303,7 +2303,7 @@ The input is an output file from the previous step and the method of data deriva
         string title
         string remote_url
     }</code></pre>
-<h3 id="combined-sample-or-observation-unit">Combined sample or observation unit<a class="headerlink" href="#combined-sample-or-observation-unit" title="Permanent link">&para;</a></h3>
+<h3 id="combined-sample">Combined sample<a class="headerlink" href="#combined-sample" title="Permanent link">&para;</a></h3>
 <p>A study that records more than one stream can use <code>CropXR combined sample</code> instead of a stream's own sample template. It carries the union of the sequencing sample, phenotyping observation unit and metabolomics sample fields plus a <code>subject_type</code> that says which one a row is.</p>
 <pre class="mermaid"><code>erDiagram
     SOURCE }|--o{ SAMPLE_OR_OBSERVATION_UNIT : Input
