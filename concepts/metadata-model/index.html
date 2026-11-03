@@ -2147,7 +2147,7 @@ The input is an output file from the previous step and the method of data deriva
         string treatment_chemical_cas_id
     }</code></pre>
 <h3 id="sequencing-stream">Sequencing stream<a class="headerlink" href="#sequencing-stream" title="Permanent link">&para;</a></h3>
-<p>The library fields follow ENA and sit on the assay stream's extended metadata, because they hold for every sample sequenced in that assay. The assay row therefore carries little more than an id and the library construction protocol. Two layouts exist: the two-table form, <code>CropXR sequencing assay condensed</code> followed by <code>CropXR sequencing data file</code>, and the one-table form <code>CropXR sequencing assay and data file</code>, which records the design description per file and links straight from the sample.</p>
+<p>The library fields follow ENA and sit on the assay stream's extended metadata, because they hold for every sample sequenced in that assay. The assay row therefore carries little more than an id and the library construction protocol. It is followed by <code>CropXR sequencing data file</code>, one row per file.</p>
 <pre class="mermaid"><code>erDiagram
     SOURCE }|--o{ SAMPLE : Input
     SAMPLE }|--o{ SEQUENCING_ASSAY_CONDENSED : Input
@@ -2223,7 +2223,7 @@ The input is an output file from the previous step and the method of data deriva
         string remote_url
     }</code></pre>
 <h3 id="phenotyping-stream">Phenotyping stream<a class="headerlink" href="#phenotyping-stream" title="Permanent link">&para;</a></h3>
-<p>The study sample is an observation unit: the plant, plot, greenhouse or other level on which a measurement is made. Units can nest through <code>parent_subject_id</code>, which is a name and not a checked link. The observed variable, method, instrument and scale can be described once on the assay stream's extended metadata, or per row in <code>CropXR observation</code> when they differ between rows. As in sequencing, a one-table form exists: <code>CropXR condensed observation assay with data file</code> links files straight from the observation unit.</p>
+<p>The study sample is an observation unit: the plant, plot, greenhouse or other level on which a measurement is made. Units can nest through <code>parent_subject_id</code>, which is a name and not a checked link. The observed variable, method, instrument and scale can be described once on the assay stream's extended metadata, or per row in <code>CropXR phenotyping assay</code> when they differ between rows. Files are recorded in <code>CropXR phenotyping data file</code>.</p>
 <pre class="mermaid"><code>erDiagram
     SOURCE }|--o{ OBSERVATION_UNIT : Input
     OBSERVATION_UNIT }|--o{ OBSERVATION : Input
@@ -2304,7 +2304,7 @@ The input is an output file from the previous step and the method of data deriva
         string remote_url
     }</code></pre>
 <h3 id="combined-sample-or-observation-unit">Combined sample or observation unit<a class="headerlink" href="#combined-sample-or-observation-unit" title="Permanent link">&para;</a></h3>
-<p>A study that holds both physical samples and observation units can use <code>CropXR sample or observation unit</code> instead of a stream's own sample template. It carries the union of the sequencing sample and observation unit fields plus a required <code>subject_type</code> that says which one a row is.</p>
+<p>A study that records more than one stream can use <code>CropXR combined sample</code> instead of a stream's own sample template. It carries the union of the sequencing sample, phenotyping observation unit and metabolomics sample fields plus a <code>subject_type</code> that says which one a row is.</p>
 <pre class="mermaid"><code>erDiagram
     SOURCE }|--o{ SAMPLE_OR_OBSERVATION_UNIT : Input
     SAMPLE_OR_OBSERVATION_UNIT }|--o{ SEQUENCING_ASSAY_CONDENSED : Input
