@@ -145,7 +145,7 @@ Not every diagram applies to every study. Jump to the ones you need:
 - **[The source](#the-source-shared-by-both-streams)**: the plant, its growth conditions and treatment. *All studies.*
 - **[Sequencing stream](#sequencing-stream)**: samples, sequencing assays and data files. *Sequencing studies.*
 - **[Phenotyping stream](#phenotyping-stream)**: observation units, observations and data files. *Phenotyping studies.*
-- **[Combined sample or observation unit](#combined-sample-or-observation-unit)**: one sample template for studies with both physical samples and observation units, used with the assays of both streams. *Combined studies.*
+- **[Combined sample](#combined-sample)**: one sample template for studies that record more than one stream, used with the assays of each stream it records. *Combined studies.*
 - **[What the model cannot express](#what-the-model-cannot-express)**: known limitations. *Worth reading before you start.*
 
 The diagrams below show model 1.0, the last per-file state of the definitions from 260727 before templates were renamed by stream. Every box is a table in the catalogue, and every row of every table is a "sample" to SEEK. `PK` marks the column SEEK displays as the row's name; it must be unique within the table. `FK` marks the `Input` column, a list of rows from the table one level up. `cv` is a controlled vocabulary, `link` is a reference to a record registered elsewhere in the catalogue. Fields marked `REQ` are required; the rest are optional.
@@ -407,7 +407,7 @@ erDiagram
     }
 ```
 
-### Combined sample or observation unit
+### Combined sample
 
 A study that records more than one stream can use `CropXR combined sample` instead of a stream's own sample template. It carries the union of the sequencing sample, phenotyping observation unit and metabolomics sample fields plus a `subject_type` that says which one a row is.
 
