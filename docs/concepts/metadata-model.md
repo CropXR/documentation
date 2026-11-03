@@ -242,7 +242,7 @@ erDiagram
 
 ### Sequencing stream
 
-The library fields follow ENA and sit on the assay stream's extended metadata, because they hold for every sample sequenced in that assay. The assay row therefore carries little more than an id and the library construction protocol. Two layouts exist: the two-table form, `CropXR sequencing assay condensed` followed by `CropXR sequencing data file`, and the one-table form `CropXR sequencing assay and data file`, which records the design description per file and links straight from the sample.
+The library fields follow ENA and sit on the assay stream's extended metadata, because they hold for every sample sequenced in that assay. The assay row therefore carries little more than an id and the library construction protocol. It is followed by `CropXR sequencing data file`, one row per file.
 
 ```mermaid
 erDiagram
@@ -323,7 +323,7 @@ erDiagram
 
 ### Phenotyping stream
 
-The study sample is an observation unit: the plant, plot, greenhouse or other level on which a measurement is made. Units can nest through `parent_subject_id`, which is a name and not a checked link. The observed variable, method, instrument and scale can be described once on the assay stream's extended metadata, or per row in `CropXR observation` when they differ between rows. As in sequencing, a one-table form exists: `CropXR condensed observation assay with data file` links files straight from the observation unit.
+The study sample is an observation unit: the plant, plot, greenhouse or other level on which a measurement is made. Units can nest through `parent_subject_id`, which is a name and not a checked link. The observed variable, method, instrument and scale can be described once on the assay stream's extended metadata, or per row in `CropXR phenotyping assay` when they differ between rows. Files are recorded in `CropXR phenotyping data file`.
 
 ```mermaid
 erDiagram
@@ -409,7 +409,7 @@ erDiagram
 
 ### Combined sample or observation unit
 
-A study that holds both physical samples and observation units can use `CropXR sample or observation unit` instead of a stream's own sample template. It carries the union of the sequencing sample and observation unit fields plus a required `subject_type` that says which one a row is.
+A study that records more than one stream can use `CropXR combined sample` instead of a stream's own sample template. It carries the union of the sequencing sample, phenotyping observation unit and metabolomics sample fields plus a `subject_type` that says which one a row is.
 
 ```mermaid
 erDiagram
