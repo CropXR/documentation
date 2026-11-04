@@ -141,3 +141,4 @@ nav:
   - Policies:
     - policies/index.md
     - Data Sensitivity Levels: policies/data-sensitivity-levels.md
+  - FAQs: faqs.md
