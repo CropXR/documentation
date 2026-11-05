@@ -65,9 +65,9 @@ To revise rows that are already there, select them before downloading.
     Enter the data with the same cycle, referencing the study sources by name and id in the Input column.
 
 9. Edit assay metadata
-10. Enter assay row data with the same cycle. Leave the file location column empty: it takes a
-    reference to a data file already registered in SEEK, not a path, so the file must exist as a
-    record first. That happens in the next step.
+10. Enter assay row data with the same cycle. In the data file assay, enter the path of each file
+    relative to the main folder you are uploading in the file name column, as shown in [How to fill the file name
+    column](reference.md#how-to-fill-the-file-name-column). The checksum column can be ignored; there is no need to fill it.
 
 The metadata now stands on its own. The second step is to add the data.
 

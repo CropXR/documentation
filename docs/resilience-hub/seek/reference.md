@@ -96,6 +96,32 @@ Note that this form has no square brackets, where a sample input does, and that 
 
 Find the data file ID, by going to the data file in the interface, and checking the number at the end of the URL https://catalogue.cropresilience.org/data_files/1 
 
+#### How to fill the file name column in the Assay excel
+
+In the **file name** column, enter the path of the file relative to the main folder of your dataset. The **checksum** column can be ignored; there is no need to fill it.
+
+For example, the folder you are uploading is `rna-seq`, and the file `sample_01.fastq.gz` is in its subfolder `raw-reads`:
+
+=== "Windows"
+
+    Full path: `C:\Users\jane\rna-seq\raw-reads\sample_01.fastq.gz`
+
+    File name to fill in the column: `raw-reads\sample_01.fastq.gz`
+
+=== "macOS"
+
+    Full path: `/Users/jane/rna-seq/raw-reads/sample_01.fastq.gz`
+
+    File name to fill in the column: `raw-reads/sample_01.fastq.gz`
+
+=== "Linux"
+
+    Full path: `/home/jane/rna-seq/raw-reads/sample_01.fastq.gz`
+
+    File name to fill in the column: `raw-reads/sample_01.fastq.gz`
+
+A file directly in the main folder is entered with just its name: `sample_01.fastq.gz`.
+
 
 ## Defining assays
 

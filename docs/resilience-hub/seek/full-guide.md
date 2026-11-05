@@ -271,8 +271,8 @@ flowchart LR
 
 So enter the assays **in order**, and upload each one before you start the next. To fill the **Input column** in the excel sheets, follow [How to fill the Input column](reference.md#how-to-fill-the-input-column).
 
-!!! note "Leave the file location empty for now"
-    That column takes a reference to a data file already registered in SEEK — not a path or a URL — so the file has to exist as a record before the cell can be filled.
+!!! note "Filling the data file assay"
+    In the **file name** column, enter the path of the file relative to the main folder. To see how this looks on Windows, macOS and Linux, follow [How to fill the file name column](reference.md#how-to-fill-the-file-name-column). The **checksum** column can be ignored; there is no need to fill it.
 
 !!! success "Metadata done"
     The metadata now stands on its own. The data can be [added now](../cli-tool/index.md).
