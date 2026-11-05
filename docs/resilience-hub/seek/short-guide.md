@@ -83,9 +83,9 @@ The metadata now stands on its own. The second step is to add the data.
          permissions — assay rows point at the individual files inside it by relative path
       3. set the sharing. These permissions will govern who can download the data, so registering
          a whole study as one data file leaves no way to grant access to part of it
-12. Link each registered data file into the assay rows it belongs to, using the [format for data
-    files](reference.md#data-files). Select the rows before downloading, so the upload revises
-    them instead of adding a second set.
+12. Fill in the file name column of the assay rows as described in
+    [How to fill the file name column](reference.md#how-to-fill-the-file-name-column-in-the-assay-excel).
+    Select the rows before downloading, so the upload revises them instead of adding a second set.
 
 Now that the minimal metadata is added, continue improving the metadata.
 
