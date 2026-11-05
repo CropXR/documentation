@@ -86,15 +86,31 @@ Writing the id as a quoted string (`"id"=>"343"`) is accepted, though the bare n
 The id is what SEEK resolves. The title is not checked against the record and does not have to match — a row with the wrong title still links correctly, and the interface displays the real name. Keep it accurate anyway: tooling that reads these workbooks parses the title back out of the string, so a wrong one is invisible in the catalogue but misleading later.
 
  
-### Data files
+### How to fill the file name column in the Assay excel
 
-To link a registered data file use the following format. 
+In the **file name** column, enter the path of the file relative to the main folder of your dataset. The **checksum** column can be ignored; there is no need to fill it.
 
-    {"id"=>1, "type"=>"DataFile", "title"=>"File from data access layer"}
+For example, the folder you are uploading is `rna-seq`, and the file `sample_01.fastq.gz` is in its subfolder `raw-reads`:
 
-Note that this form has no square brackets, where a sample input does, and that the type is `DataFile` rather than `Sample`. The id is the data file's own id, not the id of any sample or assay row.
+=== "Windows"
 
-Find the data file ID, by going to the data file in the interface, and checking the number at the end of the URL https://catalogue.cropresilience.org/data_files/1 
+    Full path: `C:\Users\jane\rna-seq\raw-reads\sample_01.fastq.gz`
+
+    File name to fill in the column: `raw-reads\sample_01.fastq.gz`
+
+=== "macOS"
+
+    Full path: `/Users/jane/rna-seq/raw-reads/sample_01.fastq.gz`
+
+    File name to fill in the column: `raw-reads/sample_01.fastq.gz`
+
+=== "Linux"
+
+    Full path: `/home/jane/rna-seq/raw-reads/sample_01.fastq.gz`
+
+    File name to fill in the column: `raw-reads/sample_01.fastq.gz`
+
+A file directly in the main folder is entered with just its name: `sample_01.fastq.gz`.
 
 
 ## Defining assays

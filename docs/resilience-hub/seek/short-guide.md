@@ -65,9 +65,9 @@ To revise rows that are already there, select them before downloading.
     Enter the data with the same cycle, referencing the study sources by name and id in the Input column.
 
 9. Edit assay metadata
-10. Enter assay row data with the same cycle. Leave the file location column empty: it takes a
-    reference to a data file already registered in SEEK, not a path, so the file must exist as a
-    record first. That happens in the next step.
+10. Enter assay row data with the same cycle. In the data file assay, enter the path of each file
+    relative to the main folder you are uploading in the file name column, as shown in [How to fill the file name
+    column](reference.md#how-to-fill-the-file-name-column). The checksum column can be ignored; there is no need to fill it.
 
 The metadata now stands on its own. The second step is to add the data.
 
@@ -83,9 +83,9 @@ The metadata now stands on its own. The second step is to add the data.
          permissions — assay rows point at the individual files inside it by relative path
       3. set the sharing. These permissions will govern who can download the data, so registering
          a whole study as one data file leaves no way to grant access to part of it
-12. Link each registered data file into the assay rows it belongs to, using the [format for data
-    files](reference.md#data-files). Select the rows before downloading, so the upload revises
-    them instead of adding a second set.
+12. Fill in the file name column of the assay rows as described in
+    [How to fill the file name column](reference.md#how-to-fill-the-file-name-column-in-the-assay-excel).
+    Select the rows before downloading, so the upload revises them instead of adding a second set.
 
 Now that the minimal metadata is added, continue improving the metadata.
 
